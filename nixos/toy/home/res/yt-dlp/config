@@ -1,0 +1,13 @@
+--embed-chapters
+
+--output "$PWD/%(title)s.%(ext)s"
+
+--remux-video mkv
+
+--write-subs
+--write-auto-subs
+--sub-langs "en.*,zh.*"
+
+--format-sort res:1080
+
+--extractor-args "youtube:skip=dash,hls"

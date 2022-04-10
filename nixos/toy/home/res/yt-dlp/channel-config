@@ -1,0 +1,5 @@
+--no-continue
+
+--download-archive "archive.log"
+
+--output "$PWD/%(channel)s/%(upload_date)s %(title)s.%(ext)s"
