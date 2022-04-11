@@ -28,7 +28,10 @@
     noto-fonts-extra
   ];
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    settings.Policy.ReconnectAttempts = 0;
+  };
 
   home-manager = {
     useGlobalPkgs = true;
