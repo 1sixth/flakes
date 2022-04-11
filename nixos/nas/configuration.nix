@@ -5,7 +5,6 @@
     ./campus_login.nix
     ./hardware.nix
     ./sftp.nix
-    ./shutdown.nix
   ];
 
   networking.hostName = "nas";
