@@ -9,7 +9,7 @@
     fcitx5-pinyin-moegirl = inputs.berberman.packages.${prev.system}.fcitx5-pinyin-moegirl;
     fcitx5-pinyin-zhwiki = inputs.berberman.packages.${prev.system}.fcitx5-pinyin-zhwiki;
   };
-  qbittorrent = final: prev: {
+  qbittorrent-nox = final: prev: {
     # https://github.com/qbittorrent/qBittorrent/issues/15235
     qbittorrent-nox = inputs.nixpkgs-qbittorrent-nox.legacyPackages.${prev.system}.qbittorrent-nox.override {
       libtorrent-rasterbar = inputs.nixpkgs-libtorrent-rasterbar.legacyPackages.${prev.system}.libtorrent-rasterbar;
