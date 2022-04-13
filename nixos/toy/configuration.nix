@@ -18,15 +18,18 @@
     tmpOnTmpfs = true;
   };
 
-  fonts.fonts = with pkgs; [
-    font-awesome
-    iosevka-bin
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    noto-fonts-emoji
-    noto-fonts-extra
-  ];
+  fonts = {
+    enableDefaultFonts = false;
+    fonts = with pkgs; [
+      font-awesome
+      iosevka-bin
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-emoji
+      noto-fonts-extra
+    ];
+  };
 
   hardware.bluetooth = {
     enable = true;

@@ -27,7 +27,6 @@
       # Based on https://github.com/rydesun/dotfiles/tree/master/.config/fontconfig/conf.d.
       "fontconfig/conf.d/50-generic.conf".source = ./res/fontconfig/50-generic.conf;
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;
-      "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
       "wofi/style.css".source = ./res/wofi.css;
       "yt-dlp/channel-config".source = ./res/yt-dlp/channel-config;
       "yt-dlp/config".source = ./res/yt-dlp/config;
