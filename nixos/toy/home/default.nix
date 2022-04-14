@@ -64,6 +64,7 @@ in
       onlyoffice-bin
       pcmanfm
       pcmanfm-qt
+      poetry
       polymc
       python3
       qliveplayer
