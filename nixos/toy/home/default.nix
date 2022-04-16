@@ -189,7 +189,6 @@ in
       # https://lists.gnupg.org/pipermail/gnupg-users/2017-June/058581.html
       extraConfig = ''Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"'';
       matchBlocks = {
-        "*".proxyCommand = "${pkgs.netcat}/bin/nc -x 127.0.0.1:1080 %h %p";
         "*.9875321.xyz".user = "root";
         "box" = {
           addressFamily = "inet";
