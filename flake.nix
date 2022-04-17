@@ -14,6 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    nixos-cn = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nixos-cn/flakes";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     # libtorrent-rasterbar 2.0.4
     nixpkgs-libtorrent-rasterbar.url = "github:NixOS/nixpkgs?rev=b42f0a0b45d33dec4a25508ea5293a4a016697a9";
@@ -31,6 +35,7 @@
     inputs@{ berberman
     , deploy-rs
     , home-manager
+    , nixos-cn
     , nixpkgs
     , nixpkgs-libtorrent-rasterbar
     , nixpkgs-qbittorrent-nox
