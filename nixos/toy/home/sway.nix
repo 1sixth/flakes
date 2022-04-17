@@ -51,7 +51,7 @@
         };
       menu = "${pkgs.wofi}/bin/wofi";
       modifier = "Mod4";
-      terminal = "footclient";
+      terminal = "foot";
     };
     enable = true;
     package = null;
