@@ -6,7 +6,6 @@ nixpkgs.lib.nixosSystem {
     inputs.nixos-cn.nixosModules.nixos-cn
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.dnscrypt-proxy2.earth
-    self.nixosModules.hath
     self.nixosModules.server
     self.nixosModules.tor
     self.nixosModules.v2ray.server
