@@ -90,6 +90,21 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1638122382,
+        "narHash": "sha256-sQzZzAbvKEqN9s0bzWuYmRaA03v40gaJ4+iL1LXjaeI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "74f7e4319258e287b0f9cb95426c9853b282730b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -107,6 +122,27 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixos-cn": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1650167359,
+        "narHash": "sha256-dKChcPA6b4UscCYXWvq9eCv1Pp6jSrE9YZ8o/EpqZIs=",
+        "owner": "nixos-cn",
+        "repo": "flakes",
+        "rev": "69f10ac83787e496ab3e1765034bc0d50351f3c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos-cn",
+        "repo": "flakes",
         "type": "github"
       }
     },
@@ -160,11 +196,11 @@
     },
     "nixpkgs-sway": {
       "locked": {
-        "lastModified": 1650200073,
-        "narHash": "sha256-snl/BQraXXBxx+Snz/phU7GZcimR8fnQIxxshW2qS/Y=",
+        "lastModified": 1650203676,
+        "narHash": "sha256-DlKqN3WCDUhUMYh0yv+1ygUbZazN7st+xQTkEZzT08Q=",
         "owner": "NickCao",
         "repo": "nixpkgs",
-        "rev": "d405d0a0a3a8a8e52ccfd18d8de6e9f3a074868f",
+        "rev": "abec383ad9028428a846de78077ffa67c4ed379d",
         "type": "github"
       },
       "original": {
@@ -201,6 +237,7 @@
         "berberman": "berberman",
         "deploy-rs": "deploy-rs",
         "home-manager": "home-manager",
+        "nixos-cn": "nixos-cn",
         "nixpkgs": "nixpkgs",
         "nixpkgs-libtorrent-rasterbar": "nixpkgs-libtorrent-rasterbar",
         "nixpkgs-qbittorrent-nox": "nixpkgs-qbittorrent-nox",
