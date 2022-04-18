@@ -44,13 +44,13 @@
   };
 
   nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [ "flakes" "nix-command" ];
-    };
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";
+    };
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "flakes" "nix-command" ];
     };
   };
 
