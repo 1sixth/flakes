@@ -12,11 +12,11 @@
   sops.secrets = {
     basic_auth = {
       owner = config.users.users.nginx.name;
-      group = config.users.users.nginx.group;
+      inherit (config.users.users.nginx) group;
     };
     "nginx/share.conf" = {
       owner = config.users.users.nginx.name;
-      group = config.users.users.nginx.group;
+      inherit (config.users.users.nginx) group;
     };
   };
 }

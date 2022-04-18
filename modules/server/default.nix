@@ -148,7 +148,7 @@
     secrets = {
       cloudflare_token = {
         owner = config.users.users.acme.name;
-        group = config.users.users.acme.group;
+        inherit (config.users.users.acme) group;
         sopsFile = ./secrets.yaml;
       };
       "password/root" = {

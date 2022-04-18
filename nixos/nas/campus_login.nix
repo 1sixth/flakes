@@ -9,7 +9,7 @@
       serviceConfig = {
         Type = "oneshot";
         EnvironmentFile = config.sops.secrets.campus_login.path;
-        ExecStart = (pkgs.writeShellScript "campus_login.sh"
+        ExecStart = pkgs.writeShellScript "campus_login.sh"
           ''
             TYPE=Internet
 
@@ -23,8 +23,7 @@
                 --data-urlencode password="$PASSWORD" \
                 --data-urlencode service="$TYPE" \
                 --data-urlencode queryString="$QUERYSTRING"
-          ''
-        );
+          '';
       };
       wants = [ "network-online.target" ];
     };

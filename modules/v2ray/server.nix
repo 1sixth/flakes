@@ -31,7 +31,7 @@
           }
         '';
         owner = config.users.users.nginx.name;
-        group = config.users.users.nginx.group;
+        inherit (config.users.users.nginx) group;
       };
       "v2ray.json".content = builtins.toJSON {
         inbounds = [{

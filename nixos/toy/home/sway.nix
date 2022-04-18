@@ -22,7 +22,7 @@
         };
       };
       keybindings =
-        let modifier = config.wayland.windowManager.sway.config.modifier; in
+        let inherit (config.wayland.windowManager.sway.config) modifier; in
         lib.mkOptionDefault {
           "XF86AudioMute" = "exec ${pkgs.pamixer}/bin/pamixer -t";
           "XF86AudioLowerVolume" = "exec ${pkgs.pamixer}/bin/pamixer -d 5";
