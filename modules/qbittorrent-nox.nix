@@ -3,7 +3,7 @@
 {
   # https://github.com/qbittorrent/qBittorrent/wiki/NGINX-Reverse-Proxy-for-Web-UI
   services.nginx.virtualHosts."${config.networking.hostName}.9875321.xyz".locations."/qbittorrent/" = {
-    extraConfig = "client_max_body_size 100M;";
+    extraConfig = "client_max_body_size 1G;";
     proxyPass = "http://127.0.0.1:8080/";
   };
 
