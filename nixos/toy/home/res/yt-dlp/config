@@ -10,4 +10,6 @@
 
 --format-sort res:1080
 
---extractor-args "youtube:skip=dash,hls"
+--extractor-args "youtube:skip=dash,hls,translated_subs"
+
+--match-filter "original_url!*=/shorts/ & url!*=/shorts/"
