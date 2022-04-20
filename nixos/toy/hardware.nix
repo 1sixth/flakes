@@ -20,22 +20,22 @@ in
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/a844606d-0b4b-43c0-b55f-f358eb432640";
+      device = "/dev/disk/by-uuid/251085ac-59ea-4e30-9d33-71dfdf781966";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@root" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/a844606d-0b4b-43c0-b55f-f358eb432640";
+      device = "/dev/disk/by-uuid/251085ac-59ea-4e30-9d33-71dfdf781966";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@nix" ];
     };
     "/home" = {
-      device = "/dev/disk/by-uuid/a844606d-0b4b-43c0-b55f-f358eb432640";
+      device = "/dev/disk/by-uuid/251085ac-59ea-4e30-9d33-71dfdf781966";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@home" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/1F50-F326";
+      device = "/dev/disk/by-uuid/641C-6BB3";
       fsType = "vfat";
     };
   };
@@ -44,4 +44,6 @@ in
     cpu.amd.updateMicrocode = true;
     firmware = with pkgs; [ linux-firmware ];
   };
+
+  swapDevices = [{ device = "/dev/disk/by-uuid/c2caae82-c764-4d01-aefc-096c5b3f38b5"; }];
 }
