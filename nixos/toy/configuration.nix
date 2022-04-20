@@ -52,34 +52,11 @@
     ];
   };
 
-  nix = {
-    buildMachines = [
-      {
-        hostName = "hel.9875321.xyz";
-        sshUser = "root";
-        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
-        systems = [
-          #"aarch64-linux"
-          "x86_64-linux"
-        ];
-      }
-      {
-        hostName = "tyo0.9875321.xyz";
-        sshUser = "root";
-        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" "gccarch-armv8-a" ];
-        systems = [
-          "aarch64-linux"
-          #"x86_64-linux"
-        ];
-      }
-    ];
-    distributedBuilds = true;
-    settings = {
-      auto-optimise-store = true;
-      builders-use-substitutes = true;
-      experimental-features = [ "flakes" "nix-command" ];
-      trusted-users = [ "one6th" "root" ];
-    };
+  nix.settings = {
+    auto-optimise-store = true;
+    builders-use-substitutes = true;
+    experimental-features = [ "flakes" "nix-command" ];
+    trusted-users = [ "one6th" "root" ];
   };
 
   networking = {
