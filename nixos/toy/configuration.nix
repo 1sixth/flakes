@@ -71,10 +71,6 @@
 
   programs = {
     command-not-found.enable = false;
-    ssh.extraConfig = ''
-      Host *
-        ProxyCommand ${pkgs.netcat}/bin/nc -x 127.0.0.1:1080 %h %p
-    '';
     sway = {
       enable = true;
       wrapperFeatures.gtk = true;
