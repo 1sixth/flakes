@@ -36,7 +36,7 @@ _:
         };
       };
       font = {
-        normal.family = "Iosevka Term";
+        normal.family = "Iosevka Terminal";
         size = 17;
       };
       selection.save_to_clipboard = true;

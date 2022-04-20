@@ -22,7 +22,26 @@
     enableDefaultFonts = false;
     fonts = with pkgs; [
       font-awesome
-      iosevka-bin
+      (iosevka.override {
+        privateBuildPlan = {
+          family = "Iosevka Custom";
+          spacing = "normal";
+          serifs = "sans";
+          no-cv-ss = false;
+          no-ligation = true;
+        };
+        set = "custom";
+      })
+      (iosevka.override {
+        privateBuildPlan = {
+          family = "Iosevka Terminal";
+          spacing = "term";
+          serifs = "sans";
+          no-cv-ss = false;
+          no-ligation = true;
+        };
+        set = "terminal";
+      })
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
