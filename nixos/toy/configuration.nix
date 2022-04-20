@@ -86,10 +86,16 @@
     wireless.iwd.enable = true;
   };
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+  ];
+
   powerManagement.cpuFreqGovernor = "schedutil";
 
   programs = {
     command-not-found.enable = false;
+    steam.enable = true;
     sway = {
       enable = true;
       wrapperFeatures.gtk = true;
