@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   mountOptions = [ "compress-force=zstd" "noatime" "space_cache=v2" ];
