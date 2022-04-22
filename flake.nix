@@ -50,6 +50,8 @@
     }:
 
     {
+      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) inputs.deploy-rs.lib;
+
       deploy = {
         nodes = (inputs.nixpkgs.lib.attrsets.genAttrs [ "hel" "nas" "tyo1" "tyo2" ]
           (name: {
