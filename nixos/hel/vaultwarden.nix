@@ -27,5 +27,5 @@
     };
   };
 
-  sops.secrets.vaultwarden = { };
+  sops.secrets.vaultwarden.restartUnits = [ "vaultwarden.service" ];
 }
