@@ -3,8 +3,8 @@
 let
   wallpaper = pkgs.fetchurl {
     curlOpts = "--referer https://www.pixiv.net";
-    url = "https://i.pximg.net/img-original/img/2017/09/30/18/37/34/65204496_p0.png";
-    sha256 = "sha256-AenfCFlD0afOvfoIqCrUelwbgLQ8l0POwsVykLI3Ksc=";
+    url = "https://i.pximg.net/img-original/img/2017/04/21/18/35/04/62506385_p0.jpg";
+    sha256 = "sha256-B1/J9ReWB0AD2pDxVsRcJ/naFOX+Tx4gDihUp1QLsvA=";
   };
 in
 
