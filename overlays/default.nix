@@ -18,6 +18,9 @@
   qliveplayer = final: prev: {
     inherit (inputs.berberman.packages.${prev.system}) qliveplayer;
   };
+  polymc = final: prev: {
+    inherit (inputs.polymc.packages.${prev.system}) polymc;
+  };
   # https://github.com/swaywm/sway/pull/5890
   # https://github.com/NickCao/nixpkgs/commit/003a3678bbbb5363ef297120ba70d85623b24c71
   sway = final: prev: {
