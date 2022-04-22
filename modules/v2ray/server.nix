@@ -11,8 +11,8 @@
 
   sops = {
     secrets = {
-      "v2ray/id" = { };
-      "v2ray/path" = { };
+      "v2ray/id".restartUnits = [ "v2ray.service" ];
+      "v2ray/path".restartUnits = [ "v2ray.service" ];
     };
     templates = {
       "v2ray.conf" = {

@@ -8,5 +8,5 @@
     enable = true;
   };
 
-  sops.secrets."v2ray.json" = { };
+  sops.secrets."v2ray.json".restartUnits = [ "v2ray.service" ];
 }
