@@ -75,6 +75,22 @@
         "type": "github"
       }
     },
+    "flake-compat_3": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648199409,
+        "narHash": "sha256-JwPKdC2PoVBkG6E+eWw3j6BMR6sL3COpYWfif7RVb8Y=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "64a525ee38886ab9028e6f61790de0832aa3ef03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1638122382,
@@ -112,16 +128,32 @@
         ]
       },
       "locked": {
-        "lastModified": 1650234580,
-        "narHash": "sha256-wTmlRedCrDl+XYJom65GMfI3RgA3eZE/w03lD28Txoc=",
+        "lastModified": 1650478719,
+        "narHash": "sha256-308c2cM4hW9AW6dSQ080ycXGyEJGkG/OwOINkYL9Mnw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "742c6cb3e9d866e095c629162fe5faf519adeb26",
+        "rev": "93a69d07389311ffd6ce1f4d01836bbc2faec644",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "libnbtplusplus": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1591558203,
+        "narHash": "sha256-QgvNvaoFflCXEPCCFBCeZvYTpuiwScBG7EosUgFwFNQ=",
+        "owner": "multimc",
+        "repo": "libnbtplusplus",
+        "rev": "dc72a20b7efd304d12af2025223fad07b4b78464",
+        "type": "github"
+      },
+      "original": {
+        "owner": "multimc",
+        "repo": "libnbtplusplus",
         "type": "github"
       }
     },
@@ -133,11 +165,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1650248111,
-        "narHash": "sha256-4UiwllHgJKNivLynzi4zo46T/hfpYn0ipRuV+AjVaHo=",
+        "lastModified": 1650593192,
+        "narHash": "sha256-mPBxlJZNcH2la0EJ7u9oGeD8+pPA+iioPkW1u8zxTJM=",
         "owner": "nixos-cn",
         "repo": "flakes",
-        "rev": "0a1fa4ad2720e16fa5289ff963636d0360fc736e",
+        "rev": "b1dffd81dccce505bd4a9116a39c68b7b9065da1",
         "type": "github"
       },
       "original": {
@@ -196,11 +228,11 @@
     },
     "nixpkgs-sway": {
       "locked": {
-        "lastModified": 1650203676,
-        "narHash": "sha256-DlKqN3WCDUhUMYh0yv+1ygUbZazN7st+xQTkEZzT08Q=",
+        "lastModified": 1650594068,
+        "narHash": "sha256-/3GQrW3d/Qq9VMavDRARUt2JyXcxjaSHt88pVEGippM=",
         "owner": "NickCao",
         "repo": "nixpkgs",
-        "rev": "abec383ad9028428a846de78077ffa67c4ed379d",
+        "rev": "0b46bd0969c5a3cac7b8577a05077f9371ad4b9e",
         "type": "github"
       },
       "original": {
@@ -232,6 +264,45 @@
         "type": "github"
       }
     },
+    "polymc": {
+      "inputs": {
+        "flake-compat": "flake-compat_3",
+        "libnbtplusplus": "libnbtplusplus",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quazip": "quazip"
+      },
+      "locked": {
+        "lastModified": 1650455965,
+        "narHash": "sha256-ecrM5IYB0T368kp5talmjHfcTCNyHrCjKlmrMdM4QdE=",
+        "owner": "PolyMC",
+        "repo": "PolyMC",
+        "rev": "5adcc26190b82dc9c1050452645d762f5e8b5a5e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PolyMC",
+        "repo": "PolyMC",
+        "type": "github"
+      }
+    },
+    "quazip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1643049383,
+        "narHash": "sha256-LcJY6yd6GyeL7X5MP4L94diceM1TYespWByliBsjK98=",
+        "owner": "stachenov",
+        "repo": "quazip",
+        "rev": "09ec1d10c6d627f895109b21728dda000cbfa7d1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stachenov",
+        "repo": "quazip",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "berberman": "berberman",
@@ -242,6 +313,7 @@
         "nixpkgs-libtorrent-rasterbar": "nixpkgs-libtorrent-rasterbar",
         "nixpkgs-qbittorrent-nox": "nixpkgs-qbittorrent-nox",
         "nixpkgs-sway": "nixpkgs-sway",
+        "polymc": "polymc",
         "sops-nix": "sops-nix"
       }
     },

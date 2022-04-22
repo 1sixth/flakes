@@ -25,6 +25,10 @@
     nixpkgs-qbittorrent-nox.url = "github:NixOS/nixpkgs?rev=56137af9f1b6f89329d55de169e0eefee57e8263";
     # sway IME support
     nixpkgs-sway.url = "github:NickCao/nixpkgs";
+    polymc = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:PolyMC/PolyMC";
+    };
     sops-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:Mic92/sops-nix";
@@ -41,6 +45,7 @@
     , nixpkgs-qbittorrent-nox
     , nixpkgs-sway
     , self
+    , polymc
     , sops-nix
     }:
 
