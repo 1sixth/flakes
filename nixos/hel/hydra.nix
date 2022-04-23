@@ -2,17 +2,10 @@
 
 {
   services = {
-    nginx.virtualHosts = {
-      "cache.shinta.ro" = {
-        forceSSL = true;
-        locations."/".proxyPass = "http://127.0.0.1:5000";
-        useACMEHost = "shinta.ro";
-      };
-      "hydra.shinta.ro" = {
-        forceSSL = true;
-        locations."/".proxyPass = "http://127.0.0.1:3000";
-        useACMEHost = "shinta.ro";
-      };
+    nginx.virtualHosts."hydra.shinta.ro" = {
+      forceSSL = true;
+      locations."/".proxyPass = "http://127.0.0.1:3000";
+      useACMEHost = "shinta.ro";
     };
     postgresql = {
       package = pkgs.postgresql_14;
