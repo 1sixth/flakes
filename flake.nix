@@ -74,7 +74,7 @@
       };
 
       hydraJobs = {
-        hel = self.nixosConfigurations.hel.config.system.system.build.toplevel;
+        hel = self.nixosConfigurations.hel.config.system.build.toplevel;
       };
 
       nixosConfigurations = {
