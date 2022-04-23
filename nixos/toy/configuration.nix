@@ -75,6 +75,8 @@
     auto-optimise-store = true;
     builders-use-substitutes = true;
     experimental-features = [ "flakes" "nix-command" ];
+    substituters = [ "https://hydra.shinta.ro" ];
+    trusted-public-keys = [ "hydra.shinta.ro:nxVZvKRpeiGdqeiHJ7QRm4GYOF/7BuFpOnaPULw+QX4=" ];
     trusted-users = [ "one6th" "root" ];
   };
 
