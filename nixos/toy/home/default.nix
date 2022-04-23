@@ -61,7 +61,6 @@ in
       nali
       nixpkgs-fmt
       onlyoffice-bin
-      pcmanfm
       pcmanfm-qt
       poetry
       polymc
