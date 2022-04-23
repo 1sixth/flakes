@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   services = {
@@ -38,4 +38,8 @@
       useSubstitutes = true;
     };
   };
+
+  nix.settings.secret-key-files = config.sops.secrets.secret-key-files.path;
+
+  sops.secrets.secret-key-files = { };
 }
