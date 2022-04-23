@@ -5,7 +5,7 @@ nixpkgs.lib.nixosSystem {
   modules = [
     {
       nixpkgs.overlays = [
-        inputs.hydra.overlay
+        self.overlays.hydra
         self.overlays.qbittorrent-nox
       ];
     }

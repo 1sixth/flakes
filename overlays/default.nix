@@ -6,6 +6,9 @@
     inherit (inputs.berberman.packages.${prev.system}) fcitx5-pinyin-moegirl;
     inherit (inputs.berberman.packages.${prev.system}) fcitx5-pinyin-zhwiki;
   };
+  hydra = final: prev: {
+    inherit (inputs.hydra.packages.${prev.system}) hydra;
+  };
   qbittorrent-nox = final: prev: {
     # https://github.com/qbittorrent/qBittorrent/issues/15235
     qbittorrent-nox = inputs.nixpkgs-qbittorrent-nox.legacyPackages.${prev.system}.qbittorrent-nox.override {
