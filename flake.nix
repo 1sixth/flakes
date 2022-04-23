@@ -14,6 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    hydra = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:NixOS/hydra";
+    };
     nixos-cn = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nixos-cn/flakes";
@@ -39,6 +43,7 @@
     inputs@{ berberman
     , deploy-rs
     , home-manager
+    , hydra
     , nixos-cn
     , nixpkgs
     , nixpkgs-libtorrent-rasterbar
