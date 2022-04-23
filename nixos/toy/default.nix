@@ -5,10 +5,10 @@ nixpkgs.lib.nixosSystem {
   modules = [
     {
       nixpkgs.overlays = [
-        self.overlays.deploy-rs
+        inputs.deploy-rs.overlay
+        inputs.polymc.overlay
         self.overlays.fcitx5
         self.overlays.qliveplayer
-        self.overlays.polymc
         self.overlays.sway
       ];
     }
