@@ -43,6 +43,8 @@
     };
   };
 
+  nix.settings.secret-key-files = config.sops.secrets.secret-key-files.path;
+
   sops.secrets.secret-key-files = {
     mode = "0440";
     owner = config.users.users.hydra.name;
