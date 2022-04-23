@@ -38,17 +38,21 @@
     };
     hydra = {
       enable = true;
+      extraConfig = ''
+        binary_cache_secret_key_file = ${config.sops.secrets.secret-key-files.path}
+        store_uri = auto?secret-key=${config.sops.secrets.secret-key-files.path}
+      '';
       hydraURL = "https://hydra.shinta.ro";
       listenHost = "127.0.0.1";
       notificationSender = "hydra@shinta.ro";
       package = pkgs.hydra;
       useSubstitutes = true;
     };
-    nix-serve = {
-      enable = true;
-      secretKeyFile = config.sops.secrets.secret-key-files.path;
-    };
   };
 
-  sops.secrets.secret-key-files = { };
+  sops.secrets.secret-key-files = {
+    mode = "0440";
+    owner = config.users.users.hydra.name;
+    inherit (config.users.users.hydra) group;
+  };
 }
