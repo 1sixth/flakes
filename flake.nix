@@ -15,7 +15,10 @@
       url = "github:nix-community/home-manager";
     };
     hydra = {
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        newNixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs";
+      };
       url = "github:NixOS/hydra";
     };
     nixos-cn = {
