@@ -34,6 +34,9 @@
       extraConfig = ''
         binary_cache_secret_key_file = ${config.sops.secrets.secret-key-files.path}
         store_uri = auto?secret-key=${config.sops.secrets.secret-key-files.path}
+        <githubstatus>
+          jobs = personal:flakes:.*
+        </githubstatus>
       '';
       hydraURL = "https://hydra.shinta.ro";
       listenHost = "127.0.0.1";
