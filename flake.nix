@@ -75,6 +75,7 @@
 
       hydraJobs = {
         hel = self.nixosConfigurations.hel.config.system.build.toplevel;
+        toy = self.nixosConfigurations.toy.config.system.build.toplevel;
       };
 
       nixosConfigurations = {
