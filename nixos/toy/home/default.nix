@@ -49,7 +49,6 @@ in
       fd
       file
       gotop
-      handlr
       htop
       imv
       iotop
