@@ -3,7 +3,12 @@
 nixpkgs.lib.nixosSystem {
   inherit system;
   modules = [
-    { nixpkgs.overlays = [ self.overlays.qbittorrent-nox ]; }
+    {
+      nixpkgs.overlays = [
+        self.overlays.hydra
+        self.overlays.qbittorrent-nox
+      ];
+    }
     inputs.nixos-cn.nixosModules.nixos-cn
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.dnscrypt-proxy2.earth

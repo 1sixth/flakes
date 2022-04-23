@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware.nix
+    ./hydra.nix
     ./share.nix
     ./vaultwarden.nix
   ];
