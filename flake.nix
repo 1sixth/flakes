@@ -73,6 +73,10 @@
         sshUser = "root";
       };
 
+      hydraJobs = {
+        hel = self.nixosConfigurations.hel.config.system.system.build.toplevel;
+      };
+
       nixosConfigurations = {
         hel = import ./nixos/hel { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nas = import ./nixos/nas { system = "x86_64-linux"; inherit self nixpkgs inputs; };
