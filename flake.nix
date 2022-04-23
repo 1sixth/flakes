@@ -75,7 +75,11 @@
 
       hydraJobs = {
         hel = self.nixosConfigurations.hel.config.system.build.toplevel;
+        nas = self.nixosConfigurations.nas.config.system.build.toplevel;
         toy = self.nixosConfigurations.toy.config.system.build.toplevel;
+        tyo0 = self.nixosConfigurations.tyo0.config.system.build.toplevel;
+        tyo1 = self.nixosConfigurations.tyo1.config.system.build.toplevel;
+        tyo2 = self.nixosConfigurations.tyo2.config.system.build.toplevel;
       };
 
       nixosConfigurations = {
