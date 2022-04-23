@@ -249,22 +249,25 @@ in
     };
   };
 
-  # https://github.com/emersion/mako/blob/master/contrib/systemd/mako.service
-  systemd.user.services.mako = {
-    Install.WantedBy = [ "graphical-session.target" ];
-    Service = {
-      Type = "dbus";
-      BusName = "org.freedesktop.Notifications";
-      ExecCondition = "/bin/sh -c '[ -n $WAYLAND_DISPLAY ]'";
-      ExecStart = "${pkgs.mako}/bin/mako";
-      ExecReload = "${pkgs.mako}/bin/makoctl reload";
+  systemd.user = {
+    # https://github.com/emersion/mako/blob/master/contrib/systemd/mako.service
+    services.mako = {
+      Install.WantedBy = [ "graphical-session.target" ];
+      Service = {
+        Type = "dbus";
+        BusName = "org.freedesktop.Notifications";
+        ExecCondition = "/bin/sh -c '[ -n $WAYLAND_DISPLAY ]'";
+        ExecStart = "${pkgs.mako}/bin/mako";
+        ExecReload = "${pkgs.mako}/bin/makoctl reload";
+      };
+      Unit = {
+        After = "graphical-session.target";
+        Description = "Lightweight Wayland notification daemon";
+        Documentation = "man:mako(1)";
+        PartOf = "graphical-session.target";
+      };
     };
-    Unit = {
-      After = "graphical-session.target";
-      Description = "Lightweight Wayland notification daemon";
-      Documentation = "man:mako(1)";
-      PartOf = "graphical-session.target";
-    };
+    targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };
 
   # TODO: Figure out what to do with the wallpaper.
