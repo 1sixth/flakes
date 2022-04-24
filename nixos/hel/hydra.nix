@@ -25,16 +25,6 @@
     settings.builders-use-substitutes = true;
   };
 
-  programs.ssh = {
-    knownHosts."tyo0.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICDgtb4zRBJ5xKMeEwJkhY7H68eUBNvSuBiRuuF0U02j";
-    extraConfig = ''
-      Host tyo0
-        HostName tyo0.9875321.xyz
-        IdentityFile ${config.sops.secrets.ssh_private_key.path}
-        User root
-    '';
-  };
-
   services = {
     nginx.virtualHosts."hydra.shinta.ro" = {
       forceSSL = true;
@@ -82,16 +72,9 @@
 
   nix.settings.secret-key-files = config.sops.secrets.secret-key-files.path;
 
-  sops.secrets = {
-    secret-key-files = {
-      mode = "0440";
-      owner = config.users.users.hydra.name;
-      inherit (config.users.users.hydra) group;
-    };
-    ssh_private_key = {
-      mode = "0440";
-      owner = config.users.users.hydra.name;
-      inherit (config.users.users.hydra) group;
-    };
+  sops.secrets.secret-key-files = {
+    mode = "0440";
+    owner = config.users.users.hydra.name;
+    inherit (config.users.users.hydra) group;
   };
 }
