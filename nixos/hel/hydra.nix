@@ -6,6 +6,7 @@
     buildMachines = [
       {
         hostName = "localhost";
+        maxJobs = 12;
         supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
         systems = [
           "aarch64-linux"
@@ -14,6 +15,7 @@
       }
       {
         hostName = "tyo0";
+        maxJobs = 4;
         supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" "gccarch-armv8-a" ];
         systems = [
           "aarch64-linux"
