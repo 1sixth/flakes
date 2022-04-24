@@ -5,7 +5,7 @@
   nix = {
     buildMachines = [
       {
-        hostName = "ssh://localhost";
+        hostName = "localhost";
         supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
         systems = [
           "aarch64-linux"
@@ -14,7 +14,6 @@
       }
       {
         hostName = "tyo0";
-        sshUser = "root";
         supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" "gccarch-armv8-a" ];
         systems = [
           "aarch64-linux"
