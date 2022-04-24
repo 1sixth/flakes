@@ -13,8 +13,16 @@
   networking.hostName = "hel";
 
   programs.ssh = {
-    knownHosts."tyo0.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICDgtb4zRBJ5xKMeEwJkhY7H68eUBNvSuBiRuuF0U02j";
+    knownHosts = {
+      "tyo0.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICDgtb4zRBJ5xKMeEwJkhY7H68eUBNvSuBiRuuF0U02j";
+      "u290909.your-storagebox.de".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIICf9svRenC/PLKIL9nk6K/pxQgoiFC41wTNvoIncOxs";
+    };
     extraConfig = ''
+      Host box
+        HostName u290909.your-storagebox.de
+        IdentityFile ${config.sops.secrets.ssh_private_key.path}
+        Port 23
+        User u290909
       Host tyo0
         HostName tyo0.9875321.xyz
         IdentityFile ${config.sops.secrets.ssh_private_key.path}
