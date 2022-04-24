@@ -1,6 +1,42 @@
 { config, pkgs, ... }:
 
 {
+
+  nix = {
+    buildMachines = [
+      {
+        hostName = "localhost";
+        sshUser = "root";
+        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+        systems = [
+          "aarch64-linux"
+          "x86_64-linux"
+        ];
+      }
+      {
+        hostName = "tyo0";
+        sshUser = "root";
+        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" "gccarch-armv8-a" ];
+        systems = [
+          "aarch64-linux"
+          "x86_64-linux"
+        ];
+      }
+    ];
+    distributedBuilds = true;
+    settings.builders-use-substitutes = true;
+  };
+
+  programs.ssh = {
+    knownHosts."tyo0.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICDgtb4zRBJ5xKMeEwJkhY7H68eUBNvSuBiRuuF0U02j";
+    extraConfig = ''
+      Host tyo0
+        HostName tyo0.9875321.xyz
+        IdentityFile ${config.sops.secrets.tyo0_ssh_private_key.path}
+        User root
+    '';
+  };
+
   services = {
     nginx.virtualHosts."hydra.shinta.ro" = {
       forceSSL = true;
@@ -48,9 +84,12 @@
 
   nix.settings.secret-key-files = config.sops.secrets.secret-key-files.path;
 
-  sops.secrets.secret-key-files = {
-    mode = "0440";
-    owner = config.users.users.hydra.name;
-    inherit (config.users.users.hydra) group;
+  sops.secrets = {
+    secret-key-files = {
+      mode = "0440";
+      owner = config.users.users.hydra.name;
+      inherit (config.users.users.hydra) group;
+    };
+    tyo0_ssh_private_key = { };
   };
 }
