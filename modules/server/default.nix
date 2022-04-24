@@ -176,6 +176,7 @@
         shell = pkgs.fish;
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOnLRT5k4gZCKNaHbLg+jEsD5ZU1/V8Bh3WxiUIrB1Bu"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+AFJen4qsCeCiSqjMW2sWapGbtH3bk2Qsk//nTgGoV"
         ];
         passwordFile = config.sops.secrets."password/root".path;
       };
