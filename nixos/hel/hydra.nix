@@ -5,8 +5,7 @@
   nix = {
     buildMachines = [
       {
-        hostName = "localhost";
-        sshUser = "root";
+        hostName = "ssh://localhost";
         supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
         systems = [
           "aarch64-linux"
@@ -90,6 +89,10 @@
       owner = config.users.users.hydra.name;
       inherit (config.users.users.hydra) group;
     };
-    tyo0_ssh_private_key = { };
+    tyo0_ssh_private_key = {
+      mode = "0440";
+      owner = config.users.users.hydra.name;
+      inherit (config.users.users.hydra) group;
+    };
   };
 }
