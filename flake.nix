@@ -65,7 +65,7 @@
           (name: {
             hostname = "${name}.9875321.xyz";
             profiles.system.path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos
-              self.nixosConfigurations."${name}";
+              self.nixosConfigurations.${name};
           })) // {
           # This is the only non x86-64 machine, so I didn't bother to write branching above.
           tyo0 = {
