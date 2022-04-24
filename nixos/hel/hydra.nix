@@ -30,7 +30,7 @@
     extraConfig = ''
       Host tyo0
         HostName tyo0.9875321.xyz
-        IdentityFile ${config.sops.secrets.tyo0_ssh_private_key.path}
+        IdentityFile ${config.sops.secrets.ssh_private_key.path}
         User root
     '';
   };
@@ -88,7 +88,7 @@
       owner = config.users.users.hydra.name;
       inherit (config.users.users.hydra) group;
     };
-    tyo0_ssh_private_key = {
+    ssh_private_key = {
       mode = "0440";
       owner = config.users.users.hydra.name;
       inherit (config.users.users.hydra) group;
