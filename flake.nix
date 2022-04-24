@@ -76,14 +76,8 @@
         sshUser = "root";
       };
 
-      hydraJobs = {
-        hel = self.nixosConfigurations.hel.config.system.build.toplevel;
-        nas = self.nixosConfigurations.nas.config.system.build.toplevel;
-        toy = self.nixosConfigurations.toy.config.system.build.toplevel;
-        tyo0 = self.nixosConfigurations.tyo0.config.system.build.toplevel;
-        tyo1 = self.nixosConfigurations.tyo1.config.system.build.toplevel;
-        tyo2 = self.nixosConfigurations.tyo2.config.system.build.toplevel;
-      };
+      hydraJobs = inputs.nixpkgs.lib.attrsets.genAttrs [ "hel" "nas" "toy" "tyo0" "tyo1" "tyo2" ]
+        (name: self.nixosConfigurations.${name}.config.system.build.toplevel);
 
       nixosConfigurations = {
         hel = import ./nixos/hel { system = "x86_64-linux"; inherit self nixpkgs inputs; };
