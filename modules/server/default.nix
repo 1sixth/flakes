@@ -28,7 +28,6 @@
     iotop
     ldns
     mtr
-    netcat
     nmap
     rclone
     restic
