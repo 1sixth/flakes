@@ -18,6 +18,8 @@
     tmpOnTmpfs = true;
   };
 
+  environment.defaultPackages = lib.mkForce [ ];
+
   fonts = {
     enableDefaultFonts = false;
     fonts = with pkgs; [

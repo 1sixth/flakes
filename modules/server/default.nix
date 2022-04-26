@@ -19,22 +19,26 @@
     man.enable = false;
   };
 
-  environment.systemPackages = with pkgs; [
-    fd
-    file
-    gotop
-    htop
-    iftop
-    iotop
-    ldns
-    mtr
-    nmap
-    rclone
-    restic
-    ripgrep
-    screen
-    traceroute
-  ];
+  environment = {
+    defaultPackages = lib.mkForce [ ];
+    systemPackages = with pkgs; [
+      fd
+      file
+      gotop
+      htop
+      iftop
+      iotop
+      ldns
+      mtr
+      nmap
+      rclone
+      restic
+      ripgrep
+      rsync
+      screen
+      traceroute
+    ];
+  };
 
   networking = {
     firewall.enable = false;

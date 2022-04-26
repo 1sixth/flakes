@@ -71,6 +71,7 @@ in
       restic
       ripgrep
       rnix-lsp
+      rsync
       rustc
       rustfmt
       sequoia
