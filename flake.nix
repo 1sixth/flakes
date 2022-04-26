@@ -2,10 +2,6 @@
   description = "somewhat somehow deterministic";
 
   inputs = {
-    berberman = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:berberman/flakes";
-    };
     deploy-rs = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:serokell/deploy-rs";
@@ -43,8 +39,7 @@
   };
 
   outputs =
-    inputs@{ berberman
-    , deploy-rs
+    inputs@{ deploy-rs
     , home-manager
     , hydra
     , nixos-cn
