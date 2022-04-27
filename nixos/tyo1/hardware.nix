@@ -4,27 +4,27 @@
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
   boot = {
-    initrd.kernelModules = [ "nvme" ];
-    loader.grub = {
-      efiSupport = true;
-      efiInstallAsRemovable = true;
-      device = "nodev";
+    initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "sd_mod" ];
+    loader = {
+      grub.enable = false;
+      systemd-boot = {
+        editor = false;
+        enable = true;
+      };
     };
   };
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/6987effb-3995-4ee5-a4bc-0c284b0ce610";
-      fsType = "ext4";
+      device = "/dev/disk/by-uuid/581096ff-b392-40cb-b23e-b86c40bd69ea";
+      fsType = "btrfs";
+      options = [ "compress-force=zstd" "noatime" "space_cache=v2" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/4D2C-F188";
+      device = "/dev/disk/by-uuid/92E8-DE3F";
       fsType = "vfat";
     };
   };
 
-  swapDevices = [{
-    device = "/swapfile";
-    size = 2048;
-  }];
+  swapDevices = [{ device = "/dev/disk/by-uuid/59ea268a-69b7-437e-ad6e-e1fbf1017a4b"; }];
 }
