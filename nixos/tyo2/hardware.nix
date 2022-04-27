@@ -4,6 +4,7 @@
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
   boot = {
+    kernelModules = [ "kvm-amd" ];
     initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "sd_mod" ];
     loader = {
       grub.enable = false;
