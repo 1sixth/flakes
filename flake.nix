@@ -58,7 +58,7 @@
       checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) inputs.deploy-rs.lib;
 
       deploy = {
-        nodes = (inputs.nixpkgs.lib.attrsets.genAttrs [ "hel" "nas" "tyo1" "tyo2" ]
+        nodes = (inputs.nixpkgs.lib.attrsets.genAttrs [ "hel" "nas" "tyo1" "tyo2" "tyo4" "tyo5" ]
           (name: {
             hostname = "${name}.9875321.xyz";
             profiles.system.path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos
@@ -73,7 +73,7 @@
         sshUser = "root";
       };
 
-      hydraJobs = inputs.nixpkgs.lib.attrsets.genAttrs [ "hel" "nas" "toy" "tyo0" "tyo1" "tyo2" ]
+      hydraJobs = inputs.nixpkgs.lib.attrsets.genAttrs [ "hel" "nas" "toy" "tyo0" "tyo1" "tyo2" "tyo4" "tyo5" ]
         (name: self.nixosConfigurations.${name}.config.system.build.toplevel);
 
       nixosConfigurations = {
@@ -83,6 +83,8 @@
         tyo0 = import ./nixos/tyo0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         tyo1 = import ./nixos/tyo1 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         tyo2 = import ./nixos/tyo2 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        tyo4 = import ./nixos/tyo4 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        tyo5 = import ./nixos/tyo5 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
       };
 
       nixosModules = import ./modules;
