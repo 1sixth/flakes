@@ -3,8 +3,15 @@
 
   inputs = {
     deploy-rs = {
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        nixpkgs.follows = "nixpkgs";
+      };
       url = "github:serokell/deploy-rs";
+    };
+    flake-compat = {
+      flake = false;
+      url = "github:edolstra/flake-compat";
     };
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +28,10 @@
     # qbittorrent 4.3.9
     nixpkgs-qbittorrent-nox.url = "github:NixOS/nixpkgs?rev=56137af9f1b6f89329d55de169e0eefee57e8263";
     polymc = {
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        nixpkgs.follows = "nixpkgs";
+      };
       url = "github:PolyMC/PolyMC";
     };
     sops-nix = {
@@ -32,6 +42,7 @@
 
   outputs =
     inputs@{ deploy-rs
+    , flake-compat
     , home-manager
     , nickpkgs
     , nixos-cn
