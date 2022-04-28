@@ -10,13 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
-    hydra = {
-      inputs = {
-        newNixpkgs.follows = "nixpkgs";
-        nixpkgs.follows = "nixpkgs";
-      };
-      url = "github:NixOS/hydra";
-    };
+    nickpkgs.url = "github:NickCao/nixpkgs";
     nixos-cn = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nixos-cn/flakes";
@@ -26,8 +20,6 @@
     nixpkgs-libtorrent-rasterbar.url = "github:NixOS/nixpkgs?rev=b42f0a0b45d33dec4a25508ea5293a4a016697a9";
     # qbittorrent 4.3.9
     nixpkgs-qbittorrent-nox.url = "github:NixOS/nixpkgs?rev=56137af9f1b6f89329d55de169e0eefee57e8263";
-    # sway IME support
-    nixpkgs-sway.url = "github:NickCao/nixpkgs";
     polymc = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:PolyMC/PolyMC";
@@ -41,12 +33,11 @@
   outputs =
     inputs@{ deploy-rs
     , home-manager
-    , hydra
+    , nickpkgs
     , nixos-cn
     , nixpkgs
     , nixpkgs-libtorrent-rasterbar
     , nixpkgs-qbittorrent-nox
-    , nixpkgs-sway
     , self
     , polymc
     , sops-nix

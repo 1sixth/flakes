@@ -67,7 +67,6 @@
       hydraURL = "https://hydra.shinta.ro";
       listenHost = "127.0.0.1";
       notificationSender = "hydra@shinta.ro";
-      package = pkgs.hydra;
       useSubstitutes = true;
     };
   };
