@@ -22,6 +22,15 @@
           "x86_64-linux"
         ];
       }
+      {
+        hostName = "tyo3";
+        maxJobs = 4;
+        supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" "gccarch-armv8-a" ];
+        systems = [
+          "aarch64-linux"
+          "x86_64-linux"
+        ];
+      }
     ];
     distributedBuilds = true;
     settings.builders-use-substitutes = true;

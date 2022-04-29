@@ -15,6 +15,7 @@
   programs.ssh = {
     knownHosts = {
       "tyo0.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIILj2hY2QVnysE20yMSWzMyORXPs+LjbMi2GIzQXQuJO";
+      "tyo3.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBQzz4TIaV597J0WfLYnmq9z4HcbddX/bBRXQctZVbhK";
       "u290909.your-storagebox.de".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIICf9svRenC/PLKIL9nk6K/pxQgoiFC41wTNvoIncOxs";
     };
     extraConfig = ''
@@ -25,6 +26,10 @@
         User u290909
       Host tyo0
         HostName tyo0.9875321.xyz
+        IdentityFile ${config.sops.secrets.ssh_private_key.path}
+        User root
+      Host tyo3
+        HostName tyo3.9875321.xyz
         IdentityFile ${config.sops.secrets.ssh_private_key.path}
         User root
     '';
