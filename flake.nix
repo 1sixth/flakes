@@ -46,7 +46,7 @@
       checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) inputs.deploy-rs.lib;
 
       deploy = {
-        nodes = (inputs.nixpkgs.lib.attrsets.genAttrs [ "hel" "nas" "tyo1" "tyo2" "tyo4" "tyo5" ]
+        nodes = (nixpkgs.lib.genAttrs [ "hel" "nas" "tyo1" "tyo2" "tyo4" "tyo5" ]
           (name: {
             hostname = "${name}.9875321.xyz";
             profiles.system.path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos
@@ -61,7 +61,7 @@
         sshUser = "root";
       };
 
-      hydraJobs = inputs.nixpkgs.lib.attrsets.mapAttrs (name: value: value.config.system.build.toplevel) self.nixosConfigurations;
+      hydraJobs = nixpkgs.lib.mapAttrs (name: value: value.config.system.build.toplevel) self.nixosConfigurations;
 
       nixosConfigurations = {
         hel = import ./nixos/hel { system = "x86_64-linux"; inherit self nixpkgs inputs; };
