@@ -6,7 +6,7 @@ in
 
 {
   boot = {
-    initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "uas" "sd_mod" ];
+    initrd.availableKernelModules = [ "ahci" "nvme" "usbhid" "xhci_pci" ];
     kernelModules = [ "kvm-amd" ];
     loader = {
       efi.canTouchEfiVariables = true;

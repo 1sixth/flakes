@@ -10,7 +10,7 @@ in
 
 {
   boot = {
-    initrd.availableKernelModules = [ "ahci" "nvme" "sd_mod" "usbhid" ];
+    initrd.availableKernelModules = [ "ahci" "nvme" "sd_mod" "xhci_pci" ];
     kernelModules = [ "kvm-amd" ];
     loader = {
       grub.enable = false;

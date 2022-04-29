@@ -6,7 +6,7 @@ in
 
 {
   boot = {
-    initrd.availableKernelModules = [ "ahci" "xhci_pci" "usb_storage" "sd_mod" ];
+    initrd.availableKernelModules = [ "ahci" "sd_mod" "xhci_pci" ];
     kernelModules = [ "kvm-intel" ];
     loader = {
       efi.canTouchEfiVariables = true;
