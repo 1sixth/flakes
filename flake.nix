@@ -55,18 +55,11 @@
         nodes = nixpkgs.lib.mapAttrs
           (name: value: {
             hostname = "${name}.9875321.xyz";
-            profiles.system.path = inputs.deploy-rs.lib.aarch64-linux.activate.nixos
+            profiles.system.path = inputs.deploy-rs.lib.${value.pkgs.system}.activate.nixos
               self.nixosConfigurations.${name};
           })
-          (nixpkgs.lib.filterAttrs (name: value: value.pkgs.system == "aarch64-linux") self.nixosConfigurations)
-        //
-        nixpkgs.lib.mapAttrs
-          (name: value: {
-            hostname = "${name}.9875321.xyz";
-            profiles.system.path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos
-              self.nixosConfigurations.${name};
-          })
-          (nixpkgs.lib.filterAttrs (name: value: name != "toy" && value.pkgs.system == "x86_64-linux") self.nixosConfigurations);
+          # toy is my local machine.
+          (nixpkgs.lib.filterAttrs (name: value: name != "toy") self.nixosConfigurations);
         sshUser = "root";
       };
 
