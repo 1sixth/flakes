@@ -9,7 +9,6 @@ in
     initrd.availableKernelModules = [ "ahci" "sd_mod" "xhci_pci" ];
     kernelModules = [ "kvm-intel" ];
     loader = {
-      efi.canTouchEfiVariables = true;
       grub.enable = false;
       systemd-boot = {
         editor = false;
