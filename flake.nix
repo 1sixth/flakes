@@ -2,13 +2,6 @@
   description = "somewhat somehow deterministic";
 
   inputs = {
-    deploy-rs = {
-      inputs = {
-        flake-compat.follows = "flake-compat";
-        nixpkgs.follows = "nixpkgs";
-      };
-      url = "github:serokell/deploy-rs";
-    };
     flake-compat = {
       flake = false;
       url = "github:edolstra/flake-compat";
@@ -43,24 +36,6 @@
   outputs = inputs@{ nixpkgs, self, ... }:
 
     {
-      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) inputs.deploy-rs.lib;
-
-      deploy = {
-        nodes = (nixpkgs.lib.genAttrs [ "hel" "nas" "tyo1" "tyo2" "tyo4" "tyo5" ]
-          (name: {
-            hostname = "${name}.9875321.xyz";
-            profiles.system.path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos
-              self.nixosConfigurations.${name};
-          })) // {
-          # This is the only non x86-64 machine, so I didn't bother to write branching above.
-          tyo0 = {
-            hostname = "tyo0.9875321.xyz";
-            profiles.system.path = inputs.deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.tyo0;
-          };
-        };
-        sshUser = "root";
-      };
-
       hydraJobs = nixpkgs.lib.mapAttrs (name: value: value.config.system.build.toplevel) self.nixosConfigurations;
 
       nixosConfigurations = {
