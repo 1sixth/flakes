@@ -40,19 +40,7 @@
     };
   };
 
-  outputs =
-    inputs@{ deploy-rs
-    , flake-compat
-    , home-manager
-    , nickpkgs
-    , nixos-cn
-    , nixpkgs
-    , nixpkgs-libtorrent-rasterbar
-    , nixpkgs-qbittorrent-nox
-    , self
-    , polymc
-    , sops-nix
-    }:
+  outputs = inputs@{ nixpkgs, self, ... }:
 
     {
       checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) inputs.deploy-rs.lib;
