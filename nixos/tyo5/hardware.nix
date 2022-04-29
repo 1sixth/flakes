@@ -6,10 +6,12 @@
   boot = {
     kernelModules = [ "kvm-amd" ];
     initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "sd_mod" ];
-    loader.grub = {
-      device = "nodev";
-      efiInstallAsRemovable = true;
-      efiSupport = true;
+    loader = {
+      grub.enable = false;
+      systemd-boot = {
+        editor = false;
+        enable = true;
+      };
     };
   };
 
