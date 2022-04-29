@@ -6,6 +6,7 @@ nixpkgs.lib.nixosSystem {
     {
       nixpkgs.overlays = [
         inputs.polymc.overlay
+        inputs.deploy-rs.overlay
         self.overlays.fcitx5
         self.overlays.qliveplayer
         self.overlays.sway
