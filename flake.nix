@@ -2,17 +2,30 @@
   description = "somewhat somehow deterministic";
 
   inputs = {
+    colmena = {
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        nixpkgs.follows = "nixpkgs";
+        stable.follows = "nixpkgs";
+        utils.follows = "flake-utils";
+      };
+      url = "github:zhaofengli/colmena";
+    };
     flake-compat = {
       flake = false;
       url = "github:edolstra/flake-compat";
     };
+    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
     nickpkgs.url = "github:NickCao/nixpkgs";
     nixos-cn = {
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        nixpkgs.follows = "nixpkgs";
+      };
       url = "github:nixos-cn/flakes";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
