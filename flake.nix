@@ -2,14 +2,13 @@
   description = "somewhat somehow deterministic";
 
   inputs = {
-    colmena = {
+    deploy-rs = {
       inputs = {
         flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs";
-        stable.follows = "nixpkgs";
         utils.follows = "flake-utils";
       };
-      url = "github:zhaofengli/colmena";
+      url = "github:serokell/deploy-rs";
     };
     flake-compat = {
       flake = false;
@@ -24,6 +23,7 @@
     nixos-cn = {
       inputs = {
         flake-compat.follows = "flake-compat";
+        flake-utils.follows = "flake-utils";
         nixpkgs.follows = "nixpkgs";
       };
       url = "github:nixos-cn/flakes";
@@ -49,6 +49,27 @@
   outputs = inputs@{ nixpkgs, self, ... }:
 
     {
+      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) inputs.deploy-rs.lib;
+
+      deploy = {
+        nodes = nixpkgs.lib.mapAttrs
+          (name: value: {
+            hostname = "${name}.9875321.xyz";
+            profiles.system.path = inputs.deploy-rs.lib.aarch64-linux.activate.nixos
+              self.nixosConfigurations.${name};
+          })
+          (nixpkgs.lib.filterAttrs (name: value: value.pkgs.system == "aarch64-linux") self.nixosConfigurations)
+        //
+        nixpkgs.lib.mapAttrs
+          (name: value: {
+            hostname = "${name}.9875321.xyz";
+            profiles.system.path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos
+              self.nixosConfigurations.${name};
+          })
+          (nixpkgs.lib.filterAttrs (name: value: name != "toy" && value.pkgs.system == "x86_64-linux") self.nixosConfigurations);
+        sshUser = "root";
+      };
+
       hydraJobs = nixpkgs.lib.mapAttrs (name: value: value.config.system.build.toplevel) self.nixosConfigurations;
 
       nixosConfigurations = {
