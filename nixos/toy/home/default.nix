@@ -53,7 +53,7 @@ in
       imv
       iotop
       jetbrains.pycharm-community
-      jq # https://github.com/franciscolourenco/done#dependencies
+      jq
       ldns # drill is awesome
       libarchive # bsdtar is awesome
       libsForQt5.qtstyleplugin-kvantum # for qt theme
@@ -114,26 +114,6 @@ in
       enable = true;
       # https://github.com/swaywm/sway/wiki#login-managers
       interactiveShellInit = "[ (tty) = /dev/tty1 ] && exec sway";
-      plugins = [
-        {
-          name = "autopair";
-          src = pkgs.fetchFromGitHub {
-            owner = "jorgebucaran";
-            repo = "autopair.fish";
-            rev = "1222311994a0730e53d8e922a759eeda815fcb62";
-            sha256 = "l6WJ2kjDO/TnU9FSigjxk5xFp90xl68gDfggkE/wrlM=";
-          };
-        }
-        {
-          name = "done";
-          src = pkgs.fetchFromGitHub {
-            owner = "franciscolourenco";
-            repo = "done";
-            rev = "d6abb267bb3fb7e987a9352bc43dcdb67bac9f06";
-            sha256 = "E0wveeDw1VzEH2kzn63q9hy1xkccfxQHBV2gVpu2IdQ=";
-          };
-        }
-      ];
       shellAliases = {
         l = "ll -a";
         ll = "ls -l -g --time-style=long-iso";
