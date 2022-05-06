@@ -5,7 +5,7 @@
   nix = {
     buildMachines = [
       {
-        hostName = "localhost";
+        hostName = "hel";
         maxJobs = 12;
         supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
         systems = [
