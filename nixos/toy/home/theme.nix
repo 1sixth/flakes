@@ -44,8 +44,8 @@
       icon_theme=${config.gtk.iconTheme.name}
       style=kvantum
 
-      [Fonts]    
-      fixed=@Variant(\0\0\0@\0\0\0\x12\0M\0o\0n\0o\0s\0p\0\x61\0\x63\0\x65@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)    
+      [Fonts]
+      fixed=@Variant(\0\0\0@\0\0\0\x12\0M\0o\0n\0o\0s\0p\0\x61\0\x63\0\x65@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
       general=@Variant(\0\0\0@\0\0\0\x14\0S\0\x61\0n\0s\0 \0S\0\x65\0r\0i\0\x66@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
     '';
   };
