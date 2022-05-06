@@ -1,23 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # Broken, see https://github.com/nix-community/home-manager/issues/2106.
-  /*
-    dconf.settings."org/gnome/desktop/interface" = {
-    cursor-theme = config.xsession.pointerCursor.name;
-    cursor-size = builtins.toString config.xsession.pointerCursor.size;
-    font-name = config.gtk.font.name;
-    gtk-theme = config.gtk.theme.name;
-    icon-theme = config.gtk.iconTheme.name;
-    };
-  */
-
   gtk = {
-    cursorTheme = {
-      name = "Vimix";
-      package = pkgs.vimix-icon-theme;
-      size = 24;
-    };
     enable = true;
     font = {
       name = "sans-serif";
@@ -32,6 +16,14 @@
       package = pkgs.arc-theme;
       name = "Arc-Lighter";
     };
+  };
+
+  home.pointerCursor = {
+    package = pkgs.vimix-icon-theme;
+    gtk.enable = true;
+    name = "Vimix";
+    #size = 24;
+    x11.enable = true;
   };
 
   xdg.configFile = {
@@ -50,14 +42,12 @@
     '';
   };
 
-  xsession.pointerCursor = with config.gtk.cursorTheme; { inherit name package size; };
-
   # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland.
   wayland.windowManager.sway.config.startup = [{
     always = true;
     command = (pkgs.writeShellScript "import_gsettings" ''
-      ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface cursor-theme ${config.gtk.cursorTheme.name}
-      ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface cursor-size ${builtins.toString config.gtk.cursorTheme.size}
+      ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface cursor-theme ${config.home.pointerCursor.name}
+      ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface cursor-size ${builtins.toString config.home.pointerCursor.size}
       ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface font-name ${config.gtk.font.name}
       ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface gtk-theme ${config.gtk.theme.name}
       ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface icon-theme ${config.gtk.iconTheme.name}
