@@ -8,8 +8,6 @@
     ./vaultwarden.nix
   ];
 
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-
   networking.hostName = "hel";
 
   programs.ssh = {
