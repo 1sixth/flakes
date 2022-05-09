@@ -28,7 +28,7 @@ _:
       };
       cursor.color = "eeeeee 878787";
       main = {
-        font = "Iosevka Terminal:size=17";
+        font = "monospace:size=17";
         dpi-aware = "no";
         pad = "6x6";
         selection-target = "clipboard";

@@ -35,10 +35,7 @@ _:
           white = "#005f87";
         };
       };
-      font = {
-        normal.family = "Iosevka Terminal";
-        size = 17;
-      };
+      font.size = 17;
       selection.save_to_clipboard = true;
       window.padding = {
         x = 6;
