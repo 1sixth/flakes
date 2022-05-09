@@ -22,7 +22,7 @@
     package = pkgs.vimix-icon-theme;
     gtk.enable = true;
     name = "Vimix";
-    #size = 24;
+    size = 24;
     x11.enable = true;
   };
 
