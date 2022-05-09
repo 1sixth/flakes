@@ -15,9 +15,6 @@
       inherit (inputs.nixpkgs-libtorrent-rasterbar.legacyPackages.${prev.system}) libtorrent-rasterbar;
     };
   };
-  qliveplayer = final: prev: {
-    inherit (inputs.nixos-cn.legacyPackages.${prev.system}.re-export) qliveplayer;
-  };
   # https://github.com/swaywm/sway/pull/5890
   # https://github.com/NickCao/nixpkgs/commit/003a3678bbbb5363ef297120ba70d85623b24c71
   sway = final: prev: {

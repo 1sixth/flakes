@@ -8,7 +8,6 @@ nixpkgs.lib.nixosSystem {
         inputs.polymc.overlay
         inputs.deploy-rs.overlay
         self.overlays.fcitx5
-        self.overlays.qliveplayer
         self.overlays.sway
       ];
     }

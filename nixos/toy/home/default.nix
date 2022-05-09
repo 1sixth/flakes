@@ -65,7 +65,6 @@ in
       poetry
       polymc
       python3
-      qliveplayer
       ranger
       rclone
       restic
