@@ -52,7 +52,7 @@
       };
       temperature = {
         critical-threshold = 80;
-        format = "{temperatureC}°C {icon}";
+        format = "{temperatureC}℃ {icon}";
         format-icons = [ "" "" "" "" "" ];
         interval = 1;
       };
