@@ -26,11 +26,6 @@
       "files.trimTrailingWhitespace" = true;
       "markdownlint.config" = {
         "MD024" = false;
-        "MD029" = false;
-        "MD033" = false;
-        "MD040" = false;
-        "MD041" = false;
-        "MD045" = false;
       };
       "nix.enableLanguageServer" = true;
       "security.workspace.trust.enabled" = false;
