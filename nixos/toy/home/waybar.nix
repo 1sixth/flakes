@@ -46,6 +46,7 @@
         on-click = "${pkgs.pamixer}/bin/pamixer -t";
         scroll-step = 5;
       };
+      spacing = 10;
       "sway/workspaces" = {
         format = "{name} {icon}";
         format-icons = { default = ""; focused = ""; urgent = ""; };
