@@ -17,7 +17,7 @@
         format-icons = { activated = ""; deactivated = ""; };
       };
       layer = "top";
-      memory = { format = "{used:0.1f}G / {total:0.1f}G  "; interval = 1; };
+      memory = { format = "{percentage}% "; interval = 1; };
       modules-center = [
         "clock"
       ];
