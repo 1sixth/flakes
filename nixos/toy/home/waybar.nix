@@ -10,7 +10,7 @@
         interval = 1;
         states = { critical = 15; warning = 30; };
       };
-      clock = { format = "{:%F %A %R}"; };
+      clock.format = "{:%F %A %R}";
       cpu = { format = "{usage}% "; interval = 1; };
       idle_inhibitor = {
         format = "{icon}";
@@ -28,9 +28,13 @@
         "cpu"
         "memory"
         "idle_inhibitor"
-
       ];
-      modules-right = [ "network" "tray" "battery" "pulseaudio" ];
+      modules-right = [
+        "network"
+        "tray"
+        "battery"
+        "pulseaudio"
+      ];
       network = {
         format-disconnected = "Disconnected  ";
         format-wifi = "{bandwidthDownBits}  {bandwidthUpBits}  {essid} ({signalStrength}%) ";
@@ -41,7 +45,7 @@
       pulseaudio = {
         format = "{volume}% {icon}";
         format-bluetooth = "{volume}% ";
-        format-icons = { default = [ "" "" "" ]; };
+        format-icons.default = [ "" "" "" ];
         format-muted = "";
         on-click = "${pkgs.pamixer}/bin/pamixer -t";
         scroll-step = 5;
@@ -57,9 +61,9 @@
         format-icons = [ "" "" "" "" "" ];
         interval = 1;
       };
-      tray = { spacing = 10; };
+      tray.spacing = 10;
     }];
-    style = builtins.readFile ./res/waybar.css;
+    style = ./res/waybar.css;
     systemd.enable = true;
   };
 }
