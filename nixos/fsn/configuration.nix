@@ -4,6 +4,7 @@
   imports = [
     ./hardware.nix
     ./hydra.nix
+    ./jackett.nix
     ./share.nix
     ./vaultwarden.nix
   ];
