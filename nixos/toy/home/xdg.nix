@@ -3,18 +3,6 @@
 {
   xdg = {
     configFile = {
-      # https://github.com/VSCodium/vscodium/blob/master/DOCS.md#extensions-marketplace
-      "VSCodium/product.json".text = ''
-        {
-          "extensionsGallery": {
-            "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-            "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-            "itemUrl": "https://marketplace.visualstudio.com/items",
-            "controlUrl": "",
-            "recommendationsUrl": ""
-          }
-        }
-      '';
       "ranger/rc.conf".text = ''
         set preview_directories false
         set preview_files false
