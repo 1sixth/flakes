@@ -21,6 +21,7 @@
       "extensions.autoCheckUpdates" = false;
       "extensions.autoUpdate" = false;
       "files.insertFinalNewline" = true;
+      "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
       "markdownlint.config" = {
         "MD024" = false;
