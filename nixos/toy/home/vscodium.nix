@@ -32,6 +32,7 @@
         "MD041" = false;
         "MD045" = false;
       };
+      "nix.enableLanguageServer" = true;
       "security.workspace.trust.enabled" = false;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;

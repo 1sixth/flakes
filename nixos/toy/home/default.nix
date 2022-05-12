@@ -59,7 +59,6 @@ in
       libsForQt5.qtstyleplugin-kvantum # for qt theme
       mumble
       nali
-      nixpkgs-fmt
       onlyoffice-bin
       pcmanfm-qt
       poetry
