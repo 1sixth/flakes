@@ -28,8 +28,7 @@ _:
       };
       cursor.color = "eeeeee 878787";
       main = {
-        font = "monospace:size=17";
-        dpi-aware = "no";
+        font = "monospace:size=10";
         pad = "6x6";
         selection-target = "clipboard";
         underline-offset = "20px";

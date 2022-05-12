@@ -10,7 +10,6 @@ in
 
 {
   imports = [
-    ./alacritty.nix
     ./browser.nix
     ./foot.nix
     ./mpv.nix
