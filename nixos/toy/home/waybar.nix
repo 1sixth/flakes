@@ -41,8 +41,8 @@
       pulseaudio = {
         format = "{volume}% {icon}";
         format-bluetooth = "{volume}% ";
-        format-icons = { default = [ "" "" ]; };
-        format-muted = "";
+        format-icons = { default = [ "" "" "" ]; };
+        format-muted = "";
         on-click = "${pkgs.pamixer}/bin/pamixer -t";
         scroll-step = 5;
       };
