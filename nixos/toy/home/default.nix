@@ -28,9 +28,6 @@ in
         honor-http-proxy
         keyserver hkps://keys.openpgp.org
       '';
-      "${config.xdg.stateHome}/gnupg/sshcontrol".text = ''
-        56F5EC024AAE01E143592C7B21F60902660B203D
-      '';
       ".iftoprc".text = ''
         dns-resolution: no
         port-display: on
@@ -189,6 +186,7 @@ in
       enable = true;
       enableSshSupport = true;
       pinentryFlavor = "curses";
+      sshKeys = [ "56F5EC024AAE01E143592C7B21F60902660B203D" ];
     };
     kanshi = {
       enable = true;
