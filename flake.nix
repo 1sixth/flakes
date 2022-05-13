@@ -52,6 +52,8 @@
       checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) inputs.deploy-rs.lib;
 
       deploy = {
+        autoRollback = false;
+        magicRollback = false;
         nodes = builtins.mapAttrs
           (name: value: {
             hostname = "${name}.9875321.xyz";
