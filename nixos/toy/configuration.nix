@@ -24,13 +24,8 @@
     enableDefaultFonts = false;
     fonts = with pkgs; [
       font-awesome
-      (iosevka.override {
-        privateBuildPlan = {
-          family = "Iosevka Custom";
-          spacing = "fontconfig-mono";
-          no-ligation = true;
-        };
-        set = "custom";
+      (iosevka-bin.override {
+        variant = "sgr-iosevka-fixed";
       })
       noto-fonts
       noto-fonts-cjk-sans
