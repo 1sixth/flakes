@@ -26,6 +26,7 @@
       "files.trimTrailingWhitespace" = true;
       "markdownlint.config" = {
         "MD024" = false;
+        "MD033" = false;
       };
       "nix.enableLanguageServer" = true;
       "security.workspace.trust.enabled" = false;
