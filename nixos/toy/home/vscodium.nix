@@ -13,7 +13,6 @@
       vadimcn.vscode-lldb
       vscodevim.vim
     ];
-    mutableExtensionsDir = false;
     package = pkgs.vscodium;
     userSettings = {
       "editor.bracketPairColorization.enabled" = true;
