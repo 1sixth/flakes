@@ -74,6 +74,7 @@
   };
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "pycharm-professional"
     "steam"
     "steam-original"
   ];

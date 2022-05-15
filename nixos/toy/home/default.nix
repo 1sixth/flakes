@@ -48,7 +48,7 @@ in
       htop
       imv
       iotop
-      jetbrains.pycharm-community
+      jetbrains.pycharm-professional
       jq
       ldns # drill is awesome
       libarchive # bsdtar is awesome
