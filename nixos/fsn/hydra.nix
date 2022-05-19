@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
   nix = {
     buildMachines = [
       {
@@ -33,11 +32,6 @@
   };
 
   services = {
-    nginx.virtualHosts."hydra.shinta.ro" = {
-      forceSSL = true;
-      locations."/".proxyPass = "http://127.0.0.1:3000";
-      useACMEHost = "shinta.ro";
-    };
     hydra = {
       enable = true;
       extraConfig = ''
@@ -51,6 +45,11 @@
       listenHost = "127.0.0.1";
       notificationSender = "hydra@shinta.ro";
       useSubstitutes = true;
+    };
+    nginx.virtualHosts."hydra.shinta.ro" = {
+      forceSSL = true;
+      locations."/".proxyPass = "http://127.0.0.1:3000";
+      useACMEHost = "shinta.ro";
     };
   };
 
