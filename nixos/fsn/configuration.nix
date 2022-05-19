@@ -5,6 +5,7 @@
     ./hardware.nix
     ./hydra.nix
     ./jackett.nix
+    ./postgresql.nix
     ./share.nix
     ./vaultwarden.nix
   ];
