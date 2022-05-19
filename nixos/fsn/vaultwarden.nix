@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   services = {
@@ -9,6 +9,7 @@
       useACMEHost = "shinta.ro";
     };
     vaultwarden = {
+      config.dataFolder = "/var/lib/vaultwarden";
       # TODO: preStart:
       # createuser vaultwarden
       # createdb -O vaultwarden vaultwarden
@@ -19,4 +20,6 @@
   };
 
   sops.secrets.vaultwarden.restartUnits = [ "vaultwarden.service" ];
+
+  systemd.services.vaultwarden.serviceConfig.StateDirectory = lib.mkForce "vaultwarden";
 }
