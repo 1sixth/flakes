@@ -9,6 +9,10 @@
       useACMEHost = "shinta.ro";
     };
     vaultwarden = {
+      # TODO: preStart:
+      # createuser vaultwarden
+      # createdb -O vaultwarden vaultwarden
+      dbBackend = "postgresql";
       enable = true;
       environmentFile = config.sops.secrets.vaultwarden.path;
     };
