@@ -77,9 +77,16 @@
 
   nix.settings.secret-key-files = config.sops.secrets.secret-key-files.path;
 
-  sops.secrets.secret-key-files = {
-    mode = "0440";
-    owner = config.users.users.hydra.name;
-    inherit (config.users.users.hydra) group;
+  sops.secrets = {
+    secret-key-files = {
+      mode = "0440";
+      owner = config.users.users.hydra.name;
+      inherit (config.users.users.hydra) group;
+    };
+    ssh_private_key = {
+      mode = "0440";
+      owner = config.users.users.hydra.name;
+      inherit (config.users.users.hydra) group;
+    };
   };
 }
