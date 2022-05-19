@@ -19,6 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    impermanence.url = "github:nix-community/impermanence";
     nickpkgs.url = "github:NickCao/nixpkgs";
     nixos-cn = {
       inputs = {
