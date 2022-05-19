@@ -47,7 +47,7 @@
         User root
     '';
     knownHosts = {
-      "fsn.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICOuYx5RVcTXVRDVJp3vBQzVEWwP59QIlJwzhu/k1kPV";
+      "fsn.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAss7ohT8nmKrKCtz2ca4MT98mDj/O0Ti+WxqCKI/+ba";
       "tyo0.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIILj2hY2QVnysE20yMSWzMyORXPs+LjbMi2GIzQXQuJO";
       "tyo3.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBQzz4TIaV597J0WfLYnmq9z4HcbddX/bBRXQctZVbhK";
     };

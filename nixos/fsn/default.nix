@@ -9,6 +9,7 @@ nixpkgs.lib.nixosSystem {
         self.overlays.qbittorrent-nox
       ];
     }
+    inputs.impermanence.nixosModules.impermanence
     inputs.nixos-cn.nixosModules.nixos-cn
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.dnscrypt-proxy2.earth

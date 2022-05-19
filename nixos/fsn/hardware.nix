@@ -1,39 +1,51 @@
 { pkgs, ... }:
 
 let
-  device = "/dev/disk/by-id/wwn-0x500003979c38042c-part2";
-  mountOptions = [ "compress-force=zstd" "noatime" "space_cache=v2" ];
+  device = "/dev/disk/by-id/wwn-0x5000039978ca202a-part3";
+  options = [ "compress-force=zstd" "noatime" "space_cache=v2" ];
 in
 
 {
   boot = {
-    initrd.availableKernelModules = [ "ahci" "sd_mod" ];
+    initrd.availableKernelModules = [ "ahci" "sd_mod" "usbhid" ];
     kernelModules = [ "kvm-intel" ];
     loader.grub.devices = [
-      "/dev/disk/by-id/wwn-0x500003979c38042c"
-      "/dev/disk/by-id/wwn-0x500003982c8027c3"
-      "/dev/disk/by-id/wwn-0x5000cca24dd2fd85"
-      "/dev/disk/by-id/wwn-0x5000cca255cd33e5"
+      "/dev/disk/by-id/wwn-0x5000039978ca202a"
+      "/dev/disk/by-id/wwn-0x5000039978ca2031"
+      "/dev/disk/by-id/wwn-0x5000039978ca2032"
+      "/dev/disk/by-id/wwn-0x5000039978ca2039"
     ];
   };
 
   fileSystems = {
     "/" = {
+      fsType = "tmpfs";
+      options = [ "mode=755" ];
+    };
+    "/boot" = {
       inherit device;
       fsType = "btrfs";
-      options = mountOptions ++ [ "subvol=/@root" ];
+      options = options ++ [ "subvol=/@boot" ];
     };
     "/nix" = {
       inherit device;
       fsType = "btrfs";
-      options = mountOptions ++ [ "subvol=/@nix" ];
+      options = options ++ [ "subvol=/@nix" ];
     };
     "/persistent" = {
       inherit device;
       fsType = "btrfs";
-      options = mountOptions ++ [ "subvol=/@persistent" ];
+      neededForBoot = true;
+      options = options ++ [ "subvol=/@persistent" ];
     };
   };
 
   hardware.cpu.intel.updateMicrocode = true;
+
+  swapDevices = [
+    { device = "/dev/disk/by-id/wwn-0x5000039978ca202a-part2"; randomEncryption = true; }
+    { device = "/dev/disk/by-id/wwn-0x5000039978ca2031-part2"; randomEncryption = true; }
+    { device = "/dev/disk/by-id/wwn-0x5000039978ca2032-part2"; randomEncryption = true; }
+    { device = "/dev/disk/by-id/wwn-0x5000039978ca2039-part2"; randomEncryption = true; }
+  ];
 }
