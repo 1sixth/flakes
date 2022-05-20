@@ -167,9 +167,9 @@ in
         "*".proxyCommand = "nc -x 127.0.0.1:1080 %h %p";
         "*.9875321.xyz".user = "root";
         "box" = {
-          hostname = "u290909.your-storagebox.de";
+          hostname = "u303966.your-storagebox.de";
           port = 23;
-          user = "u290909";
+          user = "u303966";
         };
       };
       serverAliveInterval = 10;
