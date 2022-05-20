@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./backup.nix
     ./hardware.nix
     ./hydra.nix
     ./postgresql.nix

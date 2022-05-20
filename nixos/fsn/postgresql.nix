@@ -25,11 +25,5 @@
         max_parallel_maintenance_workers = 4;
       };
     };
-    postgresqlBackup = {
-      compression = "zstd";
-      enable = true;
-      location = "/var/lib/backup/postgresql";
-      startAt = "daily";
-    };
   };
 }
