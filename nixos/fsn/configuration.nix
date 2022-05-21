@@ -84,6 +84,14 @@
 
   security.acme.certs."shinta.ro".extraDomainNames = [ "*.shinta.ro" ];
 
+  services.btrfs.autoScrub = {
+    enable = true;
+    fileSystems = [
+      "/nix"
+      "/persistent"
+    ];
+  };
+
   sops = {
     defaultSopsFile = ./secrets.yaml;
     secrets.ssh_private_key = {
