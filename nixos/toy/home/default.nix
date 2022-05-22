@@ -59,7 +59,6 @@ in
       poetry
       polymc
       python3
-      ranger
       rclone
       restic
       ripgrep
@@ -144,6 +143,13 @@ in
     };
     home-manager.enable = true;
     jq.enable = true;
+    lf = {
+      enable = true;
+      settings = {
+        preview = false;
+        ratios = "1:2";
+      };
+    };
     mako = {
       anchor = "bottom-right";
       defaultTimeout = 6180;

@@ -15,10 +15,6 @@
           }
         }
       '';
-      "ranger/rc.conf".text = ''
-        set preview_directories false
-        set preview_files false
-      '';
       "wofi/config".text = ''
         insensitive=true
         layer=overlay
