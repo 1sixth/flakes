@@ -49,7 +49,6 @@ in
       imv
       iotop
       jetbrains.pycharm-professional
-      jq
       ldns # drill is awesome
       libarchive # bsdtar is awesome
       libsForQt5.qtstyleplugin-kvantum # for qt theme
@@ -144,6 +143,7 @@ in
       homedir = "${config.xdg.stateHome}/gnupg";
     };
     home-manager.enable = true;
+    jq.enable = true;
     mako = {
       anchor = "bottom-right";
       defaultTimeout = 6180;
