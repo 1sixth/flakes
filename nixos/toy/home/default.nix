@@ -70,6 +70,7 @@ in
       sops
       sshfs
       tdesktop
+      thunderbird
       wl-clipboard
       xdg-utils
       yt-dlp

@@ -6,6 +6,7 @@
       assigns = {
         "2" = [{ app_id = "firefox"; } { app_id = "chromium"; } { class = "Chromium-browser"; }];
         "3" = [{ app_id = "mpv"; }];
+        "4" = [{ class = "Thunderbird"; }];
       };
       bars = [ ];
       gaps = {
