@@ -6,7 +6,7 @@
       compression = "zstd";
       enable = true;
       location = "/var/lib/backup/postgresql";
-      startAt = "daily";
+      startAt = "hourly";
     };
     restic.backups.main = {
       initialize = true;
@@ -22,7 +22,7 @@
         "--keep-monthly 12"
       ];
       repository = "sftp:box:Restic";
-      timerConfig.OnCalendar = "hourly";
+      timerConfig.OnCalendar = "*:05";
     };
   };
 
