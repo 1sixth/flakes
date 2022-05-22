@@ -126,13 +126,7 @@ in
       };
     };
     git = {
-      delta = {
-        enable = true;
-        options = {
-          light = true;
-          line-numbers = true;
-        };
-      };
+      difftastic.enable = true;
       enable = true;
       extraConfig = {
         http.proxy = "socks5h://127.0.0.1:1080";
