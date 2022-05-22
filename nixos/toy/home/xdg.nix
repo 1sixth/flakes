@@ -32,6 +32,7 @@
     enable = true;
     mimeApps = {
       defaultApplications = {
+        "audio/flac" = [ "mpv.desktop" ];
         "application/pdf" = [ "chromium.desktop" ];
         "image/jpeg" = [ "imv-folder.desktop" ];
         "image/gif" = [ "imv-folder.desktop" ];
