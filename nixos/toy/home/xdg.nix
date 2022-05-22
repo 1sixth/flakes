@@ -34,6 +34,7 @@
       defaultApplications = {
         "application/pdf" = [ "chromium.desktop" ];
         "image/jpeg" = [ "imv-folder.desktop" ];
+        "image/gif" = [ "imv-folder.desktop" ];
         "image/png" = [ "imv-folder.desktop" ];
         "inode/directory" = [ "pcmanfm-qt.desktop" ];
         "text/html" = [ "chromium.desktop" ];
