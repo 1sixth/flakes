@@ -129,8 +129,8 @@ in
       difftastic.enable = true;
       enable = true;
       extraConfig = {
-        http.proxy = "socks5h://127.0.0.1:1080";
         init.defaultBranch = "master";
+        log.date = "iso";
       };
       signing = {
         signByDefault = true;
