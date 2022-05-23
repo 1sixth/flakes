@@ -18,6 +18,8 @@
   };
 
   sops = {
+    # V2ray won't restart if it's just the template that changes. And
+    # there is no option to change this behavior, which is a bit inconvenient.
     secrets."v2ray_id".restartUnits = [ "v2ray.service" ];
     templates."v2ray.json".content = builtins.toJSON {
       inbounds = [{
