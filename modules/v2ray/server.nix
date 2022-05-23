@@ -11,13 +11,13 @@
 
   sops = {
     secrets = {
-      "v2ray/id".restartUnits = [ "v2ray.service" ];
-      "v2ray/path".restartUnits = [ "v2ray.service" ];
+      "v2ray_id".restartUnits = [ "v2ray.service" ];
+      "v2ray_path".restartUnits = [ "v2ray.service" ];
     };
     templates = {
       "v2ray.conf" = {
         content = ''
-          location ${config.sops.placeholder."v2ray/path"} {
+          location ${config.sops.placeholder."v2ray_path"} {
             access_log off;
             error_log /dev/null emerg;
 
@@ -38,9 +38,9 @@
           listen = "127.0.0.1";
           port = 10000;
           protocol = "vless";
-          settings = { clients = [{ id = config.sops.placeholder."v2ray/id"; }]; decryption = "none"; };
+          settings = { clients = [{ id = config.sops.placeholder."v2ray_id"; }]; decryption = "none"; };
           sniffing.enabled = true;
-          streamSettings = { network = "ws"; wsSettings.path = config.sops.placeholder."v2ray/path"; };
+          streamSettings = { network = "ws"; wsSettings.path = config.sops.placeholder."v2ray_path"; };
         }];
         log.loglevel = "none";
         outbounds = [
