@@ -28,7 +28,7 @@
         sniffing.enabled = true;
         streamSettings = { network = "ws"; wsSettings.path = "/ping"; };
       }];
-      log.loglevel = "info";
+      log.loglevel = "none";
       outbounds = [
         { protocol = "freedom"; tag = "DIRECT"; }
         { protocol = "freedom"; settings.domainStrategy = "UseIPv4"; tag = "IPv4"; }
