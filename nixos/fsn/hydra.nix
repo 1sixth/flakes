@@ -16,10 +16,12 @@
       notificationSender = "hydra@shinta.ro";
       useSubstitutes = true;
     };
-    nginx.virtualHosts."hydra.shinta.ro" = {
-      forceSSL = true;
-      locations."/".proxyPass = "http://127.0.0.1:3000";
-      useACMEHost = "shinta.ro";
+    traefik.dynamicConfigOptions.http = {
+      routers.hydra = {
+        rule = "Host(`hydra.shinta.ro`)";
+        service = "hydra";
+      };
+      services.hydra.loadBalancer.servers = [{ url = "http://127.0.0.1:3000"; }];
     };
   };
 

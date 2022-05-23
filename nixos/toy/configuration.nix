@@ -136,8 +136,8 @@
     age.keyFile = "/var/lib/sops.key";
     defaultSopsFile = ./secrets.yaml;
     secrets = {
-      "password_root".neededForUsers = true;
-      "password_one6th".neededForUsers = true;
+      password_root.neededForUsers = true;
+      password_one6th.neededForUsers = true;
       u2f_keys.mode = "0444";
     };
   };
@@ -150,10 +150,10 @@
       one6th = {
         isNormalUser = true;
         extraGroups = [ "wheel" "wireshark" ];
-        passwordFile = config.sops.secrets."password_one6th".path;
+        passwordFile = config.sops.secrets.password_one6th.path;
         shell = pkgs.fish;
       };
-      root.passwordFile = config.sops.secrets."password_root".path;
+      root.passwordFile = config.sops.secrets.password_root.path;
     };
   };
 }

@@ -9,12 +9,7 @@
 
   networking.hostName = "nas";
 
-  security.acme.certs."9875321.xyz".extraDomainNames = lib.mkForce [ ];
-
-  services = {
-    fstrim.enable = true;
-    nginx.virtualHosts."${config.networking.hostName}.9875321.xyz".serverAliases = lib.mkForce [ ];
-  };
+  services.fstrim.enable = true;
 
   sops.defaultSopsFile = ./secrets.yaml;
 

@@ -81,8 +81,6 @@
     };
   };
 
-  security.acme.certs."shinta.ro".extraDomainNames = [ "*.shinta.ro" ];
-
   services.btrfs.autoScrub = {
     enable = true;
     fileSystems = [

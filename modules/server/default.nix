@@ -90,56 +90,8 @@
     };
   };
 
-  security.acme = {
-    acceptTerms = true;
-    certs."9875321.xyz" = {
-      domain = "${config.networking.hostName}.9875321.xyz";
-      extraDomainNames = [ "${config.networking.hostName}-cf.9875321.xyz" ];
-    };
-    defaults = {
-      credentialsFile = config.sops.secrets.cloudflare_token.path;
-      dnsProvider = "cloudflare";
-      email = "acme@shinta.ro";
-      reloadServices = [ "nginx.service" ];
-    };
-  };
-
   services = {
     journald.extraConfig = "SystemMaxUse=1G";
-    nginx = {
-      appendConfig = "worker_processes auto;";
-      # Manage Nginx access logs via systemd-journald.
-      appendHttpConfig = ''
-        log_format custom '$remote_addr "$request_method $scheme://$host$request_uri $server_protocol" $status "$http_referer" "$http_user_agent"';
-        access_log syslog:server=unix:/dev/log,nohostname custom;
-      '';
-      enable = true;
-      package = pkgs.nginxMainline;
-      recommendedGzipSettings = true;
-      recommendedOptimisation = true;
-      recommendedProxySettings = true;
-      recommendedTlsSettings = true;
-      virtualHosts = {
-        "default" = {
-          default = true;
-          locations."/".return = "444";
-          # Avoid leaking TLS certificates to IP scanners.
-          rejectSSL = true;
-        };
-        "${config.networking.hostName}.9875321.xyz" = {
-          forceSSL = true;
-          locations = {
-            "= /" = {
-              extraConfig = "default_type text/plain;";
-              return = "200 $remote_addr\\n";
-            };
-            "= /generate_204".return = "204";
-          };
-          serverAliases = [ "${config.networking.hostName}-cf.9875321.xyz" ];
-          useACMEHost = "9875321.xyz";
-        };
-      };
-    };
     openssh = {
       enable = true;
       hostKeys = [{
@@ -149,46 +101,74 @@
       kbdInteractiveAuthentication = false;
       passwordAuthentication = false;
     };
+    traefik = {
+      dynamicConfigOptions = {
+        middlewares.compress.compress = { };
+        tls.options.default = {
+          minVersion = "VersionTLS12";
+          sniStrict = true;
+        };
+      };
+      enable = true;
+      staticConfigOptions = {
+        certificatesResolvers.letsencrypt.acme = {
+          dnsChallenge.provider = "cloudflare";
+          email = "letsencrypt@shinta.ro";
+          keyType = "EC256";
+          storage = "${config.services.traefik.dataDir}/acme.json";
+        };
+        experimental.http3 = true;
+        entryPoints = {
+          http = {
+            address = ":80";
+            http.redirections.entryPoint.to = "https";
+          };
+          https = {
+            address = ":443";
+            http.tls.certResolver = "letsencrypt";
+            http3 = { };
+          };
+        };
+      };
+    };
     vnstat.enable = true;
   };
 
   sops = {
     age.keyFile = "/var/lib/sops.key";
-    secrets = {
-      cloudflare_token = {
-        owner = config.users.users.acme.name;
-        inherit (config.users.users.acme) group;
-        sopsFile = ./secrets.yaml;
-      };
-      "password_root" = {
-        neededForUsers = true;
-        sopsFile = ./secrets.yaml;
-      };
+    secrets.cloudflare_token = {
+      sopsFile = ./secrets.yaml;
+      owner = config.users.users.traefik.name;
+      group = config.users.users.traefik.group;
+    };
+    secrets.password_root = {
+      neededForUsers = true;
+      sopsFile = ./secrets.yaml;
     };
   };
 
-  systemd.network = {
-    enable = true;
-    networks.default = {
-      DHCP = "yes";
-      matchConfig.Type = "ether";
+  systemd = {
+    network = {
+      enable = true;
+      networks.default = {
+        DHCP = "yes";
+        matchConfig.Type = "ether";
+      };
     };
+    services.traefik.serviceConfig.EnvironmentFile = config.sops.secrets.cloudflare_token.path;
   };
 
   time.timeZone = "Asia/Shanghai";
 
   users = {
     mutableUsers = false;
-    users = {
-      nginx.extraGroups = [ "acme" ];
-      root = {
-        shell = pkgs.fish;
-        openssh.authorizedKeys.keys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOnLRT5k4gZCKNaHbLg+jEsD5ZU1/V8Bh3WxiUIrB1Bu"
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+AFJen4qsCeCiSqjMW2sWapGbtH3bk2Qsk//nTgGoV"
-        ];
-        passwordFile = config.sops.secrets."password_root".path;
-      };
+    users.root = {
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOnLRT5k4gZCKNaHbLg+jEsD5ZU1/V8Bh3WxiUIrB1Bu"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+AFJen4qsCeCiSqjMW2sWapGbtH3bk2Qsk//nTgGoV"
+      ];
+      passwordFile = config.sops.secrets.password_root.path;
+      shell = pkgs.fish;
     };
   };
 }

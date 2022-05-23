@@ -2,24 +2,21 @@
 
 {
   services = {
-    # https://github.com/dani-garcia/vaultwarden/wiki/Proxy-examples
-    nginx.virtualHosts."vault.shinta.ro" = {
-      forceSSL = true;
-      locations = {
-        "/" = {
-          proxyPass = "http://127.0.0.1:8000";
-          proxyWebsockets = true;
+    traefik.dynamicConfigOptions.http = {
+      routers = {
+        vaultwarden = {
+          rule = "Host(`vault.shinta.ro`)";
+          service = "vaultwarden";
         };
-        "/notifications/hub" = {
-          proxyPass = "http://127.0.0.1:3012";
-          proxyWebsockets = true;
-        };
-        "/notifications/hub/negotiate" = {
-          proxyPass = "http://127.0.0.1:8000";
-          proxyWebsockets = true;
+        vaultwarden-websocket = {
+          rule = "Host(`vault.shinta.ro`) && Path(`/notifications/hub`)";
+          service = "vaultwarden-websocket";
         };
       };
-      useACMEHost = "shinta.ro";
+      services = {
+        vaultwarden.loadBalancer.servers = [{ url = "http://127.0.0.1:8000"; }];
+        vaultwarden-websocket.loadBalancer.servers = [{ url = "http://127.0.0.1:3012"; }];
+      };
     };
     vaultwarden = {
       config.dataFolder = "/var/lib/vaultwarden";

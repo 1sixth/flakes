@@ -1,10 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  # https://github.com/qbittorrent/qBittorrent/wiki/NGINX-Reverse-Proxy-for-Web-UI
-  services.nginx.virtualHosts."${config.networking.hostName}.9875321.xyz".locations."/qbittorrent/" = {
-    extraConfig = "client_max_body_size 1G;";
-    proxyPass = "http://127.0.0.1:8080/";
+  # https://github.com/qbittorrent/qBittorrent/wiki/Traefik-Reverse-Proxy-for-Web-UI
+  # The regex in the link above didn't seem to work.
+  services.traefik.dynamicConfigOptions.http = {
+    middlewares.qbittorrent.stripprefix.prefixes = "/qbittorrent";
+    routers.qbittorrent = {
+      middlewares = [ "qbittorrent" ];
+      rule = "Host(`${config.networking.fqdn}`) && PathPrefix(`/qbittorrent/`)";
+      service = "qbittorrent";
+    };
+    services.qbittorrent.loadBalancer.servers = [{ url = http://127.0.0.1:8080; }];
   };
 
   # https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in
