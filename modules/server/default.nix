@@ -45,6 +45,7 @@
   i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
   networking = {
+    domain = "9875321.xyz";
     firewall.enable = false;
     useDHCP = false;
     useNetworkd = true;
