@@ -8,7 +8,7 @@
         service = "v2ray";
       };
       services.v2ray.loadBalancer.servers = [{
-        url = "http://127.0.0.1:10000";
+        url = "h2c://127.0.0.1:10000";
       }];
     };
     v2ray = {
@@ -26,7 +26,7 @@
         protocol = "vless";
         settings = { clients = [{ id = config.sops.placeholder."v2ray_id"; }]; decryption = "none"; };
         sniffing.enabled = true;
-        streamSettings = { network = "ws"; wsSettings.path = "/ping"; };
+        streamSettings = { network = "http"; httpSettings = { host = [ config.networking.fqdn ]; path = "/ping"; }; };
       }];
       log.loglevel = "none";
       outbounds = [
