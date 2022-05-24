@@ -6,9 +6,6 @@
     inherit (inputs.nixos-cn.legacyPackages.${prev.system}.re-export) fcitx5-pinyin-moegirl;
     inherit (inputs.nixos-cn.legacyPackages.${prev.system}.re-export) fcitx5-pinyin-zhwiki-nickcao;
   };
-  hydra = final: prev: {
-    inherit (inputs.nickpkgs.legacyPackages.${prev.system}) hydra-unstable;
-  };
   qbittorrent-nox = final: prev: {
     # https://github.com/qbittorrent/qBittorrent/issues/15235
     qbittorrent-nox = inputs.nixpkgs-qbittorrent-nox.legacyPackages.${prev.system}.qbittorrent-nox.override {
