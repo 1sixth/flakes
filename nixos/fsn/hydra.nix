@@ -27,22 +27,9 @@
 
   nix.settings.secret-key-files = config.sops.secrets.secret-key-files.path;
 
-  sops.secrets = {
-    hydra-notify = {
-      mode = "0440";
-      owner = config.users.users.hydra-queue-runner.name;
-      inherit (config.users.users.hydra) group;
-    };
-    secret-key-files = {
-      mode = "0440";
-      owner = config.users.users.hydra.name;
-      inherit (config.users.users.hydra) group;
-    };
-  };
-
-  systemd.services = {
-    hydra-notify.serviceConfig.EnvironmentFile = config.sops.secrets.hydra-notify.path;
-    hydra-queue-runner.path = [ pkgs.msmtp ];
-    hydra-server.path = [ pkgs.msmtp ];
+  sops.secrets.secret-key-files = {
+    mode = "0440";
+    owner = config.users.users.hydra.name;
+    inherit (config.users.users.hydra) group;
   };
 }
