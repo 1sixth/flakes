@@ -26,7 +26,7 @@
   nix = {
     buildMachines = [
       {
-        hostName = "fsn";
+        hostName = "localhost";
         maxJobs = 8;
         supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
         systems = [
@@ -60,10 +60,6 @@
         IdentityFile ${config.sops.secrets.ssh_private_key.path}
         Port 23
         User u303966
-      Host fsn
-        HostName fsn.9875321.xyz
-        IdentityFile ${config.sops.secrets.ssh_private_key.path}
-        User root
       Host tyo0
         HostName tyo0.9875321.xyz
         IdentityFile ${config.sops.secrets.ssh_private_key.path}
@@ -75,7 +71,6 @@
     '';
     knownHosts = {
       "[u303966.your-storagebox.de]:23".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIICf9svRenC/PLKIL9nk6K/pxQgoiFC41wTNvoIncOxs";
-      "fsn.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAss7ohT8nmKrKCtz2ca4MT98mDj/O0Ti+WxqCKI/+ba";
       "tyo0.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIILj2hY2QVnysE20yMSWzMyORXPs+LjbMi2GIzQXQuJO";
       "tyo3.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBQzz4TIaV597J0WfLYnmq9z4HcbddX/bBRXQctZVbhK";
     };
