@@ -91,11 +91,7 @@
 
   sops = {
     defaultSopsFile = ./secrets.yaml;
-    secrets.ssh_private_key = {
-      mode = "0440";
-      owner = config.users.users.hydra.name;
-      inherit (config.users.users.hydra) group;
-    };
+    secrets.ssh_private_key = { };
   };
 
   systemd.network.networks.default = {
