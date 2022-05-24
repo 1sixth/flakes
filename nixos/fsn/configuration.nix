@@ -86,7 +86,7 @@
 
   sops = {
     defaultSopsFile = ./secrets.yaml;
-    secrets.ssh_private_key = { };
+    secrets.ssh_private_key.owner = config.users.users.hydra-queue-runner.name;
   };
 
   systemd.network.networks.default = {
