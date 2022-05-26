@@ -2,6 +2,7 @@
 
 {
   boot = {
+    cleanTmpDir = true;
     kernel.sysctl = {
       # https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/net/ipv4/tcp_bbr.c#n55
       "net.core.default_qdisc" = "fq";
@@ -10,7 +11,6 @@
       "net.core.rmem_max" = "2500000";
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    tmpOnTmpfs = true;
   };
 
   documentation = {
