@@ -27,7 +27,6 @@
     buildMachines = [
       {
         hostName = "localhost";
-        maxJobs = 8;
         supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
         systems = [
           "i686-linux"
