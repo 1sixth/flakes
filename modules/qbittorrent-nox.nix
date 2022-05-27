@@ -7,7 +7,7 @@
     middlewares.qbittorrent.stripprefix.prefixes = "/qbittorrent";
     routers.qbittorrent = {
       middlewares = [ "qbittorrent" ];
-      rule = "Host(`${config.networking.fqdn}`) && PathPrefix(`/qbittorrent/`)";
+      rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/qbittorrent/`)";
       service = "qbittorrent";
     };
     services.qbittorrent.loadBalancer.servers = [{ url = http://127.0.0.1:8080; }];

@@ -4,7 +4,7 @@
   services = {
     traefik.dynamicConfigOptions.http = {
       routers.v2ray = {
-        rule = "Host(`${config.networking.fqdn}`) && Path(`/ping`)";
+        rule = "Host(`${config.networking.hostName}.9875321.xyz`) && Path(`/ping`)";
         service = "v2ray";
       };
       services.v2ray.loadBalancer.servers = [{
@@ -28,7 +28,7 @@
         protocol = "vless";
         settings = { clients = [{ id = config.sops.placeholder."v2ray_id"; }]; decryption = "none"; };
         sniffing.enabled = true;
-        streamSettings = { network = "http"; httpSettings = { host = [ config.networking.fqdn ]; path = "/ping"; }; };
+        streamSettings = { network = "http"; httpSettings = { host = [ "${config.networking.hostName}.9875321.xyz" ]; path = "/ping"; }; };
       }];
       log.loglevel = "none";
       outbounds = [
