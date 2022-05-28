@@ -17,15 +17,25 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/5e5fd1b5-92ad-495a-8c43-95994ac940c4";
-      fsType = "btrfs";
-      options = [ "compress-force=zstd" "noatime" "space_cache=v2" ];
+      fsType = "tmpfs";
+      options = [ "mode=755" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/072B-3443";
+      device = "/dev/sda1";
       fsType = "vfat";
+    };
+    "/nix" = {
+      device = "/dev/sda3";
+      fsType = "btrfs";
+      options = [ "compress-force=zstd" "noatime" "space_cache=v2" "subvol=/@nix" ];
+    };
+    "/persistent" = {
+      device = "/dev/sda3";
+      fsType = "btrfs";
+      neededForBoot = true;
+      options = [ "compress-force=zstd" "noatime" "space_cache=v2" "subvol=/@persistent" ];
     };
   };
 
-  swapDevices = [{ device = "/dev/disk/by-uuid/6d409d62-ad1e-4e0f-9d23-2a3238c63027"; }];
+  swapDevices = [{ device = "/dev/sda2"; }];
 }
