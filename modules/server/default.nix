@@ -134,7 +134,11 @@
   };
 
   sops = {
-    age.keyFile = "/var/lib/sops.key";
+    age = {
+      keyFile = "/var/lib/sops.key";
+      sshKeyPaths = [ ];
+    };
+    gnupg.sshKeyPaths = [ ];
     secrets.cloudflare_token = {
       sopsFile = ./secrets.yaml;
       owner = config.users.users.traefik.name;
