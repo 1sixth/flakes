@@ -36,7 +36,6 @@ in
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
       age
-      ark # to handle some non UTF-8 encoded archives
       cargo
       clang
       clang-tools
@@ -71,6 +70,7 @@ in
       sshfs
       tdesktop
       thunderbird
+      unar # to handle some non UTF-8 encoded archives
       wl-clipboard
       xdg-utils
       yt-dlp
