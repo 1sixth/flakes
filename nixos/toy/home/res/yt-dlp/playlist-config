@@ -1,5 +1,0 @@
---no-continue
-
---download-archive "archive.log"
-
---output "$PWD/%(playlist)s/[%(playlist_index)s] %(title)s.%(ext)s"

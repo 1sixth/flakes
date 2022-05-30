@@ -25,9 +25,7 @@
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
       "wofi/style.css".source = ./res/wofi.css;
-      "yt-dlp/channel-config".source = ./res/yt-dlp/channel-config;
-      "yt-dlp/config".source = ./res/yt-dlp/config;
-      "yt-dlp/playlist-config".source = ./res/yt-dlp/playlist-config;
+      "yt-dlp/config".source = ./res/yt-dlp.conf;
     };
     enable = true;
     mimeApps = {
