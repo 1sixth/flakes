@@ -47,7 +47,7 @@ in
       htop
       imv
       iotop
-      jetbrains.pycharm-professional
+      jetbrains.pycharm-community
       ldns # drill is awesome
       libarchive # bsdtar is awesome
       libsForQt5.qtstyleplugin-kvantum # for qt theme
