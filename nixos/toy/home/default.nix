@@ -54,6 +54,7 @@ in
       mumble
       nali
       onlyoffice-bin
+      pandoc
       pcmanfm-qt
       poetry
       polymc
