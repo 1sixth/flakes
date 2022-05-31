@@ -4,6 +4,7 @@ nixpkgs.lib.nixosSystem {
   inherit system;
   modules = [
     { nixpkgs.overlays = [ self.overlays.qbittorrent-nox ]; }
+    inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.dnscrypt-proxy2.china
     self.nixosModules.qbittorrent-nox

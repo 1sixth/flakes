@@ -19,23 +19,37 @@ in
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/97785409-fe30-4f4d-a014-5b6937d93190";
-      fsType = "btrfs";
-      options = mountOptions ++ [ "compress-force=zstd" ];
+      fsType = "tmpfs";
+      options = [ "mode=755" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/BB59-C92B";
+      device = "/dev/disk/by-uuid/0B4B-1882";
       fsType = "vfat";
+    };
+    "/nix" = {
+      device = "/dev/disk/by-uuid/fa12c800-105d-4fa1-87f9-a1f8b54ad8c1";
+      fsType = "btrfs";
+      options = mountOptions ++ [ "compress-force=zstd" "subvol=/@nix" ];
+    };
+    "/persistent" = {
+      device = "/dev/disk/by-uuid/fa12c800-105d-4fa1-87f9-a1f8b54ad8c1";
+      fsType = "btrfs";
+      neededForBoot = true;
+      options = mountOptions ++ [ "compress-force=zstd" "subvol=/@persistent" ];
     };
     "/persistent/8T" = {
       device = "/dev/disk/by-uuid/51365bbd-db45-44ca-b234-3b13d345cb3b";
-      options = mountOptions;
+      fsType = "btrfs";
+      options = mountOptions ++ [ "autodefrag" ];
     };
     "/persistent/16T" = {
       device = "/dev/disk/by-uuid/db363a22-3029-414e-9bb0-b21f25ed4c1b";
-      options = mountOptions;
+      fsType = "btrfs";
+      options = mountOptions ++ [ "autodefrag" ];
     };
   };
 
   hardware.cpu.intel.updateMicrocode = true;
+
+  swapDevices = [{ device = "/dev/disk/by-uuid/31ed7cfb-2c2e-42e7-80cf-45397d708d19"; }];
 }
