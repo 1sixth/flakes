@@ -65,10 +65,7 @@
     command-not-found.enable = false;
     fish = {
       enable = true;
-      interactiveShellInit = ''
-        set -g fish_greeting
-        ${pkgs.starship}/bin/starship init fish | source
-      '';
+      interactiveShellInit = "set -g fish_greeting";
       shellAliases = {
         l = "ll -a";
         ll = "ls -l -g --time-style=long-iso";
@@ -86,6 +83,10 @@
       viAlias = true;
       vimAlias = true;
       withRuby = false;
+    };
+    starship = {
+      enable = true;
+      settings.add_newline = false;
     };
   };
 
