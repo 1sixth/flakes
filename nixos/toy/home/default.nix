@@ -52,7 +52,6 @@ in
       libarchive # bsdtar is awesome
       libsForQt5.qtstyleplugin-kvantum # for qt theme
       mumble
-      nali
       onlyoffice-bin
       pandoc
       pcmanfm-qt
