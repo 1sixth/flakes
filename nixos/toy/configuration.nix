@@ -4,6 +4,7 @@
   imports = [ ./hardware.nix ];
 
   boot = {
+    cleanTmpDir = true;
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     kernel.sysctl = {
       # https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/net/ipv4/tcp_bbr.c#n55
@@ -15,10 +16,46 @@
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ "acpi_backlight=native" ];
     supportedFilesystems = [ "ntfs" ];
-    tmpOnTmpfs = true;
   };
 
-  environment.defaultPackages = lib.mkForce [ ];
+  environment = {
+    defaultPackages = lib.mkForce [ ];
+    etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
+    persistence."/persistent/impermanence" = {
+      directories = [
+        "/var/lib"
+        "/var/log/journal"
+      ];
+      files = [
+        "/etc/machine-id"
+      ];
+      users.one6th.directories = [
+        ".config/chromium"
+        ".config/fcitx5"
+        ".config/htop"
+        ".config/JetBrains"
+        ".config/Mumble"
+        ".config/pcmanfm-qt"
+        ".config/rclone"
+        ".config/VSCodium"
+        ".config/wireshark"
+        ".local/share/fcitx5"
+        ".local/share/fish"
+        ".local/share/JetBrains"
+        ".local/share/Mumble"
+        ".local/share/nvim"
+        ".local/share/PolyMC"
+        ".local/share/TelegramDesktop"
+        ".local/state/gnupg"
+        ".local/state/wireplumber"
+        ".ssh"
+        ".thunderbird"
+        ".vscode-oss"
+        "Develop"
+        "Download"
+      ];
+    };
+  };
 
   fonts = {
     enableDefaultFonts = false;
@@ -99,6 +136,7 @@
       enable = true;
     };
     rtkit.enable = true;
+    sudo.extraConfig = ''Defaults lecture="never"'';
   };
 
   services = {
