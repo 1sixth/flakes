@@ -22,7 +22,16 @@
 
   networking.hostName = "nas";
 
-  services.fstrim.enable = true;
+  services = {
+    btrfs.autoScrub = {
+      enable = true;
+      fileSystems = [
+        "/persistent/8T"
+        "/persistent/16T"
+      ];
+    };
+    fstrim.enable = true;
+  };
 
   sops.defaultSopsFile = ./secrets.yaml;
 
