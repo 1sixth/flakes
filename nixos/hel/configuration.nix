@@ -80,11 +80,7 @@
 
   services.btrfs.autoScrub = {
     enable = true;
-    fileSystems = [
-      "/boot"
-      "/nix"
-      "/persistent"
-    ];
+    fileSystems = [ "/nix" ];
   };
 
   sops = {
