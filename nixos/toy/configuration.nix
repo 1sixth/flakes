@@ -25,6 +25,7 @@
       directories = [
         "/var/lib"
         "/var/log/journal"
+        { directory = "/mnt"; user = "one6th"; group = "users"; }
       ];
       files = [
         "/etc/machine-id"
