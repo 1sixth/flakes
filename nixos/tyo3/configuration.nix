@@ -3,7 +3,7 @@
 {
   imports = [ ./hardware.nix ];
 
-  #boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
+  boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
 
   environment.persistence."/persistent/impermanence" = {
     directories = [
