@@ -66,7 +66,7 @@
       };
 
       nixosConfigurations = {
-        hel = import ./nixos/hel { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        fsn = import ./nixos/fsn { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nas = import ./nixos/nas { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         toy = import ./nixos/toy { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         tyo0 = import ./nixos/tyo0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };

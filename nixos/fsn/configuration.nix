@@ -22,7 +22,7 @@
     ];
   };
 
-  networking.hostName = "hel";
+  networking.hostName = "fsn";
 
   nix = {
     buildMachines = [
@@ -57,11 +57,6 @@
 
   programs.ssh = {
     extraConfig = ''
-      Host box
-        HostName u305138.your-storagebox.de
-        IdentityFile ${config.sops.secrets.ssh_private_key.path}
-        Port 23
-        User u305138
       Host tyo0
         HostName tyo0.9875321.xyz
         IdentityFile ${config.sops.secrets.ssh_private_key.path}
@@ -72,7 +67,6 @@
         User root
     '';
     knownHosts = {
-      "[u305138.your-storagebox.de]:23".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIICf9svRenC/PLKIL9nk6K/pxQgoiFC41wTNvoIncOxs";
       "tyo0.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhubd/C2j9YKXj5s+PJECNXpKCOuYLBmPVi+C8d3LU2";
       "tyo3.9875321.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPlmwC1epFsDlD0LONVyOYi5OdY388CSJvYTI/8MogId";
     };
@@ -89,7 +83,7 @@
   };
 
   systemd.network.networks.default = {
-    address = [ "2a01:4f9:4b:4990::1/64" ];
+    address = [ "2a01:4f8:241:45ce::1/64" ];
     gateway = [ "fe80::1" ];
   };
 
