@@ -6,7 +6,6 @@
     earth = import ./dnscrypt-proxy2/earth.nix;
   };
   hath = import ./hath.nix;
-  oracle-iscsi = import ./oracle-iscsi.nix;
   qbittorrent-nox = import ./qbittorrent-nox.nix;
   server = import ./server;
   tor = import ./tor.nix;
