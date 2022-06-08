@@ -177,6 +177,17 @@ in
       enable = true;
       settings.add_newline = false;
     };
+    swaylock.settings = {
+      clock = true;
+      daemonize = true;
+      effect-blur = "7x5";
+      effect-vignette = "0.5:0.5";
+      grace = 3;
+      image = wallpaper.outPath;
+      indicator-caps-lock = true;
+      scaling = "fill";
+      show-failed-attempts = true;
+    };
   };
 
   services = {
@@ -247,16 +258,4 @@ in
 
   # TODO: Figure out what to do with the wallpaper.
   wayland.windowManager.sway.config.output."*".bg = "${wallpaper} fill";
-
-  xdg.configFile."swaylock/config".text = ''
-    clock
-    daemonize
-    effect-blur=7x5
-    effect-vignette=0.5:0.5
-    grace=3
-    image=${wallpaper}
-    indicator-caps-lock
-    scaling=fill
-    show-failed-attempts
-  '';
 }
