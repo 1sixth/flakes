@@ -120,6 +120,8 @@ in
         jouu = "journalctl --user";
 
         t = "crow -s en -t zh-CN";
+
+        nixos-rebuild = "nixos-rebuild --use-remote-sudo";
       };
     };
     git = {
