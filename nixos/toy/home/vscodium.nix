@@ -10,7 +10,7 @@
       llvm-vs-code-extensions.vscode-clangd
       matklad.rust-analyzer
       pkief.material-icon-theme
-      #vadimcn.vscode-lldb
+      vadimcn.vscode-lldb
       vscodevim.vim
     ];
     package = pkgs.vscodium;
