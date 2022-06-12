@@ -9,6 +9,8 @@
     ./vaultwarden.nix
   ];
 
+  boot.kernelParams = [ "mitigations=off" ];
+
   environment.persistence."/persistent/impermanence" = {
     directories = [
       "/root"
