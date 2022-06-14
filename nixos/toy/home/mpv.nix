@@ -80,6 +80,7 @@
     };
     config = {
       blend-subtitles = "video";
+      demuxer-max-bytes = "1GiB";
       fullscreen = "";
       gpu-api = "vulkan";
       # icc-profile-auto not implemented on Wayland
