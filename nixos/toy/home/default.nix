@@ -158,6 +158,7 @@ in
       font = "${config.gtk.font.name} ${builtins.toString config.gtk.font.size}";
       layer = "overlay";
     };
+    nix-index.enable = true;
     ssh = {
       compression = true;
       enable = true;
