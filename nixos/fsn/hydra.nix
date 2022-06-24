@@ -25,7 +25,10 @@
     };
   };
 
-  nix.settings.secret-key-files = config.sops.secrets.secret-key-files.path;
+  nix.settings = {
+    allowed-uris = "http:// https://";
+    secret-key-files = config.sops.secrets.secret-key-files.path;
+  };
 
   sops.secrets.secret-key-files = {
     mode = "0440";
