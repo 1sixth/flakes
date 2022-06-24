@@ -21,7 +21,7 @@
         rule = "Host(`hydra.shinta.ro`)";
         service = "hydra";
       };
-      services.hydra.loadBalancer.servers = [{ url = "http://127.0.0.1:3000"; }];
+      services.hydra.loadBalancer.servers = [{ url = "http://${config.services.hydra.listenHost}:${builtins.toString config.services.hydra.port}"; }];
     };
   };
 
