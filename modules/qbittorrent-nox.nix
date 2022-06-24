@@ -10,7 +10,7 @@
       rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/qbittorrent/`)";
       service = "qbittorrent";
     };
-    services.qbittorrent.loadBalancer.servers = [{ url = http://127.0.0.1:8080; }];
+    services.qbittorrent.loadBalancer.servers = [{ url = "http://127.0.0.1:8080"; }];
   };
 
   # https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in
