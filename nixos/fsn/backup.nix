@@ -21,8 +21,7 @@
         "--keep-daily 30"
         "--keep-monthly 12"
       ];
-      rcloneConfigFile = "/persistent/impermanence/var/lib/backup/rclone.conf";
-      repository = "rclone:restic:";
+      repository = "sftp:box:Restic";
       timerConfig.OnCalendar = "*:05";
     };
   };

@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 let
-  device = "/dev/disk/by-id/wwn-0x50000399e8d30a8f-part3";
-  options = [ "compress-force=zstd" "noatime" "space_cache=v2" ];
+  device = "/dev/disk/by-id/wwn-0x5000cca267f179d8-part3";
+  options = [ "noatime" "space_cache=v2" ];
 in
 
 {
@@ -10,10 +10,10 @@ in
     initrd.availableKernelModules = [ "ahci" "sd_mod" "usbhid" ];
     kernelModules = [ "kvm-intel" ];
     loader.grub.devices = [
-      "/dev/disk/by-id/wwn-0x50000399e8d30a8f"
-      "/dev/disk/by-id/wwn-0x50000399e8d314c0"
-      "/dev/disk/by-id/wwn-0x50000399e8d31719"
-      "/dev/disk/by-id/wwn-0x50000399e8d3363d"
+      "/dev/disk/by-id/wwn-0x5000cca267f179d8"
+      "/dev/disk/by-id/wwn-0x5000cca267f17a16"
+      "/dev/disk/by-id/wwn-0x5000cca267f18dc1"
+      "/dev/disk/by-id/wwn-0x5000cca273ee2b8b"
     ];
   };
 
@@ -43,9 +43,9 @@ in
   hardware.cpu.intel.updateMicrocode = true;
 
   swapDevices = [
-    { device = "/dev/disk/by-id/wwn-0x50000399e8d30a8f-part2"; randomEncryption = true; }
-    { device = "/dev/disk/by-id/wwn-0x50000399e8d314c0-part2"; randomEncryption = true; }
-    { device = "/dev/disk/by-id/wwn-0x50000399e8d31719-part2"; randomEncryption = true; }
-    { device = "/dev/disk/by-id/wwn-0x50000399e8d3363d-part2"; randomEncryption = true; }
+    { device = "/dev/disk/by-id/wwn-0x5000cca267f179d8-part2"; randomEncryption = true; }
+    { device = "/dev/disk/by-id/wwn-0x5000cca267f17a16-part2"; randomEncryption = true; }
+    { device = "/dev/disk/by-id/wwn-0x5000cca267f18dc1-part2"; randomEncryption = true; }
+    { device = "/dev/disk/by-id/wwn-0x5000cca273ee2b8b-part2"; randomEncryption = true; }
   ];
 }
