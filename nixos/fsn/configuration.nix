@@ -5,6 +5,7 @@
     ./backup.nix
     ./hardware.nix
     ./hydra.nix
+    ./libreddit.nix
     ./postgresql.nix
     ./vaultwarden.nix
   ];
