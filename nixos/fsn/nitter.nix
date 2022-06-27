@@ -18,7 +18,7 @@
     traefik = {
       dynamicConfigOptions.http = {
         routers.nitter = {
-          rule = "Host(`twitter.shinta.ro`)";
+          rule = "Host(`${config.services.nitter.server.hostname}`)";
           service = "nitter";
         };
         services.nitter.loadBalancer.servers = [{ url = "http://${config.services.nitter.server.address}:${builtins.toString config.services.nitter.server.port}"; }];

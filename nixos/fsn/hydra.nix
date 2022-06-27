@@ -18,7 +18,7 @@
     };
     traefik.dynamicConfigOptions.http = {
       routers.hydra = {
-        rule = "Host(`hydra.shinta.ro`)";
+        rule = "Host(`${builtins.baseNameOf config.services.hydra.hydraURL}`)";
         service = "hydra";
       };
       services.hydra.loadBalancer.servers = [{ url = "http://${config.services.hydra.listenHost}:${builtins.toString config.services.hydra.port}"; }];
