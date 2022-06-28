@@ -17,7 +17,6 @@
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       inputs = {
-        flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs";
         utils.follows = "flake-utils";
       };
