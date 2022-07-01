@@ -14,10 +14,7 @@
       "net.core.rmem_max" = "2500000";
     };
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [
-      "acpi_backlight=native"
-      "nowatchdog"
-    ];
+    kernelParams = [ "acpi_backlight=native" ];
     supportedFilesystems = [ "ntfs" ];
   };
 
