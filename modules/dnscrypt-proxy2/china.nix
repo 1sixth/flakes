@@ -14,7 +14,6 @@
         static = {
           alidns-doh.stamp = "sdns://AgAAAAAAAAAACTIyMy41LjUuNSAUZf-XFWhwvjDwNPWQzx8E3VDwpSDoT4pSfpwaLofrgA5kbnMuYWxpZG5zLmNvbQovZG5zLXF1ZXJ5";
           dnspod-doh.stamp = "sdns://AgAAAAAAAAAAACDBlAfoWsQD52fP2oOBh_Ag-lY6yBaIr1EMIqd559RaVgdkb2gucHViCi9kbnMtcXVlcnk";
-          tuna-doh-ipv4.stamp = "sdns://AgEAAAAAAAAACTEwMS42LjYuNiBZPi1Jp0AjVVUmrvm3QisZ5bixZzkbbe5e0pKxyiOnTA4xMDEuNi42LjY6ODQ0MwovZG5zLXF1ZXJ5";
         };
       };
       upstreamDefaults = false;
