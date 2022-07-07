@@ -123,13 +123,14 @@
     fish.enable = true;
     iftop.enable = true;
     mtr.enable = true;
-    qt5ct.enable = true;
     traceroute.enable = true;
     wireshark = {
       enable = true;
       package = pkgs.wireshark-qt;
     };
   };
+
+  qt5.platformTheme = "qt5ct";
 
   security = {
     pam.u2f = {
