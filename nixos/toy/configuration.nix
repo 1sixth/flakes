@@ -31,6 +31,7 @@
         "/etc/machine-id"
       ];
       users.one6th.directories = [
+        ".cache/nix"
         ".cache/nix-index"
         ".config/chromium"
         ".config/fcitx5"
