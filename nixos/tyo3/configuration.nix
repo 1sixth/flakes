@@ -8,6 +8,7 @@
   environment.persistence."/persistent/impermanence" = {
     directories = [
       "/root"
+      "/tmp"
       "/var/lib"
       "/var/log/journal"
     ];

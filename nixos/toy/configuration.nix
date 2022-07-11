@@ -23,6 +23,7 @@
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
     persistence."/persistent/impermanence" = {
       directories = [
+        "/tmp"
         "/var/lib"
         "/var/log/journal"
         { directory = "/mnt"; user = "one6th"; group = "users"; }
