@@ -17,7 +17,7 @@
   fileSystems = {
     "/" = {
       fsType = "tmpfs";
-      options = [ "mode=755" "size=100%" ];
+      options = [ "mode=755" ];
     };
     "/boot" = {
       device = "/dev/sda1";
