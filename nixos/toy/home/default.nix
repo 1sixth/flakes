@@ -65,7 +65,6 @@ in
       rsync
       rustc
       rustfmt
-      sequoia
       sops
       sshfs
       tdesktop
