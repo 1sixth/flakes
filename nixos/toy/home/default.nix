@@ -167,11 +167,6 @@ in
       matchBlocks = {
         "*".proxyCommand = "nc -x 127.0.0.1:1080 %h %p";
         "*.9875321.xyz".user = "root";
-        "box" = {
-          hostname = "u307841.your-storagebox.de";
-          port = 23;
-          user = "u307841";
-        };
       };
       serverAliveInterval = 10;
     };

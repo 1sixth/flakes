@@ -62,14 +62,7 @@
         sshUser = "root";
       };
 
-      hydraJobs = {
-        nixos = builtins.mapAttrs (name: value: value.config.system.build.toplevel) self.nixosConfigurations;
-        pkgs.deploy-rs = nixpkgs.lib.genAttrs [ "aarch64-linux" "x86_64-linux" ]
-          (name: inputs.deploy-rs.packages.${name}.deploy-rs);
-      };
-
       nixosConfigurations = {
-        fsn = import ./nixos/fsn { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nas = import ./nixos/nas { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         toy = import ./nixos/toy { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         tyo0 = import ./nixos/tyo0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
