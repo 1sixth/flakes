@@ -145,6 +145,7 @@ in
     jq.enable = true;
     lf = {
       enable = true;
+      keybindings.d = "delete";
       settings = {
         preview = false;
         ratios = "1:2";
