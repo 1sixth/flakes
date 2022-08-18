@@ -5,7 +5,7 @@
 
   boot = {
     cleanTmpDir = true;
-    binfmt.emulatedSystems = [ "aarch64-linux" "riscv64-linux" ];
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
     kernel.sysctl = {
       # https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/net/ipv4/tcp_bbr.c#n55
       "net.core.default_qdisc" = "fq";
