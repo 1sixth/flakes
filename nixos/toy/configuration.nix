@@ -97,19 +97,19 @@
     ];
   };
 
-  nix.settings = {
-    auto-optimise-store = true;
-    builders-use-substitutes = true;
-    experimental-features = [ "flakes" "nix-command" ];
-    trusted-users = [ "one6th" "root" ];
-  };
-
   networking = {
     firewall.enable = false;
     hostName = "toy";
     useDHCP = false;
     useNetworkd = true;
     wireless.iwd.enable = true;
+  };
+
+  nix.settings = {
+    auto-optimise-store = true;
+    builders-use-substitutes = true;
+    experimental-features = [ "flakes" "nix-command" ];
+    trusted-users = [ "one6th" "root" ];
   };
 
   powerManagement.cpuFreqGovernor = "schedutil";
