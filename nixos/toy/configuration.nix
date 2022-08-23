@@ -107,7 +107,6 @@
 
   nix.settings = {
     auto-optimise-store = true;
-    builders-use-substitutes = true;
     experimental-features = [ "flakes" "nix-command" ];
     trusted-users = [ "one6th" "root" ];
   };
