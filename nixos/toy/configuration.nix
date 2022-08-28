@@ -64,9 +64,11 @@
   fonts = {
     enableDefaultFonts = false;
     fonts = with pkgs; [
-      font-awesome
       (iosevka-bin.override {
         variant = "sgr-iosevka-fixed";
+      })
+      (nerdfonts.override {
+        fonts = [ "NerdFontsSymbolsOnly" ];
       })
       noto-fonts
       noto-fonts-cjk-sans
