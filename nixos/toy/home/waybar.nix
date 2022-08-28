@@ -6,18 +6,18 @@
     settings = [{
       battery = {
         format = "{capacity}% {icon}";
-        format-icons = [ "" "" "" "" "" ];
+        format-icons = [ "" "" "" "" "" "" "" "" "" ""];
         interval = 1;
         states = { critical = 15; warning = 30; };
       };
       clock.format = "{:%F %A %R}";
-      cpu = { format = "{usage}% "; interval = 1; };
+      cpu = { format = "CPU: {usage}%"; interval = 1; };
       idle_inhibitor = {
         format = "{icon}";
-        format-icons = { activated = ""; deactivated = ""; };
+        format-icons = { activated = ""; deactivated = ""; };
       };
       layer = "top";
-      memory = { format = "{percentage}% "; interval = 1; };
+      memory = { format = "Memory: {percentage}%"; interval = 1; };
       modules-center = [
         "clock"
       ];
@@ -36,7 +36,7 @@
         "pulseaudio"
       ];
       network = {
-        format-disconnected = "Disconnected  ";
+        format-disconnected = "Disconnected ";
         format-wifi = "{bandwidthDownBits}  {bandwidthUpBits}  {essid} ({signalStrength}%) ";
         interface = "wlan0";
         interval = 1;
@@ -44,21 +44,20 @@
       position = "bottom";
       pulseaudio = {
         format = "{volume}% {icon}";
-        format-bluetooth = "{volume}% ";
-        format-icons.default = [ "" "" "" ];
-        format-muted = "";
+        format-bluetooth = "{volume}% ";
+        format-icons.default = [ "奄" "奔" "墳" ];
+        format-muted = "婢";
         on-click = "${pkgs.pamixer}/bin/pamixer -t";
         scroll-step = 5;
       };
       spacing = 10;
       "sway/workspaces" = {
         format = "{name} {icon}";
-        format-icons = { default = ""; focused = ""; urgent = ""; };
+        format-icons = { default = ""; focused = ""; urgent = ""; };
       };
       temperature = {
         critical-threshold = 80;
-        format = "{temperatureC}℃ {icon}";
-        format-icons = [ "" "" "" "" "" ];
+        format = "{temperatureC}℃";
         interval = 1;
       };
       tray.spacing = 10;
