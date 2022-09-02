@@ -51,7 +51,6 @@ in
       ldns # drill is awesome
       libarchive # bsdtar is awesome
       libsForQt5.qtstyleplugin-kvantum # for qt theme
-      mumble
       onlyoffice-bin
       pandoc
       pcmanfm-qt
