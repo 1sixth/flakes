@@ -56,7 +56,6 @@ in
       pandoc
       pcmanfm-qt
       poetry
-      polymc
       python3
       rclone
       restic

@@ -48,7 +48,6 @@
         ".local/share/JetBrains"
         ".local/share/Mumble"
         ".local/share/nvim"
-        ".local/share/PolyMC"
         ".local/share/TelegramDesktop"
         ".local/state/gnupg"
         ".local/state/wireplumber"
