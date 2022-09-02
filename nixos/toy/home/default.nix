@@ -124,8 +124,8 @@ in
     };
     git = {
       difftastic = {
-          display = "inline";
-          enable = true;
+        display = "inline";
+        enable = true;
       };
       enable = true;
       extraConfig = {
@@ -160,7 +160,10 @@ in
       font = "${config.gtk.font.name} ${builtins.toString config.gtk.font.size}";
       layer = "overlay";
     };
-    nix-index.enable = true;
+    nix-index = {
+      enable = true;
+      enableFishIntegration = false;
+    };
     ssh = {
       compression = true;
       enable = true;
