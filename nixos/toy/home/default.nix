@@ -123,7 +123,10 @@ in
       };
     };
     git = {
-      difftastic.enable = true;
+      difftastic = {
+          display = "inline";
+          enable = true;
+      };
       enable = true;
       extraConfig = {
         init.defaultBranch = "master";
