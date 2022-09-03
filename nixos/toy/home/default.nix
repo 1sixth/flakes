@@ -212,9 +212,9 @@ in
         # I have not tested it under native Wayland yet.
         # Other Electron apps works fine under XWayland.
         # Chromium works fine under XWayland and native Wayland.
-        left.outputs = [
-          { criteria = "HDMI-A-1"; position = "0,0"; }
-          { criteria = "eDP-1"; position = "1920,0"; }
+        right.outputs = [
+          { criteria = "eDP-1"; position = "0,0"; }
+          { criteria = "HDMI-A-1"; position = "1920,0"; }
         ];
       };
     };
