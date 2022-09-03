@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./campus_login.nix
     ./hardware.nix
     ./sftp.nix
   ];
