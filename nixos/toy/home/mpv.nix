@@ -86,7 +86,7 @@
       # icc-profile-auto not implemented on Wayland
       #icc-profile-auto = "";
       interpolation = "";
-      keep-open = "always";
+      keep-open = "yes";
       no-input-default-bindings = "";
       profile = "gpu-hq";
       slang = "en-orig,zh-CN,zh-TW,zh-HK,zh-SG,zh-Hans,zh-Hant,chi,zho";
