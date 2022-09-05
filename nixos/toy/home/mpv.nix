@@ -89,6 +89,7 @@
       keep-open = "yes";
       no-input-default-bindings = "";
       profile = "gpu-hq";
+      script-opts = ''ytdl_hook-exclude="%.mkv$|%.mp4$",ytdl_hook-try_ytdl_first=yes'';
       slang = "en-orig,zh-CN,zh-TW,zh-HK,zh-SG,zh-Hans,zh-Hant,chi,zho";
       sub-auto = "fuzzy";
       tscale = "oversample";
