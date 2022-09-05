@@ -38,7 +38,6 @@
       network = {
         format-disconnected = "Disconnected ";
         format-wifi = "{bandwidthDownBits}  {bandwidthUpBits}  {essid} ({signalStrength}%) ";
-        interface = "wlan0";
         interval = 1;
       };
       position = "bottom";
