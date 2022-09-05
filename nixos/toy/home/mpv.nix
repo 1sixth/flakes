@@ -94,6 +94,7 @@
       sub-auto = "fuzzy";
       tscale = "oversample";
       video-sync = "display-resample";
+      ytdl-raw-options = "yes-playlist=";
     };
     enable = true;
     scripts = with pkgs.mpvScripts; [
