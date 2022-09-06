@@ -23,16 +23,16 @@ in
       options = [ "mode=755" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/0B4B-1882";
+      device = "/dev/disk/by-uuid/010B-AFC3";
       fsType = "vfat";
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/fa12c800-105d-4fa1-87f9-a1f8b54ad8c1";
+      device = "/dev/disk/by-uuid/ae973210-fc9b-4ea2-88fe-d09f8485dab8";
       fsType = "btrfs";
       options = mountOptions ++ [ "compress-force=zstd" "subvol=/@nix" ];
     };
     "/persistent" = {
-      device = "/dev/disk/by-uuid/fa12c800-105d-4fa1-87f9-a1f8b54ad8c1";
+      device = "/dev/disk/by-uuid/ae973210-fc9b-4ea2-88fe-d09f8485dab8";
       fsType = "btrfs";
       neededForBoot = true;
       options = mountOptions ++ [ "compress-force=zstd" "subvol=/@persistent" ];
@@ -51,5 +51,5 @@ in
 
   hardware.cpu.intel.updateMicrocode = true;
 
-  swapDevices = [{ device = "/dev/disk/by-uuid/31ed7cfb-2c2e-42e7-80cf-45397d708d19"; }];
+  swapDevices = [{ device = "/dev/disk/by-uuid/a2ab50d8-70bb-42a4-90d6-f288addd4540"; }];
 }
