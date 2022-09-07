@@ -6,16 +6,22 @@
     ./sftp.nix
   ];
 
-  environment.persistence."/persistent/impermanence" = {
-    directories = [
-      "/root"
-      "/var/lib"
-      "/var/log/journal"
-    ];
-    files = [
-      "/etc/machine-id"
-      "/etc/ssh/ssh_host_ed25519_key"
-      "/etc/ssh/ssh_host_ed25519_key.pub"
+  environment = {
+    persistence."/persistent/impermanence" = {
+      directories = [
+        "/root"
+        "/var/lib"
+        "/var/log/journal"
+      ];
+      files = [
+        "/etc/machine-id"
+        "/etc/ssh/ssh_host_ed25519_key"
+        "/etc/ssh/ssh_host_ed25519_key.pub"
+      ];
+    };
+    systemPackages = with pkgs; [
+      smartmontools
+      yt-dlp
     ];
   };
 
