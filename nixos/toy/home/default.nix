@@ -122,9 +122,12 @@ in
       };
     };
     git = {
-      difftastic = {
-        display = "inline";
+      delta = {
         enable = true;
+        options = {
+          light = true;
+          line-numbers = true;
+        };
       };
       enable = true;
       extraConfig = {
