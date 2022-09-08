@@ -62,7 +62,7 @@
     enableDefaultFonts = false;
     fonts = with pkgs; [
       (iosevka-bin.override {
-        variant = "sgr-iosevka-fixed";
+        variant = "sgr-iosevka-fixed-slab";
       })
       (nerdfonts.override {
         fonts = [ "NerdFontsSymbolsOnly" ];
