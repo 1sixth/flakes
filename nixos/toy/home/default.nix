@@ -126,7 +126,7 @@ in
         enable = true;
         options = {
           light = true;
-          side-by-side = true;
+          line-numbers = true;
         };
       };
       enable = true;
