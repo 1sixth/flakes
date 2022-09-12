@@ -86,7 +86,7 @@
       # icc-profile-auto not implemented on Wayland
       #icc-profile-auto = "";
       interpolation = "";
-      keep-open = "yes";
+      keep-open = "always";
       no-input-default-bindings = "";
       profile = "gpu-hq";
       script-opts = ''ytdl_hook-exclude="%.mkv$|%.mp4$",ytdl_hook-try_ytdl_first=yes'';
