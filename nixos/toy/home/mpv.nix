@@ -73,7 +73,7 @@
       MUTE = "cycle mute"; # toggle mute
       CLOSE_WIN = "quit";
 
-      "Ctrl+h" = "cycle-values hwdec auto-safe no"; # toggle hardware decoding
+      "Ctrl+h" = "cycle-values hwdec no vaapi-copy"; # toggle hardware decoding
 
       F8 = "show-text \${playlist}"; # show the playlist
       F9 = "show-text \${track-list}"; # show the list of video, audio and sub tracks
@@ -85,6 +85,7 @@
       gpu-api = "vulkan";
       # icc-profile-auto not implemented on Wayland
       #icc-profile-auto = "";
+      hwdec = "vaapi-copy";
       interpolation = "";
       keep-open = "always";
       no-input-default-bindings = "";
