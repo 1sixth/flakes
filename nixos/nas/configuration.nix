@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware.nix
+    ./sftp.nix
   ];
 
   environment = {
