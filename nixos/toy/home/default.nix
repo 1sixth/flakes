@@ -54,7 +54,6 @@ in
       onlyoffice-bin
       pandoc
       pcmanfm-qt
-      poetry
       python3
       rclone
       restic
