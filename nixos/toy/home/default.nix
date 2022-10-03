@@ -43,7 +43,6 @@ in
       deploy-rs
       fd
       file
-      gotop
       htop
       imv
       iotop

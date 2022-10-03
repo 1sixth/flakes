@@ -24,7 +24,6 @@
     systemPackages = with pkgs; [
       fd
       file
-      gotop
       htop
       iftop
       iotop
