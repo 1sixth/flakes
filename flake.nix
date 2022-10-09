@@ -31,7 +31,7 @@
       };
       url = "github:nixos-cn/flakes";
     };
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     # libtorrent-rasterbar 2.0.4
     nixpkgs-libtorrent-rasterbar.url = "github:NixOS/nixpkgs?rev=b42f0a0b45d33dec4a25508ea5293a4a016697a9";
     # qbittorrent 4.3.9
