@@ -40,7 +40,7 @@ in
       clang
       clang-tools
       crow-translate
-      deploy-rs
+      deploy-rs.deploy-rs
       fd
       file
       htop

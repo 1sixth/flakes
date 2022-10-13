@@ -5,6 +5,7 @@ nixpkgs.lib.nixosSystem {
   modules = [
     {
       nixpkgs.overlays = [
+        inputs.deploy-rs.overlay
         self.overlays.fcitx5
         self.overlays.sway
       ];
