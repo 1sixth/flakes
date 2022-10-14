@@ -52,7 +52,10 @@
             streamSettings = { network = "ws"; wsSettings.path = "/websocket"; };
           }
         ];
-        log.loglevel = "none";
+        log = {
+          access = "none";
+          error = "none";
+        };
         outbounds = [
           { protocol = "freedom"; tag = "DIRECT"; }
           { protocol = "freedom"; settings.domainStrategy = "UseIPv4"; tag = "IPv4"; }
