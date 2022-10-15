@@ -1,7 +1,13 @@
 { config, ... }:
 
 {
-  imports = [ ./hardware.nix ];
+  imports = [
+    ./backup.nix
+    ./hardware.nix
+    ./libreddit.nix
+    ./nitter.nix
+    ./vaultwarden.nix
+  ];
 
   networking.hostName = "lv";
 
