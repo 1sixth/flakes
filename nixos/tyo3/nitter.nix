@@ -12,7 +12,7 @@
         address = "127.0.0.1";
         https = true;
         hostname = "twitter.shinta.ro";
-        port = 8082;
+        port = 8001;
       };
     };
     traefik = {

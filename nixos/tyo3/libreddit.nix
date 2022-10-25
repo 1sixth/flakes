@@ -5,7 +5,7 @@
     libreddit = {
       address = "127.0.0.1";
       enable = true;
-      port = 8081;
+      port = 8000;
     };
     traefik = {
       dynamicConfigOptions.http = {
