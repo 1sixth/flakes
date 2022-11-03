@@ -3,6 +3,14 @@
     font-size: 16px;
 }
 
+button {
+    all: unset;
+}
+
+label {
+    all: unset;
+}
+
 window#waybar {
     background-color: rgba(43, 48, 59, 0.5);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
