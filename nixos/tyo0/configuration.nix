@@ -1,7 +1,11 @@
 { config, ... }:
 
 {
-  imports = [ ./hardware.nix ];
+  imports = [
+    ./backup.nix
+    ./hardware.nix
+    ./vaultwarden.nix
+  ];
 
   environment.persistence."/persistent/impermanence" = {
     directories = [
