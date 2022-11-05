@@ -9,6 +9,8 @@ nixpkgs.lib.nixosSystem {
         self.overlays.fcitx5
         self.overlays.sway
       ];
+
+      nix.registry.nixpkgs.flake = inputs.nixpkgs;
     }
     inputs.home-manager.nixosModules.home-manager
     inputs.impermanence.nixosModules.impermanence
