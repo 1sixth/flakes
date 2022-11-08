@@ -136,6 +136,14 @@
       cue = true;
       enable = true;
     };
+    pki.caCertificateBlacklist = [
+      "CFCA EV ROOT"
+      "TrustCor ECA-1"
+      "TrustCor RootCert CA-1"
+      "TrustCor RootCert CA-2"
+      "vTrus ECC Root CA"
+      "vTrus Root CA"
+    ];
     rtkit.enable = true;
     sudo.extraConfig = ''Defaults lecture="never"'';
   };
