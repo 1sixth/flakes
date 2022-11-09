@@ -11,7 +11,7 @@
       "net.core.default_qdisc" = "fq";
       "net.ipv4.tcp_congestion_control" = "bbr";
       # https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size#non-bsd
-      "net.core.rmem_max" = "2500000";
+      "net.core.rmem_max" = 2500000;
     };
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ "acpi_backlight=native" ];
