@@ -17,12 +17,13 @@
           plugins: with plugins; [
             tree-sitter-c
             tree-sitter-html
+            tree-sitter-lua
             tree-sitter-json
             tree-sitter-markdown
             tree-sitter-nix
-            tree-sitter-lua
             tree-sitter-python
             tree-sitter-rust
+            tree-sitter-toml
             tree-sitter-yaml
           ]
       ))
