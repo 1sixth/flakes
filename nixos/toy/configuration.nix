@@ -47,6 +47,7 @@
         ".local/share/JetBrains"
         ".local/share/nvim"
         ".local/share/TelegramDesktop"
+        ".local/share/virtualenv"
         ".local/state/gnupg"
         ".local/state/wireplumber"
         ".ssh"
