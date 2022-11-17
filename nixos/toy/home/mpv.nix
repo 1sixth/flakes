@@ -79,7 +79,6 @@
       F9 = "show-text \${track-list}"; # show the list of video, audio and sub tracks
     };
     config = {
-      blend-subtitles = "video";
       demuxer-max-bytes = "1GiB";
       fullscreen = "";
       gpu-api = "vulkan";
@@ -95,6 +94,7 @@
       sub-auto = "fuzzy";
       tscale = "oversample";
       video-sync = "display-resample";
+      vo = "gpu-next";
       ytdl-raw-options = "yes-playlist=";
     };
     enable = true;
