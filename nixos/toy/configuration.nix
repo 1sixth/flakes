@@ -34,6 +34,7 @@
       users.one6th.directories = [
         ".cache/nix"
         ".cache/nix-index"
+        ".cache/pypoetry"
         ".config/chromium"
         ".config/fcitx5"
         ".config/htop"
