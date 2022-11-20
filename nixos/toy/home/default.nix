@@ -117,7 +117,7 @@ in
 
         t = "crow -s en -t zh-CN";
 
-        nixos-rebuild = "nixos-rebuild --use-remote-sudo";
+        nixos-rebuild = "nixos-rebuild --use-remote-sudo --verbose";
       };
     };
     git = {
