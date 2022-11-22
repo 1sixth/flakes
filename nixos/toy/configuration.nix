@@ -123,6 +123,7 @@
     fish.enable = true;
     iftop.enable = true;
     mtr.enable = true;
+    nano.syntaxHighlight = false;
     traceroute.enable = true;
     wireshark = {
       enable = true;
