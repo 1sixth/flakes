@@ -10,6 +10,7 @@
       llvm-vs-code-extensions.vscode-clangd
       matklad.rust-analyzer
       pkief.material-icon-theme
+      streetsidesoftware.code-spell-checker
       vadimcn.vscode-lldb
       vscodevim.vim
     ];
@@ -26,6 +27,7 @@
       "markdownlint.config" = {
         "MD024" = false;
         "MD033" = false;
+        "MD040" = false;
       };
       "nix.enableLanguageServer" = true;
       "security.workspace.trust.enabled" = false;
