@@ -95,21 +95,6 @@
         "type": "github"
       }
     },
-    "nickpkgs": {
-      "locked": {
-        "lastModified": 1670376849,
-        "narHash": "sha256-lMwFBStmt5h/2OxV+XNkYLdo1CyF+JOXw9wd4URnlFM=",
-        "owner": "NickCao",
-        "repo": "nixpkgs",
-        "rev": "667f5b151291aada9e7c22642e1fca230d8ad5cd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NickCao",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixos-cn": {
       "inputs": {
         "flake-utils": [
@@ -204,7 +189,6 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
-        "nickpkgs": "nickpkgs",
         "nixos-cn": "nixos-cn",
         "nixpkgs": "nixpkgs",
         "nixpkgs-libtorrent-rasterbar": "nixpkgs-libtorrent-rasterbar",

@@ -6,7 +6,6 @@ nixpkgs.lib.nixosSystem {
     {
       nixpkgs.overlays = [
         inputs.deploy-rs.overlay
-        self.overlays.sway
       ];
 
       nix.registry.nixpkgs.flake = inputs.nixpkgs;
