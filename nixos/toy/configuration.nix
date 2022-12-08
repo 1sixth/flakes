@@ -36,6 +36,7 @@
         ".cache/nix-index"
         ".cache/pypoetry"
         ".config/chromium"
+        ".config/Crow Translate"
         ".config/fcitx5"
         ".config/htop"
         ".config/JetBrains"
