@@ -52,7 +52,6 @@ in
       libsForQt5.qtstyleplugin-kvantum # for qt theme
       onlyoffice-bin
       pandoc
-      pcmanfm-qt
       poetry
       python3
       rclone

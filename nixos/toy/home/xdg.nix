@@ -36,7 +36,7 @@
         "image/gif" = [ "imv-folder.desktop" ];
         "image/png" = [ "imv-folder.desktop" ];
         "image/webp" = [ "imv-folder.desktop" ];
-        "inode/directory" = [ "pcmanfm-qt.desktop" ];
+        "inode/directory" = [ "lf.desktop" ];
         "text/html" = [ "chromium.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
         "video/webm" = [ "mpv.desktop" ];
