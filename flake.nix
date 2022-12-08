@@ -28,7 +28,8 @@
         flake-utils.follows = "flake-utils";
         nixpkgs.follows = "nixpkgs";
       };
-      url = "github:nixos-cn/flakes";
+      # I'm only going to use the module provided by it.
+      url = "github:nixos-cn/flakes?rev=a69878f94a8a3241a420204d32b0439864f30ef7";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     # libtorrent-rasterbar 2.0.4
