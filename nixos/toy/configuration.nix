@@ -127,8 +127,6 @@
     };
   };
 
-  qt5.platformTheme = "qt5ct";
-
   security = {
     pam.u2f = {
       authFile = config.sops.secrets.u2f_keys.path;
