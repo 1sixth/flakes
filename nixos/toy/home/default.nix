@@ -35,6 +35,9 @@ in
     };
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
+      (pkgs.writeShellScriptBin "gnome-terminal" ''
+        foot "$@"
+        '')
       age
       cargo
       clang
