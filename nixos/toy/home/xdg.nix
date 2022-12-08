@@ -43,7 +43,7 @@
         "video/x-matroska" = [ "mpv.desktop" ];
         "x-scheme-handler/http" = [ "chromium.desktop" ];
         "x-scheme-handler/https" = [ "chromium.desktop" ];
-        "x-scheme-handler/mailto" = [ "chromium.desktop" ];
+        "x-scheme-handler/mailto" = [ "thunderbird.desktop" ];
       };
       enable = true;
     };
