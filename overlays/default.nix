@@ -1,11 +1,6 @@
 { inputs }:
 
 {
-  fcitx5 = final: prev: {
-    inherit (inputs.nixos-cn.legacyPackages.${prev.system}.re-export) fcitx5-material-color;
-    inherit (inputs.nixos-cn.legacyPackages.${prev.system}.re-export) fcitx5-pinyin-moegirl;
-    inherit (inputs.nixos-cn.legacyPackages.${prev.system}.re-export) fcitx5-pinyin-zhwiki-nickcao;
-  };
   qbittorrent-nox = final: prev: {
     # https://github.com/qbittorrent/qBittorrent/issues/15235
     qbittorrent-nox = inputs.nixpkgs-qbittorrent-nox.legacyPackages.${prev.system}.qbittorrent-nox.override {
