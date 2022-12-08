@@ -39,7 +39,6 @@
         ".config/fcitx5"
         ".config/htop"
         ".config/JetBrains"
-        ".config/pcmanfm-qt"
         ".config/rclone"
         ".config/VSCodium"
         ".config/wireshark"
