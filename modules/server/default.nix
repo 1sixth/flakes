@@ -54,9 +54,12 @@
       automatic = true;
       options = "--delete-older-than 7d";
     };
+    nrBuildUsers = 0;
     settings = {
+      auto-allocate-uids = true;
       auto-optimise-store = true;
-      experimental-features = [ "flakes" "nix-command" ];
+      experimental-features = [ "auto-allocate-uids" "cgroups" "flakes" "nix-command" ];
+      use-cgroups = true;
     };
   };
 
