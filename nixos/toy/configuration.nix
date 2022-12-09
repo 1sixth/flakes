@@ -40,6 +40,7 @@
         ".config/fcitx5"
         ".config/htop"
         ".config/JetBrains"
+        ".config/mpv/watch_later"
         ".config/rclone"
         ".config/VSCodium"
         ".config/wireshark"
