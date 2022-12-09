@@ -104,10 +104,15 @@
     wireless.iwd.enable = true;
   };
 
-  nix.settings = {
-    auto-optimise-store = true;
-    experimental-features = [ "flakes" "nix-command" ];
-    trusted-users = [ "one6th" "root" ];
+  nix = {
+    nrBuildUsers = 0;
+    settings = {
+      auto-allocate-uids = true;
+      auto-optimise-store = true;
+      experimental-features = [ "auto-allocate-uids" "cgroups" "flakes" "nix-command" ];
+      trusted-users = [ "one6th" "root" ];
+      use-cgroups = true;
+    };
   };
 
   powerManagement.cpuFreqGovernor = "schedutil";
