@@ -29,13 +29,13 @@ in
     "/nix" = {
       device = "/dev/disk/by-uuid/ae973210-fc9b-4ea2-88fe-d09f8485dab8";
       fsType = "btrfs";
-      options = mountOptions ++ [ "compress-force=zstd" "subvol=/@nix" ];
+      options = mountOptions ++ [ "compress-force=zstd" "discard=async" "subvol=/@nix" ];
     };
     "/persistent" = {
       device = "/dev/disk/by-uuid/ae973210-fc9b-4ea2-88fe-d09f8485dab8";
       fsType = "btrfs";
       neededForBoot = true;
-      options = mountOptions ++ [ "compress-force=zstd" "subvol=/@persistent" ];
+      options = mountOptions ++ [ "compress-force=zstd" "discard=async" "subvol=/@persistent" ];
     };
     "/persistent/8T" = {
       device = "/dev/disk/by-uuid/51365bbd-db45-44ca-b234-3b13d345cb3b";

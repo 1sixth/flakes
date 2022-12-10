@@ -1,5 +1,9 @@
 { modulesPath, ... }:
 
+let
+  mountOptions = [ "compress-force=zstd" "discard=async" "noatime" "space_cache=v2" ];
+in
+
 {
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
@@ -26,13 +30,13 @@
     "/nix" = {
       device = "/dev/sda3";
       fsType = "btrfs";
-      options = [ "compress-force=zstd" "noatime" "space_cache=v2" "subvol=/@nix" ];
+      options = mountOptions ++ [ "subvol=/@nix" ];
     };
     "/persistent" = {
       device = "/dev/sda3";
       fsType = "btrfs";
       neededForBoot = true;
-      options = [ "compress-force=zstd" "noatime" "space_cache=v2" "subvol=/@persistent" ];
+      options = mountOptions ++ [ "subvol=/@persistent" ];
     };
   };
 
