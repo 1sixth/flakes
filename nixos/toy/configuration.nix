@@ -153,7 +153,6 @@
   };
 
   services = {
-    fstrim.enable = true;
     getty.autologinUser = "one6th";
     journald.extraConfig = "SystemMaxUse=1G";
     logind.lidSwitch = "ignore";
