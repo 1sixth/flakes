@@ -12,7 +12,7 @@
     extensions = [
       {
         id = "dmmjlmbkigbgpnjfiimhlnbnmppjhpea";
-        updateUrl = "https://raw.githubusercontent.com/ronggang/PT-Plugin-Plus/master/update/index.xml";
+        updateUrl = "https://raw.githubusercontent.com/pt-plugins/PT-Plugin-Plus/master/update/index.xml";
       }
       {
         id= "oladmjdebphlnjjcnomfhhbfdldiimaf";
