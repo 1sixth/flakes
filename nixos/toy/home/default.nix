@@ -54,6 +54,7 @@ in
       libarchive # bsdtar is awesome
       onlyoffice-bin
       pandoc
+      poetry
       python3
       rclone
       restic
