@@ -24,16 +24,16 @@ in
       options = [ "mode=755" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/6EA8-2AF8";
+      device = "/dev/disk/by-uuid/C016-FDA5";
       fsType = "vfat";
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/c0a93644-d86c-4809-a1a5-008c27c63226";
+      device = "/dev/disk/by-uuid/2cc6c9d1-d10e-497b-b5b5-31761ab9bff2";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@nix" ];
     };
     "/persistent" = {
-      device = "/dev/disk/by-uuid/c0a93644-d86c-4809-a1a5-008c27c63226";
+      device = "/dev/disk/by-uuid/2cc6c9d1-d10e-497b-b5b5-31761ab9bff2";
       fsType = "btrfs";
       neededForBoot = true;
       options = mountOptions ++ [ "subvol=/@persistent" ];
@@ -45,5 +45,5 @@ in
     firmware = with pkgs; [ linux-firmware ];
   };
 
-  swapDevices = [{ device = "/dev/disk/by-uuid/c0c751c1-3564-4c97-8242-6e97105aa124"; }];
+  swapDevices = [{ device = "/dev/disk/by-uuid/4b7d1da3-3842-4d19-8b11-6067042ee1b4"; }];
 }
