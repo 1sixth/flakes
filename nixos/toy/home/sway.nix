@@ -37,9 +37,9 @@
           "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
           "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set +5%";
 
-          "${modifier}+F1" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
-          "${modifier}+F2" = "exec ${pkgs.playerctl}/bin/playerctl previous";
-          "${modifier}+F3" = "exec ${pkgs.playerctl}/bin/playerctl next";
+          "${modifier}+F1" = "exec ${pkgs.pamixer}/bin/pamixer -t";
+          "${modifier}+F2" = "exec ${pkgs.pamixer}/bin/pamixer -d 5";
+          "${modifier}+F3" = "exec ${pkgs.pamixer}/bin/pamixer -i 5";
 
           "${modifier}+e" = "split toggle";
           "${modifier}+t" = "layout toggle split";
