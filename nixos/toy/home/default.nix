@@ -149,7 +149,10 @@ in
     jq.enable = true;
     lf = {
       enable = true;
-      keybindings.d = "delete";
+      keybindings = {
+        "<enter>" = "open";
+        d = "delete";
+      };
       settings = {
         preview = false;
         ratios = "1:2";
