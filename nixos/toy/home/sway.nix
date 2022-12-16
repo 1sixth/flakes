@@ -41,6 +41,10 @@
           "${modifier}+F2" = "exec ${pkgs.pamixer}/bin/pamixer -d 5";
           "${modifier}+F3" = "exec ${pkgs.pamixer}/bin/pamixer -i 5";
 
+          "${modifier}+F5" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+          "${modifier}+F6" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+          "${modifier}+F7" = "exec ${pkgs.playerctl}/bin/playerctl next";
+
           "${modifier}+e" = "split toggle";
           "${modifier}+t" = "layout toggle split";
           "${modifier}+x" = "exec ${pkgs.systemd}/bin/loginctl lock-session";
