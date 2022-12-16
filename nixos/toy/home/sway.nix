@@ -51,7 +51,6 @@
 
           "${modifier}+w" = "exec chromium";
 
-          "${modifier}+Print" = "exec ${pkgs.sway-contrib.grimshot}/bin/grimshot copy area";
           "Print" = "exec ${pkgs.sway-contrib.grimshot}/bin/grimshot copy window";
         };
       menu = "${pkgs.wofi}/bin/wofi";
