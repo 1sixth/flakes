@@ -77,6 +77,7 @@
     git.enable = true;
     htop.enable = true;
     iftop.enable = true;
+    iotop.enable = true;
     mtr.enable = true;
     nano.syntaxHighlight = false;
     neovim = {
@@ -86,7 +87,6 @@
       vimAlias = true;
       withRuby = false;
     };
-    iotop.enable = true;
     starship = {
       enable = true;
       settings.add_newline = false;
