@@ -38,7 +38,6 @@ in
       (pkgs.writeShellScriptBin "gnome-terminal" ''
         foot "$@"
         '')
-      age
       cargo
       clang
       clang-tools
@@ -51,11 +50,9 @@ in
       ldns # drill is awesome
       libarchive # bsdtar is awesome
       onlyoffice-bin
-      pandoc
       poetry
       python3
       rclone
-      restic
       ripgrep
       rnix-lsp
       rsync
