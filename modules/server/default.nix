@@ -24,11 +24,7 @@
     systemPackages = with pkgs; [
       fd
       file
-      htop
-      iftop
-      iotop
       ldns
-      mtr
       nmap
       rclone
       restic
@@ -80,6 +76,9 @@
       };
     };
     git.enable = true;
+    htop.enable = true;
+    iftop.enable = true;
+    mtr.enable = true;
     nano.syntaxHighlight = false;
     neovim = {
       defaultEditor = true;
@@ -88,6 +87,7 @@
       vimAlias = true;
       withRuby = false;
     };
+    iotop.enable = true;
     starship = {
       enable = true;
       settings.add_newline = false;
