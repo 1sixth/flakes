@@ -79,6 +79,7 @@
         jou = "journalctl";
       };
     };
+    git.enable = true;
     nano.syntaxHighlight = false;
     neovim = {
       defaultEditor = true;
