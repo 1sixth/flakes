@@ -124,7 +124,9 @@
       wrapperFeatures.gtk = true;
     };
     fish.enable = true;
+    htop.enable = true;
     iftop.enable = true;
+    iotop.enable = true;
     mtr.enable = true;
     nano.syntaxHighlight = false;
     traceroute.enable = true;

@@ -46,9 +46,7 @@ in
       deploy-rs.deploy-rs
       fd
       file
-      htop
       imv
-      iotop
       jetbrains.pycharm-community
       ldns # drill is awesome
       libarchive # bsdtar is awesome
