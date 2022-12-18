@@ -27,7 +27,6 @@
       ldns
       nmap
       rclone
-      restic
       ripgrep
       rsync
       screen
