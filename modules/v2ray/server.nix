@@ -71,7 +71,7 @@
             { protocol = [ "bittorrent" ]; outboundTag = "BLOCK"; type = "field"; }
             { domain = [ "category-ads" ]; outboundTag = "BLOCK"; type = "field"; }
 
-            { domain = [ "geosite:google" ]; outboundTag = "IPv4"; type = "field"; }
+            { domain = [ "geosite:netflix" "geosite:google" "geosite:pixiv" ]; outboundTag = "IPv4"; type = "field"; }
           ];
         };
       };
