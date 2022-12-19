@@ -10,7 +10,6 @@
       llvm-vs-code-extensions.vscode-clangd
       matklad.rust-analyzer
       pkief.material-icon-theme
-      streetsidesoftware.code-spell-checker
       vadimcn.vscode-lldb
       vscodevim.vim
     ];
