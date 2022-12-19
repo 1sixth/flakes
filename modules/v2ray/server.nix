@@ -3,24 +3,13 @@
 {
   services = {
     traefik.dynamicConfigOptions.http = {
-      routers = {
-        v2ray-http2 = {
-          rule = "Host(`${config.networking.hostName}.9875321.xyz`) && Path(`/http2`)";
-          service = "v2ray-http2";
-        };
-        v2ray-websocket = {
-          rule = "Host(`${config.networking.hostName}.9875321.xyz`, `${config.networking.hostName}-cf.9875321.xyz`) && Path(`/websocket`)";
-          service = "v2ray-websocket";
-        };
+      routers.v2ray-websocket = {
+        rule = "Host(`${config.networking.hostName}.9875321.xyz`, `${config.networking.hostName}-cf.9875321.xyz`) && Path(`/websocket`)";
+        service = "v2ray-websocket";
       };
-      services = {
-        v2ray-http2.loadBalancer.servers = [{
-          url = "h2c://127.0.0.1:10000";
-        }];
-        v2ray-websocket.loadBalancer.servers = [{
-          url = "http://127.0.0.1:10001";
-        }];
-      };
+      services.v2ray-websocket.loadBalancer.servers = [{
+        url = "http://127.0.0.1:10000";
+      }];
     };
     v2ray = {
       configFile = config.sops.templates."v2ray.json".path;
@@ -34,24 +23,14 @@
     secrets."v2ray_id".restartUnits = [ "v2ray.service" ];
     templates."v2ray.json" = {
       content = builtins.toJSON {
-        inbounds = [
-          {
-            listen = "127.0.0.1";
-            port = 10000;
-            protocol = "vless";
-            settings = { clients = [{ id = config.sops.placeholder."v2ray_id"; }]; decryption = "none"; };
-            sniffing.enabled = true;
-            streamSettings = { network = "http"; httpSettings = { host = [ "${config.networking.hostName}.9875321.xyz" ]; path = "/http2"; }; };
-          }
-          {
-            listen = "127.0.0.1";
-            port = 10001;
-            protocol = "vless";
-            settings = { clients = [{ id = config.sops.placeholder."v2ray_id"; }]; decryption = "none"; };
-            sniffing.enabled = true;
-            streamSettings = { network = "ws"; wsSettings.path = "/websocket"; };
-          }
-        ];
+        inbounds = [{
+          listen = "127.0.0.1";
+          port = 10000;
+          protocol = "vless";
+          settings = { clients = [{ id = config.sops.placeholder."v2ray_id"; }]; decryption = "none"; };
+          sniffing.enabled = true;
+          streamSettings = { network = "ws"; wsSettings.path = "/websocket"; };
+        }];
         log = {
           access = "none";
           error = "none";
