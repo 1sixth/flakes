@@ -49,6 +49,7 @@ in
       jetbrains.pycharm-community
       ldns # drill is awesome
       libarchive # bsdtar is awesome
+      nali
       onlyoffice-bin
       poetry
       python3
