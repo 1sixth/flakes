@@ -146,6 +146,7 @@ in
       enable = true;
       keybindings = {
         "<enter>" = "open";
+        "<delete>" = "delete";
         d = "delete";
       };
       settings = {
