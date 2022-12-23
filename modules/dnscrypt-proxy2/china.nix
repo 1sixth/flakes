@@ -8,6 +8,7 @@
       enable = true;
       settings = {
         bootstrap_resolvers = [ "223.5.5.5:53" "119.29.29.29:53" ];
+        ipv6_servers = true;
         server_names = [ "alidns-doh" "dnspod-doh" ];
         # A manual update of stamps may be necessary in the furure,
         # see https://github.com/DNSCrypt/dnscrypt-resolvers/pull/602.
