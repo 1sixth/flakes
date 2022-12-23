@@ -22,7 +22,6 @@
       ];
     };
     systemPackages = with pkgs; [
-      gallery-dl
       smartmontools
       yt-dlp
     ];
