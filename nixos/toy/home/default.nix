@@ -50,6 +50,7 @@ in
       ldns # drill is awesome
       libarchive # bsdtar is awesome
       nali
+      obsidian
       onlyoffice-bin
       poetry
       python3

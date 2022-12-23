@@ -42,6 +42,7 @@
         ".config/JetBrains"
         ".config/mpv/watch_later"
         ".config/nali"
+        ".config/obsidian"
         ".config/rclone"
         ".config/VSCodium"
         ".config/wireshark"
@@ -116,6 +117,10 @@
       use-cgroups = true;
     };
   };
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "obsidian"
+  ];
 
   powerManagement.cpuFreqGovernor = "schedutil";
 
