@@ -44,6 +44,7 @@
           domainMatcher = "mph";
           domainStrategy = "IPIfNonMatch";
           rules = [
+            { ip = [ "127.0.0.1" ]; network = "udp"; port = 53; outboundTag = "DIRECT"; type = "field"; }
             { ip = [ "geoip:private" ]; outboundTag = "BLOCK"; type = "field"; }
 
             { protocol = [ "bittorrent" ]; outboundTag = "BLOCK"; type = "field"; }
