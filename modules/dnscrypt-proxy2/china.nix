@@ -7,9 +7,14 @@
     dnscrypt-proxy2 = {
       enable = true;
       settings = {
-        bootstrap_resolvers = [ "101.6.6.6:5353" ];
-        server_names = [ "alidns-doh" "dnspod-doh" "tuna-doh-ipv4" ];
-        static.tuna-doh-ipv4.stamp = "sdns://AgEAAAAAAAAACTEwMS42LjYuNiBZPi1Jp0AjVVUmrvm3QisZ5bixZzkbbe5e0pKxyiOnTA4xMDEuNi42LjY6ODQ0MwovZG5zLXF1ZXJ5";
+        bootstrap_resolvers = [ "223.5.5.5:53" "119.29.29.29:53" ];
+        server_names = [ "alidns-doh" "dnspod-doh" ];
+        # A manual update of stamps may be necessary in the furure,
+        # see https://github.com/DNSCrypt/dnscrypt-resolvers/pull/602.
+        static = {
+          alidns-doh.stamp = "sdns://AgAAAAAAAAAACTIyMy41LjUuNSAUZf-XFWhwvjDwNPWQzx8E3VDwpSDoT4pSfpwaLofrgA5kbnMuYWxpZG5zLmNvbQovZG5zLXF1ZXJ5";
+          dnspod-doh.stamp = "sdns://AgAAAAAAAAAAACDBlAfoWsQD52fP2oOBh_Ag-lY6yBaIr1EMIqd559RaVgdkb2gucHViCi9kbnMtcXVlcnk";
+        };
       };
       upstreamDefaults = false;
     };
