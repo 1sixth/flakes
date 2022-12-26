@@ -185,7 +185,10 @@
   };
 
   sops = {
-    age.keyFile = "/var/lib/sops.key";
+    age = {
+      keyFile = "/var/lib/sops.key";
+      sshKeyPaths = [ ];
+    };
     defaultSopsFile = ./secrets.yaml;
     secrets = {
       password_root.neededForUsers = true;
