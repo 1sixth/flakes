@@ -6,6 +6,13 @@ let
     url = "https://i.pximg.net/img-original/img/2017/04/21/18/35/04/62506385_p0.jpg";
     sha256 = "sha256-B1/J9ReWB0AD2pDxVsRcJ/naFOX+Tx4gDihUp1QLsvA=";
   };
+  wallpaper-blurred = pkgs.runCommand "wallpaper-blurred.png"
+    {
+      nativeBuildInputs = with pkgs; [ imagemagick ];
+    }
+    ''
+      convert -blur 7x5 ${wallpaper} $out
+    '';
 in
 
 {
@@ -37,7 +44,7 @@ in
     packages = with pkgs; [
       (pkgs.writeShellScriptBin "gnome-terminal" ''
         foot "$@"
-        '')
+      '')
       cargo
       clang
       clang-tools
@@ -190,12 +197,8 @@ in
       settings.add_newline = false;
     };
     swaylock.settings = {
-      clock = true;
       daemonize = true;
-      effect-blur = "7x5";
-      effect-vignette = "0.5:0.5";
-      grace = 3;
-      image = wallpaper.outPath;
+      image = wallpaper-blurred.outPath;
       indicator-caps-lock = true;
       scaling = "fill";
       show-failed-attempts = true;
@@ -225,7 +228,7 @@ in
     swayidle = {
       enable = true;
       events = [{
-        command = "${pkgs.swaylock-effects}/bin/swaylock";
+        command = "${pkgs.swaylock}/bin/swaylock";
         event = "lock";
       }];
       timeouts = [
