@@ -54,6 +54,7 @@
         ".local/share/TelegramDesktop"
         ".local/share/virtualenv"
         ".local/state/gnupg"
+        ".local/state/nvim"
         ".local/state/wireplumber"
         ".ssh"
         ".thunderbird"
