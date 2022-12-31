@@ -4,9 +4,7 @@
   programs.neovim = {
     enable = true;
     extraConfig = ''
-      lua << EOF
-      ${builtins.readFile ./res/neovim.lua}
-      EOF
+      :source ${./res/neovim.lua}
     '';
     plugins = with pkgs.vimPlugins; [
       lualine-nvim
