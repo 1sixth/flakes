@@ -10,8 +10,8 @@
     '';
     plugins = with pkgs.vimPlugins; [
       lualine-nvim
+      nvim-lastplace
       papercolor-theme
-      vim-lastplace
       which-key-nvim
       (nvim-treesitter.withPlugins (
           plugins: with plugins; [

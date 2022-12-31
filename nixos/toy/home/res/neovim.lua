@@ -11,7 +11,7 @@ vim.opt.smartindent = true
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 
-vim.cmd([[ colorscheme PaperColor ]])
+vim.cmd.colorscheme('PaperColor')
 
 require('nvim-treesitter.configs').setup {
   highlight = {
@@ -31,5 +31,9 @@ require('lualine').setup {
     theme = 'PaperColor',
   }
 }
+
+require('nvim-lastplace').setup {
+}
+
 require("which-key").setup {
 }
