@@ -212,9 +212,4 @@
       root.passwordFile = config.sops.secrets.password_root.path;
     };
   };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
 }
