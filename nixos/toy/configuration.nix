@@ -131,7 +131,10 @@
       enable = true;
       wrapperFeatures.gtk = true;
     };
-    fish.enable = true;
+    fish = {
+      enable = true;
+      useBabelfish = true;
+    };
     htop.enable = true;
     iftop.enable = true;
     iotop.enable = true;

@@ -73,6 +73,7 @@
 
         jou = "journalctl";
       };
+      useBabelfish = true;
     };
     git.enable = true;
     htop.enable = true;
