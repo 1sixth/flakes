@@ -122,6 +122,8 @@ in
 
         t = "crow -s en -t zh-CN";
 
+        deploy = "deploy --skip-checks";
+
         nixos-rebuild = "nixos-rebuild --use-remote-sudo --verbose";
       };
     };
