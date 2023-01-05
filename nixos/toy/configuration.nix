@@ -13,7 +13,7 @@
       # https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size#non-bsd
       "net.core.rmem_max" = 2500000;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [ "acpi_backlight=native" ];
     supportedFilesystems = [ "ntfs" ];
   };
