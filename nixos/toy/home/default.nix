@@ -46,7 +46,7 @@ in
         foot "$@"
       '')
       cargo
-      clang
+      clang_14
       clang-tools
       crow-translate
       deploy-rs.deploy-rs
