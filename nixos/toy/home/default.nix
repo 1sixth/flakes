@@ -126,6 +126,8 @@ in
         deploy = "deploy --skip-checks";
 
         nixos-rebuild = "nixos-rebuild --use-remote-sudo --verbose";
+
+        nwdrc = "nix why-depends /run/current-system/";
       };
     };
     git = {
