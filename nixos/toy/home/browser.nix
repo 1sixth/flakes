@@ -14,10 +14,6 @@
         id = "dmmjlmbkigbgpnjfiimhlnbnmppjhpea";
         updateUrl = "https://raw.githubusercontent.com/pt-plugins/PT-Plugin-Plus/master/update/index.xml";
       }
-      {
-        id= "oladmjdebphlnjjcnomfhhbfdldiimaf";
-        updateUrl = "https://raw.githubusercontent.com/libredirect/libredirect/master/src/updates/updates.xml";
-      }
     ];
   };
 }

@@ -143,7 +143,7 @@
     traceroute.enable = true;
     wireshark = {
       enable = true;
-      package = pkgs.wireshark-qt;
+      package = pkgs.wireshark;
     };
   };
 
@@ -161,7 +161,6 @@
       "vTrus ECC Root CA"
       "vTrus Root CA"
     ];
-    rtkit.enable = true;
     sudo.extraConfig = ''Defaults lecture="never"'';
   };
 
@@ -170,9 +169,7 @@
     journald.extraConfig = "SystemMaxUse=1G";
     logind.lidSwitch = "ignore";
     pipewire = {
-      alsa.enable = true;
       enable = true;
-      jack.enable = true;
       pulse.enable = true;
     };
     tlp.enable = true;

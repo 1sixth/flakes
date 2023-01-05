@@ -3,15 +3,14 @@
 {
   xdg = {
     configFile = {
-      # https://github.com/VSCodium/vscodium/blob/master/DOCS.md#extensions-marketplace
+      # https://github.com/VSCodium/vscodium/blob/master/DOCS.md#how-to-use-a-different-extension-gallery
       "VSCodium/product.json".text = ''
         {
           "extensionsGallery": {
             "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-            "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
             "itemUrl": "https://marketplace.visualstudio.com/items",
+            "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
             "controlUrl": "",
-            "recommendationsUrl": ""
           }
         }
       '';
@@ -51,7 +50,7 @@
       createDirectories = true;
       desktop = config.xdg.userDirs.download;
       documents = config.xdg.userDirs.download;
-      download = "$HOME/Download";
+      download = "${config.home.homeDirectory}/Download";
       enable = true;
       music = config.xdg.userDirs.download;
       pictures = "${config.xdg.userDirs.download}/Picture";
