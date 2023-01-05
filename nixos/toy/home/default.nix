@@ -48,7 +48,6 @@ in
       cargo
       clang_14
       clang-tools
-      crow-translate
       deploy-rs.deploy-rs
       fd
       file
@@ -71,6 +70,7 @@ in
       sshfs
       tdesktop
       thunderbird
+      translate-shell
       unar # to handle some non UTF-8 encoded archives
       wl-clipboard
       xdg-utils
@@ -120,7 +120,8 @@ in
         jou = "journalctl";
         jouu = "journalctl --user";
 
-        t = "crow -s en -t zh-CN";
+        t = "trans :zh-CN";
+        ts = "trans :zh-CN -speak";
 
         deploy = "deploy --skip-checks";
 
