@@ -80,8 +80,6 @@ in
     sessionVariables = {
       fish_greeting = "";
 
-      EDITOR = "nvim";
-
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
 
       # PyCharm will break without this.

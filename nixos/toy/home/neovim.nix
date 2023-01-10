@@ -2,6 +2,7 @@
 
 {
   programs.neovim = {
+    defaultEditor = true;
     enable = true;
     extraConfig = ''
       :source ${./res/neovim.lua}
