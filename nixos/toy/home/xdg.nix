@@ -38,6 +38,7 @@
         "inode/directory" = [ "lf.desktop" ];
         "text/html" = [ "chromium.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
+        "video/quicktime" = [ "mpv.desktop" ];
         "video/webm" = [ "mpv.desktop" ];
         "video/x-matroska" = [ "mpv.desktop" ];
         "x-scheme-handler/http" = [ "chromium.desktop" ];
