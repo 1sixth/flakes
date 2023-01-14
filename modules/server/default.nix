@@ -55,6 +55,7 @@
       auto-allocate-uids = true;
       auto-optimise-store = true;
       experimental-features = [ "auto-allocate-uids" "cgroups" "flakes" "nix-command" ];
+      nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
       use-cgroups = true;
     };
   };
