@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -109,6 +109,7 @@
 
   nix = {
     nrBuildUsers = 0;
+    registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
       auto-allocate-uids = true;
       auto-optimise-store = true;
@@ -118,9 +119,14 @@
     };
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "obsidian"
-  ];
+  nixpkgs = {
+    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "obsidian"
+    ];
+    overlays = [
+      inputs.deploy-rs.overlay
+    ];
+  };
 
   powerManagement.cpuFreqGovernor = "schedutil";
 

@@ -3,7 +3,6 @@
 nixpkgs.lib.nixosSystem {
   inherit system;
   modules = [
-    { nix.registry.nixpkgs.flake = inputs.nixpkgs; }
     inputs.impermanence.nixosModules.impermanence
     inputs.nixos-cn.nixosModules.nixos-cn
     inputs.sops-nix.nixosModules.sops
@@ -13,4 +12,5 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.v2ray.server
     ./configuration.nix
   ];
+  specialArgs = { inherit inputs self; };
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, self, pkgs, lib, ... }:
 
 {
   imports = [
@@ -28,6 +28,8 @@
   };
 
   networking.hostName = "nas";
+
+  nixpkgs.overlays = [ self.overlays.qbittorrent-nox ];
 
   services.btrfs.autoScrub = {
     enable = true;

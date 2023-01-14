@@ -3,11 +3,6 @@
 nixpkgs.lib.nixosSystem {
   inherit system;
   modules = [
-    {
-      nixpkgs.overlays = [ self.overlays.qbittorrent-nox ];
-
-      nix.registry.nixpkgs.flake = inputs.nixpkgs;
-    }
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.dnscrypt-proxy2.china
@@ -16,4 +11,5 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.v2ray.client
     ./configuration.nix
   ];
+  specialArgs = { inherit inputs self; };
 }

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
   boot = {
@@ -50,6 +50,7 @@
       options = "--delete-older-than 7d";
     };
     nrBuildUsers = 0;
+    registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
       auto-allocate-uids = true;
       auto-optimise-store = true;
