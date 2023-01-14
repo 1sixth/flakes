@@ -4,8 +4,8 @@
   wayland.windowManager.sway = {
     config = {
       assigns = {
-        "2" = [{ app_id = "firefox"; } { class = "Chromium-browser"; }];
-        "3" = [{ app_id = "mpv"; } { app_id = "imv"; } ];
+        "2" = [{ class = "Chromium-browser"; }];
+        "3" = [{ app_id = "mpv"; } { app_id = "imv"; }];
         "4" = [{ app_id = "thunderbird"; }];
       };
       bars = [ ];
