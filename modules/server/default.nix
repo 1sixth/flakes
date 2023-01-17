@@ -113,8 +113,10 @@
         path = "/etc/ssh/ssh_host_ed25519_key";
         type = "ed25519";
       }];
-      kbdInteractiveAuthentication = false;
-      passwordAuthentication = false;
+      settings = {
+        kbdInteractiveAuthentication = false;
+        passwordAuthentication = false;
+      };
     };
     traefik = {
       dynamicConfigOptions = {
