@@ -157,8 +157,11 @@ in
     lf = {
       enable = true;
       keybindings = {
-        "<enter>" = "open";
+        "<c-c>" = "copy";
+        "<c-x>" = "cut";
+        "<c-v>" = "paste";
         "<delete>" = "delete";
+        "<enter>" = "open";
         d = "delete";
       };
       settings = {
