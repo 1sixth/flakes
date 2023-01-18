@@ -49,7 +49,6 @@
         ".local/share/fish"
         ".local/share/JetBrains"
         ".local/share/nali"
-        ".local/share/nvim"
         ".local/share/TelegramDesktop"
         ".local/share/virtualenv"
         ".local/state/gnupg"
