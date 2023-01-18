@@ -5,7 +5,7 @@
     config = {
       assigns = {
         "2" = [{ class = "Chromium-browser"; }];
-        "3" = [{ app_id = "mpv"; } { app_id = "imv"; }];
+        "3" = [{ app_id = "imv"; } { app_id = "mpv"; }];
         "4" = [{ app_id = "thunderbird"; }];
       };
       bars = [ ];

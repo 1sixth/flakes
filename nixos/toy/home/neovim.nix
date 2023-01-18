@@ -8,10 +8,6 @@
       :source ${./res/neovim.lua}
     '';
     plugins = with pkgs.vimPlugins; [
-      lualine-nvim
-      nvim-lastplace
-      papercolor-theme
-      which-key-nvim
       (nvim-treesitter.withPlugins (
           plugins: with plugins; [
             tree-sitter-c
@@ -26,6 +22,10 @@
             tree-sitter-yaml
           ]
       ))
+      lualine-nvim
+      nvim-lastplace
+      papercolor-theme
+      which-key-nvim
     ];
     viAlias = true;
     vimAlias = true;
