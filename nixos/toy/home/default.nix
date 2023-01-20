@@ -53,8 +53,7 @@ in
       file
       imv
       jetbrains.pycharm-community
-      ldns # drill is awesome
-      libarchive # bsdtar is awesome
+      ldns
       nali
       obsidian
       onlyoffice-bin
@@ -71,7 +70,7 @@ in
       tdesktop
       thunderbird
       translate-shell
-      unar # to handle some non UTF-8 encoded archives
+      unar
       wl-clipboard
       xdg-utils
       yt-dlp
