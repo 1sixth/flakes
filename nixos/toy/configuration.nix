@@ -45,6 +45,7 @@
         ".config/rclone"
         ".config/VSCodium"
         ".config/wireshark"
+        ".local/share/cargo"
         ".local/share/fcitx5"
         ".local/share/fish"
         ".local/share/JetBrains"
