@@ -19,10 +19,9 @@
   };
 
   home.pointerCursor = {
-    package = pkgs.vimix-icon-theme;
+    package = pkgs.phinger-cursors;
     gtk.enable = true;
-    name = "Vimix";
-    size = 24;
+    name = "phinger-cursors";
   };
 
   # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland.
