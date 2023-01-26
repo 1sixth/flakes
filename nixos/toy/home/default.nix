@@ -96,6 +96,7 @@ in
   };
 
   programs = {
+    aria2.enable = true;
     bash = {
       enable = true;
       historyFile = "${config.xdg.stateHome}/bash_history";
