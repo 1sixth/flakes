@@ -132,6 +132,7 @@
   powerManagement.cpuFreqGovernor = "schedutil";
 
   programs = {
+    adb.enable = true;
     command-not-found.enable = false;
     sway = {
       enable = true;
@@ -211,7 +212,7 @@
     users = {
       one6th = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "wireshark" ];
+        extraGroups = ["adbusers" "wheel" "wireshark" ];
         passwordFile = config.sops.secrets.password_one6th.path;
         shell = pkgs.fish;
       };
