@@ -22,6 +22,7 @@
             tree-sitter-yaml
           ]
       ))
+      editorconfig-nvim
       lualine-nvim
       nvim-lastplace
       papercolor-theme

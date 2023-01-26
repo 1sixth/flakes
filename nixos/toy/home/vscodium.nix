@@ -6,6 +6,7 @@
     extensions = with pkgs.vscode-extensions; [
       davidanson.vscode-markdownlint
       dotjoshjohnson.xml
+      editorconfig.editorconfig
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
       matklad.rust-analyzer
