@@ -10,7 +10,9 @@
     plugins = with pkgs.vimPlugins; [
       (nvim-treesitter.withPlugins (
           plugins: with plugins; [
+            tree-sitter-bash
             tree-sitter-c
+            tree-sitter-fish
             tree-sitter-html
             tree-sitter-lua
             tree-sitter-json
