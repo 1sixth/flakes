@@ -23,12 +23,6 @@
       repository = "rclone:restic:Restic";
       timerConfig.OnCalendar = "*:05";
     };
-    vaultwarden.backupDir = "/var/lib/backup/vaultwarden/";
-  };
-
-  systemd = {
-    services.backup-vaultwarden.environment.DATA_FOLDER = lib.mkForce "/var/lib/vaultwarden";
-    timers.backup-vaultwarden.timerConfig.OnCalendar = "hourly";
   };
 
   sops.secrets.restic = { };
