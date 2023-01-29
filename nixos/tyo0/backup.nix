@@ -2,6 +2,12 @@
 
 {
   services = {
+    postgresqlBackup = {
+      compression = "zstd";
+      enable = true;
+      location = "/var/lib/backup/postgresql";
+      startAt = "hourly";
+    };
     restic.backups.main = {
       initialize = true;
       passwordFile = config.sops.secrets.restic.path;

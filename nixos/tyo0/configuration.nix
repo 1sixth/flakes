@@ -4,6 +4,7 @@
   imports = [
     ./backup.nix
     ./hardware.nix
+    ./postgresql.nix
     ./vaultwarden.nix
   ];
 
