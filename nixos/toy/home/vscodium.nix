@@ -18,6 +18,7 @@
     userSettings = {
       "editor.bracketPairColorization.enabled" = true;
       "editor.fontFamily" = "monospace";
+      "editor.fontLigatures" = true;
       "editor.fontSize" = 20;
       "extensions.autoCheckUpdates" = false;
       "extensions.autoUpdate" = false;
