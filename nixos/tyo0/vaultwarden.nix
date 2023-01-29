@@ -3,20 +3,11 @@
 {
   services = {
     traefik.dynamicConfigOptions.http = {
-      routers = {
-        vaultwarden = {
-          rule = "Host(`vault.shinta.ro`)";
-          service = "vaultwarden";
-        };
-        vaultwarden-websocket = {
-          rule = "Host(`vault.shinta.ro`) && Path(`/notifications/hub`)";
-          service = "vaultwarden-websocket";
-        };
+      routers.vaultwarden = {
+        rule = "Host(`vault.shinta.ro`)";
+        service = "vaultwarden";
       };
-      services = {
-        vaultwarden.loadBalancer.servers = [{ url = "http://127.0.0.1:8000"; }];
-        vaultwarden-websocket.loadBalancer.servers = [{ url = "http://127.0.0.1:3012"; }];
-      };
+      services.vaultwarden.loadBalancer.servers = [{ url = "http://127.0.0.1:8000"; }];
     };
     vaultwarden = {
       config.dataFolder = "/var/lib/vaultwarden";
