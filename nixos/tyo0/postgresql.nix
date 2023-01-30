@@ -3,7 +3,9 @@
 {
   services.postgresql = {
     enable = true;
-    package = pkgs.postgresql_15;
+    # Unfortunately, ensureDatabases isn't powerful enough.
+    # Wait until #203474 is merged.
+    package = pkgs.postgresql_14;
     settings = {
       # https://pgtune.leopard.in.ua/
       max_connections = 200;
