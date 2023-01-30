@@ -4,6 +4,7 @@
   imports = [
     ./backup.nix
     ./hardware.nix
+    ./miniflux.nix
     ./postgresql.nix
     ./vaultwarden.nix
   ];
