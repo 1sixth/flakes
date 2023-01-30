@@ -13,6 +13,7 @@
       passwordFile = config.sops.secrets.restic.path;
       paths = builtins.map (x: "/var/lib/" + x) [
         "backup"
+        "vaultwarden"
       ];
       pruneOpts = [
         "--keep-hourly 24"
