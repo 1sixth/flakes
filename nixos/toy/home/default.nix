@@ -119,6 +119,8 @@ in
         nixos-rebuild = "nixos-rebuild --use-remote-sudo --verbose";
 
         nwdrc = "nix why-depends /run/current-system/";
+
+        mpvc = "mpv --ytdl-raw-options=cookies-from-browser=chromium";
       };
     };
     git = {
