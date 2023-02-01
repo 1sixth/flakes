@@ -178,6 +178,9 @@ in
     ssh = {
       compression = true;
       enable = true;
+      # https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
+      # https://lists.gnupg.org/pipermail/gnupg-users/2017-June/058581.html
+      extraConfig = ''Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"'';
       matchBlocks = {
         "*" = {
           extraOptions = {
