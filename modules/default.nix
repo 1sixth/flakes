@@ -8,6 +8,7 @@
   hath = import ./hath.nix;
   qbittorrent-nox = import ./qbittorrent-nox.nix;
   server = import ./server;
+  stress-ng = import ./stress-ng.nix;
   v2ray = {
     server = import ./v2ray/server.nix;
     client = import ./v2ray/client.nix;
