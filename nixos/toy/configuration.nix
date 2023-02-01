@@ -183,6 +183,7 @@
       pulse.enable = true;
     };
     tlp.enable = true;
+    upower.enable = true;
   };
 
   system.stateVersion = "22.05";
