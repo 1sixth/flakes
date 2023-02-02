@@ -19,9 +19,10 @@
   };
 
   home.pointerCursor = {
-    package = pkgs.phinger-cursors;
     gtk.enable = true;
     name = "phinger-cursors";
+    package = pkgs.phinger-cursors;
+    size = 24;
   };
 
   # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland.
