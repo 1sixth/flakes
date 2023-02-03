@@ -41,7 +41,6 @@
         ".config/JetBrains"
         ".config/mpv/watch_later"
         ".config/nali"
-        ".config/obsidian"
         ".config/rclone"
         ".config/VSCodium"
         ".config/wireshark"
@@ -123,14 +122,9 @@
     };
   };
 
-  nixpkgs = {
-    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "obsidian"
-    ];
-    overlays = [
-      inputs.deploy-rs.overlay
-    ];
-  };
+  nixpkgs.overlays = [
+    inputs.deploy-rs.overlay
+  ];
 
   powerManagement.cpuFreqGovernor = "schedutil";
 

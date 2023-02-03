@@ -48,7 +48,6 @@ in
       jetbrains.pycharm-community
       ldns
       nali
-      obsidian
       onlyoffice-bin
       poetry
       python3
