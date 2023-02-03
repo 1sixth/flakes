@@ -26,8 +26,7 @@
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
       "markdownlint.config" = {
-        "MD024" = false;
-        "MD033" = false;
+        "MD028" = false;
         "MD040" = false;
       };
       "nix.enableLanguageServer" = true;
