@@ -27,7 +27,7 @@
       editorconfig-nvim
       lualine-nvim
       nvim-lastplace
-      papercolor-theme
+      nvim-solarized-lua
       which-key-nvim
     ];
     viAlias = true;

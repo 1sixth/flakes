@@ -19,6 +19,8 @@
         layer=overlay
         show=drun
       '';
+      # https://github.com/fish-shell/fish-shell/blob/2dc1150e35a42d3ec34f09bb12bffe74af8039a1/share/tools/web_config/themes/Solarized%20Light.theme
+      "fish/conf.d/theme.fish".source = ./res/theme.fish;
       # Based on https://github.com/rydesun/dotfiles/tree/master/.config/fontconfig/conf.d.
       "fontconfig/conf.d/50-generic.conf".source = ./res/fontconfig/50-generic.conf;
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;

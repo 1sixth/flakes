@@ -11,7 +11,7 @@ vim.opt.smartindent = true
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 
-vim.cmd.colorscheme('PaperColor')
+vim.cmd.colorscheme('solarized')
 
 require('nvim-treesitter.configs').setup {
   highlight = {
