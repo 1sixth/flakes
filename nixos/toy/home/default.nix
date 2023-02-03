@@ -97,7 +97,10 @@ in
     fish = {
       enable = true;
       # https://github.com/swaywm/sway/wiki#login-managers
-      interactiveShellInit = "[ (tty) = /dev/tty1 ] && exec sway";
+      interactiveShellInit = ''
+        [ (tty) = /dev/tty1 ] && exec sway
+        set -gx GPG_TTY (tty)
+      '';
       shellAliases = {
         l = "ll -a";
         ll = "ls -l -g --time-style=long-iso";
@@ -212,6 +215,7 @@ in
   services = {
     gpg-agent = {
       enable = true;
+      enableFishIntegration = false;
       enableSshSupport = true;
       pinentryFlavor = "curses";
       sshKeys = [ "56F5EC024AAE01E143592C7B21F60902660B203D" ];
