@@ -12,7 +12,7 @@
       }];
     };
     v2ray = {
-      configFile = config.sops.templates."v2ray.json".path;
+      configFile = "/run/credentials/v2ray.service/v2ray.json";
       enable = true;
     };
   };
@@ -21,40 +21,39 @@
     # V2ray won't restart if it's just the template that changes. And
     # there is no option to change this behavior, which is a bit inconvenient.
     secrets."v2ray_id".restartUnits = [ "v2ray.service" ];
-    templates."v2ray.json" = {
-      content = builtins.toJSON {
-        inbounds = [{
-          listen = "127.0.0.1";
-          port = 10000;
-          protocol = "vless";
-          settings = { clients = [{ id = config.sops.placeholder."v2ray_id"; }]; decryption = "none"; };
-          sniffing.enabled = true;
-          streamSettings = { network = "ws"; wsSettings.path = "/websocket"; };
-        }];
-        log = {
-          access = "none";
-          error = "none";
-        };
-        outbounds = [
-          { protocol = "freedom"; tag = "DIRECT"; }
-          { protocol = "freedom"; settings.domainStrategy = "UseIPv4"; tag = "IPv4"; }
-          { protocol = "blackhole"; tag = "BLOCK"; }
-        ];
-        routing = {
-          domainMatcher = "mph";
-          domainStrategy = "IPIfNonMatch";
-          rules = [
-            { ip = [ "127.0.0.1" ]; network = "udp"; port = 53; outboundTag = "DIRECT"; type = "field"; }
-            { ip = [ "geoip:private" ]; outboundTag = "BLOCK"; type = "field"; }
-
-            { protocol = [ "bittorrent" ]; outboundTag = "BLOCK"; type = "field"; }
-            { domain = [ "category-ads" ]; outboundTag = "BLOCK"; type = "field"; }
-
-            { domain = [ "geosite:netflix" "geosite:google" "geosite:pixiv" ]; outboundTag = "IPv4"; type = "field"; }
-          ];
-        };
+    templates."v2ray.json".content = builtins.toJSON {
+      inbounds = [{
+        listen = "127.0.0.1";
+        port = 10000;
+        protocol = "vless";
+        settings = { clients = [{ id = config.sops.placeholder."v2ray_id"; }]; decryption = "none"; };
+        sniffing.enabled = true;
+        streamSettings = { network = "ws"; wsSettings.path = "/websocket"; };
+      }];
+      log = {
+        access = "none";
+        error = "none";
       };
-      mode = "0444";
+      outbounds = [
+        { protocol = "freedom"; tag = "DIRECT"; }
+        { protocol = "freedom"; settings.domainStrategy = "UseIPv4"; tag = "IPv4"; }
+        { protocol = "blackhole"; tag = "BLOCK"; }
+      ];
+      routing = {
+        domainMatcher = "mph";
+        domainStrategy = "IPIfNonMatch";
+        rules = [
+          { ip = [ "127.0.0.1" ]; network = "udp"; port = 53; outboundTag = "DIRECT"; type = "field"; }
+          { ip = [ "geoip:private" ]; outboundTag = "BLOCK"; type = "field"; }
+
+          { protocol = [ "bittorrent" ]; outboundTag = "BLOCK"; type = "field"; }
+          { domain = [ "category-ads" ]; outboundTag = "BLOCK"; type = "field"; }
+
+          { domain = [ "geosite:netflix" "geosite:google" "geosite:pixiv" ]; outboundTag = "IPv4"; type = "field"; }
+        ];
+      };
     };
   };
+
+  systemd.services.v2ray.serviceConfig.LoadCredential = "v2ray.json:${config.sops.templates."v2ray.json".path}";
 }
