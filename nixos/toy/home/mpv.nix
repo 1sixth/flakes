@@ -2,7 +2,7 @@
 
 {
   programs.mpv = {
-    # https://github.com/mpv-player/mpv/blob/master/etc/input.conf
+    # https://github.com/mpv-player/mpv/blob/9cddd73f67f11dba2f2921124e2c39c77af01651/etc/input.conf
     bindings = {
       MBTN_LEFT_DBL = "cycle fullscreen"; # toggle fullscreen
       MBTN_RIGHT = "cycle pause"; # toggle pause/playback mode

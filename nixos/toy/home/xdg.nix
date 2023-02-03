@@ -3,7 +3,7 @@
 {
   xdg = {
     configFile = {
-      # https://github.com/VSCodium/vscodium/blob/master/DOCS.md#how-to-use-a-different-extension-gallery
+      # https://github.com/VSCodium/vscodium/blob/f73d7b632b48851bd4c0ae27794fc4e84b6f3d1d/DOCS.md#how-to-use-a-different-extension-gallery
       "VSCodium/product.json".text = ''
         {
           "extensionsGallery": {
@@ -21,7 +21,7 @@
       '';
       # https://github.com/fish-shell/fish-shell/blob/2dc1150e35a42d3ec34f09bb12bffe74af8039a1/share/tools/web_config/themes/Solarized%20Light.theme
       "fish/conf.d/theme.fish".source = ./res/theme.fish;
-      # Based on https://github.com/rydesun/dotfiles/tree/master/.config/fontconfig/conf.d.
+      # https://github.com/rydesun/dotfiles/tree/ef1f12bac03ce724f3c90380140dc96abf604478/.config/fontconfig/conf.d
       "fontconfig/conf.d/50-generic.conf".source = ./res/fontconfig/50-generic.conf;
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;

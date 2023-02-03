@@ -255,7 +255,7 @@ in
   };
 
   systemd.user = {
-    # https://github.com/emersion/mako/blob/master/contrib/systemd/mako.service
+    # https://github.com/emersion/mako/blob/6c955b74a74a3eb7eed6566ddcec125bc3a55c8c/contrib/systemd/mako.service
     services.mako = {
       Install.WantedBy = [ "graphical-session.target" ];
       Service = {
