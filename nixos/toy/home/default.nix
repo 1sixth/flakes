@@ -48,6 +48,7 @@ in
       jetbrains.pycharm-community
       ldns
       nali
+      okular
       onlyoffice-bin
       poetry
       python3

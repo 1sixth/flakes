@@ -32,7 +32,7 @@
     mimeApps = {
       defaultApplications = {
         "audio/flac" = [ "mpv.desktop" ];
-        "application/pdf" = [ "chromium.desktop" ];
+        "application/pdf" = [ "okularApplication_pdf.desktop" ];
         "image/jpeg" = [ "imv-folder.desktop" ];
         "image/gif" = [ "imv-folder.desktop" ];
         "image/png" = [ "imv-folder.desktop" ];
