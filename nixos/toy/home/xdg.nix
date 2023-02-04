@@ -33,18 +33,18 @@
       defaultApplications = {
         "audio/flac" = [ "mpv.desktop" ];
         "application/pdf" = [ "okularApplication_pdf.desktop" ];
-        "image/jpeg" = [ "imv-folder.desktop" ];
-        "image/gif" = [ "imv-folder.desktop" ];
-        "image/png" = [ "imv-folder.desktop" ];
-        "image/webp" = [ "imv-folder.desktop" ];
+        "image/jpeg" = [ "imv-dir.desktop" ];
+        "image/gif" = [ "imv-dir.desktop" ];
+        "image/png" = [ "imv-dir.desktop" ];
+        "image/webp" = [ "imv-dir.desktop" ];
         "inode/directory" = [ "lf.desktop" ];
-        "text/html" = [ "chromium.desktop" ];
+        "text/html" = [ "chromium-browser.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
         "video/quicktime" = [ "mpv.desktop" ];
         "video/webm" = [ "mpv.desktop" ];
         "video/x-matroska" = [ "mpv.desktop" ];
-        "x-scheme-handler/http" = [ "chromium.desktop" ];
-        "x-scheme-handler/https" = [ "chromium.desktop" ];
+        "x-scheme-handler/http" = [ "chromium-browser.desktop" ];
+        "x-scheme-handler/https" = [ "chromium-browser.desktop" ];
         "x-scheme-handler/mailto" = [ "thunderbird.desktop" ];
       };
       enable = true;
