@@ -22,6 +22,7 @@
       "editor.fontSize" = 20;
       "extensions.autoCheckUpdates" = false;
       "extensions.autoUpdate" = false;
+      "extensions.ignoreRecommendations" = true;
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
