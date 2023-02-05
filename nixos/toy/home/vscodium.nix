@@ -27,6 +27,7 @@
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
       "markdownlint.config" = {
+        "MD024"."siblings_only" = true;
         "MD028" = false;
         "MD040" = false;
       };
