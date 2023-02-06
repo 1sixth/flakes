@@ -79,10 +79,6 @@ in
 
       CARGO_HOME = "${config.xdg.dataHome}/cargo";
       RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-
-      # https://gist.github.com/foutrelis/14e339596b89813aa9c37fd1b4e5d9d5
-      GOOGLE_DEFAULT_CLIENT_ID = "77185425430.apps.googleusercontent.com";
-      GOOGLE_DEFAULT_CLIENT_SECRET = "OTJgUOQcT7lO7GsGZq2G4IlT";
     };
     stateVersion = "22.05";
     username = "one6th";
@@ -123,7 +119,7 @@ in
 
         nwdrc = "nix why-depends /run/current-system/";
 
-        mpvc = "mpv --ytdl-raw-options=cookies-from-browser=chromium";
+        mpvc = "mpv --ytdl-raw-options=cookies-from-browser=firefox";
       };
     };
     git = {

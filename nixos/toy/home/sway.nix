@@ -4,7 +4,7 @@
   wayland.windowManager.sway = {
     config = {
       assigns = {
-        "2" = [{ class = "Chromium-browser"; }];
+        "2" = [{ app_id = "firefox"; }];
         "3" = [{ app_id = "imv"; } { app_id = "mpv"; }];
         "4" = [{ app_id = "thunderbird"; }];
       };
@@ -49,7 +49,7 @@
           "${modifier}+t" = "layout toggle split";
           "${modifier}+x" = "exec ${pkgs.systemd}/bin/loginctl lock-session";
 
-          "${modifier}+w" = "exec chromium";
+          "${modifier}+w" = "exec firefox";
 
           "Print" = "exec ${pkgs.sway-contrib.grimshot}/bin/grimshot copy window";
         };
