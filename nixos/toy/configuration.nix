@@ -14,7 +14,6 @@
       "net.core.rmem_max" = 2500000;
     };
     kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = [ "acpi_backlight=native" ];
     supportedFilesystems = [ "ntfs" ];
   };
 
