@@ -27,7 +27,6 @@
           SponsoredPocket = false;
           Snippets = false;
         };
-        HardwareAcceleration = true;
         Homepage.StartPage = "previous-session";
         NetworkPrediction = false;
         NoDefaultBookmarks = true;
@@ -113,9 +112,7 @@
           Downloads = true;
           OfflineApps = true;
         };
-        SearchBar = "unified";
         SearchSuggestEnabled = false;
-        ShowHomeButton = false;
         UserMessaging = {
           WhatsNew = false;
           ExtensionRecommendations = false;
