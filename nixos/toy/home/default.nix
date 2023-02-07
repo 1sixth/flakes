@@ -2,9 +2,8 @@
 
 let
   wallpaper = pkgs.fetchurl {
-    curlOpts = "--referer https://www.pixiv.net";
-    url = "https://i.pximg.net/img-original/img/2017/04/21/18/35/04/62506385_p0.jpg";
-    sha256 = "sha256-B1/J9ReWB0AD2pDxVsRcJ/naFOX+Tx4gDihUp1QLsvA=";
+    url = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Crimea%2C_Ai-Petri%2C_low_clouds.jpg";
+    hash = "sha256-ZiRdkGZDAINRePRrE72GdM1C/AtQU+r3gK/Jt+fSrtA=";
   };
 in
 
@@ -276,6 +275,5 @@ in
     targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };
 
-  # TODO: Figure out what to do with the wallpaper.
   wayland.windowManager.sway.config.output."*".bg = "${wallpaper} fill";
 }
