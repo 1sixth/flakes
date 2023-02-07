@@ -7,7 +7,10 @@
       extraPolicies = {
         CaptivePortal = false;
         DisableAppUpdate = true;
+        DisableFeedbackCommands = true;
+        DisableFirefoxScreenshots = true;
         DisableFirefoxStudies = true;
+        DisableForgetButton = true;
         DisableFormHistory = true;
         DisablePocket = true;
         DisableTelemetry = true;
@@ -34,6 +37,7 @@
         OfferToSaveLogins = false;
         OverrideFirstRunPage = "";
         OverridePostUpdatePage = "";
+        PictureInPicture.Enabled = false;
         Preferences = {
           "gfx.webrender.all" = true;
           "browser.tabs.loadBookmarksInTabs" = true;
