@@ -5,6 +5,7 @@
     enable = true;
     package = pkgs.firefox-esr.override {
       extraPolicies = {
+        CaptivePortal = false;
         DisableAppUpdate = true;
         DisableFirefoxStudies = true;
         DisableFormHistory = true;
