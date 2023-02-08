@@ -9,7 +9,7 @@
     ./vaultwarden.nix
   ];
 
-  networking.hostName = "lv";
+  networking.hostName = "las0";
 
   environment.persistence."/persistent/impermanence" = {
     directories = [
