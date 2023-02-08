@@ -17,7 +17,7 @@
     ];
   };
 
-  networking.hostName = "tyo0";
+  networking.hostName = "nrt0";
 
   sops.defaultSopsFile = ./secrets.yaml;
 

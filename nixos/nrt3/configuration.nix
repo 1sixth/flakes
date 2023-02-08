@@ -1,11 +1,16 @@
 { config, ... }:
 
 {
-  imports = [ ./hardware.nix ];
+  imports = [
+    ./hardware.nix
+    ./libreddit.nix
+    ./nitter.nix
+  ];
 
   environment.persistence."/persistent/impermanence" = {
     directories = [
       "/root"
+      "/tmp"
       "/var/lib"
       "/var/log/journal"
     ];
@@ -16,7 +21,7 @@
     ];
   };
 
-  networking.hostName = "tyo5";
+  networking.hostName = "nrt3";
 
   sops.defaultSopsFile = ./secrets.yaml;
 

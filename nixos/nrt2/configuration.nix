@@ -3,8 +3,6 @@
 {
   imports = [ ./hardware.nix ];
 
-  networking.hostName = "tyo1";
-
   environment.persistence."/persistent/impermanence" = {
     directories = [
       "/root"
@@ -17,6 +15,8 @@
       "/etc/ssh/ssh_host_ed25519_key.pub"
     ];
   };
+
+  networking.hostName = "nrt2";
 
   sops.defaultSopsFile = ./secrets.yaml;
 

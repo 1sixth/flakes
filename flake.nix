@@ -67,13 +67,13 @@
       nixosConfigurations = {
         las0 = import ./nixos/las0 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nas = import ./nixos/nas { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        nrt0 = import ./nixos/nrt0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
+        nrt1 = import ./nixos/nrt1 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        nrt2 = import ./nixos/nrt2 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        nrt3 = import ./nixos/nrt3 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
+        nrt4 = import ./nixos/nrt4 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        nrt5 = import ./nixos/nrt5 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         toy = import ./nixos/toy { system = "x86_64-linux"; inherit self nixpkgs inputs; };
-        tyo0 = import ./nixos/tyo0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
-        tyo1 = import ./nixos/tyo1 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
-        tyo2 = import ./nixos/tyo2 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
-        tyo3 = import ./nixos/tyo3 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
-        tyo4 = import ./nixos/tyo4 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
-        tyo5 = import ./nixos/tyo5 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
       };
 
       nixosModules = import ./modules;
