@@ -7,7 +7,7 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.dnscrypt-proxy2.china
-    self.nixosModules.v2ray.client
+    self.nixosModules.sing-box.client
     ./configuration.nix
   ];
   specialArgs = { inherit inputs self; };
