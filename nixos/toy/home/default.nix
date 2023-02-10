@@ -131,6 +131,7 @@ in
       };
       enable = true;
       extraConfig = {
+        "diff \"sopsdiffer\"".textconv = "sops -d";
         init.defaultBranch = "master";
         log.date = "iso";
       };
