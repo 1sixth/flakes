@@ -23,14 +23,6 @@
       url = "github:nix-community/home-manager";
     };
     impermanence.url = "github:nix-community/impermanence";
-    nixos-cn = {
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
-      # I'm only going to use the module provided by it.
-      url = "github:nixos-cn/flakes?rev=a69878f94a8a3241a420204d32b0439864f30ef7";
-    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     # libtorrent-rasterbar 2.0.4
     nixpkgs-libtorrent-rasterbar.url = "github:NixOS/nixpkgs?rev=b42f0a0b45d33dec4a25508ea5293a4a016697a9";

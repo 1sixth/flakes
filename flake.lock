@@ -95,30 +95,6 @@
         "type": "github"
       }
     },
-    "nixos-cn": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1667484007,
-        "narHash": "sha256-LVksnfMYdUp/QX3RCPKZgeHkoJuAgl59TiCUN44tR9s=",
-        "owner": "nixos-cn",
-        "repo": "flakes",
-        "rev": "a69878f94a8a3241a420204d32b0439864f30ef7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos-cn",
-        "repo": "flakes",
-        "rev": "a69878f94a8a3241a420204d32b0439864f30ef7",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1675952716,
@@ -174,7 +150,6 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
-        "nixos-cn": "nixos-cn",
         "nixpkgs": "nixpkgs",
         "nixpkgs-libtorrent-rasterbar": "nixpkgs-libtorrent-rasterbar",
         "nixpkgs-qbittorrent-nox": "nixpkgs-qbittorrent-nox",
