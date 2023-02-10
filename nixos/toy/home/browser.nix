@@ -115,7 +115,6 @@
         SanitizeOnShutdown = {
           Cache = true;
           Downloads = true;
-          OfflineApps = true;
         };
         SearchSuggestEnabled = false;
         UserMessaging = {
