@@ -7,7 +7,7 @@ nixpkgs.lib.nixosSystem {
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.dnscrypt-proxy2.earth
     self.nixosModules.server
-    self.nixosModules.sing-box.server
+    self.nixosModules.v2ray.server
     ./configuration.nix
   ];
   specialArgs = { inherit inputs self; };

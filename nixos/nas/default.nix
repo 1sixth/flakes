@@ -8,7 +8,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.dnscrypt-proxy2.china
     self.nixosModules.qbittorrent-nox
     self.nixosModules.server
-    self.nixosModules.sing-box.client
+    self.nixosModules.v2ray.client
     ./configuration.nix
   ];
   specialArgs = { inherit inputs self; };

@@ -19,5 +19,7 @@
 
   networking.hostName = "nrt0";
 
+  sops.defaultSopsFile = ./secrets.yaml;
+
   system.stateVersion = "22.05";
 }
