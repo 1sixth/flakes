@@ -6,10 +6,6 @@
   hath = import ./hath.nix;
   qbittorrent-nox = import ./qbittorrent-nox.nix;
   server = import ./server;
-  sing-box = {
-    client = import ./sing-box/client.nix;
-    server = import ./sing-box/server.nix;
-  };
   stress-ng = import ./stress-ng.nix;
   v2ray = {
     server = import ./v2ray/server.nix;
