@@ -11,4 +11,8 @@
     server = import ./sing-box/server.nix;
   };
   stress-ng = import ./stress-ng.nix;
+  v2ray = {
+    server = import ./v2ray/server.nix;
+    client = import ./v2ray/client.nix;
+  };
 }
