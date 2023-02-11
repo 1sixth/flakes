@@ -133,17 +133,14 @@
     };
   };
 
-  security = {
-    pki.caCertificateBlacklist = [
-      "CFCA EV ROOT"
-      "TrustCor ECA-1"
-      "TrustCor RootCert CA-1"
-      "TrustCor RootCert CA-2"
-      "vTrus ECC Root CA"
-      "vTrus Root CA"
-    ];
-    sudo.enable = false;
-  };
+  security.pki.caCertificateBlacklist = [
+    "CFCA EV ROOT"
+    "TrustCor ECA-1"
+    "TrustCor RootCert CA-1"
+    "TrustCor RootCert CA-2"
+    "vTrus ECC Root CA"
+    "vTrus Root CA"
+  ];
 
   services = {
     journald.extraConfig = "SystemMaxUse=1G";
