@@ -186,7 +186,7 @@ in
             CanonicalDomains = "9875321.xyz";
             CanonicalizeHostname = "always";
           };
-          proxyCommand = "nc -n -X 4 -x 127.0.0.1:1080 %h %p";
+          proxyCommand = "nc -n -x 127.0.0.1:1080 %h %p";
         };
         "*.9875321.xyz".user = "root";
       };
