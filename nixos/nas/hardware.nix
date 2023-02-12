@@ -40,12 +40,12 @@ in
     "/persistent/8T" = {
       device = "/dev/disk/by-uuid/51365bbd-db45-44ca-b234-3b13d345cb3b";
       fsType = "btrfs";
-      options = mountOptions ++ [ "autodefrag" ];
+      options = mountOptions;
     };
     "/persistent/16T" = {
       device = "/dev/disk/by-uuid/db363a22-3029-414e-9bb0-b21f25ed4c1b";
       fsType = "btrfs";
-      options = mountOptions ++ [ "autodefrag" ];
+      options = mountOptions;
     };
   };
 
