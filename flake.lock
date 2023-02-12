@@ -114,38 +114,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-libtorrent-rasterbar": {
-      "locked": {
-        "lastModified": 1635939159,
-        "narHash": "sha256-ZPJIg7Yu6hyJKexOfxnYDH0lFUKWQxjni/B5w3oAEV8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b42f0a0b45d33dec4a25508ea5293a4a016697a9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b42f0a0b45d33dec4a25508ea5293a4a016697a9",
-        "type": "github"
-      }
-    },
-    "nixpkgs-qbittorrent-nox": {
-      "locked": {
-        "lastModified": 1636384017,
-        "narHash": "sha256-4F+tqNRXd6dgQFe0ZPcwcX58KtMSPoAypkhNwkI2ubw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "56137af9f1b6f89329d55de169e0eefee57e8263",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "56137af9f1b6f89329d55de169e0eefee57e8263",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "colmena": "colmena",
@@ -154,8 +122,6 @@
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-libtorrent-rasterbar": "nixpkgs-libtorrent-rasterbar",
-        "nixpkgs-qbittorrent-nox": "nixpkgs-qbittorrent-nox",
         "sops-nix": "sops-nix"
       }
     },

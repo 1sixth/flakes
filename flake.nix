@@ -25,10 +25,6 @@
     };
     impermanence.url = "github:nix-community/impermanence";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    # libtorrent-rasterbar 2.0.4
-    nixpkgs-libtorrent-rasterbar.url = "github:NixOS/nixpkgs?rev=b42f0a0b45d33dec4a25508ea5293a4a016697a9";
-    # qbittorrent 4.3.9
-    nixpkgs-qbittorrent-nox.url = "github:NixOS/nixpkgs?rev=56137af9f1b6f89329d55de169e0eefee57e8263";
     sops-nix = {
       inputs = {
         nixpkgs.follows = "nixpkgs";
