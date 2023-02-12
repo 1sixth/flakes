@@ -27,8 +27,6 @@
 
   networking.hostName = "nas";
 
-  nixpkgs.overlays = [ self.overlays.qbittorrent-nox ];
-
   services.btrfs.autoScrub = {
     enable = true;
     fileSystems = [
