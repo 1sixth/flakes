@@ -124,7 +124,7 @@
   };
 
   nixpkgs.overlays = [
-    inputs.deploy-rs.overlay
+    inputs.colmena.overlay
   ];
 
   powerManagement.cpuFreqGovernor = "schedutil";

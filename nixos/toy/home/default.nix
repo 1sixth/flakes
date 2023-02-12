@@ -40,7 +40,7 @@ in
       cargo
       clang_14
       clang-tools
-      deploy-rs.deploy-rs
+      colmena
       fd
       file
       imv
@@ -92,6 +92,14 @@ in
     exa.enable = true;
     fish = {
       enable = true;
+      functions.colmena.body = ''
+        switch $argv[1]
+            case apply build
+                command colmena $argv --evaluator streaming
+            case "*"
+                command colmena $argv
+        end
+      '';
       # https://github.com/swaywm/sway/wiki#login-managers
       interactiveShellInit = ''
         [ (tty) = /dev/tty1 ] && exec sway
@@ -111,8 +119,6 @@ in
 
         t = "trans :zh-CN";
         ts = "trans :zh-CN -speak";
-
-        deploy = "deploy --skip-checks";
 
         nixos-rebuild = "nixos-rebuild --use-remote-sudo --verbose";
 

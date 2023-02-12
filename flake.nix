@@ -2,13 +2,14 @@
   description = "somewhat somehow deterministic";
 
   inputs = {
-    deploy-rs = {
+    colmena = {
       inputs = {
         flake-compat.follows = "flake-compat";
+        flake-utils.follows = "flake-utils";
         nixpkgs.follows = "nixpkgs";
-        utils.follows = "flake-utils";
+        stable.follows = "nixpkgs";
       };
-      url = "github:serokell/deploy-rs";
+      url = "github:zhaofengli/colmena";
     };
     flake-compat = {
       flake = false;
@@ -40,21 +41,22 @@
   outputs = inputs@{ nixpkgs, self, ... }:
 
     {
-      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) inputs.deploy-rs.lib;
-
-      deploy = {
-        autoRollback = false;
-        magicRollback = false;
-        nodes = builtins.mapAttrs
+      colmenaHive = inputs.colmena.lib.makeHive (
+        {
+          meta = {
+            nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
+            nodeSpecialArgs = builtins.mapAttrs
+              (name: value: self.nixosConfigurations.${name}._module.specialArgs)
+              self.nixosConfigurations;
+          };
+        } // builtins.mapAttrs
           (name: value: {
-            hostname = "${name}.9875321.xyz";
-            profiles.system.path = inputs.deploy-rs.lib.${value.pkgs.system}.activate.nixos
-              self.nixosConfigurations.${name};
+            nixpkgs.system = value.config.nixpkgs.system;
+            imports = value._module.args.modules;
           })
           # toy is my local machine.
-          (nixpkgs.lib.filterAttrs (name: value: name != "toy") self.nixosConfigurations);
-        sshUser = "root";
-      };
+          (nixpkgs.lib.filterAttrs (name: value: name != "toy") self.nixosConfigurations)
+      );
 
       nixosConfigurations = {
         las0 = import ./nixos/las0 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
