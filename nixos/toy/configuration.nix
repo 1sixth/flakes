@@ -25,7 +25,6 @@
         "/tmp"
         "/var/lib"
         "/var/log/journal"
-        { directory = "/mnt"; user = "one6th"; group = "users"; }
       ];
       files = [
         "/etc/machine-id"
@@ -183,12 +182,17 @@
 
   system.stateVersion = "22.05";
 
-  systemd.network = {
-    enable = true;
-    networks.wlan = {
-      DHCP = "yes";
-      matchConfig.Type = "wlan";
+  systemd = {
+    network = {
+      enable = true;
+      networks.wlan = {
+        DHCP = "yes";
+        matchConfig.Type = "wlan";
+      };
     };
+    tmpfiles.rules = [
+      "d /mnt 755 one6th users"
+    ];
   };
 
   sops = {
@@ -211,7 +215,7 @@
     users = {
       one6th = {
         isNormalUser = true;
-        extraGroups = ["adbusers" "wheel" "wireshark" ];
+        extraGroups = [ "adbusers" "wheel" "wireshark" ];
         passwordFile = config.sops.secrets.password_one6th.path;
         shell = pkgs.fish;
       };
