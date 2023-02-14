@@ -46,9 +46,9 @@ in
       imv
       jetbrains.pycharm-community
       ldns
+      libreoffice
       nali
       okular
-      onlyoffice-bin
       poetry
       python3
       rclone
