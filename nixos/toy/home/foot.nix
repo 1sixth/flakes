@@ -29,7 +29,7 @@
       cursor.color = "fdf6e3 586e75";
       main = {
         dpi-aware = "no";
-        font = "Iosevka Fixed Slab:size=17";
+        font = "monospace:size=17";
         pad = "6x6";
         selection-target = "clipboard";
         underline-offset = "20px";
