@@ -30,7 +30,6 @@
       ripgrep
       rsync
       screen
-      traceroute
     ];
   };
 
@@ -131,6 +130,7 @@
       enable = true;
       settings.add_newline = false;
     };
+    traceroute.enable = true;
   };
 
   security.pki.caCertificateBlacklist = [
