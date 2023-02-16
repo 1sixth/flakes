@@ -1,24 +1,14 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
 
   boot = {
-    cleanTmpDir = true;
     binfmt.emulatedSystems = [ "aarch64-linux" ];
-    kernel.sysctl = {
-      # https://github.com/torvalds/linux/blob/8032bf1233a74627ce69b803608e650f3f35971c/net/ipv4/tcp_bbr.c
-      "net.core.default_qdisc" = "fq";
-      "net.ipv4.tcp_congestion_control" = "bbr";
-      # https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size#non-bsd
-      "net.core.rmem_max" = 2500000;
-    };
-    kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ntfs" ];
   };
 
   environment = {
-    defaultPackages = lib.mkForce [ ];
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
     persistence."/persistent/impermanence" = {
       directories = [
@@ -99,29 +89,8 @@
   };
 
   networking = {
-    firewall.enable = false;
     hostName = "toy";
-    useDHCP = false;
-    useNetworkd = true;
     wireless.iwd.enable = true;
-  };
-
-  nix = {
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 7d";
-      persistent = true;
-    };
-    nrBuildUsers = 0;
-    registry.nixpkgs.flake = inputs.nixpkgs;
-    settings = {
-      auto-allocate-uids = true;
-      auto-optimise-store = true;
-      experimental-features = [ "auto-allocate-uids" "cgroups" "flakes" "nix-command" ];
-      nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
-      trusted-users = [ "one6th" "root" ];
-      use-cgroups = true;
-    };
   };
 
   nixpkgs.overlays = [
@@ -132,21 +101,10 @@
 
   programs = {
     adb.enable = true;
-    command-not-found.enable = false;
     sway = {
       enable = true;
       wrapperFeatures.gtk = true;
     };
-    fish = {
-      enable = true;
-      useBabelfish = true;
-    };
-    htop.enable = true;
-    iftop.enable = true;
-    iotop.enable = true;
-    mtr.enable = true;
-    nano.syntaxHighlight = false;
-    traceroute.enable = true;
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
@@ -159,20 +117,11 @@
       cue = true;
       enable = true;
     };
-    pki.caCertificateBlacklist = [
-      "CFCA EV ROOT"
-      "TrustCor ECA-1"
-      "TrustCor RootCert CA-1"
-      "TrustCor RootCert CA-2"
-      "vTrus ECC Root CA"
-      "vTrus Root CA"
-    ];
     sudo.extraConfig = ''Defaults lecture="never"'';
   };
 
   services = {
     getty.autologinUser = "one6th";
-    journald.extraConfig = "SystemMaxUse=1G";
     logind.lidSwitch = "ignore";
     pipewire = {
       enable = true;
@@ -185,25 +134,14 @@
   system.stateVersion = "22.05";
 
   systemd = {
-    network = {
-      enable = true;
-      networks.wlan = {
-        DHCP = "yes";
-        matchConfig.Type = "wlan";
-      };
-    };
+    network.networks.default.matchConfig.Type = "wlan";
     tmpfiles.rules = [
       "d /mnt 755 one6th users"
     ];
   };
 
   sops = {
-    age = {
-      keyFile = "/var/lib/sops.key";
-      sshKeyPaths = [ ];
-    };
     defaultSopsFile = ./secrets.yaml;
-    gnupg.sshKeyPaths = [ ];
     secrets = {
       password_root.neededForUsers = true;
       password_one6th.neededForUsers = true;
@@ -211,21 +149,13 @@
     };
   };
 
-  time.timeZone = "Asia/Shanghai";
-
-  users = {
-    mutableUsers = false;
-    users = {
-      one6th = {
-        isNormalUser = true;
-        extraGroups = [ "adbusers" "wheel" "wireshark" ];
-        passwordFile = config.sops.secrets.password_one6th.path;
-        shell = pkgs.fish;
-      };
-      root = {
-        passwordFile = config.sops.secrets.password_root.path;
-        shell = pkgs.fish;
-      };
+  users.users = {
+    one6th = {
+      isNormalUser = true;
+      extraGroups = [ "adbusers" "wheel" "wireshark" ];
+      passwordFile = config.sops.secrets.password_one6th.path;
+      shell = pkgs.fish;
     };
+    root.passwordFile = config.sops.secrets.password_root.path;
   };
 }

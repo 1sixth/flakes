@@ -1,4 +1,5 @@
 {
+  base = import ./base.nix;
   dnscrypt-proxy2 = {
     china = import ./dnscrypt-proxy2/china.nix;
     earth = import ./dnscrypt-proxy2/earth.nix;
