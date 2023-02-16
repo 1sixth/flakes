@@ -72,6 +72,12 @@
               Alias = "y";
             }
             {
+              Name = "Google Translate";
+              URLTemplate = "https://translate.google.com/?sl=auto&tl=auto&text={searchTerms}";
+              IconURL = "https://translate.google.com/favicon.ico";
+              Alias = "f";
+            }
+            {
               Name = "维基百科 (zh)";
               URLTemplate = "https://zh.wikipedia.org/w/index.php?title=Special:%E6%90%9C%E7%B4%A2&search={searchTerms}";
               IconURL = "https://zh.wikipedia.org/favicon.ico";
