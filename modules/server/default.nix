@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   documentation = {
@@ -7,16 +7,27 @@
     man.enable = false;
   };
 
-  environment.systemPackages = with pkgs; [
-    fd
-    file
-    ldns
-    nmap
-    rclone
-    ripgrep
-    rsync
-    screen
-  ];
+  environment = {
+    persistence."/persistent/impermanence" = {
+      directories = [
+        "/root"
+      ];
+      files = [
+        "/etc/ssh/ssh_host_ed25519_key"
+        "/etc/ssh/ssh_host_ed25519_key.pub"
+      ];
+    };
+    systemPackages = with pkgs; [
+      fd
+      file
+      ldns
+      nmap
+      rclone
+      ripgrep
+      rsync
+      screen
+    ];
+  };
 
   fonts.fontconfig.enable = false;
 
