@@ -88,6 +88,8 @@
     wireless.iwd.enable = true;
   };
 
+  nix.settings.builders-use-substitutes = true;
+
   nixpkgs.overlays = [
     inputs.colmena.overlay
   ];
