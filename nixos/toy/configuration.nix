@@ -222,7 +222,10 @@
         passwordFile = config.sops.secrets.password_one6th.path;
         shell = pkgs.fish;
       };
-      root.passwordFile = config.sops.secrets.password_root.path;
+      root = {
+        passwordFile = config.sops.secrets.password_root.path;
+        shell = pkgs.fish;
+      };
     };
   };
 }
