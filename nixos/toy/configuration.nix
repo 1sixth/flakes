@@ -203,6 +203,7 @@
       sshKeyPaths = [ ];
     };
     defaultSopsFile = ./secrets.yaml;
+    gnupg.sshKeyPaths = [ ];
     secrets = {
       password_root.neededForUsers = true;
       password_one6th.neededForUsers = true;
