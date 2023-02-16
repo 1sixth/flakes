@@ -82,8 +82,10 @@
       demuxer-max-bytes = "1GiB";
       fullscreen = "";
       gpu-api = "vulkan";
-      # icc-profile-auto not implemented on Wayland
-      #icc-profile-auto = "";
+      # Color management is not implemented on Wayland.
+      # icc-profile-auto = "";
+      # HDR is not implemented on Wayland.
+      hdr-compute-peak = "no";
       hwdec = "vaapi-copy";
       interpolation = "";
       keep-open = "always";
