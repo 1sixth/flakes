@@ -13,11 +13,6 @@
     persistence."/persistent/impermanence" = {
       directories = [
         "/tmp"
-        "/var/lib"
-        "/var/log/journal"
-      ];
-      files = [
-        "/etc/machine-id"
       ];
       users.one6th.directories = [
         ".cache/nix"
@@ -130,8 +125,6 @@
     tlp.enable = true;
     upower.enable = true;
   };
-
-  system.stateVersion = "22.05";
 
   systemd = {
     network.networks.default.matchConfig.Type = "wlan";
