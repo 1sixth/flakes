@@ -15,8 +15,14 @@
         };
         services.libreddit.loadBalancer.servers = [{
           url = "http://${config.services.libreddit.address}:${builtins.toString config.services.libreddit.port}";
-          }];
+        }];
       };
     };
   };
+
+  systemd.services.libreddit.environment = {
+    "LIBREDDIT_DEFAULT_SHOW_NSFW" = "on";
+    "LIBREDDIT_DEFAULT_USE_HLS" = "on";
+    "LIBREDDIT_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION" = "on";
+   };
 }

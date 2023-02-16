@@ -5,8 +5,10 @@
     nitter = {
       enable = true;
       preferences = {
+        hlsPlayback = true;
+        infiniteScroll = true;
         replaceTwitter = config.services.nitter.server.hostname;
-        theme = "Auto";
+        theme = "Auto (Twitter)";
       };
       server = {
         address = "127.0.0.1";
