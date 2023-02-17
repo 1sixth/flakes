@@ -53,7 +53,6 @@ in
       python3
       rclone
       ripgrep
-      rnix-lsp
       rsync
       rustc
       rustfmt

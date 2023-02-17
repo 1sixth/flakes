@@ -32,6 +32,8 @@
         "MD040" = false;
       };
       "nix.enableLanguageServer" = true;
+      "nix.serverPath"= "${pkgs.nil}/bin/nil";
+      "nix.serverSettings"."nil"."formatting"."command" = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
       "security.workspace.trust.enabled" = false;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
