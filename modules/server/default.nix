@@ -98,6 +98,7 @@
     };
   };
 
+  security.sudo.enable = false;
 
   services = {
     openssh = {
