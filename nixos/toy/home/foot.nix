@@ -5,28 +5,28 @@
     enable = true;
     settings = {
       colors = {
-        background = "fdf6e3";
-        foreground = "657b83";
+        background = "eeeeee";
+        foreground = "444444";
 
-        regular0 = "eee8d5";
-        regular1 = "dc322f";
-        regular2 = "859900";
-        regular3 = "b58900";
-        regular4 = "268bd2";
-        regular5 = "d33682";
-        regular6 = "2aa198";
-        regular7 = "073642";
+        regular0 = "eeeeee";
+        regular1 = "af0000";
+        regular2 = "008700";
+        regular3 = "5f8700";
+        regular4 = "0087af";
+        regular5 = "878787";
+        regular6 = "005f87";
+        regular7 = "764e37";
 
-        bright0 = "cb4b16";
-        bright1 = "fdf6e3";
-        bright2 = "93a1a1";
-        bright3 = "839496";
-        bright4 = "657b83";
-        bright5 = "6c71c4";
-        bright6 = "586e75";
-        bright7 = "002b36";
+        bright0 = "bcbcbc";
+        bright1 = "d70000";
+        bright2 = "d70087";
+        bright3 = "8700af";
+        bright4 = "d75f00";
+        bright5 = "d75f00";
+        bright6 = "4c7a5d";
+        bright7 = "005f87";
       };
-      cursor.color = "fdf6e3 586e75";
+      cursor.color = "eeeeee 444444";
       main = {
         dpi-aware = "no";
         font = "monospace:size=17";
