@@ -46,6 +46,7 @@
         format-bluetooth = "{volume}% ";
         format-icons.default = [ "奄" "奔" "墳" ];
         format-muted = "婢";
+        ignored-sinks =  [ "Easy Effects Sink" ];
         on-click = "${pkgs.pamixer}/bin/pamixer -t";
         scroll-step = 5;
       };
