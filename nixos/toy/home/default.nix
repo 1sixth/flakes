@@ -215,6 +215,7 @@ in
   };
 
   services = {
+    easyeffects.enable = true;
     gpg-agent = {
       enable = true;
       enableFishIntegration = false;

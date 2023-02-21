@@ -18,6 +18,7 @@
         ".cache/nix"
         ".cache/nix-index"
         ".cache/pypoetry"
+        ".config/easyeffects"
         ".config/fcitx5"
         ".config/htop"
         ".config/JetBrains"
