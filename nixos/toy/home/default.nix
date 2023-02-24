@@ -161,6 +161,7 @@ in
         "<c-v>" = "paste";
         "<delete>" = "delete";
         "<enter>" = "open";
+        "<f-2>" = "rename";
         d = "delete";
       };
       settings = {
