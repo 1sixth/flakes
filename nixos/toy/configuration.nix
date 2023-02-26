@@ -61,12 +61,9 @@
     ];
   };
 
-  hardware = {
-    bluetooth = {
-      enable = true;
-      settings.Policy.ReconnectAttempts = 0;
-    };
-    video.hidpi.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    settings.Policy.ReconnectAttempts = 0;
   };
 
   home-manager = {
