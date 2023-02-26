@@ -6,9 +6,10 @@ in
 
 {
   boot = {
-    initrd.availableKernelModules = [ "ahci" "nvme" "usbhid" "xhci_pci" ];
+    initrd.availableKernelModules = [ "nvme" "sd_mod" "usb_storage" "usbhid" "xhci_pci" ];
     kernelModules = [ "kvm-amd" ];
     loader = {
+      efi.canTouchEfiVariables = true;
       grub.enable = false;
       systemd-boot = {
         editor = false;
@@ -24,16 +25,16 @@ in
       options = [ "mode=755" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/C016-FDA5";
+      device = "/dev/disk/by-uuid/B3F4-B3C9";
       fsType = "vfat";
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/2cc6c9d1-d10e-497b-b5b5-31761ab9bff2";
+      device = "/dev/disk/by-uuid/093693e0-2c55-4e0c-a4f5-e24439dd6640";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@nix" ];
     };
     "/persistent" = {
-      device = "/dev/disk/by-uuid/2cc6c9d1-d10e-497b-b5b5-31761ab9bff2";
+      device = "/dev/disk/by-uuid/093693e0-2c55-4e0c-a4f5-e24439dd6640";
       fsType = "btrfs";
       neededForBoot = true;
       options = mountOptions ++ [ "subvol=/@persistent" ];
@@ -45,5 +46,8 @@ in
     firmware = with pkgs; [ linux-firmware ];
   };
 
-  swapDevices = [{ device = "/dev/disk/by-uuid/4b7d1da3-3842-4d19-8b11-6067042ee1b4"; }];
+  swapDevices = [{
+    device = "/persistent/swapfile";
+    size = 32768;
+  }];
 }

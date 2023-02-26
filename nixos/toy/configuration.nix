@@ -10,43 +10,38 @@
 
   environment = {
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
-    persistence."/persistent/impermanence" = {
-      directories = [
-        "/tmp"
-      ];
-      users.one6th.directories = [
-        ".cache/nix"
-        ".cache/nix-index"
-        ".cache/pypoetry"
-        ".config/easyeffects"
-        ".config/fcitx5"
-        ".config/htop"
-        ".config/JetBrains"
-        ".config/mpv/watch_later"
-        ".config/nali"
-        ".config/rclone"
-        ".config/VSCodium"
-        ".config/wireshark"
-        ".local/share/cargo"
-        ".local/share/fcitx5"
-        ".local/share/fish"
-        ".local/share/JetBrains"
-        ".local/share/kxmlgui5/okular"
-        ".local/share/nali"
-        ".local/share/okular"
-        ".local/share/TelegramDesktop"
-        ".local/share/virtualenv"
-        ".local/state/gnupg"
-        ".local/state/nvim"
-        ".local/state/wireplumber"
-        ".mozilla"
-        ".ssh"
-        ".thunderbird"
-        ".vscode-oss"
-        "Develop"
-        "Download"
-      ];
-    };
+    persistence."/persistent/impermanence".users.one6th.directories = [
+      ".cache/nix"
+      ".cache/nix-index"
+      ".cache/pypoetry"
+      ".config/easyeffects"
+      ".config/fcitx5"
+      ".config/htop"
+      ".config/JetBrains"
+      ".config/mpv/watch_later"
+      ".config/nali"
+      ".config/rclone"
+      ".config/VSCodium"
+      ".config/wireshark"
+      ".local/share/cargo"
+      ".local/share/fcitx5"
+      ".local/share/fish"
+      ".local/share/JetBrains"
+      ".local/share/kxmlgui5/okular"
+      ".local/share/nali"
+      ".local/share/okular"
+      ".local/share/TelegramDesktop"
+      ".local/share/virtualenv"
+      ".local/state/gnupg"
+      ".local/state/nvim"
+      ".local/state/wireplumber"
+      ".mozilla"
+      ".ssh"
+      ".thunderbird"
+      ".vscode-oss"
+      "Develop"
+      "Download"
+    ];
   };
 
   fonts = {
@@ -66,9 +61,12 @@
     ];
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    settings.Policy.ReconnectAttempts = 0;
+  hardware = {
+    bluetooth = {
+      enable = true;
+      settings.Policy.ReconnectAttempts = 0;
+    };
+    video.hidpi.enable = true;
   };
 
   home-manager = {
@@ -130,7 +128,13 @@
   };
 
   systemd = {
-    network.networks.default.matchConfig.Type = "wlan";
+    network.networks = {
+      default.matchConfig.Type = "ether";
+      wlan = {
+        DHCP = "yes";
+        matchConfig.Type = "wlan";
+      };
+    };
     tmpfiles.rules = [
       "d /mnt 755 one6th users"
     ];

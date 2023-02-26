@@ -55,6 +55,7 @@
         };
       menu = "${pkgs.wofi}/bin/wofi";
       modifier = "Mod4";
+      output.eDP-1.scale = "1.5";
       terminal = "foot";
     };
     enable = true;
