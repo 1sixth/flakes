@@ -262,26 +262,7 @@ in
     };
   };
 
-  systemd.user = {
-    # https://github.com/emersion/mako/blob/6c955b74a74a3eb7eed6566ddcec125bc3a55c8c/contrib/systemd/mako.service
-    services.mako = {
-      Install.WantedBy = [ "graphical-session.target" ];
-      Service = {
-        Type = "dbus";
-        BusName = "org.freedesktop.Notifications";
-        ExecCondition = "/bin/sh -c '[ -n $WAYLAND_DISPLAY ]'";
-        ExecStart = "${pkgs.mako}/bin/mako";
-        ExecReload = "${pkgs.mako}/bin/makoctl reload";
-      };
-      Unit = {
-        After = "graphical-session.target";
-        Description = "Lightweight Wayland notification daemon";
-        Documentation = "man:mako(1)";
-        PartOf = "graphical-session.target";
-      };
-    };
-    targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
-  };
+  systemd.user.targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
 
   wayland.windowManager.sway.config.output."*".bg = "${wallpaper} fill";
 }
