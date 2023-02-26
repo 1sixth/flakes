@@ -87,7 +87,12 @@
     wireless.iwd.enable = true;
   };
 
-  nix.settings.builders-use-substitutes = true;
+  nix.settings = {
+    builders-use-substitutes = true;
+    substituters = [
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+    ];
+  };
 
   nixpkgs.overlays = [
     inputs.colmena.overlay
