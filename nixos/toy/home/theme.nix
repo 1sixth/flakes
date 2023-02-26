@@ -1,6 +1,14 @@
 { config, pkgs, ... }:
 
 {
+  dconf.settings."org/gnome/desktop/interface" = {
+    cursor-theme = config.home.pointerCursor.name;
+    cursor-size = config.home.pointerCursor.size;
+    font-name = config.gtk.font.name + " " + builtins.toString config.gtk.font.size;
+    gtk-theme = config.gtk.theme.name;
+    icon-theme = config.gtk.iconTheme.name;
+  };
+
   gtk = {
     enable = true;
     font = {
@@ -24,16 +32,4 @@
     package = pkgs.phinger-cursors;
     size = 24;
   };
-
-  # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland.
-  wayland.windowManager.sway.config.startup = [{
-    always = true;
-    command = (pkgs.writeShellScript "import-gsettings" ''
-      ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface cursor-theme ${config.home.pointerCursor.name}
-      ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface cursor-size ${builtins.toString config.home.pointerCursor.size}
-      ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface font-name ${config.gtk.font.name}
-      ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface gtk-theme ${config.gtk.theme.name}
-      ${pkgs.glib}/bin/gsettings set org.gnome.desktop.interface icon-theme ${config.gtk.iconTheme.name}
-    '').outPath;
-  }];
 }
