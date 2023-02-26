@@ -128,12 +128,15 @@
   };
 
   systemd = {
-    network.networks = {
-      default.matchConfig.Type = "ether";
-      wlan = {
-        DHCP = "yes";
-        matchConfig.Type = "wlan";
+    network = {
+      networks = {
+        default.matchConfig.Type = "ether";
+        wlan = {
+          DHCP = "yes";
+          matchConfig.Type = "wlan";
+        };
       };
+      wait-online.anyInterface = true;
     };
     tmpfiles.rules = [
       "d /mnt 755 one6th users"
