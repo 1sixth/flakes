@@ -224,19 +224,6 @@ in
       pinentryFlavor = "curses";
       sshKeys = [ "56F5EC024AAE01E143592C7B21F60902660B203D" ];
     };
-    kanshi = {
-      enable = true;
-      profiles = {
-        # Negative coordinates break VSCodium under XWayland.
-        # I have not tested it under native Wayland yet.
-        # Other Electron apps works fine under XWayland.
-        # Chromium works fine under XWayland and native Wayland.
-        left.outputs = [
-          { criteria = "HDMI-A-1"; position = "0,0"; }
-          { criteria = "eDP-1"; position = "1920,0"; }
-        ];
-      };
-    };
     swayidle = {
       enable = true;
       events = [{
