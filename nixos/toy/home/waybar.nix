@@ -37,6 +37,7 @@
       ];
       network = {
         format-disconnected = "Disconnected ";
+        format-ethernet = "{bandwidthDownBits}  {bandwidthUpBits}  ";
         format-wifi = "{bandwidthDownBits}  {bandwidthUpBits}  {essid} ({signalStrength}%) ";
         interval = 1;
       };
