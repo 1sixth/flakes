@@ -11,6 +11,7 @@
   environment = {
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
     persistence."/persistent/impermanence".users.one6th.directories = [
+      { directory = ".local/state/gnupg"; mode = "0700"; }
       ".cache/nix"
       ".cache/nix-index"
       ".cache/pypoetry"
@@ -32,7 +33,6 @@
       ".local/share/okular"
       ".local/share/TelegramDesktop"
       ".local/share/virtualenv"
-      ".local/state/gnupg"
       ".local/state/nvim"
       ".local/state/wireplumber"
       ".mozilla"
