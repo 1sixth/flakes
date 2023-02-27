@@ -91,14 +91,18 @@ in
     exa.enable = true;
     fish = {
       enable = true;
-      functions.colmena.body = ''
-        switch $argv[1]
-            case apply build
-                command colmena $argv --evaluator streaming
-            case "*"
-                command colmena $argv
-        end
-      '';
+      functions = {
+        colmena.body = ''
+          switch $argv[1]
+              case apply build
+                  command colmena $argv --evaluator streaming
+              case "*"
+                  command colmena $argv
+          end
+        '';
+        nl.body = "nix-locate --whole-name bin/$argv";
+        which.body = "readlink -f (command which $argv)";
+      };
       # https://github.com/swaywm/sway/wiki#login-managers
       interactiveShellInit = ''
         [ (tty) = /dev/tty1 ] && exec sway
