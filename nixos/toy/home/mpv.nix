@@ -88,7 +88,6 @@
       hdr-compute-peak = "no";
       # Wait until https://github.com/NixOS/nixpkgs/pull/217044 is merged.
       # hwdec = "auto-copy-safe";
-      interpolation = "";
       keep-open = "always";
       no-input-default-bindings = "";
       profile = "gpu-hq";
@@ -96,7 +95,6 @@
       slang = "en-orig,zh-CN,zh-TW,zh-HK,zh-SG,zh-Hans,zh-Hant,chi,zho";
       sub-auto = "fuzzy";
       tscale = "oversample";
-      video-sync = "display-resample";
       vo = "gpu-next";
       ytdl-raw-options = "yes-playlist=";
     };
