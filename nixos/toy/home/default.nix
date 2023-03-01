@@ -77,6 +77,8 @@ in
 
       CARGO_HOME = "${config.xdg.dataHome}/cargo";
       RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+
+      WLR_NO_HARDWARE_CURSORS = 1;
     };
     stateVersion = "22.05";
     username = "one6th";

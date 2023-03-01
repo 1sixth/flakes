@@ -73,7 +73,7 @@
       MUTE = "cycle mute"; # toggle mute
       CLOSE_WIN = "quit";
 
-      "Ctrl+h" = "cycle-values hwdec no vaapi-copy"; # toggle hardware decoding
+      "Ctrl+h" = "cycle-values hwdec no auto-copy-safe"; # toggle hardware decoding
 
       F8 = "show-text \${playlist}"; # show the playlist
       F9 = "show-text \${track-list}"; # show the list of video, audio and sub tracks
@@ -81,12 +81,12 @@
     config = {
       demuxer-max-bytes = "1GiB";
       fullscreen = "";
-      gpu-api = "vulkan";
       # Color management is not implemented on Wayland.
       # icc-profile-auto = "";
       # HDR is not implemented on Wayland.
       hdr-compute-peak = "no";
-      hwdec = "vaapi-copy";
+      # Wait until https://github.com/NixOS/nixpkgs/pull/217044 is merged.
+      # hwdec = "auto-copy-safe";
       interpolation = "";
       keep-open = "always";
       no-input-default-bindings = "";

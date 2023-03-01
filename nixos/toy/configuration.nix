@@ -61,9 +61,28 @@
     ];
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    settings.Policy.ReconnectAttempts = 0;
+  hardware = {
+    bluetooth = {
+      enable = true;
+      settings.Policy.ReconnectAttempts = 0;
+    };
+    nvidia = {
+      modesetting.enable = true;
+      nvidiaSettings = false;
+      open = true;
+      powerManagement = {
+        enable = true;
+        finegrained = true;
+      };
+      prime = {
+        amdgpuBusId = "PCI:6:0:0";
+        nvidiaBusId = "PCI:1:0:0";
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+      };
+    };
   };
 
   home-manager = {
@@ -91,9 +110,14 @@
     ];
   };
 
-  nixpkgs.overlays = [
-    inputs.colmena.overlay
-  ];
+  nixpkgs = {
+    config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+      "nvidia-x11"
+    ];
+    overlays = [
+      inputs.colmena.overlay
+    ];
+  };
 
   powerManagement.cpuFreqGovernor = "schedutil";
 
@@ -101,6 +125,9 @@
     adb.enable = true;
     sway = {
       enable = true;
+      extraOptions = [
+        "--unsupported-gpu"
+      ];
       wrapperFeatures.gtk = true;
     };
     wireshark = {
@@ -127,6 +154,7 @@
     };
     tlp.enable = true;
     upower.enable = true;
+    xserver.videoDrivers = [ "nvidia" ];
   };
 
   systemd = {
