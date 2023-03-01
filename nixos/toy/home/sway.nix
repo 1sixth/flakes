@@ -60,6 +60,7 @@
         };
       menu = "${pkgs.wofi}/bin/wofi";
       modifier = "Mod4";
+      output."*".adaptive_sync = "on";
       terminal = "foot";
     };
     enable = true;

@@ -80,6 +80,7 @@
     };
     config = {
       demuxer-max-bytes = "1GiB";
+      drm-vrr-enabled = "auto";
       fullscreen = "";
       # Color management is not implemented on Wayland.
       # icc-profile-auto = "";
