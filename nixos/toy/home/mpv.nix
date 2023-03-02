@@ -82,12 +82,9 @@
       demuxer-max-bytes = "1GiB";
       drm-vrr-enabled = "auto";
       fullscreen = "";
-      # Color management is not implemented on Wayland.
-      # icc-profile-auto = "";
       # HDR is not implemented on Wayland.
       hdr-compute-peak = "no";
-      # Wait until https://github.com/NixOS/nixpkgs/pull/217044 is merged.
-      # hwdec = "auto-copy-safe";
+      hwdec = "auto-copy-safe";
       keep-open = "always";
       no-input-default-bindings = "";
       profile = "gpu-hq";
