@@ -99,6 +99,7 @@
     scripts = with pkgs.mpvScripts; [
       autoload
       mpris
+      sponsorblock
     ];
   };
 }
