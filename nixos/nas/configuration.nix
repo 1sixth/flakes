@@ -14,12 +14,15 @@
 
   networking.hostName = "nas";
 
-  services.btrfs.autoScrub = {
-    enable = true;
-    fileSystems = [
-      "/persistent/8T"
-      "/persistent/16T"
-    ];
+  services = {
+    btrfs.autoScrub = {
+      enable = true;
+      fileSystems = [
+        "/persistent/8T"
+        "/persistent/16T"
+      ];
+    };
+    iperf3.enable = true;
   };
 
   sops.defaultSopsFile = ./secrets.yaml;
