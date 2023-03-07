@@ -31,6 +31,7 @@
       ".local/share/kxmlgui5/okular"
       ".local/share/nali"
       ".local/share/okular"
+      ".local/share/sponsorblock_shared"
       ".local/share/TelegramDesktop"
       ".local/share/virtualenv"
       ".local/state/nvim"
