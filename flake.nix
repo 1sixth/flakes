@@ -24,7 +24,7 @@
       url = "github:nix-community/home-manager";
     };
     impermanence.url = "github:nix-community/impermanence";
-    nixpkgs.url = "github:NixOS/nixpkgs/c83dc8d0505452818fb2913b0e7d469995b08223";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     sops-nix = {
       inputs = {
         nixpkgs.follows = "nixpkgs";
