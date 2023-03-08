@@ -174,13 +174,6 @@ in
         ratios = "1:2";
       };
     };
-    mako = {
-      anchor = "bottom-right";
-      defaultTimeout = 6180;
-      enable = true;
-      font = "${config.gtk.font.name} ${builtins.toString config.gtk.font.size}";
-      layer = "overlay";
-    };
     nix-index = {
       enable = true;
       enableFishIntegration = false;
@@ -228,6 +221,13 @@ in
       enableSshSupport = true;
       pinentryFlavor = "curses";
       sshKeys = [ "56F5EC024AAE01E143592C7B21F60902660B203D" ];
+    };
+    mako = {
+      anchor = "bottom-right";
+      defaultTimeout = 6180;
+      enable = true;
+      font = "${config.gtk.font.name} ${builtins.toString config.gtk.font.size}";
+      layer = "overlay";
     };
     swayidle = {
       enable = true;
