@@ -63,6 +63,7 @@
         nrt3 = import ./nixos/nrt3 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         nrt4 = import ./nixos/nrt4 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nrt5 = import ./nixos/nrt5 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        phx0 = import ./nixos/phx0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         toy = import ./nixos/toy { system = "x86_64-linux"; inherit self nixpkgs inputs; };
       };
 
