@@ -55,7 +55,6 @@
       );
 
       nixosConfigurations = {
-        las0 = import ./nixos/las0 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nas = import ./nixos/nas { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nrt0 = import ./nixos/nrt0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         nrt1 = import ./nixos/nrt1 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
