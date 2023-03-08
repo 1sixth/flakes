@@ -1,13 +1,7 @@
 { config, ... }:
 
 {
-  imports = [
-    ./backup.nix
-    ./hardware.nix
-    ./miniflux.nix
-    ./postgresql.nix
-    ./vaultwarden.nix
-  ];
+  imports = [ ./hardware.nix ];
 
   networking.hostName = "las0";
 

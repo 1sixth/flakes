@@ -1,7 +1,13 @@
 { config, ... }:
 
 {
-  imports = [ ./hardware.nix ];
+  imports = [
+    ./backup.nix
+    ./hardware.nix
+    ./miniflux.nix
+    ./postgresql.nix
+    ./vaultwarden.nix
+  ];
 
   environment.persistence."/persistent/impermanence".directories = [
     "/tmp"
