@@ -44,7 +44,6 @@ in
       fd
       file
       imv
-      jetbrains.pycharm-community
       ldns
       libreoffice
       nali
