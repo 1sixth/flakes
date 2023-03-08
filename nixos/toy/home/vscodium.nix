@@ -10,6 +10,8 @@
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
       matklad.rust-analyzer
+      ms-python.python
+      ms-python.vscode-pylance
       pkief.material-icon-theme
       vadimcn.vscode-lldb
       vscodevim.vim
@@ -34,6 +36,9 @@
       "nix.enableLanguageServer" = true;
       "nix.serverPath"= "${pkgs.nil}/bin/nil";
       "nix.serverSettings"."nil"."formatting"."command" = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
+      "python.experiments.enabled" = false;
+      "python.formatting.provider" = "black";
+      "python.formatting.blackPath" = "${pkgs.black}/bin/black";
       "security.workspace.trust.enabled" = false;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;

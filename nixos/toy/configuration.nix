@@ -112,6 +112,7 @@
   nixpkgs = {
     config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
       "nvidia-x11"
+      "vscode-extension-MS-python-vscode-pylance"
     ];
     overlays = [
       inputs.colmena.overlay
