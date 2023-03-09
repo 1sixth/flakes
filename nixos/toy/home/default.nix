@@ -37,7 +37,6 @@ in
       (pkgs.writeShellScriptBin "gnome-terminal" ''
         foot "$@"
       '')
-      cargo
       clang_14
       clang-tools
       fd
@@ -52,8 +51,6 @@ in
       rclone
       ripgrep
       rsync
-      rustc
-      rustfmt
       sshfs
       tdesktop
       thunderbird
@@ -72,8 +69,7 @@ in
       # PyCharm will break without this.
       _JAVA_AWT_WM_NONREPARENTING = 1;
 
-      CARGO_HOME = "${config.xdg.dataHome}/cargo";
-      RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+      CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 
       WLR_NO_HARDWARE_CURSORS = 1;
     };

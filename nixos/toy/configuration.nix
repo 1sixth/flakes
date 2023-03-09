@@ -12,6 +12,7 @@
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
     persistence."/persistent/impermanence".users.one6th.directories = [
       { directory = ".local/state/gnupg"; mode = "0700"; }
+      ".cache/cargo"
       ".cache/nix"
       ".cache/nix-index"
       ".cache/pypoetry"
@@ -23,7 +24,6 @@
       ".config/rclone"
       ".config/VSCodium"
       ".config/wireshark"
-      ".local/share/cargo"
       ".local/share/direnv"
       ".local/share/fcitx5"
       ".local/share/fish"
