@@ -40,7 +40,6 @@ in
       cargo
       clang_14
       clang-tools
-      colmena
       fd
       file
       imv
@@ -55,7 +54,6 @@ in
       rsync
       rustc
       rustfmt
-      sops
       sshfs
       tdesktop
       thunderbird
