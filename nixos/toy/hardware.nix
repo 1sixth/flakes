@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  mountOptions = [ "compress-force=zstd" "discard=async" "noatime" "space_cache=v2" ];
+  mountOptions = [ "compress-force=zstd" "noatime" "space_cache=v2" ];
 in
 
 {
