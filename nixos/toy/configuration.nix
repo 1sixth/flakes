@@ -24,6 +24,7 @@
       ".config/VSCodium"
       ".config/wireshark"
       ".local/share/cargo"
+      ".local/share/direnv"
       ".local/share/fcitx5"
       ".local/share/fish"
       ".local/share/kxmlgui5/okular"
@@ -104,6 +105,8 @@
 
   nix.settings = {
     builders-use-substitutes = true;
+    keep-derivations = true;
+    keep-outputs = true;
     substituters = [
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     ];

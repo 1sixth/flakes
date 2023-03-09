@@ -89,6 +89,10 @@ in
       enable = true;
       historyFile = "${config.xdg.stateHome}/bash_history";
     };
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
     exa.enable = true;
     fish = {
       enable = true;
