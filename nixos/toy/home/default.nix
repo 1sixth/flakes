@@ -241,7 +241,9 @@ in
       defaultTimeout = 6180;
       enable = true;
       font = "${config.gtk.font.name} ${builtins.toString config.gtk.font.size}";
+      height = 200;
       layer = "overlay";
+      width = 500;
     };
     swayidle = {
       enable = true;
