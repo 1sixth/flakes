@@ -140,12 +140,15 @@ in
       enable = true;
       extraConfig = {
         "diff \"sopsdiffer\"".textconv = "sops -d";
+        commit.gpgSign = true;
+        gpg = {
+          ssh.allowedSignersFile = builtins.toString (pkgs.writeText "allowed_signers"
+            (config.programs.git.userEmail + " " + config.programs.git.extraConfig.user.signingKey));
+          format = "ssh";
+        };
         init.defaultBranch = "master";
         log.date = "iso";
-      };
-      signing = {
-        signByDefault = true;
-        key = "91173A04457B40A1CBF42221ED2A3FFD509AA5CC";
+        user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOSqODpw3my6PkhWrAD/sulDNCiNjKqLjNOtFPMFwr";
       };
       userEmail = "1sixth@shinta.ro";
       userName = "1sixth";
@@ -156,6 +159,10 @@ in
     };
     home-manager.enable = true;
     jq.enable = true;
+    keychain = {
+      enable = true;
+      keys = [ "id_ed25519" ];
+    };
     lf = {
       enable = true;
       keybindings = {
@@ -179,9 +186,6 @@ in
     ssh = {
       compression = true;
       enable = true;
-      # https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
-      # https://lists.gnupg.org/pipermail/gnupg-users/2017-June/058581.html
-      extraConfig = ''Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"'';
       matchBlocks = {
         "*" = {
           extraOptions = {
@@ -216,9 +220,7 @@ in
     gpg-agent = {
       enable = true;
       enableFishIntegration = false;
-      enableSshSupport = true;
       pinentryFlavor = "curses";
-      sshKeys = [ "56F5EC024AAE01E143592C7B21F60902660B203D" ];
     };
     mako = {
       anchor = "bottom-right";
