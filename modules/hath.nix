@@ -4,6 +4,7 @@
   sops.secrets.hath = {
     owner = config.users.users.hath.name;
     inherit (config.users.users.hath) group;
+    path = "/var/lib/hath/data/client_login";
     restartUnits = [ "hath.service" ];
   };
 
@@ -13,12 +14,6 @@
     after = [ "network.target" ];
     wants = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
-
-    preStart = ''
-      mkdir -p /var/lib/hath/data
-      ln -sf ${config.sops.secrets.hath.path} /var/lib/hath/data/client_login
-    '';
-
     serviceConfig = {
       User = "hath";
       StateDirectory = "hath";
