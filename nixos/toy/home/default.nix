@@ -53,7 +53,6 @@ in
       rsync
       sshfs
       tdesktop
-      thunderbird
       translate-shell
       unar
       wl-clipboard
@@ -212,6 +211,21 @@ in
       indicator-caps-lock = true;
       scaling = "fill";
       show-failed-attempts = true;
+    };
+    thunderbird = {
+      enable = true;
+      package = pkgs.thunderbird.override {
+        extraPolicies = {
+          Proxy = {
+            Mode = "manual";
+            SOCKSProxy = "127.0.0.1:1080";
+            SOCKSVersion = 5;
+            UseProxyForDNS = true;
+          };
+          Preferences."layout.css.devPixelsPerPx" = "1.5";
+        };
+      };
+      profiles.default.isDefault = true;
     };
   };
 
