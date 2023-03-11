@@ -254,7 +254,25 @@ in
     };
   };
 
-  systemd.user.targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
+  systemd.user = {
+    services.sshfs = {
+      Unit.After = [ "network-online.target" ];
+      Service = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+        ExecStart = builtins.toString (pkgs.writeShellScript "sshfs-start.sh" ''
+          ${pkgs.sshfs}/bin/sshfs -o idmap=user,reconnect nas:/persistent/16T /persistent/16T
+          ${pkgs.sshfs}/bin/sshfs -o idmap=user,reconnect nas:/persistent/8T /persistent/8T
+        '');
+        ExecStop = builtins.toString (pkgs.writeShellScript "sshfs-stop.sh" ''
+          ${pkgs.fuse}/bin/fusermount -u /persistent/16T
+          ${pkgs.fuse}/bin/fusermount -u /persistent/8T
+        '');
+      };
+      Install.WantedBy = [ "default.target" ];
+    };
+    targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
+  };
 
   wayland.windowManager.sway.config.output."*".bg = "${wallpaper} fill";
 }
