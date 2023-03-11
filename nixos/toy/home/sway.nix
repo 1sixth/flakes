@@ -1,5 +1,12 @@
 { config, lib, pkgs, ... }:
 
+let
+  wallpaper = pkgs.fetchurl {
+    url = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Crimea%2C_Ai-Petri%2C_low_clouds.jpg";
+    hash = "sha256-ZiRdkGZDAINRePRrE72GdM1C/AtQU+r3gK/Jt+fSrtA=";
+  };
+in
+
 {
   wayland.windowManager.sway = {
     config = {
@@ -60,7 +67,10 @@
         };
       menu = "${pkgs.wofi}/bin/wofi";
       modifier = "Mod4";
-      output."*".adaptive_sync = "on";
+      output."*" = {
+        adaptive_sync = "on";
+        bg = "${wallpaper} fill";
+      };
       terminal = "foot";
     };
     enable = true;

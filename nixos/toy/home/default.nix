@@ -1,12 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  wallpaper = pkgs.fetchurl {
-    url = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Crimea%2C_Ai-Petri%2C_low_clouds.jpg";
-    hash = "sha256-ZiRdkGZDAINRePRrE72GdM1C/AtQU+r3gK/Jt+fSrtA=";
-  };
-in
-
 {
   imports = [
     ./browser.nix
@@ -288,6 +281,4 @@ in
     };
     targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };
-
-  wayland.windowManager.sway.config.output."*".bg = "${wallpaper} fill";
 }
