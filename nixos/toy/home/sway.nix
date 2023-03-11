@@ -36,7 +36,7 @@ in
           inherit (config.wayland.windowManager.sway.config) modifier;
         in
         lib.mkOptionDefault {
-          "XF86AudioMute" = "exec ${pkgs.pamixer}/bin/pamixer --toggle";
+          "XF86AudioMute" = "exec ${pkgs.pamixer}/bin/pamixer --toggle-mute";
           "XF86AudioLowerVolume" = "exec ${pkgs.pamixer}/bin/pamixer --decrease 5";
           "XF86AudioRaiseVolume" = "exec ${pkgs.pamixer}/bin/pamixer --increase 5";
 
@@ -48,7 +48,7 @@ in
           "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
           "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set +5%";
 
-          "${modifier}+F1" = "exec ${pkgs.pamixer}/bin/pamixer --toggle";
+          "${modifier}+F1" = "exec ${pkgs.pamixer}/bin/pamixer --toggle-mute";
           "${modifier}+F2" = "exec ${pkgs.pamixer}/bin/pamixer --decrease 5";
           "${modifier}+F3" = "exec ${pkgs.pamixer}/bin/pamixer --increase 5";
 
