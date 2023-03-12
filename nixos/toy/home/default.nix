@@ -196,6 +196,7 @@
     };
     swaylock.settings = {
       clock = true;
+      daemonize = true;
       effect-blur = "7x5";
       effect-vignette = "0.5:0.5";
       grace = 3;
