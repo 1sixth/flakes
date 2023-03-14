@@ -274,8 +274,8 @@
           ${pkgs.sshfs}/bin/sshfs -o idmap=user,reconnect nas:/persistent/8T /persistent/8T
         '');
         ExecStop = builtins.toString (pkgs.writeShellScript "sshfs-stop.sh" ''
-          ${pkgs.fuse}/bin/fusermount -u /persistent/16T
-          ${pkgs.fuse}/bin/fusermount -u /persistent/8T
+          /run/wrappers/bin/umount /persistent/16T
+          /run/wrappers/bin/umount /persistent/8T
         '');
       };
       Install.WantedBy = [ "default.target" ];
