@@ -90,7 +90,7 @@
 
   systemd.network = {
     enable = true;
-    networks.default.DHCP = "yes";
+    networks.default.DHCP = lib.mkDefault "yes";
   };
 
   time.timeZone = "Asia/Shanghai";
