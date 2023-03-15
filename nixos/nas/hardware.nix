@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 let
   mountOptions = [ "noatime" "space_cache=v2" ];

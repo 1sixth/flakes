@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -113,7 +113,7 @@
     ];
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "nvidia-x11"
     "vscode-extension-MS-python-vscode-pylance"
   ];
