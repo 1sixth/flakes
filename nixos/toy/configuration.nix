@@ -22,6 +22,7 @@
       ".config/mpv/watch_later"
       ".config/nali"
       ".config/rclone"
+      ".config/sops"
       ".config/VSCodium"
       ".config/wireshark"
       ".local/share/direnv"
