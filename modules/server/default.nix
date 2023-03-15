@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   documentation = {
@@ -72,7 +72,7 @@
       }];
       settings = {
         kbdInteractiveAuthentication = false;
-        passwordAuthentication = false;
+        passwordAuthentication = lib.mkDefault false;
       };
     };
     traefik = {

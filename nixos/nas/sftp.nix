@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 {
-  services.openssh.settings.passwordAuthentication = lib.mkForce true;
+  services.openssh.settings.passwordAuthentication = true;
 
   sops.secrets.password_sftp.neededForUsers = true;
 
