@@ -63,10 +63,7 @@
   };
 
   hardware = {
-    bluetooth = {
-      enable = true;
-      settings.Policy.ReconnectAttempts = 0;
-    };
+    bluetooth.enable = true;
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = false;
