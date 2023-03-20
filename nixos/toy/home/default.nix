@@ -278,7 +278,6 @@
           /run/wrappers/bin/umount /persistent/8T
         '');
       };
-      Install.WantedBy = [ "default.target" ];
     };
     targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };
