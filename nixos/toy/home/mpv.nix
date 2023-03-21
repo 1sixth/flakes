@@ -82,6 +82,8 @@
       F9 = "show-text \${track-list}"; # show the list of video, audio and sub tracks
     };
     config = {
+      # Bluetooth latency compensation
+      audio-delay = "-0.2";
       demuxer-max-bytes = "1GiB";
       drm-vrr-enabled = "auto";
       fullscreen = "";
