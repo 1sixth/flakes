@@ -84,6 +84,8 @@
     config = {
       # Bluetooth latency compensation
       audio-delay = "-0.2";
+      cscale = "ewa_lanczos";
+      dscale = "ewa_lanczos";
       demuxer-max-bytes = "1GiB";
       drm-vrr-enabled = "auto";
       fullscreen = "";
@@ -93,6 +95,8 @@
       keep-open = "always";
       no-input-default-bindings = "";
       profile = "gpu-hq";
+      scale = "ewa_lanczos";
+      scale-blur = "0.981251";
       script = "${pkgs.fetchurl {
         url = "https://raw.githubusercontent.com/mpv-player/mpv/e1727553f164181265f71a20106fbd5e34fa08b0/player/lua/ytdl_hook.lua";
         hash = "sha256-cG7EATdmXkSZ1Vn98Pg6mvmez0IlELCVz+hmCc800mc=";
@@ -100,7 +104,6 @@
       script-opts = ''ytdl_hook-exclude="%.mkv$|%.mp4$",ytdl_hook-try_ytdl_first=yes'';
       slang = "en-orig,zh-CN,zh-TW,zh-HK,zh-SG,zh-Hans,zh-Hant,chi,zho";
       sub-auto = "fuzzy";
-      tscale = "oversample";
       vo = "gpu-next";
       ytdl = "no";
       ytdl-raw-options = "yes-playlist=";
