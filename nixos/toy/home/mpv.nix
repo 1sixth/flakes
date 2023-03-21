@@ -37,8 +37,11 @@
 
       "`" = "script-binding console/enable"; # open the console
 
-      z = "add sub-delay +0.1"; # shift subtitles 100 ms earlier
+      z = "add sub-delay 0.1"; # shift subtitles 100 ms earlier
       Z = "add sub-delay -0.1"; # delay subtitles by 100 ms
+
+      "x" = "add audio-delay 0.1"; # # change audio/video sync by delaying the audio
+      "X" = "add audio-delay -0.1"; # # change audio/video sync by shifting the audio earlier
 
       "9" = "add volume -5";
       "0" = "add volume 5";
