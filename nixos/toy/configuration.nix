@@ -28,6 +28,7 @@
       ".config/sops"
       ".config/VSCodium"
       ".config/wireshark"
+      ".local/share/containers"
       ".local/share/direnv"
       ".local/share/fcitx5"
       ".local/share/fish"
@@ -184,10 +185,15 @@
   users.users = {
     one6th = {
       isNormalUser = true;
-      extraGroups = [ "adbusers" "wheel" "wireshark" ];
+      extraGroups = [ "adbusers" "podman" "wheel" "wireshark" ];
       passwordFile = config.sops.secrets.password_one6th.path;
       shell = pkgs.fish;
     };
     root.passwordFile = config.sops.secrets.password_root.path;
+  };
+
+  virtualisation.podman = {
+    dockerSocket.enable = true;
+    enable = true;
   };
 }
