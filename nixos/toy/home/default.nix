@@ -119,6 +119,7 @@
         nwdrc = "nix why-depends /run/current-system/";
 
         mpvc = "mpv --ytdl-raw-options=cookies-from-browser=firefox";
+        mpvn = "mpv --ytdl-raw-options=no-write-auto-subs=";
       };
     };
     git = {
