@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -113,6 +113,8 @@
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     ];
   };
+
+  nix.registry.flake-utils.flake = inputs.flake-utils;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "nvidia-x11"
