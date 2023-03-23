@@ -122,6 +122,7 @@
         mpvn = "mpv --ytdl-raw-options=no-write-auto-subs=";
       };
     };
+    fzf.enable = true;
     git = {
       delta = {
         enable = true;
