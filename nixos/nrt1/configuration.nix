@@ -11,7 +11,7 @@
     "/tmp"
   ];
 
-  networking.hostName = "nrt3";
+  networking.hostName = "nrt1";
 
   sops.defaultSopsFile = ./secrets.yaml;
 }
