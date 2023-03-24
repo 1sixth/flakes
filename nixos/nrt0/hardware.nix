@@ -28,17 +28,20 @@ in
       fsType = "vfat";
     };
     "/nix" = {
-      device = "/dev/sda3";
+      device = "/dev/sda2";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@nix" ];
     };
     "/persistent" = {
-      device = "/dev/sda3";
+      device = "/dev/sda2";
       fsType = "btrfs";
       neededForBoot = true;
       options = mountOptions ++ [ "subvol=/@persistent" ];
     };
   };
 
-  swapDevices = [{ device = "/dev/sda2"; }];
+  swapDevices = [{
+    device = "/persistent/swapfile";
+    size = 8192;
+  }];
 }
