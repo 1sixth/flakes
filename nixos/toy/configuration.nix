@@ -19,6 +19,7 @@
       ".cache/nix"
       ".cache/nix-index"
       ".cache/pypoetry"
+      ".config/chromium"
       ".config/easyeffects"
       ".config/fcitx5"
       ".config/htop"
@@ -106,6 +107,9 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "nvidia-x11"
+    "chrome-widevine-cdm"
+    "chromium-unwrapped"
+    "ungoogled-chromium"
     "vscode-extension-MS-python-vscode-pylance"
   ];
 
