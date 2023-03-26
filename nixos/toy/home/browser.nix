@@ -41,7 +41,6 @@
         Preferences = {
           "gfx.webrender.all" = true;
           "browser.tabs.loadBookmarksInTabs" = true;
-          "layout.css.devPixelsPerPx" = "1.5";
           "media.ffmpeg.vaapi.enabled" = true;
           "media.peerconnection.enabled" = false;
           "ui.key.menuAccessKeyFocuses" = false;

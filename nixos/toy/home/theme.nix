@@ -13,7 +13,7 @@
     enable = true;
     font = {
       name = "sans-serif";
-      size = 18;
+      size = 12;
     };
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     iconTheme = {

@@ -44,7 +44,6 @@
       "update.showReleaseNotes" = false;
       "vim.useCtrlKeys" = false;
       "window.menuBarVisibility" = "toggle";
-      "window.zoomLevel" = 2.5;
       "workbench.colorTheme" = "Solarized Light";
       "workbench.enableExperiments" = false;
       "workbench.iconTheme" = "material-icon-theme";

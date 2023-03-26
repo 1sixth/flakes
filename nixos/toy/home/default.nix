@@ -64,6 +64,8 @@
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 
       WLR_NO_HARDWARE_CURSORS = 1;
+
+      NIXOS_OZONE_WL = 1;
     };
     stateVersion = "22.05";
     username = "one6th";
@@ -217,7 +219,6 @@
             SOCKSVersion = 5;
             UseProxyForDNS = true;
           };
-          Preferences."layout.css.devPixelsPerPx" = "1.5";
         };
       };
       profiles.default.isDefault = true;
@@ -238,7 +239,7 @@
       font = "${config.gtk.font.name} ${builtins.toString config.gtk.font.size}";
       height = 200;
       layer = "overlay";
-      width = 500;
+      width = 300;
     };
     swayidle = {
       enable = true;

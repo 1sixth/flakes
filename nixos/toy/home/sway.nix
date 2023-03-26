@@ -70,6 +70,7 @@ in
       output."*" = {
         adaptive_sync = "on";
         bg = "${wallpaper} fill";
+        scale = "1.5";
       };
       terminal = "foot";
     };
