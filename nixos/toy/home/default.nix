@@ -56,14 +56,9 @@
     sessionVariables = {
       fish_greeting = "";
 
-      LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
-
-      # PyCharm will break without this.
-      _JAVA_AWT_WM_NONREPARENTING = 1;
-
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 
-      WLR_NO_HARDWARE_CURSORS = 1;
+      LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
 
       NIXOS_OZONE_WL = 1;
     };
