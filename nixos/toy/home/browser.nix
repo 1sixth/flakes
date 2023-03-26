@@ -120,6 +120,8 @@
               # Google won't be removed for some mysterious reason.
               "Google"
               "Amazon.com"
+              "Amazon.co.jp"
+              "Amazon.co.uk"
               "Bing"
               "DuckDuckGo"
               "Wikipedia (en)"
