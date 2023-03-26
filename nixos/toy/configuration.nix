@@ -69,21 +69,9 @@
   hardware = {
     bluetooth.enable = true;
     nvidia = {
-      modesetting.enable = true;
       nvidiaSettings = false;
       open = true;
-      powerManagement = {
-        enable = true;
-        finegrained = true;
-      };
-      prime = {
-        amdgpuBusId = "PCI:6:0:0";
-        nvidiaBusId = "PCI:1:0:0";
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
-        };
-      };
+      powerManagement.enable = true;
     };
   };
 
