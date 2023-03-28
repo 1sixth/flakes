@@ -29,7 +29,7 @@
       cursor.color = "eeeeee 444444";
       main = {
         dpi-aware = "no";
-        font = "monospace:size=17";
+        font = "monospace:size=16";
         pad = "6x6";
         selection-target = "clipboard";
         underline-offset = "20px";
