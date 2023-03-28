@@ -38,6 +38,7 @@
       ldns
       libreoffice
       nali
+      nvtop
       okular
       poetry
       python3
