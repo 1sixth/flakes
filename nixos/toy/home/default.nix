@@ -90,7 +90,7 @@
           end
         '';
         nl.body = "nix-locate --whole-name bin/$argv";
-        which.body = "readlink -f (command which $argv)";
+        which.body = "realpath (command which $argv)";
       };
       # https://github.com/swaywm/sway/wiki#login-managers
       interactiveShellInit = ''
