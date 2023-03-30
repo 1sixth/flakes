@@ -12,7 +12,7 @@ in
     config = {
       assigns = {
         "2" = [{ app_id = "firefox"; }];
-        "3" = [{ app_id = "imv"; } { app_id = "mpv"; }];
+        "3" = [{ app_id = "chromium-browser"; } { app_id = "imv"; } { app_id = "mpv"; }];
         "4" = [{ app_id = "thunderbird"; }];
       };
       bars = [ ];
