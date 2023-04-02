@@ -40,6 +40,7 @@
       nali
       nvtop
       okular
+      podman-compose
       poetry
       python3
       rclone

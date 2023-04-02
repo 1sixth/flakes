@@ -199,8 +199,5 @@
     root.passwordFile = config.sops.secrets.password_root.path;
   };
 
-  virtualisation.podman = {
-    dockerSocket.enable = true;
-    enable = true;
-  };
+  virtualisation.podman.enable = true;
 }
