@@ -102,10 +102,7 @@
         which.body = "realpath (command which $argv)";
       };
       # https://github.com/swaywm/sway/wiki#login-managers
-      interactiveShellInit = ''
-        [ (tty) = /dev/tty1 ] && exec sway
-        set -gx GPG_TTY (tty)
-      '';
+      interactiveShellInit = "[ (tty) = /dev/tty1 ] && exec sway";
       shellAliases = {
         l = "ll -a";
         ll = "ls -l -g --time-style=long-iso";
