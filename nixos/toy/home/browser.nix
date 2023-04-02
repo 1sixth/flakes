@@ -5,6 +5,12 @@
     chromium = {
       enable = true;
       package = pkgs.ungoogled-chromium.override {
+        commandLineArgs = builtins.concatStringsSep " " [
+          "--enable-gpu-rasterization"
+          "--enable-zero-copy"
+          "--ignore-gpu-blocklist"
+          "--proxy-server=socks5://127.0.0.1:1080"
+        ];
         enableWideVine = true;
       };
     };
