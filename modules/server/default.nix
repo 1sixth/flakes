@@ -1,12 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  documentation = {
-    doc.enable = false;
-    info.enable = false;
-    man.enable = false;
-  };
-
   environment = {
     persistence."/persistent/impermanence" = {
       directories = [
@@ -30,8 +24,6 @@
   };
 
   fonts.fontconfig.enable = false;
-
-  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" ];
 
   programs = {
     fish = {
