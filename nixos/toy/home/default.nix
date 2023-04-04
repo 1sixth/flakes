@@ -57,8 +57,6 @@
     ];
 
     sessionVariables = {
-      fish_greeting = "";
-
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";

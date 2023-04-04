@@ -24,7 +24,12 @@
       which.body = "realpath (command which $argv)";
     };
     # https://github.com/swaywm/sway/wiki#login-managers
-    interactiveShellInit = "[ (tty) = /dev/tty1 ] && exec sway";
+    interactiveShellInit = ''
+      [ (tty) = /dev/tty1 ] && exec sway
+
+      set -g fish_greeting
+      set -g sponge_purge_only_on_exit true
+    '';
     plugins = [
       {
         name = "autopair";
