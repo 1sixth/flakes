@@ -37,10 +37,10 @@
       file
       imv
       ldns
-      libreoffice
       nali
       nvtop
       okular
+      onlyoffice-bin
       podman-compose
       poetry
       python3
