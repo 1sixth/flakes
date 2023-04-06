@@ -102,7 +102,7 @@
         hash = "sha256-cG7EATdmXkSZ1Vn98Pg6mvmez0IlELCVz+hmCc800mc=";
       }}";
       script-opts = ''ytdl_hook-exclude="%.mkv$|%.mp4$",ytdl_hook-try_ytdl_first=yes'';
-      slang = "en-orig,zh-CN,zh-TW,zh-HK,zh-SG,zh-Hans,zh-Hant,chi,zho";
+      slang = "en-orig,zh-CN,zh-TW,zh-HK,zh-SG,zh-Hans,zh-Hant,chi,zho,zh";
       sub-auto = "fuzzy";
       vo = "gpu-next";
       ytdl = "no";
