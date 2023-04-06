@@ -28,7 +28,6 @@
       [ (tty) = /dev/tty1 ] && exec sway
 
       set -g fish_greeting
-      set -g sponge_purge_only_on_exit true
     '';
     plugins = [
       {
@@ -57,15 +56,6 @@
           repo = "puffer-fish";
           rev = "fd0a9c95da59512beffddb3df95e64221f894631";
           hash = "sha256-aij48yQHeAKCoAD43rGhqW8X/qmEGGkg8B4jSeqjVU0=";
-        };
-      }
-      {
-        name = "sponge";
-        src = pkgs.fetchFromGitHub {
-          owner = "meaningful-ooo";
-          repo = "sponge";
-          rev = "1.1.0";
-          sha256 = "sha256-MdcZUDRtNJdiyo2l9o5ma7nAX84xEJbGFhAVhK+Zm1w=";
         };
       }
     ];
