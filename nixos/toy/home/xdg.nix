@@ -26,11 +26,6 @@
       "wofi/style.css".source = ./res/wofi.css;
       "yt-dlp/config".source = ./res/yt-dlp.conf;
     };
-    desktopEntries.chromium-browser = {
-      name = "Chromium";
-      # assert(hardware.nvidia.prime.offload.enableOffloadCmd);
-      exec = "nvidia-offload chromium";
-    };
     enable = true;
     mimeApps = {
       defaultApplications = {

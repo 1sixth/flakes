@@ -65,26 +65,7 @@
     ];
   };
 
-  hardware = {
-    bluetooth.enable = true;
-    nvidia = {
-      modesetting.enable = true;
-      nvidiaSettings = false;
-      open = true;
-      powerManagement = {
-        enable = true;
-        finegrained = true;
-      };
-      prime = {
-        amdgpuBusId = "PCI:6:0:0";
-        nvidiaBusId = "PCI:1:0:0";
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
-        };
-      };
-    };
-  };
+  hardware.bluetooth.enable = true;
 
   home-manager = {
     useGlobalPkgs = true;
@@ -116,8 +97,6 @@
   nix.registry.flake-utils.flake = inputs.flake-utils;
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "cudatoolkit"
-    "nvidia-x11"
     "chrome-widevine-cdm"
     "chromium-unwrapped"
     "ungoogled-chromium"
@@ -130,9 +109,6 @@
     adb.enable = true;
     sway = {
       enable = true;
-      extraOptions = [
-        "--unsupported-gpu"
-      ];
       wrapperFeatures.gtk = true;
     };
     wireshark = {
@@ -159,7 +135,6 @@
     };
     tlp.enable = true;
     upower.enable = true;
-    xserver.videoDrivers = [ "nvidia" ];
   };
 
   systemd = {
