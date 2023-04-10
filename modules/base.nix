@@ -2,7 +2,6 @@
 
 {
   boot = {
-    cleanTmpDir = true;
     kernel.sysctl = {
       # https://github.com/torvalds/linux/blob/8032bf1233a74627ce69b803608e650f3f35971c/net/ipv4/tcp_bbr.c
       "net.core.default_qdisc" = "fq";
