@@ -80,6 +80,8 @@
 
       mpvc = "mpv --ytdl-raw-options=cookies-from-browser=firefox";
       mpvn = "mpv --ytdl-raw-options=no-write-auto-subs=";
+
+      yt-dlpc = "yt-dlp --cookies-from-browser firefox";
     };
   };
 }
