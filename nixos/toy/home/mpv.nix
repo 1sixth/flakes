@@ -82,8 +82,6 @@
       F9 = "show-text \${track-list}"; # show the list of video, audio and sub tracks
     };
     config = {
-      # Bluetooth latency compensation
-      audio-delay = "-0.2";
       cscale = "ewa_lanczos";
       dscale = "ewa_lanczos";
       demuxer-max-bytes = "1GiB";
