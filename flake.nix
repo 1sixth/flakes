@@ -17,10 +17,7 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        utils.follows = "flake-utils";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
     impermanence.url = "github:nix-community/impermanence";
