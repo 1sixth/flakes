@@ -89,7 +89,6 @@
       fullscreen = "";
       # HDR is not implemented on Wayland.
       hdr-compute-peak = "no";
-      hwdec = "auto-copy-safe";
       keep-open = "always";
       no-input-default-bindings = "";
       profile = "gpu-hq";
