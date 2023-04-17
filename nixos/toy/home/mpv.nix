@@ -9,13 +9,13 @@
 
       RIGHT = "seek 5"; # seek 5 seconds forward
       LEFT = "seek -5"; # seek 5 seconds backward
-      UP = "seek  60 "; # seek 1 minute forward
+      UP = "seek 60"; # seek 1 minute forward
       DOWN = "seek -60"; # seek 1 minute backward
 
-      "Shift+RIGHT" = "no-osd seek  1 exact"; # seek exactly 1 second forward
+      "Shift+RIGHT" = "no-osd seek 1 exact"; # seek exactly 1 second forward
       "Shift+LEFT" = "no-osd seek -1 exact"; # seek exactly 1 second backward
 
-      "Ctrl+RIGHT" = "add chapter 1 "; # seek to the next chapter
+      "Ctrl+RIGHT" = "add chapter 1"; # seek to the next chapter
       "Ctrl+LEFT" = "add chapter -1"; # seek to the previous chapter
 
       "Ctrl+Shift+RIGHT" = "playlist-next"; # skip to the next file
@@ -23,8 +23,6 @@
 
       "[" = "multiply speed 1/1.1"; # decrease the playback speed
       "]" = "multiply speed 1.1"; # increase the playback speed
-      "{" = "multiply speed 0.5"; # halve the playback speed
-      "}" = "multiply speed 2.0"; # double the playback speed
 
       q = "quit";
       Q = "quit-watch-later"; # exit and remember the playback position
@@ -39,9 +37,6 @@
 
       z = "add sub-delay 0.1"; # shift subtitles 100 ms earlier
       Z = "add sub-delay -0.1"; # delay subtitles by 100 ms
-
-      "x" = "add audio-delay 0.1"; # # change audio/video sync by delaying the audio
-      "X" = "add audio-delay -0.1"; # # change audio/video sync by shifting the audio earlier
 
       "9" = "add volume -5";
       "0" = "add volume 5";
@@ -76,7 +71,7 @@
       MUTE = "cycle mute"; # toggle mute
       CLOSE_WIN = "quit";
 
-      "Ctrl+h" = "cycle-values hwdec no auto-copy-safe"; # toggle hardware decoding
+      "Ctrl+h" = "cycle-values hwdec auto-copy-safe no"; # toggle hardware decoding
 
       F8 = "show-text \${playlist}"; # show the playlist
       F9 = "show-text \${track-list}"; # show the list of video, audio and sub tracks
