@@ -37,6 +37,7 @@
       file
       imv
       ldns
+      libnotify
       libreoffice
       nali
       okular
