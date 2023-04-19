@@ -124,8 +124,6 @@
     "vscode-extension-MS-python-vscode-pylance"
   ];
 
-  powerManagement.cpuFreqGovernor = "schedutil";
-
   programs = {
     adb.enable = true;
     sway = {
