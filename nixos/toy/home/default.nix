@@ -40,6 +40,7 @@
       libnotify
       libreoffice
       nali
+      nvtop
       okular
       podman-compose
       poetry
@@ -62,6 +63,8 @@
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
 
       NIXOS_OZONE_WL = 1;
+
+      NVD_BACKEND = "direct";
     };
     stateVersion = "22.05";
     username = "one6th";
