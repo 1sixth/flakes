@@ -180,6 +180,15 @@
       };
       profiles.default.isDefault = true;
     };
+    wofi = {
+      enable = true;
+      settings = {
+        insensitive = true;
+        layer = "overlay";
+        show = "drun";
+      };
+      style = builtins.readFile ./res/wofi.css;
+    };
   };
 
   services = {
