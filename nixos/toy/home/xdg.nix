@@ -18,7 +18,6 @@
       "fontconfig/conf.d/50-generic.conf".source = ./res/fontconfig/50-generic.conf;
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
-      "yt-dlp/config".source = ./res/yt-dlp.conf;
     };
     desktopEntries.chromium-browser = {
       name = "Chromium";

@@ -189,6 +189,18 @@
       };
       style = builtins.readFile ./res/wofi.css;
     };
+    yt-dlp = {
+      enable = true;
+      settings = {
+        embed-chapters = true;
+        extractor-args = "youtube:skip=translated_subs";
+        output = "$PWD/%(title)s.%(ext)s";
+        remux-video = "mkv";
+        sub-langs = "en.*,zh.*";
+        write-subs = true;
+        write-auto-subs = true;
+      };
+    };
   };
 
   services = {
