@@ -12,6 +12,13 @@
                 command colmena $argv
         end
       '';
+      mpv.body = ''
+        if string match --quiet --regex "^https:\/\/.*\.bilibili\.com" -- $argv
+            command mpv --ytdl-raw-options=cookies-from-browser=firefox $argv
+        else
+            command mpv $argv
+        end
+      '';
       nl.body = "nix-locate --whole-name bin/$argv";
       podman.body = ''
         switch $argv[1]
@@ -22,6 +29,13 @@
         end
       '';
       which.body = "realpath (command which $argv)";
+      yt-dlp.body = ''
+        if string match --quiet --regex "^https:\/\/.*\.bilibili\.com" -- $argv
+            command yt-dlp --cookies-from-browser=firefox $argv
+        else
+            command yt-dlp $argv
+        end
+      '';
     };
     # https://github.com/swaywm/sway/wiki#login-managers
     interactiveShellInit = ''
@@ -78,10 +92,7 @@
 
       nwdrc = "nix why-depends /run/current-system/";
 
-      mpvc = "mpv --ytdl-raw-options=cookies-from-browser=firefox";
       mpvn = "mpv --ytdl-raw-options=no-write-auto-subs=";
-
-      yt-dlpc = "yt-dlp --cookies-from-browser firefox";
     };
   };
 }
