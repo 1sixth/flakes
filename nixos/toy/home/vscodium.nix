@@ -8,10 +8,11 @@
       dotjoshjohnson.xml
       editorconfig.editorconfig
       jnoortheen.nix-ide
-      llvm-vs-code-extensions.vscode-clangd
       matklad.rust-analyzer
       ms-python.python
       ms-python.vscode-pylance
+      ms-vscode.cmake-tools
+      ms-vscode.cpptools
       pkief.material-icon-theme
       vadimcn.vscode-lldb
       vscodevim.vim

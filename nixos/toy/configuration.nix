@@ -122,6 +122,7 @@
     "chromium-unwrapped"
     "ungoogled-chromium"
     "vscode-extension-MS-python-vscode-pylance"
+    "vscode-extension-ms-vscode-cpptools"
   ];
 
   programs = {

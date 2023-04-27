@@ -31,10 +31,11 @@
       (pkgs.writeShellScriptBin "gnome-terminal" ''
         foot "$@"
       '')
-      clang_14
       clang-tools
       fd
       file
+      gcc
+      gdb
       imv
       ldns
       libnotify

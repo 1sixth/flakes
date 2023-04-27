@@ -12,6 +12,8 @@
           plugins: with plugins; [
             tree-sitter-bash
             tree-sitter-c
+            tree-sitter-cmake
+            tree-sitter-cpp
             tree-sitter-fish
             tree-sitter-html
             tree-sitter-lua
