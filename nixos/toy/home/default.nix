@@ -238,11 +238,6 @@
         }
       ];
     };
-    wlsunset = {
-      enable = true;
-      latitude = "0";
-      longitude = "120";
-    };
   };
 
   systemd.user = {
