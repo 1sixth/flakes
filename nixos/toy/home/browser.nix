@@ -16,7 +16,7 @@
     };
     firefox = {
       enable = true;
-      package = pkgs.firefox.override {
+      package = pkgs.firefox-esr.override {
         extraPolicies = {
           CaptivePortal = false;
           DisableAppUpdate = true;
