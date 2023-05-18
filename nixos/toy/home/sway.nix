@@ -71,7 +71,6 @@ in
         adaptive_sync = "on";
         bg = "${wallpaper} fill";
         scale = "1.5";
-        resolution = "2560x1600@165Hz";
       };
       terminal = "foot";
     };

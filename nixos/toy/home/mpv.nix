@@ -71,7 +71,7 @@
       MUTE = "cycle mute"; # toggle mute
       CLOSE_WIN = "quit";
 
-      "Ctrl+h" = "cycle-values hwdec vdpau-copy no"; # toggle hardware decoding
+      "Ctrl+h" = "cycle-values hwdec auto-copy-safe no"; # toggle hardware decoding
 
       F8 = "show-text \${playlist}"; # show the playlist
       F9 = "show-text \${track-list}"; # show the list of video, audio and sub tracks
@@ -84,7 +84,6 @@
       fullscreen = "";
       # HDR is not implemented on Wayland.
       hdr-compute-peak = "no";
-      hwdec = "vdpau-copy";
       keep-open = "always";
       no-input-default-bindings = "";
       profile = "gpu-hq";

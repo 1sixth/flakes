@@ -19,11 +19,6 @@
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
     };
-    desktopEntries.chromium-browser = {
-      name = "Chromium";
-      # assert(hardware.nvidia.prime.offload.enableOffloadCmd);
-      exec = "nvidia-offload chromium";
-    };
     enable = true;
     mimeApps = {
       defaultApplications = {
