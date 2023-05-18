@@ -38,6 +38,7 @@
       gdb
       imv
       ldns
+      libarchive
       libnotify
       libreoffice
       nali
