@@ -32,6 +32,7 @@
         foot "$@"
       '')
       clang-tools
+      dmlive
       fd
       file
       gcc
@@ -42,6 +43,7 @@
       libnotify
       libreoffice
       nali
+      nix-tree
       okular
       podman-compose
       poetry
