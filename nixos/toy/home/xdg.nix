@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   xdg = {
@@ -18,6 +18,14 @@
       "fontconfig/conf.d/50-generic.conf".source = ./res/fontconfig/50-generic.conf;
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
+    };
+    desktopEntries.idea-community = {
+      exec = builtins.toString (pkgs.writeShellScript "idea-community" ''
+        export GDK_SCALE=2
+        export XCURSOR_SIZE=48
+        idea-community
+      '');
+      name = "IntelliJ IDEA CE";
     };
     enable = true;
     mimeApps = {

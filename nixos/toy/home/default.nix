@@ -39,6 +39,7 @@
       gcc
       gdb
       imv
+      jetbrains.idea-community
       ldns
       libarchive
       libnotify
