@@ -17,7 +17,9 @@
       vadimcn.vscode-lldb
       vscodevim.vim
     ];
-    package = pkgs.vscodium;
+    package = pkgs.vscodium.override {
+      commandLineArgs = "--enable-wayland-ime";
+    };
     userSettings = {
       "editor.bracketPairColorization.enabled" = true;
       "editor.fontFamily" = "monospace";

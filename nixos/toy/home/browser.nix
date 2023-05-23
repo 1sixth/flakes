@@ -8,6 +8,7 @@
         commandLineArgs = builtins.concatStringsSep " " [
           "--enable-gpu-rasterization"
           "--enable-zero-copy"
+          "--gtk-version=4"
           "--ignore-gpu-blocklist"
           "--proxy-server=socks5://127.0.0.1:1080"
         ];

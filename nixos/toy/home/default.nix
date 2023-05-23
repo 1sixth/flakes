@@ -1,13 +1,14 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [
+    inputs.hyprland.homeManagerModules.default
     ./browser.nix
     ./foot.nix
+    ./hyprland.nix
     ./mpv.nix
     ./neovim.nix
     ./shell.nix
-    ./sway.nix
     ./theme.nix
     ./vscodium.nix
     ./waybar.nix
@@ -64,8 +65,6 @@
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
-
-      NIXOS_OZONE_WL = 1;
     };
     stateVersion = "22.05";
     username = "one6th";
@@ -156,16 +155,20 @@
       enable = true;
       settings.add_newline = false;
     };
-    swaylock.settings = {
-      clock = true;
-      daemonize = true;
-      effect-blur = "7x5";
-      effect-vignette = "0.5:0.5";
-      grace = 3;
-      indicator = true;
-      indicator-caps-lock = true;
-      screenshots = true;
-      show-failed-attempts = true;
+    swaylock = {
+      enable = true;
+      package = pkgs.swaylock-effects;
+      settings = {
+        clock = true;
+        daemonize = true;
+        effect-blur = "7x5";
+        effect-vignette = "0.5:0.5";
+        grace = 3;
+        indicator = true;
+        indicator-caps-lock = true;
+        screenshots = true;
+        show-failed-attempts = true;
+      };
     };
     thunderbird = {
       enable = true;
@@ -232,11 +235,11 @@
           timeout = 300;
         }
         {
-          command = ''${pkgs.sway}/bin/swaymsg "output * dpms off"'';
-          resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
+          command = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
           timeout = 600;
         }
       ];
+      systemdTarget = "hyprland-session.target";
     };
   };
 
@@ -256,6 +259,6 @@
         '');
       };
     };
-    targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
+    targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };
 }

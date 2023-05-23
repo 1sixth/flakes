@@ -69,6 +69,9 @@
   hardware.bluetooth.enable = true;
 
   home-manager = {
+    extraSpecialArgs = {
+      inherit inputs;
+    };
     useGlobalPkgs = true;
     useUserPackages = true;
     users.one6th = import ./home;
@@ -97,20 +100,24 @@
 
   nix.registry.flake-utils.flake = inputs.flake-utils;
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "chrome-widevine-cdm"
-    "chromium-unwrapped"
-    "ungoogled-chromium"
-    "vscode-extension-MS-python-vscode-pylance"
-    "vscode-extension-ms-vscode-cpptools"
-  ];
+  nixpkgs = {
+    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "chrome-widevine-cdm"
+      "chromium-unwrapped"
+      "ungoogled-chromium"
+      "vscode-extension-MS-python-vscode-pylance"
+      "vscode-extension-ms-vscode-cpptools"
+    ];
+    overlays = [
+      inputs.hyprland.overlays.default
+      inputs.hyprland-contrib.overlays.default
+    ];
+  };
 
   programs = {
     adb.enable = true;
-    sway = {
-      enable = true;
-      wrapperFeatures.gtk = true;
-    };
+    # programs.hyprland.package cannot be null.
+    hyprland.enable = true;
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
@@ -118,10 +125,13 @@
   };
 
   security = {
-    pam.u2f = {
-      authFile = config.sops.secrets.u2f_keys.path;
-      cue = true;
-      enable = true;
+    pam = {
+      services.swaylock = { };
+      u2f = {
+        authFile = config.sops.secrets.u2f_keys.path;
+        cue = true;
+        enable = true;
+      };
     };
     sudo.extraConfig = ''Defaults lecture="never"'';
   };

@@ -20,6 +20,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    hyprland = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/Hyprland";
+    };
+    hyprland-contrib = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/contrib";
+    };
     impermanence.url = "github:nix-community/impermanence";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     sops-nix = {

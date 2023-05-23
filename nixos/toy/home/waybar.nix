@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.waybar = {
     enable = true;
+    package = pkgs.waybar-hyprland;
     settings = [{
       battery = {
         format = "{capacity}% {icon}";
@@ -34,8 +35,7 @@
         "clock"
       ];
       modules-left = [
-        "sway/workspaces"
-        "sway/mode"
+        "wlr/workspaces"
         "temperature"
         "cpu"
         "memory"
@@ -64,13 +64,16 @@
         scroll-step = 5;
       };
       spacing = 10;
-      "sway/workspaces" = {
+      "wlr/workspaces" = {
         format = "{name} {icon}";
         format-icons = {
+          active = "";
           default = "";
-          focused = "";
           urgent = "";
         };
+        on-click = "activate";
+        on-scroll-down = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch workspace e+1";
+        on-scroll-up = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch workspace e-1";
       };
       temperature = {
         critical-threshold = 80;
