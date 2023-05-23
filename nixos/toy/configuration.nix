@@ -117,7 +117,10 @@
   programs = {
     adb.enable = true;
     # programs.hyprland.package cannot be null.
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      xwayland.hidpi = true;
+    };
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
