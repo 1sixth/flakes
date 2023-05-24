@@ -141,6 +141,7 @@
     # programs.hyprland.package cannot be null.
     hyprland = {
       enable = true;
+      nvidiaPatches = true;
       xwayland.hidpi = true;
     };
     wireshark = {
