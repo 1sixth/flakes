@@ -47,6 +47,7 @@
       libreoffice
       nali
       nix-tree
+      nvtop
       okular
       podman-compose
       poetry
@@ -67,6 +68,10 @@
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
+
+      NVD_BACKEND = "direct";
+
+      WLR_NO_HARDWARE_CURSORS = 1;
     };
     stateVersion = "22.05";
     username = "one6th";

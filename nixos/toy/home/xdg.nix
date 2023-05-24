@@ -20,6 +20,11 @@
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
     };
     desktopEntries = {
+      chromium-browser = {
+        name = "Chromium";
+        # assert(hardware.nvidia.prime.offload.enableOffloadCmd);
+        exec = "nvidia-offload chromium";
+      };
       idea-community = {
         exec = builtins.toString (pkgs.writeShellScript "idea-community" ''
           export GDK_SCALE=2
