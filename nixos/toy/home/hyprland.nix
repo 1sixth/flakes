@@ -46,6 +46,7 @@ in
       windowrulev2 = workspace 3 silent, class: imv
       windowrulev2 = workspace 3 silent, class: mpv
       windowrulev2 = workspace 4 silent, class: thunderbird
+      windowrulev2 = float, title: Media viewer
 
       $Mod = SUPER
 
