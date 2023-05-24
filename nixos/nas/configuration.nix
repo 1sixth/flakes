@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware.nix
-    ./sftp.nix
+    ./samba.nix
   ];
 
   environment.systemPackages = with pkgs; [

@@ -73,7 +73,7 @@
       }];
       settings = {
         kbdInteractiveAuthentication = false;
-        passwordAuthentication = lib.mkDefault false;
+        passwordAuthentication = false;
       };
     };
     traefik = {
