@@ -127,8 +127,6 @@
       "chrome-widevine-cdm"
       "chromium-unwrapped"
       "ungoogled-chromium"
-      "vscode-extension-MS-python-vscode-pylance"
-      "vscode-extension-ms-vscode-cpptools"
     ];
     overlays = [
       inputs.hyprland.overlays.default
