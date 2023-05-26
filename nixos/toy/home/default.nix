@@ -164,16 +164,15 @@
     };
     swaylock = {
       enable = true;
-      package = pkgs.swaylock-effects;
       settings = {
-        clock = true;
         daemonize = true;
-        effect-blur = "7x5";
-        effect-vignette = "0.5:0.5";
-        grace = 3;
-        indicator = true;
+        image = builtins.toString (pkgs.fetchurl {
+          url = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Crimea%2C_Ai-Petri%2C_low_clouds.jpg";
+          hash = "sha256-ZiRdkGZDAINRePRrE72GdM1C/AtQU+r3gK/Jt+fSrtA=";
+        });
         indicator-caps-lock = true;
-        screenshots = true;
+        indicator-idle-visible = true;
+        scaling = "fill";
         show-failed-attempts = true;
       };
     };
@@ -233,7 +232,7 @@
     swayidle = {
       enable = true;
       events = [{
-        command = "${pkgs.swaylock-effects}/bin/swaylock";
+        command = "${config.programs.swaylock.package}/bin/swaylock";
         event = "lock";
       }];
       timeouts = [
@@ -243,7 +242,7 @@
         }
         {
           command = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
-          timeout = 600;
+          timeout = 305;
         }
       ];
       systemdTarget = "hyprland-session.target";

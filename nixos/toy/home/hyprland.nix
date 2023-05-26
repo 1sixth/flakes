@@ -1,11 +1,4 @@
-{ pkgs, ... }:
-
-let
-  wallpaper = pkgs.fetchurl {
-    url = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Crimea%2C_Ai-Petri%2C_low_clouds.jpg";
-    hash = "sha256-ZiRdkGZDAINRePRrE72GdM1C/AtQU+r3gK/Jt+fSrtA=";
-  };
-in
+{ config, pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -115,7 +108,7 @@ in
 
       bind = , PRINT, exec, ${pkgs.grimblast}/bin/grimblast copy area
 
-      exec-once = ${pkgs.swaybg}/bin/swaybg --mode fill --image ${wallpaper}
+      exec-once = ${pkgs.swaybg}/bin/swaybg --mode fill --image ${config.programs.swaylock.settings.image}
 
       exec-once=${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
     '';
