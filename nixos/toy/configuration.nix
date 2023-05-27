@@ -109,16 +109,14 @@
     wireless.iwd.enable = true;
   };
 
-  nix.settings = {
-    builders-use-substitutes = true;
-    keep-derivations = true;
-    keep-outputs = true;
-    substituters = [
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-    ];
+  nix = {
+    registry.flake-utils.flake = inputs.flake-utils;
+    settings = {
+      builders-use-substitutes = true;
+      keep-derivations = true;
+      keep-outputs = true;
+    };
   };
-
-  nix.registry.flake-utils.flake = inputs.flake-utils;
 
   nixpkgs = {
     config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
