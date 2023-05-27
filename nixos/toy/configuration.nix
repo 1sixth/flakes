@@ -179,7 +179,7 @@
           matchConfig.Type = "wlan";
         };
       };
-      wait-online.anyInterface = true;
+      wait-online.enable = false;
     };
     tmpfiles.rules = [
       "d /mnt 755 one6th users"
