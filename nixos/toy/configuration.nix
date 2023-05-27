@@ -5,7 +5,8 @@
 
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
-    kernelParams = [ "amd_pstate=passive" ];
+    consoleLogLevel = 0;
+    kernelParams = [ "amd_pstate=passive" "quiet" "rd.udev.log_level=0" ];
     supportedFilesystems = [ "ntfs" ];
   };
 
