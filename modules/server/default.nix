@@ -72,8 +72,8 @@
         type = "ed25519";
       }];
       settings = {
-        kbdInteractiveAuthentication = false;
-        passwordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        PasswordAuthentication = false;
       };
     };
     traefik = {
