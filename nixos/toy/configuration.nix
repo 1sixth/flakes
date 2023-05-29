@@ -15,6 +15,7 @@
     persistence."/persistent/impermanence".users.one6th.directories = [
       { directory = ".local/state/gnupg"; mode = "0700"; }
       ".cache/cargo"
+      ".cache/JetBrains"
       ".cache/nix"
       ".cache/nix-index"
       ".cache/pypoetry"
