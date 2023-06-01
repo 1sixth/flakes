@@ -122,7 +122,6 @@
 
   nixpkgs = {
     config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "cudatoolkit"
       "nvidia-x11"
       "chrome-widevine-cdm"
       "chromium-unwrapped"

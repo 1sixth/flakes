@@ -47,7 +47,6 @@
       libreoffice
       nali
       nix-tree
-      nvtop
       okular
       podman-compose
       poetry
