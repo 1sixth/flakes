@@ -13,7 +13,10 @@
       vscodevim.vim
     ];
     package = pkgs.vscodium.override {
-      commandLineArgs = "--enable-wayland-ime";
+      commandLineArgs = builtins.concatStringsSep " " [
+        "--enable-wayland-ime"
+        "--ozone-platform-hint=auto"
+      ];
     };
     userSettings = {
       "editor.bracketPairColorization.enabled" = true;
