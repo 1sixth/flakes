@@ -3,7 +3,6 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    systemdIntegration = true;
     extraConfig = ''
       monitor=eDP-1,2560x1600@165,auto,1.5
 
@@ -112,7 +111,7 @@
 
       exec-once=${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
     '';
-    nvidiaPatches = true;
-    xwayland.hidpi = true;
+    package = null;
+    systemdIntegration = true;
   };
 }

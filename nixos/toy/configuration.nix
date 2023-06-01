@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, self, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -128,19 +128,13 @@
       "ungoogled-chromium"
     ];
     overlays = [
-      inputs.hyprland.overlays.default
-      inputs.hyprland-contrib.overlays.default
+      self.overlays.hyprland
     ];
   };
 
   programs = {
     adb.enable = true;
-    # programs.hyprland.package cannot be null.
-    hyprland = {
-      enable = true;
-      nvidiaPatches = true;
-      xwayland.hidpi = true;
-    };
+    hyprland.enable = true;
     wireshark = {
       enable = true;
       package = pkgs.wireshark;

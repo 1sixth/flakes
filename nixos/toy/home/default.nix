@@ -240,7 +240,7 @@
           timeout = 300;
         }
         {
-          command = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
+          command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
           timeout = 305;
         }
       ];

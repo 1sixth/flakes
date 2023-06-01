@@ -4,7 +4,6 @@ nixpkgs.lib.nixosSystem {
   inherit system;
   modules = [
     inputs.home-manager.nixosModules.home-manager
-    inputs.hyprland.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base

@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar-hyprland;
     settings = [{
       battery = {
         format = "{capacity}% {icon}";
@@ -72,8 +71,8 @@
           urgent = "";
         };
         on-click = "activate";
-        on-scroll-down = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch workspace e+1";
-        on-scroll-up = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch workspace e-1";
+        on-scroll-down = "hyprctl dispatch workspace e+1";
+        on-scroll-up = "hyprctl dispatch workspace e-1";
       };
       temperature = {
         critical-threshold = 80;
