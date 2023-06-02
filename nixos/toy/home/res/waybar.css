@@ -74,6 +74,7 @@ window#waybar.chromium {
 
 #clock,
 #battery,
+#bluetooth,
 #cpu,
 #memory,
 #disk,
@@ -135,6 +136,10 @@ window#waybar.chromium {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#bluetooth {
+    background-color: #0082FC;
 }
 
 label:focus {

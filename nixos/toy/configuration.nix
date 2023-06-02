@@ -70,7 +70,10 @@
   };
 
   hardware = {
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      settings.General.Experimental = true;
+    };
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = false;

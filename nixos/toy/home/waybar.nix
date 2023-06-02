@@ -13,6 +13,10 @@
           warning = 30;
         };
       };
+      bluetooth = {
+        format = "";
+        format-connected-battery = "{device_battery_percentage}% 󰥉";
+      };
       clock.format = "{:%F %A %R}";
       cpu = {
         format = "CPU: {usage}%";
@@ -44,6 +48,7 @@
         "network"
         "tray"
         "battery"
+        "bluetooth"
         "pulseaudio"
       ];
       network = {
