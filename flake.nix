@@ -55,13 +55,13 @@
             nixpkgs.system = value.config.nixpkgs.system;
             imports = value._module.args.modules;
           })
-          # toy is my local machine.
-          (nixpkgs.lib.filterAttrs (name: value: name != "toy") self.nixosConfigurations)
+          (nixpkgs.lib.filterAttrs (name: value: !nixpkgs.lib.hasSuffix "toy" name) self.nixosConfigurations)
       );
 
       nixosConfigurations = {
         ams0 = import ./nixos/ams0 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nas = import ./nixos/nas { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        oldtoy = import ./nixos/oldtoy { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nrt0 = import ./nixos/nrt0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         nrt1 = import ./nixos/nrt1 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         phx0 = import ./nixos/phx0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
