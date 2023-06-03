@@ -1,14 +1,13 @@
-{ config, inputs, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
-    inputs.hyprland.homeManagerModules.default
     ./browser.nix
     ./foot.nix
-    ./hyprland.nix
     ./mpv.nix
     ./neovim.nix
     ./shell.nix
+    ./sway.nix
     ./theme.nix
     ./vscodium.nix
     ./waybar.nix
@@ -159,15 +158,16 @@
     };
     swaylock = {
       enable = true;
+      package = pkgs.swaylock-effects;
       settings = {
+        clock = true;
         daemonize = true;
-        image = builtins.toString (pkgs.fetchurl {
-          url = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Crimea%2C_Ai-Petri%2C_low_clouds.jpg";
-          hash = "sha256-ZiRdkGZDAINRePRrE72GdM1C/AtQU+r3gK/Jt+fSrtA=";
-        });
+        effect-blur = "7x5";
+        effect-vignette = "0.5:0.5";
+        grace = 3;
+        indicator = true;
         indicator-caps-lock = true;
-        indicator-idle-visible = true;
-        scaling = "fill";
+        screenshots = true;
         show-failed-attempts = true;
       };
     };
@@ -236,11 +236,11 @@
           timeout = 300;
         }
         {
-          command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+          command = ''${pkgs.sway}/bin/swaymsg "output * dpms off"'';
+          resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
           timeout = 305;
         }
       ];
-      systemdTarget = "hyprland-session.target";
     };
   };
 
@@ -260,6 +260,6 @@
         '');
       };
     };
-    targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
+    targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };
 }

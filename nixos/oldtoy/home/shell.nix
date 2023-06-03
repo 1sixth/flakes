@@ -37,8 +37,9 @@
         end
       '';
     };
+    # https://github.com/swaywm/sway/wiki#login-managers
     interactiveShellInit = ''
-      [ (tty) = /dev/tty1 ] && exec Hyprland
+      [ (tty) = /dev/tty1 ] && exec sway
 
       set -g fish_greeting
     '';

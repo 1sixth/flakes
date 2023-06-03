@@ -12,12 +12,7 @@
       vadimcn.vscode-lldb
       vscodevim.vim
     ];
-    package = pkgs.vscodium.override {
-      commandLineArgs = builtins.concatStringsSep " " [
-        "--enable-wayland-ime"
-        "--ozone-platform-hint=auto"
-      ];
-    };
+    package = pkgs.vscodium;
     userSettings = {
       "editor.bracketPairColorization.enabled" = true;
       "editor.fontFamily" = "monospace";

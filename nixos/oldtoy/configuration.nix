@@ -75,9 +75,6 @@
     };
 
   home-manager = {
-    extraSpecialArgs = {
-      inherit inputs;
-    };
     useGlobalPkgs = true;
     useUserPackages = true;
     users.one6th = import ./home;
@@ -104,20 +101,18 @@
     };
   };
 
-  nixpkgs = {
-    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "chrome-widevine-cdm"
-      "chromium-unwrapped"
-      "ungoogled-chromium"
-    ];
-    overlays = [
-      self.overlays.hyprland
-    ];
-  };
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "chrome-widevine-cdm"
+    "chromium-unwrapped"
+    "ungoogled-chromium"
+  ];
 
   programs = {
     adb.enable = true;
-    hyprland.enable = true;
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+    };
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
@@ -125,13 +120,10 @@
   };
 
   security = {
-    pam = {
-      services.swaylock = { };
-      u2f = {
-        authFile = config.sops.secrets.u2f_keys.path;
-        cue = true;
-        enable = true;
-      };
+    pam.u2f = {
+      authFile = config.sops.secrets.u2f_keys.path;
+      cue = true;
+      enable = true;
     };
     sudo.extraConfig = ''Defaults lecture="never"'';
   };

@@ -8,7 +8,6 @@
         commandLineArgs = builtins.concatStringsSep " " [
           "--enable-gpu-rasterization"
           "--enable-zero-copy"
-          "--gtk-version=4"
           "--ignore-gpu-blocklist"
           "--proxy-server=socks5://127.0.0.1:1080"
         ];
@@ -55,6 +54,7 @@
           Preferences = {
             "gfx.webrender.all" = true;
             "browser.tabs.loadBookmarksInTabs" = true;
+            "media.ffmpeg.vaapi.enabled" = true;
             "media.peerconnection.enabled" = false;
             "ui.key.menuAccessKeyFocuses" = false;
           };
