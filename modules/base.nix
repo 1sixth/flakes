@@ -60,6 +60,7 @@
     iftop.enable = true;
     iotop.enable = true;
     mtr.enable = true;
+    # remove reference to nano
     nano.syntaxHighlight = false;
     starship = {
       enable = true;
@@ -69,10 +70,15 @@
   };
 
   security.pki.caCertificateBlacklist = [
+    "BJCA Global Root CA1"
+    "BJCA Global Root CA2"
     "CFCA EV ROOT"
+    "GDCA TrustAUTH R5 ROOT"
     "TrustCor ECA-1"
     "TrustCor RootCert CA-1"
     "TrustCor RootCert CA-2"
+    "UCA Extended Validation Root"
+    "UCA Global G2 Root"
     "vTrus ECC Root CA"
     "vTrus Root CA"
   ];
@@ -86,6 +92,7 @@
     };
     gnupg.sshKeyPaths = [ ];
   };
+
   system.stateVersion = "22.05";
 
   systemd.network = {
