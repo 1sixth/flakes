@@ -118,7 +118,13 @@
   };
 
   systemd = {
-    network.networks.default.matchConfig.Type = "ether";
+    network = {
+      enable = true;
+      networks.default = {
+        DHCP = lib.mkDefault "yes";
+        matchConfig.Type = "ether";
+      };
+    };
     services.traefik.serviceConfig.EnvironmentFile = config.sops.secrets.cloudflare_token.path;
   };
 

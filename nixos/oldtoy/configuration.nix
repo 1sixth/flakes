@@ -141,7 +141,7 @@
   systemd = {
     network = {
       networks = {
-        default.matchConfig.Type = "ether";
+        enable = true;
         wlan = {
           DHCP = "yes";
           matchConfig.Type = "wlan";

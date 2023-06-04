@@ -12,12 +12,7 @@
       vadimcn.vscode-lldb
       vscodevim.vim
     ];
-    package = pkgs.vscodium.override {
-      commandLineArgs = builtins.concatStringsSep " " [
-        "--enable-wayland-ime"
-        "--ozone-platform-hint=auto"
-      ];
-    };
+    package = pkgs.vscodium;
     userSettings = {
       "editor.bracketPairColorization.enabled" = true;
       "editor.fontFamily" = "monospace";
@@ -35,13 +30,14 @@
         "MD040" = false;
       };
       "nix.enableLanguageServer" = true;
-      "nix.serverPath"= "${pkgs.nil}/bin/nil";
+      "nix.serverPath" = "${pkgs.nil}/bin/nil";
       "nix.serverSettings"."nil"."formatting"."command" = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
       "security.workspace.trust.enabled" = false;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
       "vim.useCtrlKeys" = false;
       "window.menuBarVisibility" = "toggle";
+      "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "Solarized Light";
       "workbench.enableExperiments" = false;
       "workbench.iconTheme" = "material-icon-theme";

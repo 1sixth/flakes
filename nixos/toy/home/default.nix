@@ -1,17 +1,13 @@
-{ config, inputs, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
-    inputs.hyprland.homeManagerModules.default
     ./browser.nix
     ./foot.nix
-    ./hyprland.nix
     ./mpv.nix
     ./neovim.nix
     ./shell.nix
-    ./theme.nix
     ./vscodium.nix
-    ./waybar.nix
     ./xdg.nix
   ];
 
@@ -47,7 +43,6 @@
       libreoffice
       nali
       nix-tree
-      okular
       podman-compose
       poetry
       python3
@@ -58,6 +53,7 @@
       tdesktop
       translate-shell
       unar
+      vlc
       wl-clipboard
       xdg-utils
       yt-dlp
@@ -157,20 +153,6 @@
       };
       serverAliveInterval = 10;
     };
-    swaylock = {
-      enable = true;
-      settings = {
-        daemonize = true;
-        image = builtins.toString (pkgs.fetchurl {
-          url = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Crimea%2C_Ai-Petri%2C_low_clouds.jpg";
-          hash = "sha256-ZiRdkGZDAINRePRrE72GdM1C/AtQU+r3gK/Jt+fSrtA=";
-        });
-        indicator-caps-lock = true;
-        indicator-idle-visible = true;
-        scaling = "fill";
-        show-failed-attempts = true;
-      };
-    };
     thunderbird = {
       enable = true;
       package = pkgs.thunderbird.override {
@@ -184,15 +166,6 @@
         };
       };
       profiles.default.isDefault = true;
-    };
-    wofi = {
-      enable = true;
-      settings = {
-        insensitive = true;
-        layer = "overlay";
-        show = "drun";
-      };
-      style = builtins.readFile ./res/wofi.css;
     };
     yt-dlp = {
       enable = true;
@@ -215,33 +188,6 @@
       enableFishIntegration = false;
       pinentryFlavor = "curses";
     };
-    mako = {
-      anchor = "bottom-right";
-      defaultTimeout = 6180;
-      enable = true;
-      font = "${config.gtk.font.name} ${builtins.toString config.gtk.font.size}";
-      height = 200;
-      layer = "overlay";
-      width = 300;
-    };
-    swayidle = {
-      enable = true;
-      events = [{
-        command = "${config.programs.swaylock.package}/bin/swaylock";
-        event = "lock";
-      }];
-      timeouts = [
-        {
-          command = "${pkgs.systemd}/bin/loginctl lock-session";
-          timeout = 300;
-        }
-        {
-          command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-          timeout = 305;
-        }
-      ];
-      systemdTarget = "hyprland-session.target";
-    };
   };
 
   systemd.user = {
@@ -260,6 +206,5 @@
         '');
       };
     };
-    targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };
 }
