@@ -56,10 +56,6 @@
       vimAlias = true;
       withRuby = false;
     };
-    starship = {
-      enable = true;
-      settings.add_newline = false;
-    };
   };
 
   security.sudo.enable = false;

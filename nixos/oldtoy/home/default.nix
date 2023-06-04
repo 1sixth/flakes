@@ -152,10 +152,6 @@
       };
       serverAliveInterval = 10;
     };
-    starship = {
-      enable = true;
-      settings.add_newline = false;
-    };
     swaylock = {
       enable = true;
       package = pkgs.swaylock-effects;
