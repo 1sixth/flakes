@@ -29,7 +29,7 @@
       url = "github:hyprwm/contrib";
     };
     impermanence.url = "github:nix-community/impermanence";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     sops-nix = {
       inputs = {
         nixpkgs.follows = "nixpkgs";
