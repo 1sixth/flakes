@@ -134,6 +134,7 @@
   programs = {
     adb.enable = true;
     dconf.enable = true;
+    kdeconnect.enable = true;
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
