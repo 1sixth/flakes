@@ -11,6 +11,8 @@
     ./xdg.nix
   ];
 
+  fonts.fontconfig.enable = false;
+
   home = {
     file = {
       "${config.xdg.stateHome}/gnupg/dirmngr.conf".text = ''
