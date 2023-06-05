@@ -61,8 +61,6 @@
       };
 
       nixosModules = import ./modules;
-
-      overlays = import ./overlays { inherit inputs; };
     } // flake-utils.lib.eachSystem
       (with flake-utils.lib.system; [
         aarch64-linux
