@@ -140,8 +140,8 @@
 
   systemd = {
     network = {
+      enable = true;
       networks = {
-        enable = true;
         wlan = {
           DHCP = "yes";
           matchConfig.Type = "wlan";
