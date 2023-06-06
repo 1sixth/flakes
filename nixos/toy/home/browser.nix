@@ -10,6 +10,7 @@
           "--enable-zero-copy"
           "--gtk-version=4"
           "--ignore-gpu-blocklist"
+          "--ozone-platform-hint=auto"
           "--proxy-server=socks5://127.0.0.1:1080"
         ];
         enableWideVine = true;

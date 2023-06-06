@@ -24,6 +24,11 @@
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
     };
     enable = true;
+    desktopEntries.chromium-browser = {
+      name = "Chromium";
+      # assert(hardware.nvidia.prime.offload.enableOffloadCmd);
+      exec = "nvidia-offload chromium";
+    };
     mimeApps = {
       defaultApplications = {
         "audio/flac" = [ "org.kde.elisa.desktop" ];
