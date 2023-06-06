@@ -125,7 +125,7 @@
         matchConfig.Type = "ether";
       };
     };
-    services.traefik.serviceConfig.EnvironmentFile = config.sops.secrets.cloudflare_token.path;
+    services.traefik.serviceConfig.EnvironmentFile = [ config.sops.secrets.cloudflare_token.path ];
   };
 
   users.users.root = {
