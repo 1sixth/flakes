@@ -158,7 +158,10 @@
       pulse.enable = true;
     };
     xserver = {
-      displayManager.sddm.enable = true;
+      displayManager = {
+        defaultSession = "plasmawayland";
+        sddm.enable = true;
+      };
       desktopManager.plasma5.enable = true;
       enable = true;
       videoDrivers = [ "nvidia" ];
