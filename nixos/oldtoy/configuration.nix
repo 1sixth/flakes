@@ -30,6 +30,7 @@
       ".config/sops"
       ".config/VSCodium"
       ".config/wireshark"
+      ".java"
       ".local/share/containers"
       ".local/share/direnv"
       ".local/share/fcitx5"

@@ -22,6 +22,8 @@
 
       ".config"
 
+      ".java"
+
       ".local/share/containers"
       ".local/share/direnv"
       ".local/share/dolphin"
