@@ -119,9 +119,7 @@
 
   systemd = {
     network = {
-      enable = true;
       networks.default = {
-        DHCP = lib.mkDefault "yes";
         matchConfig.Type = "ether";
       };
     };

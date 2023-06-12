@@ -5,7 +5,8 @@
 
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
-    kernelParams = [ "amd_pstate=passive" ];
+    consoleLogLevel = 0;
+    kernelParams = [ "amd_pstate=passive" "quiet" "rd.udev.log_level=0" ];
     supportedFilesystems = [ "ntfs" ];
   };
 
@@ -13,45 +14,42 @@
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
     persistence."/persistent/impermanence".users.one6th.directories = [
       { directory = ".local/state/gnupg"; mode = "0700"; }
-
       ".cache/cargo"
       ".cache/JetBrains"
       ".cache/nix"
       ".cache/nix-index"
       ".cache/pypoetry"
-
-      ".config"
-
+      ".config/chromium"
+      ".config/easyeffects"
+      ".config/fcitx5"
+      ".config/htop"
+      ".config/JetBrains"
+      ".config/mpv/watch_later"
+      ".config/nali"
+      ".config/rclone"
+      ".config/sops"
+      ".config/VSCodium"
+      ".config/wireshark"
       ".java"
-
       ".local/share/containers"
       ".local/share/direnv"
-      ".local/share/dolphin"
       ".local/share/fcitx5"
       ".local/share/fish"
       ".local/share/JetBrains"
-      ".local/share/kactivitymanagerd"
-      ".local/share/klipper"
-      ".local/share/kwalletd"
+      ".local/share/kxmlgui5/okular"
       ".local/share/nali"
       ".local/share/okular"
       ".local/share/sponsorblock_shared"
       ".local/share/TelegramDesktop"
       ".local/share/virtualenv"
-
       ".local/state/nvim"
       ".local/state/wireplumber"
-
       ".mozilla"
       ".ssh"
       ".thunderbird"
       ".vscode-oss"
-
       "Develop"
       "Download"
-    ];
-    plasma5.excludePackages = with pkgs.plasma5Packages; [
-      konsole
     ];
   };
 
@@ -114,7 +112,7 @@
 
   networking = {
     hostName = "toy";
-    networkmanager.enable = true;
+    wireless.iwd.enable = true;
   };
 
   nix = {
@@ -126,17 +124,21 @@
     };
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "chrome-widevine-cdm"
-    "chromium-unwrapped"
-    "nvidia-x11"
-    "ungoogled-chromium"
-  ];
+  nixpkgs = {
+    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "chrome-widevine-cdm"
+      "chromium-unwrapped"
+      "nvidia-x11"
+      "ungoogled-chromium"
+    ];
+    overlays = [
+      self.overlays.hyprland
+    ];
+  };
 
   programs = {
     adb.enable = true;
-    dconf.enable = true;
-    kdeconnect.enable = true;
+    hyprland.enable = true;
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
@@ -144,35 +146,43 @@
   };
 
   security = {
-    pam.u2f = {
-      authFile = config.sops.secrets.u2f_keys.path;
-      cue = true;
-      enable = true;
+    pam = {
+      services.swaylock = { };
+      u2f = {
+        authFile = config.sops.secrets.u2f_keys.path;
+        cue = true;
+        enable = true;
+      };
     };
-    rtkit.enable = true;
     sudo.extraConfig = ''Defaults lecture="never"'';
   };
 
   services = {
+    getty.autologinUser = "one6th";
     logind.lidSwitch = "ignore";
     pipewire = {
       enable = true;
       pulse.enable = true;
     };
-    xserver = {
-      displayManager = {
-        defaultSession = "plasmawayland";
-        sddm.enable = true;
-      };
-      desktopManager.plasma5.enable = true;
-      enable = true;
-      videoDrivers = [ "nvidia" ];
-    };
+    upower.enable = true;
+    xserver.videoDrivers = [ "nvidia" ];
   };
 
-  systemd.tmpfiles.rules = [
-    "d /mnt 755 one6th users"
-  ];
+  systemd = {
+    network = {
+      networks = {
+        default.matchConfig.Type = "ether";
+        wlan = {
+          DHCP = "yes";
+          matchConfig.Type = "wlan";
+        };
+      };
+      wait-online.enable = false;
+    };
+    tmpfiles.rules = [
+      "d /mnt 755 one6th users"
+    ];
+  };
 
   sops = {
     defaultSopsFile = ./secrets.yaml;

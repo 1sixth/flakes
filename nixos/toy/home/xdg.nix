@@ -3,10 +3,6 @@
 {
   xdg = {
     configFile = {
-      "baloofilerc".text = ''
-        [Basic Settings]
-        Indexing-Enabled=false
-      '';
       # https://github.com/VSCodium/vscodium/blob/f73d7b632b48851bd4c0ae27794fc4e84b6f3d1d/DOCS.md#how-to-use-a-different-extension-gallery
       "VSCodium/product.json".text = ''
         {
@@ -24,22 +20,16 @@
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
     };
     enable = true;
-    desktopEntries.chromium-browser = {
-      name = "Chromium";
-      # assert(hardware.nvidia.prime.offload.enableOffloadCmd);
-      exec = "nvidia-offload chromium";
-    };
     mimeApps = {
       defaultApplications = {
-        "audio/flac" = [ "org.kde.elisa.desktop" ];
-        "application/pdf" = [ "org.kde.okular.desktop" ];
-        "image/jpeg" = [ "org.kde.gwenview.desktop" ];
-        "image/gif" = [ "org.kde.gwenview.desktop" ];
-        "image/png" = [ "org.kde.gwenview.desktop" ];
-        "image/webp" = [ "org.kde.gwenview.desktop" ];
-        "inode/directory" = [ "org.kde.dolphin.desktop" ];
+        "audio/flac" = [ "mpv.desktop" ];
+        "application/pdf" = [ "okularApplication_pdf.desktop" ];
+        "image/jpeg" = [ "imv-dir.desktop" ];
+        "image/gif" = [ "imv-dir.desktop" ];
+        "image/png" = [ "imv-dir.desktop" ];
+        "image/webp" = [ "imv-dir.desktop" ];
+        "inode/directory" = [ "lf.desktop" ];
         "text/html" = [ "firefox.desktop" ];
-        "text/plain" = [ "codium.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
         "video/quicktime" = [ "mpv.desktop" ];
         "video/webm" = [ "mpv.desktop" ];

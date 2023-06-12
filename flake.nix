@@ -20,6 +20,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    hyprland = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/Hyprland";
+    };
+    hyprland-contrib = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/contrib";
+    };
     impermanence.url = "github:nix-community/impermanence";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     sops-nix = {
@@ -53,14 +61,16 @@
       nixosConfigurations = {
         ams0 = import ./nixos/ams0 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nas = import ./nixos/nas { system = "x86_64-linux"; inherit self nixpkgs inputs; };
+        oldtoy = import ./nixos/oldtoy { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nrt0 = import ./nixos/nrt0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         nrt1 = import ./nixos/nrt1 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
-        oldtoy = import ./nixos/oldtoy { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         phx0 = import ./nixos/phx0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         toy = import ./nixos/toy { system = "x86_64-linux"; inherit self nixpkgs inputs; };
       };
 
       nixosModules = import ./modules;
+
+      overlays = import ./overlays { inherit inputs; };
     } // flake-utils.lib.eachSystem
       (with flake-utils.lib.system; [
         aarch64-linux
