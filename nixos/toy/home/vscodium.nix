@@ -15,6 +15,7 @@
     package = pkgs.vscodium.override {
       commandLineArgs = builtins.concatStringsSep " " [
         "--enable-wayland-ime"
+        # VSCodium just shows a white window in XWayland on Hyprland.
         "--ozone-platform-hint=auto"
       ];
     };
@@ -42,6 +43,10 @@
       "update.showReleaseNotes" = false;
       "vim.useCtrlKeys" = false;
       "window.menuBarVisibility" = "toggle";
+      # Unset the following line and VSCodium would crash
+      # in native Wayland on Hyprland. This is weird
+      # because other people are reporting crashes
+      # when it is set. See: vscode/issues/181533
       "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "Solarized Light";
       "workbench.enableExperiments" = false;
