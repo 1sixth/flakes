@@ -47,6 +47,7 @@
       flake-registry = "/etc/nix/registry.json";
       nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
       use-cgroups = true;
+      use-xdg-base-directories = true;
     };
   };
 
