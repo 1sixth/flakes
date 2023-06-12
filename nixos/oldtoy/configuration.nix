@@ -136,7 +136,6 @@
       enable = true;
       pulse.enable = true;
     };
-    upower.enable = true;
   };
 
   systemd = {

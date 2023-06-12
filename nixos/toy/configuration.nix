@@ -164,7 +164,6 @@
       enable = true;
       pulse.enable = true;
     };
-    upower.enable = true;
     xserver.videoDrivers = [ "nvidia" ];
   };
 
