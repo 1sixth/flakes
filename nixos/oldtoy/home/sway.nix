@@ -71,10 +71,6 @@ in
       terminal = "foot";
     };
     enable = true;
-    extraConfig = ''
-      bindswitch --locked --reload lid:on output eDP-1 disable
-      bindswitch --locked --reload lid:off output eDP-1 enable
-    '';
     package = null;
   };
 }
