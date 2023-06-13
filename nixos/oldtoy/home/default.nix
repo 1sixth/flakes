@@ -98,13 +98,14 @@
         "diff \"sopsdiffer\"".textconv = "sops -d";
         commit.gpgSign = true;
         gpg = {
-          ssh.allowedSignersFile = builtins.toString (pkgs.writeText "allowed_signers"
-            (config.programs.git.userEmail + " " + config.programs.git.extraConfig.user.signingKey));
+          ssh.allowedSignersFile = builtins.toString (pkgs.writeText "allowed_signers" ''
+            ${config.programs.git.userEmail} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOSqODpw3my6PkhWrAD/sulDNCiNjKqLjNOtFPMFwr
+          '');
           format = "ssh";
         };
         init.defaultBranch = "master";
         log.date = "iso";
-        user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOSqODpw3my6PkhWrAD/sulDNCiNjKqLjNOtFPMFwr";
+        user.signingKey = "${config.home.homeDirectory}/.ssh/id_ed25519";
       };
       userEmail = "1sixth@shinta.ro";
       userName = "1sixth";
@@ -115,10 +116,6 @@
     };
     home-manager.enable = true;
     jq.enable = true;
-    keychain = {
-      enable = true;
-      keys = [ "id_ed25519" ];
-    };
     lf = {
       enable = true;
       keybindings = {
