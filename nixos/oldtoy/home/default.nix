@@ -194,6 +194,7 @@
       settings = {
         embed-chapters = true;
         extractor-args = "youtube:skip=translated_subs";
+        format-sort = "res:1080";
         output = "$PWD/%(title)s.%(ext)s";
         remux-video = "mkv";
         sub-langs = "en.*,zh.*";
