@@ -45,6 +45,7 @@
       libnotify
       libreoffice
       nali
+      nix-index-with-db
       nix-tree
       okular
       podman-compose
@@ -129,10 +130,6 @@
         preview = false;
         ratios = "1:2";
       };
-    };
-    nix-index = {
-      enable = true;
-      enableFishIntegration = false;
     };
     ssh = {
       compression = true;

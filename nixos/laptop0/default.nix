@@ -10,6 +10,13 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.dnscrypt-proxy2.china
     self.nixosModules.v2ray.client
     ./configuration.nix
+    {
+      nixpkgs.overlays = [
+        (final: prev: {
+          inherit (inputs.nix-index-database.packages.${prev.system}) nix-index-with-db;
+        })
+      ];
+    }
   ];
   specialArgs = { inherit inputs self; };
 }

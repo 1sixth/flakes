@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, self, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -14,7 +14,6 @@
       { directory = ".local/state/gnupg"; mode = "0700"; }
       ".cache/cargo"
       ".cache/nix"
-      ".cache/nix-index"
       ".cache/pypoetry"
       ".config/chromium"
       ".config/easyeffects"

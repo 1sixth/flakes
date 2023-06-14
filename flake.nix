@@ -21,6 +21,10 @@
       url = "github:nix-community/home-manager";
     };
     impermanence.url = "github:nix-community/impermanence";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     sops-nix = {
       inputs = {
