@@ -20,14 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
-    hyprland = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:hyprwm/Hyprland";
-    };
-    hyprland-contrib = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:hyprwm/contrib";
-    };
     impermanence.url = "github:nix-community/impermanence";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     sops-nix = {
@@ -65,12 +57,9 @@
         nrt0 = import ./nixos/nrt0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         nrt1 = import ./nixos/nrt1 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         phx0 = import ./nixos/phx0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
-        toy = import ./nixos/toy { system = "x86_64-linux"; inherit self nixpkgs inputs; };
       };
 
       nixosModules = import ./modules;
-
-      overlays = import ./overlays { inherit inputs; };
     } // flake-utils.lib.eachSystem
       (with flake-utils.lib.system; [
         aarch64-linux
