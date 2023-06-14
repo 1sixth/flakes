@@ -9,7 +9,9 @@
       jnoortheen.nix-ide
       matklad.rust-analyzer
       pkief.material-icon-theme
+      redhat.java
       vadimcn.vscode-lldb
+      vscjava.vscode-java-debug
       vscodevim.vim
     ];
     package = pkgs.vscodium;
@@ -24,6 +26,12 @@
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
+      "java.configuration.runtimes" = [{
+        "default" = true;
+        "name" = "JavaSE-17";
+        "path" = "${pkgs.openjdk17}/lib/openjdk";
+      }];
+      "java.jdt.ls.java.home" = "${pkgs.openjdk17}/lib/openjdk";
       "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
         "MD024"."siblings_only" = true;
