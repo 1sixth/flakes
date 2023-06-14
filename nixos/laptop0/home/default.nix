@@ -43,7 +43,6 @@
       ldns
       libarchive
       libnotify
-      libreoffice
       nali
       nix-index-with-db
       nix-tree
