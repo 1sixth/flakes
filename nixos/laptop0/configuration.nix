@@ -87,7 +87,7 @@
   };
 
   networking = {
-    hostName = "oldtoy";
+    hostName = "laptop0";
     wireless.iwd.enable = true;
   };
 
