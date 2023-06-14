@@ -28,7 +28,6 @@
       ".local/share/direnv"
       ".local/share/fcitx5"
       ".local/share/fish"
-      ".local/share/kxmlgui5/okular"
       ".local/share/nali"
       ".local/share/okular"
       ".local/share/sponsorblock_shared"
