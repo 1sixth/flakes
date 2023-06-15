@@ -55,6 +55,7 @@ in
       windowrulev2 = workspace 3 silent, class: mpv
       windowrulev2 = workspace 4 silent, class: thunderbird
       windowrulev2 = float, title: Media viewer
+      windowrulev2 = nofullscreenrequest, class: mpv
 
       $Mod = SUPER
 
