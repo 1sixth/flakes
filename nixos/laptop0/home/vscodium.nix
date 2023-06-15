@@ -8,6 +8,8 @@
       editorconfig.editorconfig
       jnoortheen.nix-ide
       matklad.rust-analyzer
+      ms-python.python
+      ms-python.vscode-pylance
       pkief.material-icon-theme
       redhat.java
       vadimcn.vscode-lldb
@@ -44,8 +46,11 @@
         "MD040" = false;
       };
       "nix.enableLanguageServer" = true;
-      "nix.serverPath"= "${pkgs.nil}/bin/nil";
+      "nix.serverPath" = "${pkgs.nil}/bin/nil";
       "nix.serverSettings"."nil"."formatting"."command" = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
+      "python.experiments.enabled" = false;
+      "python.formatting.blackPath" = "${pkgs.black}/bin/black";
+      "python.formatting.provider" = "black";
       "security.workspace.trust.enabled" = false;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
