@@ -101,7 +101,6 @@
     "chrome-widevine-cdm"
     "chromium-unwrapped"
     "ungoogled-chromium"
-    "vscode-extension-MS-python-vscode-pylance"
   ];
 
   programs = {

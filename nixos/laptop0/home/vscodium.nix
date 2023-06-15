@@ -8,12 +8,8 @@
       editorconfig.editorconfig
       jnoortheen.nix-ide
       matklad.rust-analyzer
-      ms-python.python
-      ms-python.vscode-pylance
       pkief.material-icon-theme
-      redhat.java
       vadimcn.vscode-lldb
-      vscjava.vscode-java-debug
       vscodevim.vim
     ];
     package = pkgs.vscodium.override {
@@ -33,12 +29,6 @@
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
-      "java.configuration.runtimes" = [{
-        "default" = true;
-        "name" = "JavaSE-17";
-        "path" = "${pkgs.openjdk17}/lib/openjdk";
-      }];
-      "java.jdt.ls.java.home" = "${pkgs.openjdk17}/lib/openjdk";
       "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
         "MD024"."siblings_only" = true;
@@ -48,9 +38,6 @@
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nil}/bin/nil";
       "nix.serverSettings"."nil"."formatting"."command" = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
-      "python.experiments.enabled" = false;
-      "python.formatting.blackPath" = "${pkgs.black}/bin/black";
-      "python.formatting.provider" = "black";
       "security.workspace.trust.enabled" = false;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
