@@ -7,8 +7,10 @@
       package = pkgs.ungoogled-chromium.override {
         commandLineArgs = builtins.concatStringsSep " " [
           "--enable-gpu-rasterization"
+          "--enable-wayland-ime"
           "--enable-zero-copy"
           "--ignore-gpu-blocklist"
+          "--ozone-platform-hint=auto"
           "--proxy-server=socks5://127.0.0.1:1080"
         ];
         enableWideVine = true;

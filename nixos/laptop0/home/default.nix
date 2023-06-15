@@ -4,10 +4,10 @@
   imports = [
     ./browser.nix
     ./foot.nix
+    ./hyprland.nix
     ./mpv.nix
     ./neovim.nix
     ./shell.nix
-    ./sway.nix
     ./theme.nix
     ./vscodium.nix
     ./waybar.nix
@@ -220,14 +220,15 @@
         command = "${config.programs.swaylock.package}/bin/swaylock";
         event = "lock";
       }];
+      systemdTarget = "hyprland-session.target";
       timeouts = [
         {
           command = "${pkgs.systemd}/bin/loginctl lock-session";
           timeout = 300;
         }
         {
-          command = ''${pkgs.sway}/bin/swaymsg "output * dpms off"'';
-          resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
+          command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+          resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
           timeout = 305;
         }
       ];
@@ -250,6 +251,6 @@
         '');
       };
     };
-    targets.sway-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
+    targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   };
 }

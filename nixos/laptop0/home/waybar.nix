@@ -38,8 +38,7 @@
         "clock"
       ];
       modules-left = [
-        "sway/workspaces"
-        "sway/mode"
+        "wlr/workspaces"
         "temperature"
         "cpu"
         "memory"
@@ -69,13 +68,16 @@
         scroll-step = 5;
       };
       spacing = 10;
-      "sway/workspaces" = {
+      "wlr/workspaces" = {
         format = "{name} {icon}";
         format-icons = {
+          active = "";
           default = "";
-          focused = "";
           urgent = "";
         };
+        on-click = "activate";
+        on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e+1";
+        on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e-1";
       };
       temperature = {
         critical-threshold = 80;

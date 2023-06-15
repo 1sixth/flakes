@@ -14,6 +14,22 @@ nixpkgs.lib.nixosSystem {
       nixpkgs.overlays = [
         (final: prev: {
           inherit (inputs.nix-index-database.packages.${prev.system}) nix-index-with-db;
+          inherit (inputs.hyprwm-contrib.packages.${prev.system}) grimblast;
+
+          hyprland = prev.hyprland.override {
+            enableXWayland = false;
+          };
+
+          waybar = prev.waybar.overrideAttrs (old: {
+            postPatch = ''
+              sed -i 's/zext_workspace_handle_v1_activate(workspace_handle_);/const std::string command = "hyprctl dispatch workspace " + name_;\n\tsystem(command.c_str());/g' src/modules/wlr/workspace_manager.cpp
+            '';
+            postFixup = ''
+              wrapProgram $out/bin/waybar \
+                --suffix PATH : ${inputs.nixpkgs.lib.makeBinPath [ final.hyprland ]}
+            '';
+            mesonFlags = old.mesonFlags ++ [ "-Dexperimental=true" ];
+          });
         })
       ];
     }

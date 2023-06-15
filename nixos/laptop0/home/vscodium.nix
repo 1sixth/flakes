@@ -14,7 +14,12 @@
       vscjava.vscode-java-debug
       vscodevim.vim
     ];
-    package = pkgs.vscodium;
+    package = pkgs.vscodium.override {
+      commandLineArgs = builtins.concatStringsSep " " [
+        "--enable-wayland-ime"
+        "--ozone-platform-hint=auto"
+      ];
+    };
     userSettings = {
       "editor.bracketPairColorization.enabled" = true;
       "editor.fontFamily" = "monospace";
@@ -46,6 +51,7 @@
       "update.showReleaseNotes" = false;
       "vim.useCtrlKeys" = false;
       "window.menuBarVisibility" = "toggle";
+      "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "Solarized Light";
       "workbench.enableExperiments" = false;
       "workbench.iconTheme" = "material-icon-theme";

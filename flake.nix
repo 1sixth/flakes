@@ -20,6 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    hyprwm-contrib = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/contrib";
+    };
     impermanence.url = "github:nix-community/impermanence";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";

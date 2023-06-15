@@ -62,9 +62,9 @@
   };
 
   hardware.bluetooth = {
-      enable = true;
-      settings.General.Experimental = true;
-    };
+    enable = true;
+    settings.General.Experimental = true;
+  };
 
   home-manager = {
     useGlobalPkgs = true;
@@ -101,17 +101,20 @@
 
   programs = {
     adb.enable = true;
-    sway = {
+    hyprland = {
       enable = true;
-      wrapperFeatures.gtk = true;
+      package = pkgs.hyprland;
     };
   };
 
   security = {
-    pam.u2f = {
-      authFile = config.sops.secrets.u2f_keys.path;
-      cue = true;
-      enable = true;
+    pam = {
+      services.swaylock = { };
+      u2f = {
+        authFile = config.sops.secrets.u2f_keys.path;
+        cue = true;
+        enable = true;
+      };
     };
     sudo.extraConfig = ''Defaults lecture="never"'';
   };
