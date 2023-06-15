@@ -26,7 +26,7 @@ in
       done
     '';
     text = ''
-      monitor=eDP-1,preferred,auto,1
+      monitor=eDP-1,preferred,auto,1.5
 
       animations {
           enabled = false
@@ -123,6 +123,8 @@ in
       exec-once = ${pkgs.dbus}/bin/dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE XDG_CURRENT_DESKTOP && systemctl --user start hyprland-session.target
 
       exec-once = ${pkgs.swaybg}/bin/swaybg --mode fill --image ${wallpaper}
+
+      exec-once = ${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
     '';
   };
 }
