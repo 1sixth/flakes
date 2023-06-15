@@ -40,6 +40,8 @@
       gcc
       gdb
       imv
+      jetbrains.idea-community
+      jetbrains.pycharm-community
       ldns
       libarchive
       libnotify
