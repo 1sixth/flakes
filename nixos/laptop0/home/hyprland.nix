@@ -21,7 +21,7 @@ in
       # execute in subshell so that `shopt` won't affect other scripts
       shopt -s nullglob  # so that nothing is done if /tmp/hypr/ does not exist or is empty
       for instance in /tmp/hypr/*; do
-        HYPRLAND_INSTANCE_SIGNATURE=''${instance##*/} ${pkgs.hyprland}/bin/hyprctl reload config-only \
+        HYPRLAND_INSTANCE_SIGNATURE=''${instance##*/} ${pkgs.hyprland}/bin/hyprctl reload \
           || true  # ignore dead instance(s)
       done
     '';
