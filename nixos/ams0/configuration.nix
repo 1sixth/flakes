@@ -18,4 +18,6 @@
   };
 
   sops.defaultSopsFile = ./secrets.yaml;
+
+  zramSwap.enable = true;
 }
