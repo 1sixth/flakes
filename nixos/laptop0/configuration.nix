@@ -125,7 +125,7 @@
 
   services = {
     getty.autologinUser = "one6th";
-    logind.lidSwitch = "ignore";
+    logind.lidSwitchExternalPower = "ignore";
     pipewire = {
       enable = true;
       pulse.enable = true;
