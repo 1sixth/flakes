@@ -1,11 +1,7 @@
 { ... }:
 
 {
-  imports = [
-    ./hardware.nix
-    ./libreddit.nix
-    ./nitter.nix
-  ];
+  imports = [ ./hardware.nix ];
 
   networking.hostName = "nrt1";
 
