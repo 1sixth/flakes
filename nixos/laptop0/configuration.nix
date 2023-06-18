@@ -135,13 +135,7 @@
   systemd = {
     network = {
       enable = true;
-      networks = {
-        wlan = {
-          DHCP = "yes";
-          matchConfig.Type = "wlan";
-        };
-      };
-      wait-online.enable = false;
+      networks.default.matchConfig.Type = "wlan";
     };
     tmpfiles.rules = [
       "d /mnt 755 one6th users"
