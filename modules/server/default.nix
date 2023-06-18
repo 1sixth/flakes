@@ -118,11 +118,7 @@
   };
 
   systemd = {
-    network = {
-      networks.default = {
-        matchConfig.Type = "ether";
-      };
-    };
+    network.networks.default.matchConfig.Type = "ether";
     services.traefik.serviceConfig.EnvironmentFile = [ config.sops.secrets.cloudflare_token.path ];
   };
 
