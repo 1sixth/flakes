@@ -118,7 +118,7 @@ in
 
       bind = $Mod, RETURN, exec, ${config.programs.foot.package}/bin/foot
 
-      bind = , PRINT, exec, ${pkgs.grimblast}/bin/grimblast copy area
+      bind = , PRINT, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy
 
       exec-once = ${pkgs.dbus}/bin/dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE XDG_CURRENT_DESKTOP && systemctl --user start hyprland-session.target
 

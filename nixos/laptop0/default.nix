@@ -13,7 +13,6 @@ nixpkgs.lib.nixosSystem {
     {
       nixpkgs.overlays = [
         (final: prev: {
-          inherit (inputs.hyprwm-contrib.packages.${prev.system}) grimblast;
           inherit (inputs.nix-index-database.packages.${prev.system}) nix-index-with-db;
 
           hyprland = prev.hyprland.override {

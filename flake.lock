@@ -83,26 +83,6 @@
         "type": "github"
       }
     },
-    "hyprwm-contrib": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1687002145,
-        "narHash": "sha256-xJCwdtxIFDImx4XsVzWns8jzh6htcvWhjdrVDNZfjTg=",
-        "owner": "hyprwm",
-        "repo": "contrib",
-        "rev": "fa0b667ef28c0f7e597f916eadb3f8bef48d9ef8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hyprwm",
-        "repo": "contrib",
-        "type": "github"
-      }
-    },
     "impermanence": {
       "locked": {
         "lastModified": 1684264534,
@@ -160,7 +140,6 @@
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "hyprwm-contrib": "hyprwm-contrib",
         "impermanence": "impermanence",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
