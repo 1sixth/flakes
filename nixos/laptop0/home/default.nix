@@ -239,10 +239,11 @@
 
   systemd.user = {
     services.sshfs = {
-      Unit.After = [ "network-online.target" ];
+      Install.WantedBy = [ "default.target" ];
       Service = {
         Type = "oneshot";
         RemainAfterExit = true;
+        ExecStartPre = "${pkgs.coreutils}/bin/sleep 5s";
         ExecStart = builtins.toString (pkgs.writeShellScript "sshfs-start.sh" ''
           ${pkgs.sshfs}/bin/sshfs -o idmap=user,reconnect nas:/persistent/16T /persistent/16T
           ${pkgs.sshfs}/bin/sshfs -o idmap=user,reconnect nas:/persistent/8T /persistent/8T
