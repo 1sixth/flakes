@@ -22,8 +22,8 @@
     };
     impermanence.url = "github:nix-community/impermanence";
     nix-index-database = {
-      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nix-index-database";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     sops-nix = {
@@ -38,21 +38,21 @@
   outputs = inputs@{ flake-utils, nixpkgs, self, ... }:
 
     {
-      colmenaHive = inputs.colmena.lib.makeHive (
-        {
-          meta = {
-            nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
-            nodeSpecialArgs = builtins.mapAttrs
-              (name: value: self.nixosConfigurations.${name}._module.specialArgs)
-              self.nixosConfigurations;
-          };
-        } // builtins.mapAttrs
-          (name: value: {
-            nixpkgs.system = value.config.nixpkgs.system;
-            imports = value._module.args.modules;
-          })
-          (nixpkgs.lib.filterAttrs (name: value: !nixpkgs.lib.hasPrefix "laptop" name) self.nixosConfigurations)
-      );
+      colmenaHive = inputs.colmena.lib.makeHive ({
+        meta = {
+          nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
+          nodeSpecialArgs = builtins.mapAttrs
+            (name: value: self.nixosConfigurations.${name}._module.specialArgs)
+            self.nixosConfigurations;
+        };
+      } // builtins.mapAttrs
+        (name: value: {
+          nixpkgs.system = value.config.nixpkgs.system;
+          imports = value._module.args.modules;
+        })
+        (nixpkgs.lib.filterAttrs
+          (name: value: !nixpkgs.lib.hasPrefix "laptop" name)
+          self.nixosConfigurations));
 
       nixosConfigurations = {
         ams0 = import ./nixos/ams0 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
@@ -73,9 +73,7 @@
         let
           pkgs = import nixpkgs {
             inherit system;
-            overlays = [
-              inputs.colmena.overlays.default
-            ];
+            overlays = [ inputs.colmena.overlays.default ];
           };
         in
         {
@@ -85,6 +83,5 @@
               sops
             ];
           };
-        }
-      );
+        });
 }
