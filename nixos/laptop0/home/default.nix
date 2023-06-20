@@ -55,7 +55,6 @@
       rclone
       ripgrep
       rsync
-      sshfs
       tdesktop
       translate-shell
       unar
@@ -236,23 +235,5 @@
     };
   };
 
-  systemd.user = {
-    services.sshfs = {
-      Install.WantedBy = [ "default.target" ];
-      Service = {
-        Type = "oneshot";
-        RemainAfterExit = true;
-        ExecStartPre = "${pkgs.coreutils}/bin/sleep 5s";
-        ExecStart = builtins.toString (pkgs.writeShellScript "sshfs-start.sh" ''
-          ${pkgs.sshfs}/bin/sshfs -o idmap=user,reconnect nas:/persistent/16T /persistent/16T
-          ${pkgs.sshfs}/bin/sshfs -o idmap=user,reconnect nas:/persistent/8T /persistent/8T
-        '');
-        ExecStop = builtins.toString (pkgs.writeShellScript "sshfs-stop.sh" ''
-          /run/wrappers/bin/umount /persistent/16T
-          /run/wrappers/bin/umount /persistent/8T
-        '');
-      };
-    };
-    targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
-  };
+  systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
 }
