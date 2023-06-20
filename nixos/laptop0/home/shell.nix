@@ -41,6 +41,12 @@
       [ (tty) = /dev/tty1 ] && exec Hyprland
 
       set -g fish_greeting
+
+      # dirty temporary fix
+      if not test -e ~/.config/fish/completions/poetry.fish
+          mkdir -p ~/.config/fish/completions/
+          poetry completions | ${pkgs.sd}/bin/sd "'([^']+)'''" '"$1"\''' > ~/.config/fish/completions/poetry.fish
+      end
     '';
     plugins = [
       {
