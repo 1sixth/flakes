@@ -8,10 +8,6 @@
         format = "{capacity}% {icon}";
         format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
         interval = 1;
-        states = {
-          critical = 15;
-          warning = 30;
-        };
       };
       bluetooth = {
         format = "";
