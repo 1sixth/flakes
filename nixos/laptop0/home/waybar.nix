@@ -39,7 +39,6 @@
       ];
       modules-left = [
         "wlr/workspaces"
-        "temperature"
         "cpu"
         "memory"
         "idle_inhibitor"
@@ -78,11 +77,6 @@
         on-click = "activate";
         on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e+1";
         on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e-1";
-      };
-      temperature = {
-        critical-threshold = 80;
-        format = "{temperatureC}℃";
-        interval = 1;
       };
       tray.spacing = 10;
     }];
