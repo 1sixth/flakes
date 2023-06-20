@@ -125,7 +125,13 @@
 
   services = {
     getty.autologinUser = "one6th";
-    logind.lidSwitchExternalPower = "ignore";
+    logind = {
+      lidSwitchExternalPower = "ignore";
+      powerKey = "ignore";
+      powerKeyLongPress = "poweroff";
+      suspendKey = "ignore";
+      suspendKeyLongPress = "suspend";
+    };
     pipewire = {
       enable = true;
       pulse.enable = true;
