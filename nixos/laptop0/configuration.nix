@@ -129,7 +129,6 @@
     logind = {
       lidSwitchExternalPower = "ignore";
       powerKey = "ignore";
-      powerKeyLongPress = "poweroff";
       suspendKey = "ignore";
       suspendKeyLongPress = "suspend";
     };
