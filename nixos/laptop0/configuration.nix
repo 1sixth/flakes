@@ -94,6 +94,7 @@
       builders-use-substitutes = true;
       keep-derivations = true;
       keep-outputs = true;
+      trusted-users = [ "one6th" "root" ];
     };
   };
 
