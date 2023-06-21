@@ -33,7 +33,9 @@ in
       }
 
       dwindle {
+          force_split = 2
           no_gaps_when_only = true
+          preserve_split = true
       }
 
       general {
@@ -92,6 +94,7 @@ in
       bind = $Mod SHIFT, Q, killactive
       bind = $Mod SHIFT, SPACE, togglefloating
       bind = $Mod, f, fullscreen, 0
+      bind = $Mod, t, layoutmsg, togglesplit
 
       bindm = $Mod, mouse:272, movewindow
       bindm = $Mod, mouse:273, resizewindow
