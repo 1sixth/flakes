@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -16,7 +16,6 @@
       ".cache/JetBrains"
       ".cache/nix"
       ".cache/pypoetry"
-      ".config/chromium"
       ".config/easyeffects"
       ".config/fcitx5"
       ".config/htop"
@@ -99,12 +98,6 @@
       trusted-users = [ "@wheel" "root" ];
     };
   };
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "chrome-widevine-cdm"
-    "chromium-unwrapped"
-    "ungoogled-chromium"
-  ];
 
   programs = {
     adb.enable = true;
