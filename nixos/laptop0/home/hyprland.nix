@@ -97,20 +97,20 @@ in
       bindm = $Mod, mouse:273, resizewindow
 
       bind = , XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute
-      bind = , XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer --decrease 5
-      bind = , XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer --increase 5
+      binde = , XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer --decrease 5
+      binde = , XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer --increase 5
 
       bind = , XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause
       bind = , XF86AudioPause, exec, ${pkgs.playerctl}/bin/playerctl play-pause
       bind = , XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous
       bind = , XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next
 
-      bind = , XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%-
-      bind = , XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%+
+      binde = , XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%-
+      binde = , XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%+
 
       bind = $Mod, F1, exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute
-      bind = $Mod, F2, exec, ${pkgs.pamixer}/bin/pamixer --decrease 5
-      bind = $Mod, F3, exec, ${pkgs.pamixer}/bin/pamixer --increase 5
+      binde = $Mod, F2, exec, ${pkgs.pamixer}/bin/pamixer --decrease 5
+      binde = $Mod, F3, exec, ${pkgs.pamixer}/bin/pamixer --increase 5
 
       bind = $Mod, d, exec, ${config.programs.wofi.package}/bin/wofi
       bind = $Mod, w, exec, ${config.programs.firefox.package}/bin/firefox
