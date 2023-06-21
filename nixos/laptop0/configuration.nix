@@ -89,12 +89,14 @@
   };
 
   nix = {
+    daemonCPUSchedPolicy = "idle";
+    daemonIOSchedClass = "idle";
     registry.flake-utils.flake = inputs.flake-utils;
     settings = {
       builders-use-substitutes = true;
       keep-derivations = true;
       keep-outputs = true;
-      trusted-users = [ "one6th" "root" ];
+      trusted-users = [ "@wheel" "root" ];
     };
   };
 
@@ -121,6 +123,7 @@
         enable = true;
       };
     };
+    rtkit.enable = true;
     sudo.extraConfig = ''Defaults lecture="never"'';
   };
 
