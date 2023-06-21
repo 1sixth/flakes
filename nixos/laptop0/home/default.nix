@@ -33,12 +33,11 @@
       (pkgs.writeShellScriptBin "gnome-terminal" ''
         foot "$@"
       '')
-      clang-tools
+      clang-tools_16
+      clang_16
       dmlive
       fd
       file
-      gcc
-      gdb
       imv
       jetbrains.idea-community
       jetbrains.pycharm-community

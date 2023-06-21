@@ -3,17 +3,6 @@
 {
   xdg = {
     configFile = {
-      # https://github.com/VSCodium/vscodium/blob/f73d7b632b48851bd4c0ae27794fc4e84b6f3d1d/DOCS.md#how-to-use-a-different-extension-gallery
-      "VSCodium/product.json".text = ''
-        {
-          "extensionsGallery": {
-            "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-            "itemUrl": "https://marketplace.visualstudio.com/items",
-            "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-            "controlUrl": "",
-          }
-        }
-      '';
       # https://github.com/rydesun/dotfiles/tree/ef1f12bac03ce724f3c90380140dc96abf604478/.config/fontconfig/conf.d
       "fontconfig/conf.d/50-generic.conf".source = ./res/fontconfig/50-generic.conf;
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;

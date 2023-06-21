@@ -7,11 +7,13 @@
       davidanson.vscode-markdownlint
       editorconfig.editorconfig
       jnoortheen.nix-ide
+      llvm-vs-code-extensions.vscode-clangd
       matklad.rust-analyzer
       pkief.material-icon-theme
       vadimcn.vscode-lldb
       vscodevim.vim
     ];
+    mutableExtensionsDir = false;
     package = pkgs.vscodium.override {
       commandLineArgs = builtins.concatStringsSep " " [
         "--enable-wayland-ime"
