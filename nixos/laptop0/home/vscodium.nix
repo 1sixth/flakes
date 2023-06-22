@@ -8,9 +8,7 @@
       editorconfig.editorconfig
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
-      matklad.rust-analyzer
       pkief.material-icon-theme
-      vadimcn.vscode-lldb
       vscodevim.vim
     ];
     mutableExtensionsDir = false;
@@ -31,7 +29,6 @@
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
-      "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
         "MD024"."siblings_only" = true;
         "MD028" = false;
