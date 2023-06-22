@@ -5,6 +5,7 @@
 
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
+    kernelParams = [ "amd_pstate=active" ];
     supportedFilesystems = [ "ntfs" ];
   };
 
@@ -131,6 +132,13 @@
     pipewire = {
       enable = true;
       pulse.enable = true;
+    };
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      };
     };
   };
 
