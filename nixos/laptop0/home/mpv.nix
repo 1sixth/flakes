@@ -79,6 +79,7 @@
       dscale = "ewa_lanczos";
       demuxer-max-bytes = "1GiB";
       drm-vrr-enabled = "auto";
+      gpu-api = "vulkan";
       # HDR is not implemented on Wayland.
       hdr-compute-peak = "no";
       hwdec = "vaapi-copy";
