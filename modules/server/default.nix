@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
 
@@ -21,13 +21,7 @@
       ];
     };
     systemPackages = with pkgs; [
-      fd
-      file
-      ldns
       nmap
-      rclone
-      ripgrep
-      rsync
       screen
     ];
   };

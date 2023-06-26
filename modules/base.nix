@@ -24,6 +24,14 @@
         "/etc/machine-id"
       ];
     };
+    systemPackages = with pkgs; [
+      fd
+      file
+      ldns
+      rclone
+      ripgrep
+      rsync
+    ];
   };
 
   networking = {

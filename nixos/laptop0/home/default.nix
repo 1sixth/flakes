@@ -36,12 +36,9 @@
       clang-tools_16
       clang_16
       dmlive
-      fd
-      file
       imv
       jetbrains.idea-community
       jetbrains.pycharm-community
-      ldns
       libarchive
       libnotify
       nali
@@ -51,9 +48,6 @@
       podman-compose
       poetry
       python3
-      rclone
-      ripgrep
-      rsync
       tdesktop
       translate-shell
       unar
