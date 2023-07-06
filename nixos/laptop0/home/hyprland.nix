@@ -52,7 +52,6 @@ in
       }
 
       windowrulev2 = workspace 2 silent, class: firefox
-      windowrulev2 = workspace 3 silent, class: chromium-browser
       windowrulev2 = workspace 3 silent, class: imv
       windowrulev2 = workspace 3 silent, class: mpv
       windowrulev2 = workspace 4 silent, class: thunderbird
