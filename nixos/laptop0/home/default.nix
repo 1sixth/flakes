@@ -53,7 +53,6 @@
       unar
       wl-clipboard
       xdg-utils
-      yt-dlp
     ];
 
     sessionVariables = {
@@ -184,9 +183,9 @@
         extractor-args = "youtube:skip=translated_subs";
         output = "$PWD/%(title)s.%(ext)s";
         remux-video = "mkv";
-        sub-langs = "en.*,zh.*";
-        write-subs = true;
+        sub-langs = "ai-zh,en.*,zh.*";
         write-auto-subs = true;
+        write-subs = true;
       };
     };
   };
