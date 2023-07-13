@@ -83,7 +83,7 @@
       # HDR is not implemented on Wayland.
       hdr-compute-peak = "no";
       hwdec = "vaapi-copy";
-      keep-open = "always";
+      keep-open = "yes";
       no-input-default-bindings = "";
       profile = "gpu-hq";
       scale = "ewa_lanczos";
