@@ -97,6 +97,7 @@
     settings = {
       builders-use-substitutes = true;
       keep-outputs = true;
+      substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
       trusted-users = [ "@wheel" "root" ];
     };
   };
