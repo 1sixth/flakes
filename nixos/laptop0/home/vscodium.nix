@@ -33,6 +33,7 @@
         "MD024"."siblings_only" = true;
         "MD028" = false;
         "MD040" = false;
+        "MD041" = false;
       };
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nil}/bin/nil";
