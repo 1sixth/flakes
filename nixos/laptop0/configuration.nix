@@ -25,6 +25,7 @@
       ".config/rclone"
       ".config/sops"
       ".config/VSCodium"
+      ".config/wireshark"
       ".java"
       ".local/share/containers"
       ".local/share/direnv"
@@ -111,6 +112,10 @@
       enable = true;
       package = pkgs.hyprland;
     };
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
   };
 
   security = {
@@ -169,7 +174,7 @@
   users.users = {
     one6th = {
       isNormalUser = true;
-      extraGroups = [ "adbusers" "podman" "wheel" ];
+      extraGroups = [ "adbusers" "podman" "wheel" "wireshark" ];
       passwordFile = config.sops.secrets.password_one6th.path;
       shell = pkgs.fish;
     };
