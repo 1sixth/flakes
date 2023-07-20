@@ -8,7 +8,7 @@ nixpkgs.lib.nixosSystem {
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
     self.nixosModules.dnscrypt-proxy2.china
-    self.nixosModules.v2ray.client
+    self.nixosModules.proxy.client
     ./configuration.nix
     {
       nixpkgs.overlays = [
