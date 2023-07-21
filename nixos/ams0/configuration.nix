@@ -5,6 +5,8 @@
 
   networking.hostName = "ams0";
 
+  nix.settings.auto-optimise-store = false;
+
   systemd.network.networks.default = {
     address = [
       "5.255.109.113/24"

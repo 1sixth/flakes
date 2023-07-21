@@ -50,7 +50,7 @@
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
       auto-allocate-uids = true;
-      auto-optimise-store = true;
+      auto-optimise-store = lib.mkDefault true;
       experimental-features = [ "auto-allocate-uids" "cgroups" "flakes" "nix-command" ];
       flake-registry = "/etc/nix/registry.json";
       nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
