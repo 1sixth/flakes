@@ -11,31 +11,8 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = "eDP-1,preferred,auto,1.5";
-      animations.enabled = false;
-      dwindle = {
-        force_split = 2;
-        no_gaps_when_only = true;
-        preserve_split = true;
-      };
-      general = {
-        border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
-      };
-      input.touchpad = {
-        middle_button_emulation = true;
-        natural_scroll = true;
-      };
-      windowrulev2 = [
-        "workspace 2 silent, class: firefox"
-        "workspace 3 silent, class: imv"
-        "workspace 3 silent, class: mpv"
-        "workspace 4 silent, class: thunderbird"
-        "float, title: Media viewer"
-        "nofullscreenrequest, class: mpv"
-      ];
       "$Mod" = "SUPER";
+      animations.enabled = false;
       bind = [
         "$Mod, 1, workspace, 1"
         "$Mod, 2, workspace, 2"
@@ -104,9 +81,32 @@ in
         "$Mod, mouse:272, movewindow"
         "$Mod, mouse:273, resizewindow"
       ];
+      dwindle = {
+        force_split = 2;
+        no_gaps_when_only = true;
+        preserve_split = true;
+      };
       exec-once = [
         "${pkgs.swaybg}/bin/swaybg --mode fill --image ${wallpaper}"
         "${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2"
+      ];
+      general = {
+        border_size = 2;
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
+      };
+      input.touchpad = {
+        middle_button_emulation = true;
+        natural_scroll = true;
+      };
+      monitor = "eDP-1,preferred,auto,1.5";
+      windowrulev2 = [
+        "workspace 2 silent, class: firefox"
+        "workspace 3 silent, class: imv"
+        "workspace 3 silent, class: mpv"
+        "workspace 4 silent, class: thunderbird"
+        "float, title: Media viewer"
+        "nofullscreenrequest, class: mpv"
       ];
     };
   };
