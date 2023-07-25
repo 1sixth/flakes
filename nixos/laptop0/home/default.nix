@@ -2,8 +2,8 @@
 
 {
   imports = [
+    ./alacritty.nix
     ./browser.nix
-    ./foot.nix
     ./hyprland.nix
     ./mpv.nix
     ./neovim.nix
@@ -31,7 +31,7 @@
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
       (pkgs.writeShellScriptBin "gnome-terminal" ''
-        foot "$@"
+        alacritty "$@"
       '')
       clang-tools_16
       clang_16

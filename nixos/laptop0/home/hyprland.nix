@@ -63,7 +63,7 @@ in
         "$Mod, d, exec, ${config.programs.wofi.package}/bin/wofi"
         "$Mod, w, exec, ${config.programs.firefox.package}/bin/firefox"
         "$Mod, x, exec, ${pkgs.systemd}/bin/loginctl lock-session"
-        "$Mod, RETURN, exec, ${config.programs.foot.package}/bin/foot"
+        "$Mod, RETURN, exec, ${config.programs.alacritty.package}/bin/alacritty"
 
         '', PRINT, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy''
       ];
