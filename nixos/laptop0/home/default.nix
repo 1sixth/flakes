@@ -17,17 +17,11 @@
   fonts.fontconfig.enable = false;
 
   home = {
-    file = {
-      "${config.xdg.stateHome}/gnupg/dirmngr.conf".text = ''
-        honor-http-proxy
-        keyserver hkps://keys.openpgp.org
-      '';
-      ".iftoprc".text = ''
-        dns-resolution: no
-        port-display: on
-        port-resolution: no
-      '';
-    };
+    file.".iftoprc".text = ''
+      dns-resolution: no
+      port-display: on
+      port-resolution: no
+    '';
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
       (pkgs.writeShellScriptBin "gnome-terminal" ''
@@ -100,10 +94,6 @@
       };
       userEmail = "1sixth@shinta.ro";
       userName = "1sixth";
-    };
-    gpg = {
-      enable = true;
-      homedir = "${config.xdg.stateHome}/gnupg";
     };
     home-manager.enable = true;
     jq.enable = true;
@@ -191,11 +181,6 @@
   };
 
   services = {
-    gpg-agent = {
-      enable = true;
-      enableFishIntegration = false;
-      pinentryFlavor = "curses";
-    };
     mako = {
       anchor = "bottom-right";
       defaultTimeout = 6180;
