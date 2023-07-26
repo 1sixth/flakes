@@ -31,8 +31,8 @@
   };
 
   fonts = {
-    enableDefaultFonts = false;
-    fonts = with pkgs; [
+    enableDefaultPackages = false;
+    packages = with pkgs; [
       (iosevka-bin.override {
         variant = "sgr-iosevka-fixed-slab";
       })
