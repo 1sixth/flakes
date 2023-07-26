@@ -37,9 +37,15 @@
       };
       font.size = 17;
       selection.save_to_clipboard = true;
-      window.padding = {
-        x = 5;
-        y = 5;
+      window = {
+        dimensions = {
+          columns = 80;
+          lines = 30;
+        };
+        padding = {
+          x = 5;
+          y = 5;
+        };
       };
     };
   };

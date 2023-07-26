@@ -4,13 +4,10 @@
   imports = [
     ./alacritty.nix
     ./browser.nix
-    ./hyprland.nix
     ./mpv.nix
     ./neovim.nix
     ./shell.nix
-    ./theme.nix
     ./vscodium.nix
-    ./waybar.nix
     ./xdg.nix
   ];
 
@@ -24,13 +21,9 @@
     '';
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
-      (pkgs.writeShellScriptBin "gnome-terminal" ''
-        alacritty "$@"
-      '')
       clang-tools_16
       clang_16
       dmlive
-      imv
       jetbrains.idea-community
       jetbrains.pycharm-community
       libarchive
@@ -38,7 +31,6 @@
       nali
       nix-index-with-db
       nix-tree
-      okular
       podman-compose
       poetry
       python3
@@ -128,21 +120,6 @@
       };
       serverAliveInterval = 10;
     };
-    swaylock = {
-      enable = true;
-      package = pkgs.swaylock-effects;
-      settings = {
-        clock = true;
-        daemonize = true;
-        effect-blur = "7x5";
-        effect-vignette = "0.5:0.5";
-        grace = 3;
-        indicator = true;
-        indicator-caps-lock = true;
-        screenshots = true;
-        show-failed-attempts = true;
-      };
-    };
     thunderbird = {
       enable = true;
       package = pkgs.thunderbird.override {
@@ -157,15 +134,6 @@
       };
       profiles.default.isDefault = true;
     };
-    wofi = {
-      enable = true;
-      settings = {
-        insensitive = true;
-        layer = "overlay";
-        show = "drun";
-      };
-      style = builtins.readFile ./res/wofi.css;
-    };
     yt-dlp = {
       enable = true;
       settings = {
@@ -179,37 +147,4 @@
       };
     };
   };
-
-  services = {
-    mako = {
-      anchor = "bottom-right";
-      defaultTimeout = 6180;
-      enable = true;
-      font = "${config.gtk.font.name} ${builtins.toString config.gtk.font.size}";
-      height = 200;
-      layer = "overlay";
-      width = 300;
-    };
-    swayidle = {
-      enable = true;
-      events = [{
-        command = "${config.programs.swaylock.package}/bin/swaylock";
-        event = "lock";
-      }];
-      systemdTarget = "hyprland-session.target";
-      timeouts = [
-        {
-          command = "${pkgs.systemd}/bin/loginctl lock-session";
-          timeout = 300;
-        }
-        {
-          command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-          resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-          timeout = 305;
-        }
-      ];
-    };
-  };
-
-  systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
 }

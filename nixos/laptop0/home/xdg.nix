@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   xdg = {
@@ -8,34 +8,16 @@
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
     };
-    desktopEntries = {
-      idea-community = {
-        exec = builtins.toString (pkgs.writeShellScript "idea-community" ''
-          export GDK_SCALE=2
-          export XCURSOR_SIZE=${builtins.toString (config.home.pointerCursor.size * 2)}
-          idea-community
-        '');
-        name = "IntelliJ IDEA CE";
-      };
-      pycharm-community = {
-        exec = builtins.toString (pkgs.writeShellScript "pycharm-community" ''
-          export GDK_SCALE=2
-          export XCURSOR_SIZE=${builtins.toString (config.home.pointerCursor.size * 2)}
-          pycharm-community
-        '');
-        name = "PyCharm Community Edition";
-      };
-    };
     enable = true;
     mimeApps = {
       defaultApplications = {
-        "audio/flac" = [ "mpv.desktop" ];
-        "application/pdf" = [ "okularApplication_pdf.desktop" ];
-        "image/jpeg" = [ "imv-dir.desktop" ];
-        "image/gif" = [ "imv-dir.desktop" ];
-        "image/png" = [ "imv-dir.desktop" ];
-        "image/webp" = [ "imv-dir.desktop" ];
-        "inode/directory" = [ "lf.desktop" ];
+        "audio/flac" = [ "org.kde.elisa.desktop" ];
+        "application/pdf" = [ "org.kde.okular.desktop" ];
+        "image/jpeg" = [ "org.kde.gwenview.desktop" ];
+        "image/gif" = [ "org.kde.gwenview.desktop" ];
+        "image/png" = [ "org.kde.gwenview.desktop" ];
+        "image/webp" = [ "org.kde.gwenview.desktop" ];
+        "inode/directory" = [ "org.kde.dolphin.desktop" ];
         "text/html" = [ "firefox.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
         "video/quicktime" = [ "mpv.desktop" ];

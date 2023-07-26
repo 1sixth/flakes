@@ -38,8 +38,6 @@
       '';
     };
     interactiveShellInit = ''
-      [ (tty) = /dev/tty1 ] && exec Hyprland
-
       set -g fish_greeting
 
       # dirty temporary fix

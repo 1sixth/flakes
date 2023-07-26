@@ -4,7 +4,7 @@
   programs.mpv = {
     # https://github.com/mpv-player/mpv/blob/9cddd73f67f11dba2f2921124e2c39c77af01651/etc/input.conf
     bindings = {
-      MBTN_LEFT_DBL = ''run "/bin/sh" "-c" "${pkgs.hyprland}/bin/hyprctl dispatch fullscreen toggle"; cycle fullscreen''; # toggle fullscreen
+      MBTN_LEFT_DBL = "cycle fullscreen"; # toggle fullscreen
       MBTN_RIGHT = "cycle pause"; # toggle pause/playback mode
 
       RIGHT = "seek 5"; # seek 5 seconds forward
@@ -26,6 +26,8 @@
 
       q = "quit";
       Q = "quit-watch-later"; # exit and remember the playback position
+
+      ESC = "set fullscreen no"; # leave fullscreen
 
       SPACE = "cycle pause"; # toggle pause/playback mode
 
@@ -49,7 +51,7 @@
       j = "cycle sub"; # switch subtitle track
       J = "cycle sub down"; # switch subtitle track backwards
 
-      f = ''run "/bin/sh" "-c" "${pkgs.hyprland}/bin/hyprctl dispatch fullscreen toggle"; cycle fullscreen''; # toggle fullscreen
+      f = "cycle fullscreen"; # toggle fullscreen
 
       l = ''cycle-values loop-file "inf" "no"''; # toggle infinite looping
 
@@ -79,6 +81,7 @@
       dscale = "ewa_lanczos";
       demuxer-max-bytes = "1GiB";
       drm-vrr-enabled = "auto";
+      fullscreen = "";
       gpu-api = "vulkan";
       # HDR is not implemented on Wayland.
       hdr-compute-peak = "no";
