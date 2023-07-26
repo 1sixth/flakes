@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -69,6 +69,7 @@
   };
 
   networking = {
+    dhcpcd.enable = false;
     hostName = "laptop0";
     networkmanager = {
       enable = true;
@@ -133,12 +134,9 @@
     };
   };
 
-  systemd = {
-    network.enable = lib.mkForce false;
-    tmpfiles.rules = [
-      "d /mnt 755 one6th users"
-    ];
-  };
+  systemd.tmpfiles.rules = [
+    "d /mnt 755 one6th users"
+  ];
 
   sops = {
     defaultSopsFile = ./secrets.yaml;

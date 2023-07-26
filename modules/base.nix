@@ -37,7 +37,6 @@
   networking = {
     firewall.enable = false;
     useDHCP = false;
-    useNetworkd = true;
   };
 
   nix = {
