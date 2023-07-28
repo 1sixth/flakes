@@ -4,12 +4,17 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
+      asvetliakov.vscode-neovim
       davidanson.vscode-markdownlint
       editorconfig.editorconfig
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
       pkief.material-icon-theme
-      vscodevim.vim
+      davidanson.vscode-markdownlint
+      editorconfig.editorconfig
+      jnoortheen.nix-ide
+      llvm-vs-code-extensions.vscode-clangd
+      pkief.material-icon-theme
     ];
     mutableExtensionsDir = false;
     package = pkgs.vscodium.override {
@@ -41,7 +46,7 @@
       "security.workspace.trust.enabled" = false;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
-      "vim.useCtrlKeys" = false;
+      "vscode-neovim.useCtrlKeysForInsertMode" = false;
       "window.menuBarVisibility" = "toggle";
       "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "Solarized Light";
