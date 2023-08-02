@@ -28,9 +28,9 @@
       };
       cursor.color = "eeeeee 444444";
       main = {
-        dpi-aware = "no";
         font = "monospace:size=16";
-        pad = "6x6";
+        initial-window-size-chars = "80x30";
+        pad = "5x5";
         selection-target = "clipboard";
         underline-offset = "20px";
       };
