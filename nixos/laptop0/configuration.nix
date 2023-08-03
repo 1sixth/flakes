@@ -128,7 +128,10 @@
       desktopManager.plasma5.enable = true;
       displayManager = {
         defaultSession = "plasmawayland";
-        sddm.enable = true;
+        sddm = {
+          enable = true;
+          settings.General.DisplayServer = "wayland";
+        };
       };
       enable = true;
     };
