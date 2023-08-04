@@ -72,8 +72,8 @@
       };
       enable = true;
       extraConfig = {
-        "diff \"sopsdiffer\"".textconv = "sops -d";
         commit.gpgSign = true;
+        diff.sopsdiffer.textconv = "sops -d";
         gpg = {
           ssh.allowedSignersFile = builtins.toString (pkgs.writeText "allowed_signers" ''
             ${config.programs.git.userEmail} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOSqODpw3my6PkhWrAD/sulDNCiNjKqLjNOtFPMFwr
