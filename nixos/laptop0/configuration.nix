@@ -86,10 +86,7 @@
     settings = {
       builders-use-substitutes = true;
       keep-outputs = true;
-      substituters = [
-        "https://mirrors.bfsu.edu.cn/nix-channels/store"
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
-      ];
+      substituters = [ "https://mirrors.bfsu.edu.cn/nix-channels/store" ];
       trusted-users = [ "@wheel" "root" ];
     };
   };
