@@ -7,6 +7,12 @@
       "fontconfig/conf.d/50-generic.conf".source = ./res/fontconfig/50-generic.conf;
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
+      "go/env".text = ''
+        GO111MODULE=on
+        GOBIN=${config.xdg.cacheHome}/go/bin
+        GOPATH=${config.xdg.cacheHome}/go
+        GOPROXY=https://goproxy.cn,direct
+      '';
     };
     enable = true;
     mimeApps = {

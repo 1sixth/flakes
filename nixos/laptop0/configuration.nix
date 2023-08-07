@@ -13,6 +13,8 @@
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
     persistence."/persistent/impermanence".users.one6th.directories = [
       ".cache/cargo"
+      ".cache/go"
+      ".cache/go-build"
       ".cache/JetBrains"
       ".cache/nix"
       ".cache/pypoetry"

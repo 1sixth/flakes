@@ -23,7 +23,12 @@
     packages = with pkgs; [
       clang-tools_16
       clang_16
+      delve
       dmlive
+      go-tools
+      go
+      gopls
+      gotools
       jetbrains.idea-community
       jetbrains.pycharm-community
       libarchive

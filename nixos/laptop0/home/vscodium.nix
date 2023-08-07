@@ -7,6 +7,7 @@
       asvetliakov.vscode-neovim
       davidanson.vscode-markdownlint
       editorconfig.editorconfig
+      golang.go
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
       pkief.material-icon-theme
