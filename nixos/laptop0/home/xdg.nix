@@ -9,7 +9,7 @@
       "fontconfig/conf.d/52-replace.conf".source = ./res/fontconfig/52-replace.conf;
       "go/env".text = ''
         GO111MODULE=on
-        GOBIN=${config.xdg.cacheHome}/go/bin
+        GOBIN=${config.home.homeDirectory}/.local/bin
         GOPATH=${config.xdg.cacheHome}/go
         GOPROXY=https://goproxy.cn,direct
       '';

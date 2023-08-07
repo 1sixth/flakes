@@ -11,6 +11,7 @@
 
   environment = {
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
+    localBinInPath = true;
     persistence."/persistent/impermanence".users.one6th.directories = [
       ".cache/cargo"
       ".cache/go"
@@ -20,6 +21,7 @@
       ".cache/pypoetry"
       ".config"
       ".java"
+      ".local/bin"
       ".local/share"
       ".local/state/nvim"
       ".local/state/wireplumber"

@@ -45,7 +45,6 @@
       wl-clipboard
       xdg-utils
     ];
-
     sessionVariables = {
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 
