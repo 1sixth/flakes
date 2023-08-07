@@ -10,11 +10,6 @@
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
       pkief.material-icon-theme
-      davidanson.vscode-markdownlint
-      editorconfig.editorconfig
-      jnoortheen.nix-ide
-      llvm-vs-code-extensions.vscode-clangd
-      pkief.material-icon-theme
     ];
     mutableExtensionsDir = false;
     package = pkgs.vscodium.override {
