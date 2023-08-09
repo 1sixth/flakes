@@ -85,6 +85,7 @@
       gpu-api = "vulkan";
       # HDR is not implemented on Wayland.
       hdr-compute-peak = "no";
+      hdr-contrast-recovery = "0.0";
       hwdec = "vaapi-copy";
       keep-open = "yes";
       no-input-default-bindings = "";
