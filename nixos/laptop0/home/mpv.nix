@@ -94,6 +94,8 @@
       script-opts = ''ytdl_hook-exclude="%.mkv$|%.mp4$",ytdl_hook-try_ytdl_first=yes'';
       slang = "en-orig,zh-CN,zh-TW,zh-HK,zh-SG,zh-Hans,zh-Hant,chi,zho,zh";
       sub-auto = "fuzzy";
+      subs-fallback = "default";
+      subs-with-matching-audio = "yes";
       vo = "gpu-next";
       ytdl-raw-options = "yes-playlist=";
     };
