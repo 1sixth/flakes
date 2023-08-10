@@ -28,8 +28,6 @@
 
   fonts.fontconfig.enable = false;
 
-  networking.useNetworkd = true;
-
   programs = {
     fish = {
       interactiveShellInit = "set -g fish_greeting";
