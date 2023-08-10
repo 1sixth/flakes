@@ -81,6 +81,7 @@ in
         "$Mod, mouse:272, movewindow"
         "$Mod, mouse:273, resizewindow"
       ];
+      "device:pnp0c50:00-093a:0255-touchpad".accel_profile = "adaptive";
       dwindle = {
         force_split = 2;
         no_gaps_when_only = true;
@@ -95,9 +96,12 @@ in
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
       };
-      input.touchpad = {
-        middle_button_emulation = true;
-        natural_scroll = true;
+      input = {
+        accel_profile = "flat";
+        touchpad = {
+          middle_button_emulation = true;
+          natural_scroll = true;
+        };
       };
       monitor = "eDP-1,preferred,auto,1.5";
       windowrulev2 = [
