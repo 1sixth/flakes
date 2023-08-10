@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   xdg = {
@@ -17,13 +17,13 @@
     enable = true;
     mimeApps = {
       defaultApplications = {
-        "audio/flac" = [ "org.kde.elisa.desktop" ];
-        "application/pdf" = [ "org.kde.okular.desktop" ];
-        "image/jpeg" = [ "org.kde.gwenview.desktop" ];
-        "image/gif" = [ "org.kde.gwenview.desktop" ];
-        "image/png" = [ "org.kde.gwenview.desktop" ];
-        "image/webp" = [ "org.kde.gwenview.desktop" ];
-        "inode/directory" = [ "org.kde.dolphin.desktop" ];
+        "audio/flac" = [ "mpv.desktop" ];
+        "application/pdf" = [ "okularApplication_pdf.desktop" ];
+        "image/jpeg" = [ "imv-dir.desktop" ];
+        "image/gif" = [ "imv-dir.desktop" ];
+        "image/png" = [ "imv-dir.desktop" ];
+        "image/webp" = [ "imv-dir.desktop" ];
+        "inode/directory" = [ "lf.desktop" ];
         "text/html" = [ "firefox.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
         "video/quicktime" = [ "mpv.desktop" ];

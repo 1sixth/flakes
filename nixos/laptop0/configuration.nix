@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -19,10 +19,26 @@
       ".cache/JetBrains"
       ".cache/nix"
       ".cache/pypoetry"
-      ".config"
+      ".config/fcitx5"
+      ".config/htop"
+      ".config/JetBrains"
+      ".config/mpv/watch_later"
+      ".config/nali"
+      ".config/rclone"
+      ".config/sops"
+      ".config/VSCodium"
+      ".config/wireshark"
       ".java"
       ".local/bin"
-      ".local/share"
+      ".local/share/containers"
+      ".local/share/direnv"
+      ".local/share/fcitx5"
+      ".local/share/fish"
+      ".local/share/JetBrains"
+      ".local/share/nali"
+      ".local/share/okular"
+      ".local/share/TelegramDesktop"
+      ".local/share/virtualenv"
       ".local/state/nvim"
       ".local/state/wireplumber"
       ".mozilla"
@@ -74,10 +90,7 @@
 
   networking = {
     hostName = "laptop0";
-    networkmanager = {
-      enable = true;
-      wifi.backend = "iwd";
-    };
+    wireless.iwd.enable = true;
   };
 
   nix = {
@@ -94,7 +107,7 @@
 
   programs = {
     adb.enable = true;
-    dconf.enable = true;
+    hyprland.enable = true;
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
@@ -102,21 +115,30 @@
   };
 
   security = {
-    pam.u2f = {
-      authFile = config.sops.secrets.u2f_keys.path;
-      cue = true;
-      enable = true;
+    pam = {
+      services.swaylock = { };
+      u2f = {
+        authFile = config.sops.secrets.u2f_keys.path;
+        cue = true;
+        enable = true;
+      };
     };
     rtkit.enable = true;
     sudo.extraConfig = ''Defaults lecture="never"'';
   };
 
   services = {
+    getty.autologinUser = "one6th";
+    logind = {
+      lidSwitchExternalPower = "ignore";
+      powerKey = "ignore";
+      suspendKey = "ignore";
+      suspendKeyLongPress = "suspend";
+    };
     pipewire = {
       enable = true;
       pulse.enable = true;
     };
-    power-profiles-daemon.enable = false;
     tlp = {
       enable = true;
       settings = {
@@ -124,21 +146,10 @@
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       };
     };
-    xserver = {
-      desktopManager.plasma5.enable = true;
-      displayManager = {
-        defaultSession = "plasmawayland";
-        sddm = {
-          enable = true;
-          settings.General.DisplayServer = "wayland";
-        };
-      };
-      enable = true;
-    };
   };
 
   systemd = {
-    network.enable = lib.mkForce false;
+    network.networks.default.matchConfig.Type = "wlan";
     tmpfiles.rules = [
       "d /mnt 755 one6th users"
     ];
@@ -156,7 +167,7 @@
   users.users = {
     one6th = {
       isNormalUser = true;
-      extraGroups = [ "adbusers" "networkmanager" "podman" "wheel" "wireshark" ];
+      extraGroups = [ "adbusers" "podman" "wheel" "wireshark" ];
       passwordFile = config.sops.secrets.password_one6th.path;
       shell = pkgs.fish;
     };
