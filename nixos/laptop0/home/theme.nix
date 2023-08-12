@@ -1,14 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  dconf.settings."org/gnome/desktop/interface" = {
-    cursor-theme = config.home.pointerCursor.name;
-    cursor-size = config.home.pointerCursor.size;
-    font-name = config.gtk.font.name + " " + builtins.toString config.gtk.font.size;
-    gtk-theme = config.gtk.theme.name;
-    icon-theme = config.gtk.iconTheme.name;
-  };
-
   gtk = {
     enable = true;
     font = {
@@ -30,6 +22,5 @@
     gtk.enable = true;
     name = "phinger-cursors";
     package = pkgs.phinger-cursors;
-    size = 24;
   };
 }
