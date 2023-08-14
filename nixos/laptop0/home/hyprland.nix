@@ -89,7 +89,6 @@ in
       };
       exec-once = [
         "${pkgs.swaybg}/bin/swaybg --mode fill --image ${wallpaper}"
-        "${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2"
       ];
       general = {
         border_size = 2;
@@ -103,13 +102,13 @@ in
           natural_scroll = true;
         };
       };
+      misc.vrr = 1;
       monitor = "eDP-1,preferred,auto,1.5";
       windowrulev2 = [
         "workspace 2 silent, class: firefox"
         "workspace 3 silent, class: imv"
         "workspace 3 silent, class: mpv"
         "workspace 4 silent, class: thunderbird"
-        "float, title: Media viewer"
       ];
     };
   };
