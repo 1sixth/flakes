@@ -39,7 +39,6 @@
       nix-tree
       okular
       podman-compose
-      poetry
       python3
       tdesktop
       translate-shell
