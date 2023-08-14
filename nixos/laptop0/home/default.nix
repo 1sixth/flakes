@@ -32,8 +32,6 @@
       go
       gopls
       gotools
-      jetbrains.idea-community
-      jetbrains.pycharm-community
       libarchive
       libnotify
       nali
