@@ -3,7 +3,6 @@
 {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar-hyprland;
     settings = [{
       battery = {
         format = "{capacity}% {icon}";
@@ -19,6 +18,13 @@
       cpu = {
         format = "CPU: {usage}%";
         interval = 1;
+      };
+      "hyprland/workspaces" = {
+        format = "{name} {icon}";
+        format-icons = {
+          active = "";
+          default = "";
+        };
       };
       idle_inhibitor = {
         format = "{icon}";
@@ -36,7 +42,7 @@
         "clock"
       ];
       modules-left = [
-        "wlr/workspaces"
+        "hyprland/workspaces"
         "cpu"
         "memory"
         "idle_inhibitor"
@@ -65,17 +71,6 @@
         scroll-step = 5;
       };
       spacing = 10;
-      "wlr/workspaces" = {
-        format = "{name} {icon}";
-        format-icons = {
-          active = "";
-          default = "";
-          urgent = "";
-        };
-        on-click = "activate";
-        on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e+1";
-        on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e-1";
-      };
       tray.spacing = 10;
     }];
     style = ./res/waybar.css;
