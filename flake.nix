@@ -38,23 +38,17 @@
   outputs = inputs@{ flake-utils, nixpkgs, self, ... }:
 
     {
-      colmenaHive = inputs.colmena.lib.makeHive (
-        {
-          meta = {
-            nixpkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
-            nodeSpecialArgs = builtins.mapAttrs
-              (name: value: self.nixosConfigurations.${name}._module.specialArgs)
-              self.nixosConfigurations;
-          };
-        } // builtins.mapAttrs
-          (name: value: {
-            nixpkgs.system = value.config.nixpkgs.system;
-            imports = value._module.args.modules;
-          })
-          (nixpkgs.lib.filterAttrs
-            (name: value: !nixpkgs.lib.hasPrefix "laptop" name)
-            self.nixosConfigurations)
-      );
+      colmena = {
+        meta = {
+          nixpkgs = import nixpkgs { system = "x86_64-linux"; };
+          nodeNixpkgs = builtins.mapAttrs (_: v: v.pkgs) self.nixosConfigurations;
+          nodeSpecialArgs = builtins.mapAttrs (_: v: v._module.specialArgs) self.nixosConfigurations;
+        };
+      } // builtins.mapAttrs
+        (_: v: { imports = v._module.args.modules; })
+        (nixpkgs.lib.filterAttrs
+          (n: _: !nixpkgs.lib.hasPrefix "laptop" n)
+          self.nixosConfigurations);
 
       nixosConfigurations = {
         ams0 = import ./nixos/ams0 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
