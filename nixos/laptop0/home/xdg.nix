@@ -37,16 +37,9 @@
       enable = true;
     };
     userDirs = {
-      createDirectories = true;
       desktop = config.xdg.userDirs.download;
-      documents = config.xdg.userDirs.download;
       download = "${config.home.homeDirectory}/Download";
       enable = true;
-      music = config.xdg.userDirs.download;
-      pictures = "${config.xdg.userDirs.download}/Picture";
-      publicShare = config.xdg.userDirs.download;
-      templates = config.xdg.userDirs.download;
-      videos = "${config.xdg.userDirs.download}/Video";
     };
   };
 }
