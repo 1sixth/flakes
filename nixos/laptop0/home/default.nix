@@ -155,14 +155,13 @@
       };
       profiles.default.isDefault = true;
     };
-    wofi = {
+    fuzzel = {
       enable = true;
-      settings = {
-        insensitive = true;
-        layer = "overlay";
-        show = "drun";
+      settings.main = {
+        fields = "name";
+        font = "monospace:size=20";
+        terminal = "${config.programs.foot.package}/bin/foot -e";
       };
-      style = builtins.readFile ./res/wofi.css;
     };
     yt-dlp = {
       enable = true;

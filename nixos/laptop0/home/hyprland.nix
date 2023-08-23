@@ -60,7 +60,7 @@ in
 
         "$Mod, F1, exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute"
 
-        "$Mod, d, exec, ${config.programs.wofi.package}/bin/wofi"
+        "$Mod, d, exec, ${config.programs.fuzzel.package}/bin/fuzzel --log-level=warning"
         "$Mod, w, exec, ${config.programs.firefox.package}/bin/firefox"
         "$Mod, x, exec, ${pkgs.systemd}/bin/loginctl lock-session"
         "$Mod, RETURN, exec, ${config.programs.foot.package}/bin/foot"
