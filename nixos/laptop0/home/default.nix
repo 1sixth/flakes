@@ -180,13 +180,15 @@
 
   services = {
     mako = {
+      # https://github.com/stacyharper/base16-mako/blob/master/colors/base16-solarized-light.config
       anchor = "bottom-right";
-      defaultTimeout = 6180;
+      backgroundColor = "#fdf6e3";
+      borderColor = "#268bd2";
+      defaultTimeout = 10000;
       enable = true;
-      font = "${config.gtk.font.name} ${builtins.toString config.gtk.font.size}";
-      height = 200;
+      font = "monospace 15";
       layer = "overlay";
-      width = 300;
+      textColor = "#586e75";
     };
     swayidle = {
       enable = true;
