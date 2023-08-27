@@ -42,6 +42,7 @@
       "security.workspace.trust.enabled" = false;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
+      "vscode-neovim.neovimClean" = true;
       "vscode-neovim.useCtrlKeysForInsertMode" = false;
       "window.menuBarVisibility" = "toggle";
       "window.titleBarStyle" = "custom";
