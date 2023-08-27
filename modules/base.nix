@@ -4,11 +4,12 @@
   boot = {
     initrd.systemd.enable = true;
     kernel.sysctl = {
-      # https://github.com/torvalds/linux/blob/8032bf1233a74627ce69b803608e650f3f35971c/net/ipv4/tcp_bbr.c
+      # https://github.com/torvalds/linux/blob/218af599fa635b107cfe10acf3249c4dfe5e4123/net/ipv4/tcp_bbr.c#L55
       "net.core.default_qdisc" = "fq";
       "net.ipv4.tcp_congestion_control" = "bbr";
-      # https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size#non-bsd
+      # https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes#non-bsd
       "net.core.rmem_max" = 2500000;
+      "net.core.wmem_max" = 2500000;
       # https://wiki.archlinux.org/title/Zram#Optimizing_swap_on_zram
       "vm.swappiness" = 180;
       "vm.watermark_boost_factor" = 0;
