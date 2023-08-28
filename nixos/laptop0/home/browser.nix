@@ -109,8 +109,8 @@
           ];
           Default = "Google Search";
           Remove = [
-            # Google won't be removed for some mysterious reason.
             "Google"
+            "Amazon.co.jp"
             "Amazon.com"
             "Bing"
             "DuckDuckGo"
