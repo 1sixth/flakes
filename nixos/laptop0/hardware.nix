@@ -25,16 +25,16 @@ in
       options = [ "mode=755" "size=100%" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/50BB-88A5";
+      device = "/dev/disk/by-uuid/4E1B-2A50";
       fsType = "vfat";
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/ea5707ba-5f2a-4180-bef9-8a633742f12b";
+      device = "/dev/disk/by-uuid/0080291b-9ff4-470f-9c78-569ee68eb49d";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@nix" ];
     };
     "/persistent" = {
-      device = "/dev/disk/by-uuid/ea5707ba-5f2a-4180-bef9-8a633742f12b";
+      device = "/dev/disk/by-uuid/0080291b-9ff4-470f-9c78-569ee68eb49d";
       fsType = "btrfs";
       neededForBoot = true;
       options = mountOptions ++ [ "subvol=/@persistent" ];
