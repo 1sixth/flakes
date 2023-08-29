@@ -7,9 +7,9 @@ nixpkgs.lib.nixosSystem {
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
     self.nixosModules.dnscrypt-proxy2.china
+    self.nixosModules.proxy.client
     self.nixosModules.qbittorrent-nox
     self.nixosModules.server
-    self.nixosModules.proxy.client
     ./configuration.nix
   ];
   specialArgs = { inherit inputs self; };
