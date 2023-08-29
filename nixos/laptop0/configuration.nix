@@ -5,7 +5,6 @@
 
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
-    kernelParams = [ "amd_pstate=active" ];
     supportedFilesystems = [ "ntfs" ];
   };
 
