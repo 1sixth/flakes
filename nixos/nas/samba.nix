@@ -11,13 +11,11 @@
       shares = {
         "16T" = {
           path = "/persistent/16T";
-          "read only" = true;
-          "guest ok" = true;
+          public = true;
         };
         "8T" = {
           path = "/persistent/8T";
-          "read only" = true;
-          "guest ok" = true;
+          public = true;
         };
       };
     };
