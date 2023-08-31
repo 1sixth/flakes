@@ -9,7 +9,7 @@
       LimitMEMLOCK = "infinity";
       StateDirectory = "stress-ng";
       Type = "exec";
-      WorkingDirectory = "/var/lib/stress-ng/";
+      WorkingDirectory = "/var/lib/stress-ng";
     };
     wantedBy = [ "multi-user.target" ];
   };

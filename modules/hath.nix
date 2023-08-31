@@ -17,7 +17,7 @@
     serviceConfig = {
       User = "hath";
       StateDirectory = "hath";
-      WorkingDirectory = "/var/lib/hath/";
+      WorkingDirectory = "/var/lib/hath";
       ExecStart = "${pkgs.HentaiAtHome}/bin/HentaiAtHome";
       SuccessExitStatus = 143;
       TimeoutStopSec = 10;

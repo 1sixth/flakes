@@ -89,7 +89,7 @@
 
       nixos-rebuild = "nixos-rebuild --use-remote-sudo --verbose";
 
-      nwdrc = "nix why-depends /run/current-system/";
+      nwdrc = "nix why-depends /run/current-system";
 
       mpvn = "mpv --ytdl-raw-options=no-write-auto-subs=";
     };
