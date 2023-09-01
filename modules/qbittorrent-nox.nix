@@ -2,12 +2,20 @@
 
 {
   # https://github.com/qbittorrent/qBittorrent/wiki/Traefik-Reverse-Proxy-for-Web-UI
-  # The regex in the link above didn't seem to work.
   services.traefik.dynamicConfigOptions.http = {
-    middlewares.qbittorrent.stripprefix.prefixes = [ "/qbittorrent" ];
+    middlewares = {
+      qb-redirect.redirectregex = {
+        regex="^(.*)/qbittorrent$";
+        replacement="$1/qbittorrent/";
+      };
+      qb-strip.stripprefix = {
+        prefixes = [ "/qbittorrent" ];
+        forceSlash = false;
+      };
+    };
     routers.qbittorrent = {
-      middlewares = [ "qbittorrent" ];
-      rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/qbittorrent/`)";
+      middlewares = [ "qb-redirect" "qb-strip" ];
+      rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/qbittorrent`)";
       service = "qbittorrent";
     };
     services.qbittorrent.loadBalancer.servers = [{ url = "http://127.0.0.1:8080"; }];
