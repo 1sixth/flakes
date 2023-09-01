@@ -101,7 +101,6 @@ in
       };
       input.accel_profile = "flat";
       misc.vrr = 1;
-      monitor = "eDP-1,preferred,auto,1.5";
       windowrulev2 = [
         "workspace 2 silent, class: firefox"
         "workspace 3 silent, class: imv"
