@@ -8,6 +8,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.base
     self.nixosModules.dnscrypt-proxy2.earth
     self.nixosModules.proxy.server
+    self.nixosModules.qbittorrent-nox
     self.nixosModules.server
     self.nixosModules.stress-ng
     ./configuration.nix
