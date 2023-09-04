@@ -1,12 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  wallpaper = pkgs.fetchurl {
-    url = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Crimea%2C_Ai-Petri%2C_low_clouds.jpg";
-    hash = "sha256-ZiRdkGZDAINRePRrE72GdM1C/AtQU+r3gK/Jt+fSrtA=";
-  };
-in
-
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -92,7 +85,7 @@ in
         preserve_split = true;
       };
       exec-once = [
-        "${pkgs.swaybg}/bin/swaybg --mode fill --image ${wallpaper}"
+        "${pkgs.swaybg}/bin/swaybg --mode fill --image ${config.programs.swaylock.settings.image}"
       ];
       general = {
         border_size = 2;
