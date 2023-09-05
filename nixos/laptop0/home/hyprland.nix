@@ -70,6 +70,10 @@
         "$Mod, F2, exec, ${pkgs.pamixer}/bin/pamixer --decrease 5"
         "$Mod, F3, exec, ${pkgs.pamixer}/bin/pamixer --increase 5"
       ];
+      bindl = [
+        ", switch:off:Lid Switch, exec, ${pkgs.hyprland}/bin/hyprctl dispatch dpms on"
+        ", switch:on:Lid Switch, exec, ${pkgs.hyprland}/bin/hyprctl dispatch dpms off"
+      ];
       bindm = [
         "$Mod, mouse:272, movewindow"
         "$Mod, mouse:273, resizewindow"
