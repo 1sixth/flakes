@@ -13,7 +13,10 @@ nixpkgs.lib.nixosSystem {
     {
       nixpkgs.overlays = [
         (final: prev: {
-          inherit (inputs.nix-index-database.packages.${prev.system}) nix-index-with-db;
+          inherit (inputs.berberman.packages.${prev.system})
+            fcitx5-pinyin-moegirl fcitx5-pinyin-zhwiki;
+          inherit (inputs.nix-index-database.packages.${prev.system})
+            nix-index-with-db;
         })
       ];
     }
