@@ -16,7 +16,7 @@
       };
       clock.format = "{:%F %A %R}";
       cpu = {
-        format = "CPU: {usage}%";
+        format = "{usage}% ";
         interval = 1;
       };
       "hyprland/workspaces" = {
@@ -35,7 +35,7 @@
       };
       layer = "top";
       memory = {
-        format = "Memory: {percentage}%";
+        format = "{percentage}% ";
         interval = 1;
       };
       modules-center = [
@@ -43,6 +43,7 @@
       ];
       modules-left = [
         "hyprland/workspaces"
+        "bluetooth"
         "cpu"
         "memory"
         "idle_inhibitor"
@@ -51,7 +52,6 @@
         "network"
         "tray"
         "battery"
-        "bluetooth"
         "pulseaudio"
       ];
       network = {
