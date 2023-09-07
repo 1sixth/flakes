@@ -19,6 +19,8 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+  documentation.info.enable = false;
+
   environment = {
     defaultPackages = lib.mkForce [ ];
     persistence."/persistent/impermanence" = {
