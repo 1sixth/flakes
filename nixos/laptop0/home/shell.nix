@@ -73,10 +73,10 @@
       }
     ];
     shellAliases = {
-      l = "ll -a";
-      ll = "ls -l -g --time-style=long-iso";
-      ls = "exa --group-directories-first";
-      tree = "ls -T";
+      l = "ll --all";
+      ll = "ls --group --long --time-style=long-iso";
+      ls = "eza --group-directories-first";
+      tree = "ls --tree";
 
       sys = "sudo systemctl";
       sysu = "systemctl --user";

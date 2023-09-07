@@ -35,6 +35,7 @@ in
       clang_16
       delve
       dmlive
+      eza
       go-tools
       go
       gopls
@@ -72,7 +73,6 @@ in
       enable = true;
       nix-direnv.enable = true;
     };
-    exa.enable = true;
     fzf.enable = true;
     git = {
       delta = {

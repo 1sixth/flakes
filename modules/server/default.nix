@@ -21,6 +21,7 @@
       ];
     };
     systemPackages = with pkgs; [
+      eza
       nmap
       screen
     ];
@@ -32,10 +33,10 @@
     fish = {
       interactiveShellInit = "set -g fish_greeting";
       shellAliases = {
-        l = "ll -a";
-        ll = "ls -l -g --time-style=long-iso";
-        ls = "${pkgs.exa}/bin/exa --group-directories-first";
-        tree = "ls -T";
+        l = "ll --all";
+        ll = "ls --group --long --time-style=long-iso";
+        ls = "eza --group-directories-first";
+        tree = "ls --tree";
 
         sys = "systemctl";
 
