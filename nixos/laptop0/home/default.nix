@@ -31,6 +31,7 @@ in
     '';
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
+      cargo
       clang-tools_16
       clang_16
       colmena
@@ -50,6 +51,7 @@ in
       okular
       podman-compose
       python3
+      rustc
       sops
       tdesktop
       translate-shell

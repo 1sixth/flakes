@@ -12,6 +12,8 @@
       llvm-vs-code-extensions.vscode-clangd
       ms-dotnettools.csharp
       pkief.material-icon-theme
+      rust-lang.rust-analyzer
+      vadimcn.vscode-lldb
     ];
     mutableExtensionsDir = false;
     package = pkgs.vscodium.override {
@@ -31,6 +33,7 @@
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
+      "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
         "MD024"."siblings_only" = true;
         "MD028" = false;
