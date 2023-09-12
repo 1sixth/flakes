@@ -36,6 +36,7 @@ in
       colmena
       delve
       dmlive
+      dotnet-sdk
       eza
       go-tools
       go
@@ -58,6 +59,8 @@ in
     ];
     sessionVariables = {
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
+
+      DOTNET_CLI_TELEMETRY_OPTOUT = 1;
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
     };

@@ -23,6 +23,7 @@
       ".config/sops"
       ".config/VSCodium"
       ".config/wireshark"
+      ".dotnet"
       ".local/bin"
       ".local/share/containers"
       ".local/share/direnv"

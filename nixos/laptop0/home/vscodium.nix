@@ -10,6 +10,7 @@
       golang.go
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
+      ms-dotnettools.csharp
       pkief.material-icon-theme
     ];
     mutableExtensionsDir = false;
