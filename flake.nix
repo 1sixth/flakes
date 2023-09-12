@@ -39,8 +39,7 @@
     };
   };
 
-  outputs = inputs@{ flake-utils, nixpkgs, self, ... }:
-
+  outputs = inputs@{ nixpkgs, self, ... }:
     {
       colmena = {
         meta = {
@@ -64,24 +63,5 @@
       };
 
       nixosModules = import ./modules;
-    } // flake-utils.lib.eachSystem
-      (with flake-utils.lib.system; [
-        aarch64-linux
-        x86_64-linux
-      ])
-      (system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [ inputs.colmena.overlays.default ];
-          };
-        in
-        {
-          devShells.default = pkgs.mkShell {
-            packages = with pkgs; [
-              colmena
-              sops
-            ];
-          };
-        });
+    };
 }

@@ -33,6 +33,7 @@ in
     packages = with pkgs; [
       clang-tools_16
       clang_16
+      colmena
       delve
       dmlive
       eza
@@ -48,6 +49,7 @@ in
       okular
       podman-compose
       python3
+      sops
       tdesktop
       translate-shell
       unar
