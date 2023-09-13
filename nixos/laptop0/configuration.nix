@@ -32,6 +32,7 @@
       ".local/share/nali"
       ".local/share/okular"
       ".local/share/TelegramDesktop"
+      ".local/share/zoxide"
       ".local/state/mpv/watch_later"
       ".local/state/nvim"
       ".local/state/wireplumber"

@@ -79,6 +79,14 @@ in
       enable = true;
       nix-direnv.enable = true;
     };
+    fuzzel = {
+      enable = true;
+      settings.main = {
+        fields = "name";
+        font = "monospace:size=20";
+        terminal = "${config.programs.foot.package}/bin/foot -e";
+      };
+    };
     fzf.enable = true;
     git = {
       delta = {
@@ -161,14 +169,6 @@ in
       };
       profiles.default.isDefault = true;
     };
-    fuzzel = {
-      enable = true;
-      settings.main = {
-        fields = "name";
-        font = "monospace:size=20";
-        terminal = "${config.programs.foot.package}/bin/foot -e";
-      };
-    };
     yt-dlp = {
       enable = true;
       settings = {
@@ -181,6 +181,7 @@ in
         write-subs = true;
       };
     };
+    zoxide.enable = true;
   };
 
   services = {
