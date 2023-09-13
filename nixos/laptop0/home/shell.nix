@@ -54,15 +54,6 @@
           };
       }
       {
-        name = "done";
-        src = pkgs.fetchFromGitHub {
-          owner = "franciscolourenco";
-          repo = "done";
-          rev = "1.16.5";
-          sha256 = "E0wveeDw1VzEH2kzn63q9hy1xkccfxQHBV2gVpu2IdQ=";
-        };
-      }
-      {
         name = "puffer";
         src = pkgs.fetchFromGitHub {
           owner = "nickeb96";

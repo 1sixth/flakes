@@ -44,7 +44,6 @@ in
       gopls
       gotools
       libarchive
-      libnotify
       nali
       nix-index-with-db
       nix-tree
