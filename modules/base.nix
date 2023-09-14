@@ -32,7 +32,6 @@
         "/etc/machine-id"
       ];
     };
-    sessionVariables.EXA_COLORS = "xx=0";
     systemPackages = with pkgs; [
       fd
       file
