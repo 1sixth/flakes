@@ -33,6 +33,14 @@
           deactivated = "󰈉";
         };
       };
+      keyboard-state = {
+        capslock = true;
+        format.capslock = "{icon}";
+        format-icons = {
+          locked = "󰪛";
+          unlocked = "";
+        };
+      };
       layer = "top";
       memory = {
         format = "{percentage}% ";
@@ -47,6 +55,7 @@
         "cpu"
         "memory"
         "idle_inhibitor"
+        "keyboard-state"
       ];
       modules-right = [
         "network"

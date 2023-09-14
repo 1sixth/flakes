@@ -21,6 +21,7 @@ window#waybar {
 #clock,
 #cpu,
 #idle_inhibitor,
+#keyboard-state label.locked,
 #memory,
 #network,
 #pulseaudio,
@@ -51,6 +52,10 @@ window#waybar {
 
 #idle_inhibitor {
     background-color: #2d3436;
+}
+
+#keyboard-state label.locked {
+    background-color: #d70000;
 }
 
 #idle_inhibitor.activated {

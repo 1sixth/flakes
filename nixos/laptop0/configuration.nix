@@ -164,7 +164,7 @@
   users.users = {
     one6th = {
       isNormalUser = true;
-      extraGroups = [ "adbusers" "podman" "wheel" "wireshark" ];
+      extraGroups = [ "adbusers" "input" "podman" "wheel" "wireshark" ];
       passwordFile = config.sops.secrets.password_one6th.path;
       shell = pkgs.fish;
     };
