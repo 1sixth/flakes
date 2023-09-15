@@ -115,10 +115,10 @@
   };
 
   users.users.root = {
+    hashedPasswordFile = config.sops.secrets.password_root.path;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOnLRT5k4gZCKNaHbLg+jEsD5ZU1/V8Bh3WxiUIrB1Bu"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOSqODpw3my6PkhWrAD/sulDNCiNjKqLjNOtFPMFwr"
     ];
-    passwordFile = config.sops.secrets.password_root.path;
   };
 }

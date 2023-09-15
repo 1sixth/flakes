@@ -169,10 +169,10 @@
     one6th = {
       isNormalUser = true;
       extraGroups = [ "adbusers" "input" "podman" "wheel" "wireshark" ];
-      passwordFile = config.sops.secrets.password_one6th.path;
+      hashedPasswordFile = config.sops.secrets.password_one6th.path;
       shell = pkgs.fish;
     };
-    root.passwordFile = config.sops.secrets.password_root.path;
+    root.hashedPasswordFile = config.sops.secrets.password_root.path;
   };
 
   virtualisation.podman.enable = true;
