@@ -17,6 +17,7 @@
       "vm.page-cluster" = 0;
     };
     kernelPackages = pkgs.linuxPackages_latest;
+    swraid.enable = false;
   };
 
   documentation.info.enable = false;
