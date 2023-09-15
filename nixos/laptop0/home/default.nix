@@ -43,6 +43,7 @@ in
       go
       gopls
       gotools
+      jetbrains.idea-community
       libarchive
       nali
       nix-index-with-db

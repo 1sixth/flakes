@@ -104,6 +104,7 @@
         "workspace 3 silent, class: mpv"
         "workspace 4 silent, class: thunderbird"
       ];
+      xwayland.force_zero_scaling = true;
     };
   };
 }
