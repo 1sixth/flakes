@@ -42,6 +42,7 @@
     };
     git.enable = true;
     neovim = {
+      configure.customRC = "set mouse=";
       defaultEditor = true;
       enable = true;
       viAlias = true;
