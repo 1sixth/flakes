@@ -29,6 +29,7 @@
       "editor.fontSize" = 20;
       "extensions.autoCheckUpdates" = false;
       "extensions.autoUpdate" = false;
+      "extensions.experimental.affinity"."asvetliakov.vscode-neovim" = 1;
       "extensions.ignoreRecommendations" = true;
       "files.enableTrash" = false;
       "files.insertFinalNewline" = true;
