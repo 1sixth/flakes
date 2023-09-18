@@ -3,18 +3,19 @@
 {
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    extensions = (with pkgs.vscode-extensions; [
+      ms-dotnettools.csharp
+      rust-lang.rust-analyzer
+      vadimcn.vscode-lldb
+    ]) ++ (with pkgs.vscode-marketplace; [
       asvetliakov.vscode-neovim
       davidanson.vscode-markdownlint
       editorconfig.editorconfig
       golang.go
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
-      ms-dotnettools.csharp
       pkief.material-icon-theme
-      rust-lang.rust-analyzer
-      vadimcn.vscode-lldb
-    ];
+    ]);
     mutableExtensionsDir = false;
     package = pkgs.vscodium.override {
       commandLineArgs = builtins.concatStringsSep " " [

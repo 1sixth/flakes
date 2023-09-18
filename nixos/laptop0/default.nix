@@ -17,6 +17,9 @@ nixpkgs.lib.nixosSystem {
             fcitx5-pinyin-moegirl fcitx5-pinyin-zhwiki;
           inherit (inputs.nix-index-database.packages.${prev.system})
             nix-index-with-db;
+          inherit (inputs.nix-vscode-extensions.extensions.${prev.system}.forVSCodeVersion
+            prev.vscodium.version)
+            vscode-marketplace;
         })
       ];
     }
