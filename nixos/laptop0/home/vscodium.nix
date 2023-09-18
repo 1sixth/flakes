@@ -5,6 +5,7 @@
     enable = true;
     extensions = (with pkgs.vscode-extensions; [
       ms-dotnettools.csharp
+      ms-python.python
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb
     ]) ++ (with pkgs.vscode-marketplace; [
@@ -14,6 +15,8 @@
       golang.go
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
+      ms-pyright.pyright
+      ms-python.isort
       pkief.material-icon-theme
     ]);
     mutableExtensionsDir = false;
@@ -35,6 +38,8 @@
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
+      "isort.check" = true;
+      "isort.path" = [ "${pkgs.isort}/bin/isort" ];
       "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
         "MD024"."siblings_only" = true;
@@ -45,6 +50,9 @@
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nil}/bin/nil";
       "nix.serverSettings"."nil"."formatting"."command" = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
+      "python.experiments.enabled" = false;
+      "python.formatting.blackPath" = "${pkgs.black}/bin/black";
+      "python.formatting.provider" = "black";
       "security.workspace.trust.enabled" = false;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
