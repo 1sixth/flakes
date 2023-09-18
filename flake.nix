@@ -29,6 +29,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/nix-index-database";
     };
+    nix-vscode-extensions = {
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:nix-community/nix-vscode-extensions";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     sops-nix = {
       inputs = {
