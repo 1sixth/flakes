@@ -15,6 +15,7 @@
       golang.go
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
+      mkhl.direnv
       ms-pyright.pyright
       ms-python.isort
       pkief.material-icon-theme
