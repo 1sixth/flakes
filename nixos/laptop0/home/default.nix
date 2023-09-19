@@ -31,30 +31,43 @@ in
     '';
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
-      cargo
+      # C#
+      dotnet-sdk
+
+      # C/C++
       clang-tools_16
       clang_16
-      clippy
-      colmena
+
+      # Go
       delve
-      dmlive
-      dotnet-sdk
-      eza
       go-tools
       go
       gopls
       gotools
+
+      # Python
+      python3
+
+      # Rust
+      cargo
+      clippy
+      rustc
+
+      # GUI
       jetbrains.idea-community
+      okular
+      tdesktop
+
+      # Terminal Utilities
+      colmena
+      dmlive
+      eza
       libarchive
       nali
       nix-index-with-db
       nix-tree
-      okular
       podman-compose
-      python3
-      rustc
       sops
-      tdesktop
       translate-shell
       unar
       wl-clipboard
