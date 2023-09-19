@@ -45,6 +45,9 @@ in
       gopls
       gotools
 
+      # Java
+      gradle
+
       # Python
       python3
 
@@ -77,6 +80,8 @@ in
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 
       DOTNET_CLI_TELEMETRY_OPTOUT = 1;
+
+      GRADLE_USER_HOME = "${config.xdg.cacheHome}/gradle";
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
     };

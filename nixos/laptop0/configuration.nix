@@ -14,6 +14,7 @@
     persistence."/persistent/impermanence".users.one6th.directories = [
       ".cache/cargo"
       ".cache/go"
+      ".cache/gradle"
       ".cache/go-build"
       ".cache/nix"
       ".cache/JetBrains"
