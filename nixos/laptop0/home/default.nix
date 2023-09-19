@@ -34,6 +34,7 @@ in
       cargo
       clang-tools_16
       clang_16
+      clippy
       colmena
       delve
       dmlive
