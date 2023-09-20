@@ -35,8 +35,8 @@ in
       dotnet-sdk
 
       # C/C++
-      clang-tools_16
-      clang_16
+      clang-tools
+      gcc
 
       # Go
       delve
