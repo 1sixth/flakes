@@ -71,6 +71,7 @@ in
       nix-tree
       podman-compose
       sops
+      tokei
       translate-shell
       unar
       wl-clipboard
