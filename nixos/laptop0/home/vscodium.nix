@@ -59,6 +59,7 @@
       "update.showReleaseNotes" = false;
       "vscode-neovim.neovimClean" = true;
       "vscode-neovim.useCtrlKeysForInsertMode" = false;
+      "vscode-neovim.useCtrlKeysForNormalMode" = false;
       "window.menuBarVisibility" = "toggle";
       "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "Solarized Light";
