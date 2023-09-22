@@ -18,6 +18,7 @@
       ".cache/go-build"
       ".cache/nix"
       ".cache/JetBrains"
+      ".config/easyeffects"
       ".config/fcitx5"
       ".config/htop"
       ".config/JetBrains"
