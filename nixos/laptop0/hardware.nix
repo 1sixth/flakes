@@ -22,7 +22,7 @@ in
   fileSystems = {
     "/" = {
       fsType = "tmpfs";
-      options = [ "mode=755" "size=100%" ];
+      options = [ "mode=755" "size=200%" ];
     };
     "/boot" = {
       device = "/dev/disk/by-uuid/4E1B-2A50";
