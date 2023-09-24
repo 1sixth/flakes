@@ -107,6 +107,7 @@ in
       settings.main = {
         fields = "name";
         font = "monospace:size=20";
+        fuzzy = "no";
         terminal = "${config.programs.foot.package}/bin/foot -e";
       };
     };
