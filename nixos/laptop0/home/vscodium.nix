@@ -55,6 +55,7 @@
       "python.formatting.blackPath" = "${pkgs.black}/bin/black";
       "python.formatting.provider" = "black";
       "security.workspace.trust.enabled" = false;
+      "terminal.integrated.copyOnSelection" = true;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
       "vscode-neovim.neovimClean" = true;
