@@ -111,6 +111,7 @@
   programs = {
     adb.enable = true;
     hyprland.enable = true;
+    starship.settings.cmd_duration.show_notifications = true;
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
