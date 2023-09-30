@@ -58,6 +58,7 @@ in
 
       # GUI
       jetbrains.idea-community
+      libreoffice
       okular
       tdesktop
 
