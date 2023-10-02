@@ -23,7 +23,6 @@
   documentation.info.enable = false;
 
   environment = {
-    defaultPackages = lib.mkForce [ ];
     persistence."/persistent/impermanence" = {
       directories = [
         "/var/lib"
@@ -39,7 +38,6 @@
       ldns
       rclone
       ripgrep
-      rsync
     ];
   };
 
