@@ -70,6 +70,7 @@ in
       nali
       nix-index-with-db
       nix-tree
+      pamixer
       podman-compose
       sops
       tokei

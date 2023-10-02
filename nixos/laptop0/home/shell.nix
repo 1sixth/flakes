@@ -83,6 +83,8 @@
       nwdrc = "nix why-depends /run/current-system";
 
       mpvn = "mpv --ytdl-raw-options=no-write-auto-subs=";
+
+      vol = "pamixer --set-volume";
     };
   };
 }
