@@ -78,8 +78,7 @@
     iftop.enable = true;
     iotop.enable = true;
     mtr.enable = true;
-    # remove reference to nano
-    nano.syntaxHighlight = false;
+    nano.enable= false;
     starship = {
       enable = true;
       settings.add_newline = false;
