@@ -32,7 +32,7 @@
       shellAliases = {
         l = "ll --all";
         ll = "ls --group --long --time-style=long-iso";
-        ls = "eza --group-directories-first";
+        ls = "eza --group-directories-first --no-quotes";
         tree = "ls --tree";
 
         sys = "systemctl";
