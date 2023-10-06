@@ -70,10 +70,7 @@
 
   hardware.bluetooth = {
     enable = true;
-    settings = {
-      General.Experimental = true;
-      Policy.ReconnectAttempts = 0;
-    };
+    settings.General.Experimental = true;
   };
 
   home-manager = {
