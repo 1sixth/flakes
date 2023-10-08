@@ -10,6 +10,8 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.dnscrypt-proxy2.china
     self.nixosModules.proxy.client
     ./configuration.nix
+    ({ config, ... }:
+
     {
       nixpkgs.overlays = [
         (final: prev: {
@@ -18,11 +20,11 @@ nixpkgs.lib.nixosSystem {
           inherit (inputs.nix-index-database.packages.${prev.system})
             nix-index-with-db;
           inherit (inputs.nix-vscode-extensions.extensions.${prev.system}.forVSCodeVersion
-            prev.vscodium.version)
+            config.home-manager.users.one6th.programs.vscode.package.version)
             vscode-marketplace;
         })
       ];
-    }
+    })
   ];
   specialArgs = { inherit inputs self; };
 }
