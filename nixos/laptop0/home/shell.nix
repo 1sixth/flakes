@@ -75,8 +75,8 @@
       jou = "journalctl";
       jouu = "journalctl --user";
 
-      t = "trans :zh-CN";
-      ts = "trans :zh-CN -speak";
+      t = "trans en:zh-CN";
+      ts = "t -speak";
 
       nixos-rebuild = "nixos-rebuild --use-remote-sudo --verbose";
 
