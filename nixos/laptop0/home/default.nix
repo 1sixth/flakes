@@ -80,8 +80,6 @@ in
       xdg-utils
     ];
     sessionVariables = {
-      _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
-
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 
       DOTNET_CLI_TELEMETRY_OPTOUT = 1;

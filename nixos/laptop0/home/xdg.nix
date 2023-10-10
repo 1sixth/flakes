@@ -13,6 +13,13 @@
         GOPROXY=https://goproxy.cn,direct
       '';
     };
+    desktopEntries.idea-community = {
+      exec = builtins.toString (pkgs.writeShellScript "idea-community" ''
+        idea-community -Dsun.java2d.uiScale=2
+      '');
+      icon = "idea-community";
+      name = "IntelliJ IDEA CE";
+    };
     enable = true;
     mimeApps = {
       defaultApplications = {
