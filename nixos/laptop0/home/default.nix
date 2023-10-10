@@ -47,6 +47,7 @@ in
 
       # Java
       gradle
+      jdk17
 
       # Python
       python3
@@ -85,6 +86,8 @@ in
       DOTNET_CLI_TELEMETRY_OPTOUT = 1;
 
       GRADLE_USER_HOME = "${config.xdg.cacheHome}/gradle";
+
+      JAVA_HOME = "${pkgs.jdk17}/lib/openjdk";
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
     };
