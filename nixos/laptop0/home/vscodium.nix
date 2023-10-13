@@ -18,6 +18,7 @@
       mkhl.direnv
       ms-pyright.pyright
       ms-python.isort
+      ms-vscode.cmake-tools
       pkief.material-icon-theme
     ]);
     mutableExtensionsDir = false;
