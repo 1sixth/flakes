@@ -87,7 +87,7 @@ in
 
       GRADLE_USER_HOME = "${config.xdg.cacheHome}/gradle";
 
-      JAVA_HOME = "${pkgs.jdk17}/lib/openjdk";
+      JAVA_HOME = pkgs.jdk17.home;
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
     };
