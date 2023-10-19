@@ -9,7 +9,6 @@
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb
     ]) ++ (with pkgs.vscode-marketplace; [
-      asvetliakov.vscode-neovim
       davidanson.vscode-markdownlint
       editorconfig.editorconfig
       golang.go
@@ -20,6 +19,7 @@
       ms-python.isort
       ms-vscode.cmake-tools
       pkief.material-icon-theme
+      vscodevim.vim
     ]);
     mutableExtensionsDir = false;
     package = pkgs.vscodium.override {
@@ -34,7 +34,6 @@
       "editor.fontSize" = 20;
       "extensions.autoCheckUpdates" = false;
       "extensions.autoUpdate" = false;
-      "extensions.experimental.affinity"."asvetliakov.vscode-neovim" = 1;
       "extensions.ignoreRecommendations" = true;
       "files.enableTrash" = false;
       "files.insertFinalNewline" = true;
@@ -59,9 +58,7 @@
       "terminal.integrated.copyOnSelection" = true;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
-      "vscode-neovim.neovimClean" = true;
-      "vscode-neovim.useCtrlKeysForInsertMode" = false;
-      "vscode-neovim.useCtrlKeysForNormalMode" = false;
+      "vim.useCtrlKeys" = false;
       "window.menuBarVisibility" = "toggle";
       "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "Solarized Light";
