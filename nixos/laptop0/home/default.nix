@@ -74,6 +74,7 @@ in
       pamixer
       podman-compose
       sops
+      sshfs
       tokei
       translate-shell
       unar
