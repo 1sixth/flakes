@@ -43,6 +43,7 @@
       "isort.path" = [ "${pkgs.isort}/bin/isort" ];
       "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
+        "MD010" = false;
         "MD024"."siblings_only" = true;
         "MD028" = false;
         "MD040" = false;
