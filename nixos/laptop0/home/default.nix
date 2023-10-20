@@ -65,6 +65,7 @@ in
 
       # Terminal Utilities
       colmena
+      curlHTTP3
       dmlive
       eza
       libarchive
