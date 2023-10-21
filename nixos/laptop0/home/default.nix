@@ -76,7 +76,6 @@ in
       pamixer
       podman-compose
       sops
-      sshfs
       tealdeer
       tokei
       translate-shell
