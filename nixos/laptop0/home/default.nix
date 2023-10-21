@@ -69,6 +69,7 @@ in
       dmlive
       eza
       libarchive
+      libfaketime
       nali
       nix-index-with-db
       nix-tree
@@ -76,6 +77,7 @@ in
       podman-compose
       sops
       sshfs
+      tealdeer
       tokei
       translate-shell
       unar
