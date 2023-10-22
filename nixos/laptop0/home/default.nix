@@ -117,7 +117,6 @@ in
         terminal = "${config.programs.foot.package}/bin/foot -e";
       };
     };
-    fzf.enable = true;
     git = {
       delta = {
         enable = true;
