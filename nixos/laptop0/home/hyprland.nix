@@ -99,9 +99,11 @@
       input.accel_profile = "flat";
       misc.vrr = 1;
       windowrulev2 = [
+        "workspace 1 silent, class: codium-url-handler"
         "workspace 2 silent, class: firefox"
         "workspace 3 silent, class: imv"
         "workspace 3 silent, class: mpv"
+        "workspace 3 silent, class: org.kde.okular"
         "workspace 4 silent, class: thunderbird"
       ];
       xwayland.force_zero_scaling = true;
