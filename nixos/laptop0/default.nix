@@ -7,8 +7,8 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
-    self.nixosModules.dnscrypt-proxy2.china
     self.nixosModules.proxy.client
+    self.nixosModules.resolved.china
     ./configuration.nix
     ./overlays.nix
   ];

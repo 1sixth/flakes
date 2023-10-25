@@ -6,8 +6,8 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
-    self.nixosModules.dnscrypt-proxy2.earth
     self.nixosModules.proxy.server
+    self.nixosModules.resolved.earth
     self.nixosModules.server
     self.nixosModules.stress-ng
     ./configuration.nix
