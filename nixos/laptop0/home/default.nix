@@ -2,8 +2,9 @@
 
 let
   wallpaper = pkgs.fetchurl {
-    url = "https://upload.wikimedia.org/wikipedia/commons/a/a3/Crimea%2C_Ai-Petri%2C_low_clouds.jpg";
-    hash = "sha256-ZiRdkGZDAINRePRrE72GdM1C/AtQU+r3gK/Jt+fSrtA=";
+    curlOpts = "--referer https://www.pixiv.net";
+    url = "https://i.pximg.net/img-original/img/2017/09/30/18/37/34/65204496_p0.png";
+    hash = "sha256-AenfCFlD0afOvfoIqCrUelwbgLQ8l0POwsVykLI3Ksc=";
   };
 in
 
