@@ -11,6 +11,15 @@
         config.home-manager.users.one6th.programs.vscode.package.version)
         vscode-marketplace;
 
+      telegram-desktop = prev.telegram-desktop.overrideAttrs (old: {
+        patches = (old.patches or [ ]) ++ [
+          (prev.fetchpatch {
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/88d0ad6b9ad5c6146ff782e6c6d0937c2cbc32cb/0001-Disable-sponsored-messages.patch";
+            hash = "sha256-o2Wxyag6hpEDgGm8FU4vs6aCpL9aekazKiNeZPLI9po=";
+          })
+        ];
+      });
+
       vscodium = prev.vscodium.overrideAttrs (old: rec {
         version = "1.81.1.23222";
         src = prev.fetchurl {

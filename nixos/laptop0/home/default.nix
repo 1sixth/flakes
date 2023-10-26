@@ -61,7 +61,7 @@ in
       jetbrains.idea-community
       libreoffice
       okular
-      tdesktop
+      telegram-desktop
 
       # Terminal Utilities
       colmena
