@@ -5,8 +5,8 @@
   services.traefik.dynamicConfigOptions.http = {
     middlewares = {
       qb-redirect.redirectregex = {
-        regex="^(.*)/qbittorrent$";
-        replacement="$1/qbittorrent/";
+        regex = "^(.*)/qbittorrent$";
+        replacement = "$1/qbittorrent/";
       };
       qb-strip.stripprefix = {
         prefixes = [ "/qbittorrent" ];

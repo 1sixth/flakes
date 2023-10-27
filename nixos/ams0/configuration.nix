@@ -7,6 +7,8 @@
 
   nix.settings.auto-optimise-store = false;
 
+  sops.defaultSopsFile = ./secrets.yaml;
+
   systemd.network.networks.default = {
     address = [
       "5.255.109.113/24"
@@ -18,6 +20,4 @@
       "2a04:52c0:114::1"
     ];
   };
-
-  sops.defaultSopsFile = ./secrets.yaml;
 }

@@ -78,7 +78,7 @@
     iftop.enable = true;
     iotop.enable = true;
     mtr.enable = true;
-    nano.enable= false;
+    nano.enable = false;
     starship = {
       enable = true;
       settings.add_newline = false;
