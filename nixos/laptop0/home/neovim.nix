@@ -8,7 +8,6 @@
       :source ${./res/neovim.lua}
     '';
     plugins = with pkgs.vimPlugins; [
-      editorconfig-nvim
       lualine-nvim
       nvim-lastplace
       nvim-treesitter.withAllGrammars
