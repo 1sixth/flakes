@@ -121,8 +121,5 @@
     users.root.shell = pkgs.fish;
   };
 
-  zramSwap = {
-    enable = true;
-    memoryPercent = 100;
-  };
+  zramSwap.enable = true;
 }
