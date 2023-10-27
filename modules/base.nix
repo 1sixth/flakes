@@ -18,6 +18,7 @@
     };
     kernelPackages = pkgs.linuxPackages_latest;
     swraid.enable = false;
+    tmp.cleanOnBoot = true;
   };
 
   documentation.info.enable = false;
@@ -25,6 +26,7 @@
   environment = {
     persistence."/persistent/impermanence" = {
       directories = [
+        "/tmp"
         "/var/lib"
         "/var/log/journal"
       ];
