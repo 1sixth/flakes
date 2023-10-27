@@ -29,6 +29,7 @@
       ];
     };
     userSettings = {
+      "[nix]"."editor.formatOnSave" = true;
       "editor.bracketPairColorization.enabled" = true;
       "editor.fontFamily" = "monospace";
       "editor.fontSize" = 20;
