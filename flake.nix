@@ -3,7 +3,10 @@
 
   inputs = {
     berberman = {
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nvfetcher.follows = "nvfetcher";
+      };
       url = "github:berberman/flakes";
     };
     colmena = {
@@ -19,7 +22,10 @@
       flake = false;
       url = "github:edolstra/flake-compat";
     };
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems";
+    };
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
@@ -38,6 +44,14 @@
       url = "github:nix-community/nix-vscode-extensions";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nvfetcher = {
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:berberman/nvfetcher";
+    };
     sops-nix = {
       inputs = {
         nixpkgs.follows = "nixpkgs";
@@ -45,6 +59,7 @@
       };
       url = "github:Mic92/sops-nix";
     };
+    systems.url = "github:nix-systems/default";
   };
 
   outputs = inputs@{ nixpkgs, self, ... }:
