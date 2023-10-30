@@ -97,7 +97,6 @@
   nix = {
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
-    registry.flake-utils.flake = inputs.flake-utils;
     settings = {
       builders-use-substitutes = true;
       keep-outputs = true;
