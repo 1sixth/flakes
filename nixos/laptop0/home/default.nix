@@ -63,6 +63,7 @@ in
       libreoffice
       okular
       telegram-desktop
+      tor-browser
 
       # Terminal Utilities
       colmena

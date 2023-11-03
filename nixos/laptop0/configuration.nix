@@ -19,6 +19,7 @@
       ".cache/JetBrains"
       ".cache/nix"
       ".cache/tealdeer"
+      ".config/chromium"
       ".config/easyeffects"
       ".config/fcitx5"
       ".config/htop"
