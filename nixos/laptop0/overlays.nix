@@ -14,8 +14,20 @@
       telegram-desktop = prev.telegram-desktop.overrideAttrs (old: {
         patches = (old.patches or [ ]) ++ [
           (prev.fetchpatch {
-            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/88d0ad6b9ad5c6146ff782e6c6d0937c2cbc32cb/0001-Disable-sponsored-messages.patch";
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/2457ef3a2d3ff94dfa4b0a73ea4c51bad4b3f14b/0001-Disable-sponsored-messages.patch";
             hash = "sha256-o2Wxyag6hpEDgGm8FU4vs6aCpL9aekazKiNeZPLI9po=";
+          })
+          (prev.fetchpatch {
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/2457ef3a2d3ff94dfa4b0a73ea4c51bad4b3f14b/0002-Disable-saving-restrictions.patch";
+            hash = "sha256-sQsyXlvhXSvouPgzYSiRB8ieICo3GDXWH5MaZtBjtqw=";
+          })
+          (prev.fetchpatch {
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/2457ef3a2d3ff94dfa4b0a73ea4c51bad4b3f14b/0003-Disable-invite-peeking-restrictions.patch";
+            hash = "sha256-8mJD6LOjz11yfAdY4QPK/AUz9o5W3XdupXxy7kRrbC8=";
+          })
+          (prev.fetchpatch {
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/2457ef3a2d3ff94dfa4b0a73ea4c51bad4b3f14b/0004-Disable-accounts-limit.patch";
+            hash = "sha256-PZWCFdGE/TTJ1auG1JXNpnTUko2rCWla6dYKaQNzreg=";
           })
         ];
       });
