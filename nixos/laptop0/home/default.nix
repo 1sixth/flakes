@@ -135,12 +135,13 @@ in
         gpg = {
           ssh.allowedSignersFile = builtins.toString (pkgs.writeText "allowed_signers" ''
             ${config.programs.git.userEmail} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOSqODpw3my6PkhWrAD/sulDNCiNjKqLjNOtFPMFwr
+            ${config.programs.git.userEmail} sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFo0aSRnBTZxloY4B3UBOtuRJVEKjs5qgjKerAB2sSr7AAAABHNzaDo=
           '');
           format = "ssh";
         };
         init.defaultBranch = "master";
         log.date = "iso";
-        user.signingKey = "${config.home.homeDirectory}/.ssh/id_ed25519";
+        user.signingKey = "${config.home.homeDirectory}/.ssh/id_ed25519_sk";
       };
       userEmail = "1sixth@shinta.ro";
       userName = "1sixth";
