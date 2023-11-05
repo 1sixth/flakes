@@ -4,7 +4,6 @@
   programs.vscode = {
     enable = true;
     extensions = (with pkgs.vscode-extensions; [
-      ms-dotnettools.csharp
       ms-python.python
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb

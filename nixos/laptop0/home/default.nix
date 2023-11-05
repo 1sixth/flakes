@@ -32,9 +32,6 @@ in
     '';
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
-      # C#
-      dotnet-sdk
-
       # C/C++
       clang-tools
       gcc
@@ -87,8 +84,6 @@ in
     ];
     sessionVariables = {
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
-
-      DOTNET_CLI_TELEMETRY_OPTOUT = 1;
 
       GRADLE_USER_HOME = "${config.xdg.cacheHome}/gradle";
 

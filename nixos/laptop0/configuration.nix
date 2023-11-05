@@ -29,7 +29,6 @@
       ".config/sops"
       ".config/VSCodium"
       ".config/wireshark"
-      ".dotnet"
       ".java"
       ".local/bin"
       ".local/share/containers"
