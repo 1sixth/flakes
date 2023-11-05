@@ -132,10 +132,10 @@
   services = {
     getty.autologinUser = "one6th";
     logind = {
-      lidSwitchExternalPower = "ignore";
+      lidSwitch = "ignore";
       powerKey = "ignore";
       suspendKey = "ignore";
-      suspendKeyLongPress = "suspend";
+      suspendKeyLongPress = "ignore";
     };
     pipewire = {
       enable = true;
