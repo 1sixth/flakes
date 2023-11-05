@@ -39,15 +39,15 @@
       "files.trimTrailingWhitespace" = true;
       "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
-        "MD010" = false;
-        "MD024"."siblings_only" = true;
-        "MD028" = false;
-        "MD040" = false;
-        "MD041" = false;
+        MD010 = false;
+        MD024.siblings_only = true;
+        MD028 = false;
+        MD040 = false;
+        MD041 = false;
       };
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nil}/bin/nil";
-      "nix.serverSettings"."nil"."formatting"."command" = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
+      "nix.serverSettings".nil.formatting.command = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
       "security.workspace.trust.enabled" = false;
       "terminal.integrated.copyOnSelection" = true;
       "update.mode" = "none";
