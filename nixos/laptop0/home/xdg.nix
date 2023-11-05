@@ -13,12 +13,21 @@
         GOPROXY=https://goproxy.cn,direct
       '';
     };
-    desktopEntries.idea-community = {
-      exec = builtins.toString (pkgs.writeShellScript "idea-community" ''
-        idea-community -Dsun.java2d.uiScale=2
-      '');
-      icon = "idea-community";
-      name = "IntelliJ IDEA CE";
+    desktopEntries = {
+      idea-community = {
+        exec = builtins.toString (pkgs.writeShellScript "idea-community" ''
+          idea-community -Dsun.java2d.uiScale=2
+        '');
+        icon = "idea-community";
+        name = "IntelliJ IDEA CE";
+      };
+      pycharm-community = {
+        exec = builtins.toString (pkgs.writeShellScript "pycharm-community" ''
+          pycharm-community -Dsun.java2d.uiScale=2
+        '');
+        icon = "pycharm-community";
+        name = "PyCharm CE";
+      };
     };
     enable = true;
     mimeApps = {

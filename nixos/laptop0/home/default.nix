@@ -48,6 +48,7 @@ in
       jdk17
 
       # Python
+      poetry
       python3
 
       # Rust
@@ -57,6 +58,7 @@ in
 
       # GUI
       jetbrains.idea-community
+      jetbrains.pycharm-community
       libreoffice
       okular
       telegram-desktop

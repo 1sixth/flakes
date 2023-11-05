@@ -4,7 +4,6 @@
   programs.vscode = {
     enable = true;
     extensions = (with pkgs.vscode-extensions; [
-      ms-python.python
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb
     ]) ++ (with pkgs.vscode-marketplace; [
@@ -14,8 +13,6 @@
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
       mkhl.direnv
-      ms-pyright.pyright
-      ms-python.isort
       ms-vscode.cmake-tools
       pkief.material-icon-theme
       vscodevim.vim
@@ -40,8 +37,6 @@
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
-      "isort.check" = true;
-      "isort.path" = [ "${pkgs.isort}/bin/isort" ];
       "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
         "MD010" = false;
@@ -53,9 +48,6 @@
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nil}/bin/nil";
       "nix.serverSettings"."nil"."formatting"."command" = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
-      "python.experiments.enabled" = false;
-      "python.formatting.blackPath" = "${pkgs.black}/bin/black";
-      "python.formatting.provider" = "black";
       "security.workspace.trust.enabled" = false;
       "terminal.integrated.copyOnSelection" = true;
       "update.mode" = "none";
