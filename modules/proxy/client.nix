@@ -1,14 +1,22 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 {
-  networking.proxy.default = "http://127.0.0.1:1081";
+  networking.proxy.default = "http://127.0.0.1:1080";
 
-  services.v2ray = {
-    configFile = "/run/credentials/v2ray.service/v2ray.json";
-    enable = true;
+  sops.secrets."sing-box.json" = {
+    path = "/etc/sing-box/config.json";
+    restartUnits = [ "sing-box.service" ];
   };
 
-  sops.secrets."v2ray.json".restartUnits = [ "v2ray.service" ];
-
-  systemd.services.v2ray.serviceConfig.LoadCredential = "v2ray.json:${config.sops.secrets."v2ray.json".path}";
+  systemd = {
+    packages = [ pkgs.sing-box ];
+    services.sing-box = {
+      preStart = ''
+        ln -sf ${pkgs.sing-geoip}/share/sing-box/geoip.db /var/lib/sing-box/geoip.db
+        ln -sf ${pkgs.sing-geosite}/share/sing-box/geosite.db /var/lib/sing-box/geosite.db
+      '';
+      serviceConfig.StateDirectory = "sing-box";
+      wantedBy = [ "multi-user.target" ];
+    };
+  };
 }

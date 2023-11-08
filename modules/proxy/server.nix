@@ -1,28 +1,31 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
-  services = {
-    traefik.dynamicConfigOptions.http = {
-      routers.v2ray = {
-        rule = "Host(`${config.networking.hostName}.9875321.xyz`, `${config.networking.hostName}-cf.9875321.xyz`) && Path(`/websocket`)";
-        service = "v2ray";
-      };
-      services.v2ray.loadBalancer.servers = [{
-        url = "http://127.0.0.1:10000";
-      }];
+  services.traefik.dynamicConfigOptions.http = {
+    routers.sing-box = {
+      rule = "Host(`${config.networking.hostName}.9875321.xyz`, `${config.networking.hostName}-cf.9875321.xyz`) && Path(`/websocket`)";
+      service = "sing-box";
     };
-    v2ray = {
-      configFile = "/run/credentials/v2ray.service/v2ray.json";
-      enable = true;
-    };
+    services.sing-box.loadBalancer.servers = [{
+      url = "http://127.0.0.1:10000";
+    }];
   };
 
-  sops = {
-    secrets."v2ray.json" = {
-      restartUnits = [ "v2ray.service" ];
-      sopsFile = ./secrets.yaml;
-    };
+  sops.secrets."sing-box.json" = {
+    path = "/etc/sing-box/config.json";
+    restartUnits = [ "sing-box.service" ];
+    sopsFile = ./secrets.yaml;
   };
 
-  systemd.services.v2ray.serviceConfig.LoadCredential = "v2ray.json:${config.sops.secrets."v2ray.json".path}";
+  systemd = {
+    packages = [ pkgs.sing-box ];
+    services.sing-box = {
+      preStart = ''
+        ln -sf ${pkgs.sing-geoip}/share/sing-box/geoip.db /var/lib/sing-box/geoip.db
+        ln -sf ${pkgs.sing-geosite}/share/sing-box/geosite.db /var/lib/sing-box/geosite.db
+      '';
+      serviceConfig.StateDirectory = "sing-box";
+      wantedBy = [ "multi-user.target" ];
+    };
+  };
 }
