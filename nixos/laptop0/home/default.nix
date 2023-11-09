@@ -76,6 +76,7 @@ in
       nix-tree
       pamixer
       podman-compose
+      rename
       sops
       tealdeer
       tokei
