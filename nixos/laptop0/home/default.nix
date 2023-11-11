@@ -163,21 +163,6 @@ in
         ratios = "1:2";
       };
     };
-    ssh = {
-      compression = true;
-      enable = true;
-      matchBlocks = {
-        "*" = {
-          extraOptions = {
-            CanonicalDomains = "9875321.xyz";
-            CanonicalizeHostname = "always";
-          };
-          proxyCommand = "nc -n -x 127.0.0.1:1080 %h %p";
-        };
-        "*.9875321.xyz".user = "root";
-      };
-      serverAliveInterval = 10;
-    };
     swaylock = {
       enable = true;
       settings = {
