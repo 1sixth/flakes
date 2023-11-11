@@ -2,6 +2,7 @@
 
 {
   documentation = {
+    doc.enable = false;
     enable = false;
     man.enable = false;
     nixos.enable = false;
