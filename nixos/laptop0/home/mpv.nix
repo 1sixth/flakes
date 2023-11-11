@@ -95,6 +95,7 @@
       subs-fallback = "default";
       subs-with-matching-audio = "yes";
       vo = "gpu-next";
+      volume-max = "100";
       ytdl-raw-options = "yes-playlist=";
     };
     enable = true;
