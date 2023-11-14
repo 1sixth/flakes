@@ -11,6 +11,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.resolved.earth
     self.nixosModules.server
     self.nixosModules.stress-ng
+    self.nixosModules.tor
     ./configuration.nix
   ];
   specialArgs = { inherit inputs self; };
