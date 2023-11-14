@@ -21,8 +21,8 @@
       "Ctrl+Shift+RIGHT" = "playlist-next"; # skip to the next file
       "Ctrl+Shift+LEFT" = "playlist-prev"; # skip to the previous file
 
-      "[" = "multiply speed 1/1.1"; # decrease the playback speed
-      "]" = "multiply speed 1.1"; # increase the playback speed
+      "[" = "add speed -0.1"; # decrease the playback speed
+      "]" = "add speed 0.1"; # increase the playback speed
 
       q = "quit";
       Q = "quit-watch-later"; # exit and remember the playback position
