@@ -12,4 +12,5 @@
   };
   server = import ./server;
   stress-ng = import ./stress-ng.nix;
+  tor = import ./tor.nix;
 }
