@@ -139,6 +139,7 @@ in
         };
         init.defaultBranch = "master";
         log.date = "iso";
+        pull.rebase = true;
         user.signingKey = "${config.home.homeDirectory}/.ssh/id_ed25519_sk";
       };
       userEmail = "1sixth@shinta.ro";
