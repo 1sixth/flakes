@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   boot = {
@@ -59,7 +59,7 @@
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
       auto-allocate-uids = true;
-      auto-optimise-store = lib.mkDefault true;
+      auto-optimise-store = true;
       experimental-features = [ "auto-allocate-uids" "cgroups" "flakes" "nix-command" ];
       flake-registry = "/etc/nix/registry.json";
       nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
@@ -112,7 +112,7 @@
 
   system.stateVersion = "22.05";
 
-  systemd.network.networks.default.DHCP = lib.mkDefault "yes";
+  systemd.network.networks.default.DHCP = "yes";
 
   time.timeZone = "Asia/Shanghai";
 
