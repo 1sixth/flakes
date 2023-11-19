@@ -41,7 +41,6 @@
           unlocked = "";
         };
       };
-      layer = "top";
       memory = {
         format = "{percentage}% ";
         interval = 1;
