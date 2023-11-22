@@ -55,6 +55,7 @@ in
       cargo
       clippy
       rustc
+      rustfmt
 
       # GUI
       jetbrains.idea-community
