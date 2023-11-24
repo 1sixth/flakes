@@ -54,7 +54,6 @@
         "$Mod, F1, exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute"
 
         "$Mod, d, exec, ${config.programs.fuzzel.package}/bin/fuzzel --log-level=warning"
-        "$Mod, w, exec, ${config.programs.firefox.finalPackage}/bin/firefox"
         "$Mod, x, exec, ${pkgs.systemd}/bin/loginctl lock-session"
         "$Mod, RETURN, exec, ${config.programs.foot.package}/bin/foot"
 
@@ -90,6 +89,9 @@
       };
       exec-once = [
         "${pkgs.swaybg}/bin/swaybg --mode fill --image ${config.programs.swaylock.settings.image}"
+        "${config.programs.foot.package}/bin/foot"
+        "${config.programs.firefox.finalPackage}/bin/firefox"
+        "${config.programs.thunderbird.package}/bin/thunderbird"
       ];
       general = {
         border_size = 2;
