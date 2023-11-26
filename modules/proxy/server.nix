@@ -24,7 +24,10 @@
         ln -sf ${pkgs.sing-geoip}/share/sing-box/geoip.db /var/lib/sing-box/geoip.db
         ln -sf ${pkgs.sing-geosite}/share/sing-box/geosite.db /var/lib/sing-box/geosite.db
       '';
-      serviceConfig.StateDirectory = "sing-box";
+      serviceConfig = {
+        DynamicUser = "yes";
+        StateDirectory = "sing-box";
+      };
       wantedBy = [ "multi-user.target" ];
     };
   };
