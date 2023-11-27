@@ -40,6 +40,7 @@
       ldns
       rclone
       ripgrep
+      tcpdump
     ];
   };
 
