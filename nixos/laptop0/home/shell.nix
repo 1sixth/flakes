@@ -41,6 +41,7 @@
       [ (tty) = /dev/tty1 ] && exec Hyprland
 
       set -g fish_greeting
+      set -gx DIRENV_LOG_FORMAT ""
     '';
     plugins = [
       {
