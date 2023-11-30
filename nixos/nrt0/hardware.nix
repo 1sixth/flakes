@@ -39,9 +39,4 @@ in
       options = mountOptions ++ [ "subvol=/@persistent" ];
     };
   };
-
-  swapDevices = [{
-    device = "/persistent/swapfile";
-    size = 8192;
-  }];
 }
