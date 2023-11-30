@@ -12,7 +12,6 @@
       bluetooth = {
         format = "";
         format-connected-battery = "{device_battery_percentage}% 󰥉";
-        format-device-preference = [ "WF-1000XM4" ];
       };
       clock.format = "{:%F %A %R}";
       cpu = {

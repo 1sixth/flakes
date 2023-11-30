@@ -203,7 +203,6 @@ in
   };
 
   services = {
-    easyeffects.enable = true;
     mako = {
       # https://github.com/stacyharper/base16-mako/blob/master/colors/base16-solarized-light.config
       anchor = "bottom-right";

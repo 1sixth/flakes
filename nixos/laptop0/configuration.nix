@@ -21,7 +21,6 @@
       ".cache/pypoetry"
       ".cache/tealdeer"
       ".config/chromium"
-      ".config/easyeffects"
       ".config/fcitx5"
       ".config/htop"
       ".config/JetBrains"
