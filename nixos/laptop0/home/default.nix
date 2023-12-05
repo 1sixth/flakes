@@ -66,6 +66,7 @@ in
       tor-browser
 
       # Terminal Utilities
+      brightnessctl
       colmena
       curlHTTP3
       dmlive

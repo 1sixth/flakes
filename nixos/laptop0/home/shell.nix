@@ -87,6 +87,7 @@
 
       mpvn = "mpv --ytdl-raw-options=no-write-auto-subs=";
 
+      bri = "brightnessctl set";
       vol = "pamixer --set-volume";
     };
   };
