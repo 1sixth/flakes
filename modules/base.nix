@@ -56,7 +56,6 @@
       dates = "daily";
       options = "--delete-older-than 7d";
     };
-    nrBuildUsers = 0;
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
       auto-allocate-uids = true;
@@ -103,13 +102,7 @@
 
   services.journald.extraConfig = "SystemMaxUse=1G";
 
-  sops = {
-    age = {
-      keyFile = "/var/lib/sops.key";
-      sshKeyPaths = [ ];
-    };
-    gnupg.sshKeyPaths = [ ];
-  };
+  sops.age.keyFile = "/var/lib/sops.key";
 
   system.stateVersion = "22.05";
 
