@@ -9,6 +9,7 @@
     ]) ++ (with pkgs.vscode-marketplace; [
       davidanson.vscode-markdownlint
       editorconfig.editorconfig
+      huacnlee.autocorrect
       golang.go
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
@@ -27,6 +28,7 @@
     };
     userSettings = {
       "[nix]"."editor.formatOnSave" = true;
+      "autocorrect.formatOnSave" = false;
       "editor.bracketPairColorization.enabled" = true;
       "editor.fontFamily" = "monospace";
       "editor.fontSize" = 20;
