@@ -16,6 +16,7 @@
       mkhl.direnv
       ms-vscode.cmake-tools
       pkief.material-icon-theme
+      redhat.vscode-xml
       vscodevim.vim
     ]);
     mutableExtensionsDir = false;
@@ -50,6 +51,7 @@
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nil}/bin/nil";
       "nix.serverSettings".nil.formatting.command = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
+      "redhat.telemetry.enabled" = false;
       "security.workspace.trust.enabled" = false;
       "terminal.integrated.copyOnSelection" = true;
       "update.mode" = "none";
