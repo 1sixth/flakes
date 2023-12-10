@@ -71,7 +71,7 @@
       MUTE = "cycle mute"; # toggle mute
       CLOSE_WIN = "quit";
 
-      "Ctrl+h" = "cycle-values hwdec vaapi-copy no"; # toggle hardware decoding
+      "Ctrl+h" = "cycle-values hwdec auto-safe no"; # toggle hardware decoding
 
       F8 = "show-text \${playlist}"; # show the playlist
       F9 = "show-text \${track-list}"; # show the list of video, audio and sub tracks
@@ -83,7 +83,7 @@
       drm-vrr-enabled = "auto";
       fullscreen = "";
       gpu-api = "vulkan";
-      hwdec = "vaapi-copy";
+      hwdec = "auto-safe";
       keep-open = "yes";
       no-input-default-bindings = "";
       profile = "gpu-hq";
