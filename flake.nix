@@ -67,11 +67,13 @@
       colmena = {
         meta = {
           nixpkgs = import nixpkgs { system = "x86_64-linux"; };
-          nodeNixpkgs = builtins.mapAttrs (_: v: v.pkgs) self.nixosConfigurations;
           nodeSpecialArgs = builtins.mapAttrs (_: v: v._module.specialArgs) self.nixosConfigurations;
         };
       } // builtins.mapAttrs
-        (_: v: { imports = v._module.args.modules; })
+        (_: v: {
+          imports = v._module.args.modules;
+          nixpkgs.system = v.config.nixpkgs.system;
+        })
         (nixpkgs.lib.filterAttrs
           (n: _: !nixpkgs.lib.hasPrefix "laptop" n)
           self.nixosConfigurations);
