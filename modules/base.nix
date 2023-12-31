@@ -99,7 +99,10 @@
 
   services.journald.extraConfig = "SystemMaxUse=1G";
 
-  sops.age.keyFile = "/var/lib/sops.key";
+  sops.age = {
+    keyFile = "/var/lib/sops.key";
+    sshKeyPaths = [ ];
+  };
 
   system.stateVersion = "22.05";
 
