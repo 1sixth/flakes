@@ -43,10 +43,6 @@ in
       gopls
       gotools
 
-      # Java
-      gradle
-      jdk17
-
       # Python
       poetry
       python3
@@ -58,7 +54,6 @@ in
       rustfmt
 
       # GUI
-      jetbrains.idea-community
       jetbrains.pycharm-community
       libreoffice
       okular
@@ -89,10 +84,6 @@ in
     ];
     sessionVariables = {
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
-
-      GRADLE_USER_HOME = "${config.xdg.cacheHome}/gradle";
-
-      JAVA_HOME = pkgs.jdk17.home;
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
     };
