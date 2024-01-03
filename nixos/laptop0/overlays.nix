@@ -67,14 +67,6 @@
           })
         ];
       });
-
-      vscodium = prev.vscodium.overrideAttrs (old: rec {
-        version = "1.81.1.23222";
-        src = prev.fetchurl {
-          url = "https://github.com/VSCodium/vscodium/releases/download/${version}/VSCodium-linux-x64-${version}.tar.gz";
-          hash = "sha256-pgblQPjf5aBJUTE4rbAfA9YAXLubG2qHFohGLqUapXM=";
-        };
-      });
     })
   ];
 }
