@@ -30,13 +30,13 @@
         "image/png" = [ "imv-dir.desktop" ];
         "image/webp" = [ "imv-dir.desktop" ];
         "inode/directory" = [ "lf.desktop" ];
-        "text/html" = [ "firefox.desktop" ];
+        "text/html" = [ "firefox-esr.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
         "video/quicktime" = [ "mpv.desktop" ];
         "video/webm" = [ "mpv.desktop" ];
         "video/x-matroska" = [ "mpv.desktop" ];
-        "x-scheme-handler/http" = [ "firefox.desktop" ];
-        "x-scheme-handler/https" = [ "firefox.desktop" ];
+        "x-scheme-handler/http" = [ "firefox-esr.desktop" ];
+        "x-scheme-handler/https" = [ "firefox-esr.desktop" ];
         "x-scheme-handler/mailto" = [ "thunderbird.desktop" ];
         "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
       };
