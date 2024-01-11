@@ -84,11 +84,6 @@
       nwdrc = "nix why-depends /run/current-system";
 
       ncf = "nix copy --no-check-sigs --from";
-
-      mpvn = "mpv --ytdl-raw-options=no-write-auto-subs=";
-
-      bri = "brightnessctl set";
-      vol = "pamixer --set-volume";
     };
   };
 }

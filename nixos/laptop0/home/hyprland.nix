@@ -44,14 +44,14 @@
         "$Mod, f, fullscreen, 0"
         "$Mod, t, layoutmsg, togglesplit"
 
-        ", XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute"
+        ", XF86AudioMute, exec, ${config.services.avizo.package}/bin/volumectl toggle-mute"
 
         ", XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
         ", XF86AudioPause, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
         ", XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"
         ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
 
-        "$Mod, F1, exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute"
+        "$Mod, F1, exec, ${config.services.avizo.package}/bin/volumectl toggle-mute"
 
         "$Mod, d, exec, ${config.programs.fuzzel.package}/bin/fuzzel --log-level=warning"
         "$Mod, x, exec, ${pkgs.systemd}/bin/loginctl lock-session"
@@ -60,18 +60,18 @@
         '', PRINT, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy''
       ];
       binde = [
-        ", XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer --decrease 5"
-        ", XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer --increase 5"
+        ", XF86AudioLowerVolume, exec, ${config.services.avizo.package}/bin/volumectl down"
+        ", XF86AudioRaiseVolume, exec, ${config.services.avizo.package}/bin/volumectl up"
 
-        ", XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%-"
-        ", XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%+"
+        ", XF86MonBrightnessDown, exec, ${config.services.avizo.package}/bin/lightctl down"
+        ", XF86MonBrightnessUp, exec, ${config.services.avizo.package}/bin/lightctl up"
 
-        "$Mod, F2, exec, ${pkgs.pamixer}/bin/pamixer --decrease 5"
-        "$Mod, F3, exec, ${pkgs.pamixer}/bin/pamixer --increase 5"
+        "$Mod, F2, exec, ${config.services.avizo.package}/bin/volumectl down"
+        "$Mod, F3, exec, ${config.services.avizo.package}/bin/volumectl up"
       ];
       bindl = [
-        ", switch:off:Lid Switch, exec, ${pkgs.hyprland}/bin/hyprctl dispatch dpms on"
-        ", switch:on:Lid Switch, exec, ${pkgs.hyprland}/bin/hyprctl dispatch dpms off"
+        ", switch:off:Lid Switch, exec, ${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on"
+        ", switch:on:Lid Switch, exec, ${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off"
       ];
       bindm = [
         "$Mod, mouse:272, movewindow"
