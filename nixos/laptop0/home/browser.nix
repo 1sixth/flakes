@@ -13,7 +13,9 @@
     };
     firefox = {
       enable = true;
-      package = pkgs.firefox-esr;
+      package = (pkgs.firefox-esr.override {
+        nativeMessagingHosts = [ pkgs.ff2mpv ];
+      });
       policies = {
         CaptivePortal = false;
         DisableFeedbackCommands = true;
