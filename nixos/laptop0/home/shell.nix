@@ -12,13 +12,6 @@
                 command colmena $argv
         end
       '';
-      mpv.body = ''
-        if string match --quiet --regex "^https:\/\/.*\.bilibili\.com" -- $argv
-            command mpv --ytdl-raw-options=cookies-from-browser=firefox $argv
-        else
-            command mpv $argv
-        end
-      '';
       nl.body = "nix-locate --whole-name bin/$argv";
       podman.body = ''
         switch $argv[1]
@@ -29,13 +22,6 @@
         end
       '';
       which.body = "realpath (command which $argv)";
-      yt-dlp.body = ''
-        if string match --quiet --regex "^https:\/\/.*\.bilibili\.com" -- $argv
-            command yt-dlp --cookies-from-browser=firefox $argv
-        else
-            command yt-dlp $argv
-        end
-      '';
     };
     interactiveShellInit = ''
       [ (tty) = /dev/tty1 ] && exec Hyprland

@@ -182,6 +182,7 @@ in
     yt-dlp = {
       enable = true;
       settings = {
+        cookies-from-browser = "firefox";
         embed-chapters = true;
         extractor-args = "youtube:skip=dash,translated_subs";
         output = "$PWD/%(title)s.%(ext)s";
