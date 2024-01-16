@@ -32,6 +32,30 @@
         ];
       });
 
+      ff2mpv = prev.ff2mpv.overrideAttrs (old: {
+        buildInputs = old.buildInputs ++ [ final.dmlive ];
+        patches = (old.patches or [ ]) ++ [
+          (prev.writeText "ff2mpv.patch" ''
+            diff --git a/ff2mpv.py b/ff2mpv.py
+            index 5e88a7b..db60f7c 100755
+            --- a/ff2mpv.py
+            +++ b/ff2mpv.py
+            @@ -12,7 +12,10 @@ def main():
+                 message = get_message()
+                 url = message.get("url")
+
+            -    args = ["mpv", "--no-terminal", "--", url]
+            +    if "bilibili.com" in url:
+            +        args = ["dmlive", "--url", url]
+            +    else:
+            +        args = ["mpv", "--no-terminal", "--", url]
+
+                 kwargs = {}
+                 # https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging#Closing_the_native_app
+          '')
+        ];
+      });
+
       poetry = prev.poetry.overrideAttrs (old: {
         postInstall =
           let
