@@ -66,6 +66,7 @@ in
       curlHTTP3
       dmlive
       eza
+      hyperfine
       libarchive
       libfaketime
       nali
