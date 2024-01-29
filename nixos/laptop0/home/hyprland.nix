@@ -90,7 +90,8 @@
       exec-once = [
         "${pkgs.swaybg}/bin/swaybg --mode fill --image ${config.programs.swaylock.settings.image}"
         "${config.programs.foot.package}/bin/foot"
-        "${config.programs.firefox.finalPackage}/bin/firefox"
+        "${pkgs.telegram-desktop}/bin/telegram-desktop"
+        "${config.programs.firefox.finalPackage}/bin/firefox-esr"
         "${config.programs.thunderbird.package}/bin/thunderbird"
       ];
       general = {
