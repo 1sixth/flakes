@@ -37,18 +37,18 @@
         patches = (old.patches or [ ]) ++ [
           (prev.writeText "ff2mpv.patch" ''
             diff --git a/ff2mpv.py b/ff2mpv.py
-            index 5e88a7b..db60f7c 100755
+            index 01a0353..ff1a7ab 100755
             --- a/ff2mpv.py
             +++ b/ff2mpv.py
-            @@ -12,7 +12,10 @@ def main():
-                 message = get_message()
+            @@ -13,7 +13,10 @@ def main():
                  url = message.get("url")
+                 options = message.get("options") or []
 
-            -    args = ["mpv", "--no-terminal", "--", url]
-            +    if "bilibili.com" in url:
+            -    args = ["mpv", "--no-terminal", *options, "--", url]
+            +    if "www.bilibili.com" in url:
             +        args = ["dmlive", "--url", url]
             +    else:
-            +        args = ["mpv", "--no-terminal", "--", url]
+            +        args = ["mpv", "--no-terminal", *options, "--", url]
 
                  kwargs = {}
                  # https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging#Closing_the_native_app
