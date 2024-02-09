@@ -19,7 +19,7 @@
       services.vaultwarden.loadBalancer.servers = [{ url = "http://127.0.0.1:${builtins.toString config.services.vaultwarden.config.ROCKET_PORT}"; }];
     };
     vaultwarden = {
-      config.ROCKET_PORT = 8003;
+      config.ROCKET_PORT = 8002;
       dbBackend = "postgresql";
       enable = true;
       environmentFile = config.sops.secrets.vaultwarden.path;

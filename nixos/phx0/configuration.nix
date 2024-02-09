@@ -6,7 +6,6 @@
     ./hardware.nix
     ./libreddit.nix
     ./miniflux.nix
-    ./nitter.nix
     ./postgresql.nix
     ./vaultwarden.nix
   ];
