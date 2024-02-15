@@ -14,7 +14,6 @@
       jnoortheen.nix-ide
       llvm-vs-code-extensions.vscode-clangd
       mkhl.direnv
-      ms-vscode.cmake-tools
       pkief.material-icon-theme
       redhat.vscode-xml
       vscodevim.vim
