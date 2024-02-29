@@ -5,10 +5,8 @@
     postgresql = {
       ensureDatabases = [ "vaultwarden" ];
       ensureUsers = [{
+        ensureDBOwnership = true;
         name = "vaultwarden";
-        ensurePermissions = {
-          "DATABASE vaultwarden" = "ALL PRIVILEGES";
-        };
       }];
     };
     traefik.dynamicConfigOptions.http = {

@@ -1,14 +1,7 @@
 { ... }:
 
 {
-  imports = [
-    ./backup.nix
-    ./hardware.nix
-    ./libreddit.nix
-    ./miniflux.nix
-    ./postgresql.nix
-    ./vaultwarden.nix
-  ];
+  imports = [ ./hardware.nix ];
 
   networking.hostName = "phx0";
 
