@@ -122,19 +122,6 @@
         ];
         system = "aarch64-linux";
       }
-      {
-        hostName = "phx0";
-        protocol = "ssh-ng";
-        sshUser = "root";
-        supportedFeatures = [
-          "benchmark"
-          "big-parallel"
-          "gccarch-armv8-a"
-          "kvm"
-          "nixos-test"
-        ];
-        system = "aarch64-linux";
-      }
     ];
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";

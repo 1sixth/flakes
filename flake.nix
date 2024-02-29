@@ -84,7 +84,6 @@
         nas = import ./nixos/nas { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nrt0 = import ./nixos/nrt0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         nrt1 = import ./nixos/nrt1 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
-        phx0 = import ./nixos/phx0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
       };
 
       nixosModules = import ./modules;
