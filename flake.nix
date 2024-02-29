@@ -79,6 +79,7 @@
           self.nixosConfigurations);
 
       nixosConfigurations = {
+        fsn0 = import ./nixos/fsn0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
         laptop0 = import ./nixos/laptop0 { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nas = import ./nixos/nas { system = "x86_64-linux"; inherit self nixpkgs inputs; };
         nrt0 = import ./nixos/nrt0 { system = "aarch64-linux"; inherit self nixpkgs inputs; };
