@@ -53,6 +53,7 @@
           "browser.tabs.loadBookmarksInTabs" = true;
           "gfx.webrender.all" = true;
           "media.peerconnection.enabled" = false;
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "ui.key.menuAccessKeyFocuses" = false;
         };
         Proxy = {
@@ -119,7 +120,6 @@
             }
           ];
           Default = "Google Search";
-          # Doesn't work for Amazon or eBay.
           Remove = [
             "Bing"
             "DuckDuckGo"
@@ -141,6 +141,18 @@
           MoreFromMozilla = false;
         };
       };
+      # https://github.com/stonecrusher/simpleMenuWizard
+      profiles.default.userChrome = ''
+        #context-openlinkinusercontext-menu,    /* Open Link in New Container Tab   */
+        #context-openlink,                      /* Open Link in New Window          */
+        #context-openlinkprivate,               /* Open Link in New Private Window  */
+        #context-sep-open,                      /************ Separator *************/
+        #context-bookmarklink,                  /* Bookmark Link                    */
+        #context-savelink,                      /* Save Link As…                    */
+        #context-sep-sendlinktodevice,          /************ Separator *************/
+        #frame-sep                              /************ Separator *************/
+            { display:none !important; }
+      '';
     };
   };
 }
