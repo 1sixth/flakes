@@ -13,12 +13,25 @@
         GOPROXY=https://goproxy.cn,direct
       '';
     };
-    desktopEntries.pycharm-community = {
-      exec = builtins.toString (pkgs.writeShellScript "pycharm-community" ''
-        pycharm-community -Dsun.java2d.uiScale=2
-      '');
-      icon = "pycharm-community";
-      name = "PyCharm CE";
+    desktopEntries = {
+      obsidian = {
+        exec = builtins.toString (pkgs.writeShellScript "obsidian" ''
+          obsidian ${builtins.concatStringsSep " " [
+            "--enable-wayland-ime"
+            "--ozone-platform-hint=auto"
+            "--proxy-server=socks5://127.0.0.1:1080"
+          ]}
+        '');
+        icon = "obsidian";
+        name = "Obsidian";
+      };
+      pycharm-community = {
+        exec = builtins.toString (pkgs.writeShellScript "pycharm-community" ''
+          pycharm-community -Dsun.java2d.uiScale=2
+        '');
+        icon = "pycharm-community";
+        name = "PyCharm CE";
+      };
     };
     enable = true;
     mimeApps = {

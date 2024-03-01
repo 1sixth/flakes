@@ -56,6 +56,7 @@ in
       # GUI
       jetbrains.pycharm-community
       libreoffice
+      obsidian
       okular
       telegram-desktop
       tor-browser

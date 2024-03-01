@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -22,6 +22,7 @@
       ".config/htop"
       ".config/JetBrains"
       ".config/nali"
+      ".config/obsidian"
       ".config/rclone"
       ".config/sops"
       ".config/VSCodium"
@@ -132,6 +133,10 @@
       trusted-users = [ "@wheel" "root" ];
     };
   };
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "obsidian"
+  ];
 
   programs = {
     adb.enable = true;
