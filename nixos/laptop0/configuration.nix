@@ -17,7 +17,6 @@
       ".cache/nix"
       ".cache/pypoetry"
       ".cache/tealdeer"
-      ".config/chromium"
       ".config/fcitx5"
       ".config/htop"
       ".config/JetBrains"
