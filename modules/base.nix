@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, lib, pkgs, ... }:
 
 {
   boot = {
@@ -64,6 +64,8 @@
       experimental-features = [ "auto-allocate-uids" "cgroups" "flakes" "nix-command" ];
       flake-registry = "/etc/nix/registry.json";
       nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
+      substituters = lib.mkAfter [ "https://cache.garnix.io" ];
+      trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
       use-cgroups = true;
       use-xdg-base-directories = true;
     };
