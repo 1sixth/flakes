@@ -3,6 +3,14 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    extraConfig = ''
+      device {
+        name=pnp0c50:00-093a:0255-touchpa
+        accel_profile=adaptive
+        middle_button_emulation=true
+        natural_scroll=true
+      }
+    '';
     settings = {
       "$Mod" = "SUPER";
       animations.enabled = false;
@@ -77,11 +85,6 @@
         "$Mod, mouse:272, movewindow"
         "$Mod, mouse:273, resizewindow"
       ];
-      "device:pnp0c50:00-093a:0255-touchpad" = {
-        accel_profile = "adaptive";
-        middle_button_emulation = true;
-        natural_scroll = true;
-      };
       dwindle = {
         force_split = 2;
         no_gaps_when_only = true;
@@ -101,7 +104,7 @@
       input.accel_profile = "flat";
       misc.vrr = 1;
       windowrulev2 = [
-        "nomaximizerequest, class: mpv"
+        "suppressevent maximize, class: mpv"
         "workspace 1 silent, class: codium-url-handler"
         "workspace 2 silent, class: firefox"
         "workspace 3 silent, class: imv"
