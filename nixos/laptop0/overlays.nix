@@ -11,9 +11,6 @@
         config.home-manager.users.one6th.programs.vscode.package.version)
         vscode-marketplace;
 
-      go = prev.go_1_22;
-      buildGoModule = prev.buildGo122Module;
-
       dmlive = prev.dmlive.overrideAttrs (old: {
         patches = (old.patches or [ ]) ++ [
           (prev.writeText "dmlive.patch" ''
