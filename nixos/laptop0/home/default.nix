@@ -2,8 +2,7 @@
 
 let
   wallpaper = pkgs.fetchurl {
-    curlOpts = "--referer https://www.pixiv.net";
-    url = "https://i.pximg.net/img-original/img/2017/09/30/18/37/34/65204496_p0.png";
+    url = "https://pixiv.cat/65204496.png";
     hash = "sha256-AenfCFlD0afOvfoIqCrUelwbgLQ8l0POwsVykLI3Ksc=";
   };
 in
