@@ -5,7 +5,7 @@
     enable = true;
     extraConfig = ''
       device {
-        name=pnp0c50:00-093a:0255-touchpa
+        name=pnp0c50:00-093a:0255-touchpad
         accel_profile=adaptive
         middle_button_emulation=true
         natural_scroll=true
