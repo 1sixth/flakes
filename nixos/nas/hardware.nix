@@ -1,12 +1,19 @@
 { ... }:
 
 let
-  mountOptions = [ "noatime" "space_cache=v2" ];
+  mountOptions = [
+    "noatime"
+    "space_cache=v2"
+  ];
 in
 
 {
   boot = {
-    initrd.availableKernelModules = [ "ahci" "sd_mod" "xhci_pci" ];
+    initrd.availableKernelModules = [
+      "ahci"
+      "sd_mod"
+      "xhci_pci"
+    ];
     kernelModules = [ "kvm-intel" ];
     loader = {
       grub.enable = false;
@@ -20,7 +27,10 @@ in
   fileSystems = {
     "/" = {
       fsType = "tmpfs";
-      options = [ "mode=755" "size=100%" ];
+      options = [
+        "mode=755"
+        "size=100%"
+      ];
     };
     "/boot" = {
       device = "/dev/disk/by-uuid/010B-AFC3";
@@ -29,13 +39,19 @@ in
     "/nix" = {
       device = "/dev/disk/by-uuid/ae973210-fc9b-4ea2-88fe-d09f8485dab8";
       fsType = "btrfs";
-      options = mountOptions ++ [ "compress-force=zstd" "subvol=/@nix" ];
+      options = mountOptions ++ [
+        "compress-force=zstd"
+        "subvol=/@nix"
+      ];
     };
     "/persistent" = {
       device = "/dev/disk/by-uuid/ae973210-fc9b-4ea2-88fe-d09f8485dab8";
       fsType = "btrfs";
       neededForBoot = true;
-      options = mountOptions ++ [ "compress-force=zstd" "subvol=/@persistent" ];
+      options = mountOptions ++ [
+        "compress-force=zstd"
+        "subvol=/@persistent"
+      ];
     };
     "/persistent/8T" = {
       device = "/dev/disk/by-uuid/51365bbd-db45-44ca-b234-3b13d345cb3b";
@@ -51,5 +67,5 @@ in
 
   hardware.cpu.intel.updateMicrocode = true;
 
-  swapDevices = [{ device = "/dev/disk/by-uuid/a2ab50d8-70bb-42a4-90d6-f288addd4540"; }];
+  swapDevices = [ { device = "/dev/disk/by-uuid/a2ab50d8-70bb-42a4-90d6-f288addd4540"; } ];
 }

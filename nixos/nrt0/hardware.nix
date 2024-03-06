@@ -1,14 +1,21 @@
 { modulesPath, ... }:
 
 let
-  mountOptions = [ "compress-force=zstd" "noatime" "space_cache=v2" ];
+  mountOptions = [
+    "compress-force=zstd"
+    "noatime"
+    "space_cache=v2"
+  ];
 in
 
 {
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
   boot = {
-    initrd.availableKernelModules = [ "xhci_pci" "usbhid" ];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "usbhid"
+    ];
     loader = {
       grub.enable = false;
       systemd-boot = {
@@ -21,7 +28,10 @@ in
   fileSystems = {
     "/" = {
       fsType = "tmpfs";
-      options = [ "mode=755" "size=100%" ];
+      options = [
+        "mode=755"
+        "size=100%"
+      ];
     };
     "/boot" = {
       device = "/dev/sda1";

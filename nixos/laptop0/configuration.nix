@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [ ./hardware.nix ];
@@ -54,12 +59,8 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      (iosevka-bin.override {
-        variant = "sgr-iosevka-fixed-slab";
-      })
-      (nerdfonts.override {
-        fonts = [ "NerdFontsSymbolsOnly" ];
-      })
+      (iosevka-bin.override { variant = "sgr-iosevka-fixed-slab"; })
+      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -129,13 +130,14 @@
     settings = {
       builders-use-substitutes = true;
       keep-outputs = true;
-      trusted-users = [ "@wheel" "root" ];
+      trusted-users = [
+        "@wheel"
+        "root"
+      ];
     };
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "obsidian"
-  ];
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "obsidian" ];
 
   programs = {
     adb.enable = true;
@@ -193,9 +195,7 @@
 
   systemd = {
     network.networks.default.matchConfig.Type = "wlan";
-    tmpfiles.rules = [
-      "d /mnt 755 one6th users"
-    ];
+    tmpfiles.rules = [ "d /mnt 755 one6th users" ];
   };
 
   sops = {
@@ -210,7 +210,13 @@
   users.users = {
     one6th = {
       isNormalUser = true;
-      extraGroups = [ "adbusers" "input" "podman" "wheel" "wireshark" ];
+      extraGroups = [
+        "adbusers"
+        "input"
+        "podman"
+        "wheel"
+        "wireshark"
+      ];
       hashedPasswordFile = config.sops.secrets.password_one6th.path;
       shell = pkgs.fish;
     };

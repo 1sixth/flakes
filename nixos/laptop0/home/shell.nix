@@ -32,13 +32,12 @@
     plugins = [
       {
         name = "autopair";
-        src = pkgs.fetchFromGitHub
-          {
-            owner = "jorgebucaran";
-            repo = "autopair.fish";
-            rev = "1.0.4";
-            sha256 = "sha256-s1o188TlwpUQEN3X5MxUlD/2CFCpEkWu83U9O+wg3VU=";
-          };
+        src = pkgs.fetchFromGitHub {
+          owner = "jorgebucaran";
+          repo = "autopair.fish";
+          rev = "1.0.4";
+          sha256 = "sha256-s1o188TlwpUQEN3X5MxUlD/2CFCpEkWu83U9O+wg3VU=";
+        };
       }
       {
         name = "puffer";

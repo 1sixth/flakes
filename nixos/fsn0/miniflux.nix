@@ -16,7 +16,9 @@
         rule = "Host(`rss.shinta.ro`)";
         service = "miniflux";
       };
-      services.miniflux.loadBalancer.servers = [{ url = "http://${config.services.miniflux.config.LISTEN_ADDR}"; }];
+      services.miniflux.loadBalancer.servers = [
+        { url = "http://${config.services.miniflux.config.LISTEN_ADDR}"; }
+      ];
     };
   };
 

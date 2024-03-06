@@ -1,12 +1,21 @@
 { pkgs, ... }:
 
 let
-  mountOptions = [ "compress-force=zstd" "noatime" "space_cache=v2" ];
+  mountOptions = [
+    "compress-force=zstd"
+    "noatime"
+    "space_cache=v2"
+  ];
 in
 
 {
   boot = {
-    initrd.availableKernelModules = [ "nvme" "sd_mod" "usb_storage" "xhci_pci" ];
+    initrd.availableKernelModules = [
+      "nvme"
+      "sd_mod"
+      "usb_storage"
+      "xhci_pci"
+    ];
     kernelModules = [ "kvm-amd" ];
     loader = {
       efi.canTouchEfiVariables = true;
@@ -22,7 +31,10 @@ in
   fileSystems = {
     "/" = {
       fsType = "tmpfs";
-      options = [ "mode=755" "size=200%" ];
+      options = [
+        "mode=755"
+        "size=200%"
+      ];
     };
     "/boot" = {
       device = "/dev/disk/by-uuid/4E1B-2A50";
@@ -46,8 +58,10 @@ in
     firmware = with pkgs; [ linux-firmware ];
   };
 
-  swapDevices = [{
-    device = "/persistent/swapfile";
-    size = 16384;
-  }];
+  swapDevices = [
+    {
+      device = "/persistent/swapfile";
+      size = 16384;
+    }
+  ];
 }

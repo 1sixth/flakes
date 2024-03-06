@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.proxychains = {
@@ -20,9 +25,7 @@
           rule = "Host(`reddit.shinta.ro`)";
           service = "libreddit";
         };
-        services.libreddit.loadBalancer.servers = [{
-          url = "http://127.0.0.1:8000";
-        }];
+        services.libreddit.loadBalancer.servers = [ { url = "http://127.0.0.1:8000"; } ];
       };
     };
   };
@@ -34,8 +37,8 @@
       "LIBREDDIT_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION" = "on";
     };
     serviceConfig.ExecStart = lib.mkForce (
-      "${config.programs.proxychains.package}/bin/proxychains4 -q " +
-      "${config.services.libreddit.package}/bin/libreddit --address 127.0.0.1 --port 8000"
+      "${config.programs.proxychains.package}/bin/proxychains4 -q "
+      + "${config.services.libreddit.package}/bin/libreddit --address 127.0.0.1 --port 8000"
     );
   };
 }

@@ -14,16 +14,23 @@
       };
     };
     routers.qbittorrent = {
-      middlewares = [ "qb-redirect" "qb-strip" ];
+      middlewares = [
+        "qb-redirect"
+        "qb-strip"
+      ];
       rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/qbittorrent`)";
       service = "qbittorrent";
     };
-    services.qbittorrent.loadBalancer.servers = [{ url = "http://127.0.0.1:8080"; }];
+    services.qbittorrent.loadBalancer.servers = [ { url = "http://127.0.0.1:8080"; } ];
   };
 
   # https://github.com/qbittorrent/qBittorrent/blob/615b76f78c8ab92ad57bed42fc4266950c9f0251/dist/unix/systemd/qbittorrent-nox%40.service.in
   systemd.services.qbittorrent-nox = {
-    after = [ "local-fs.target" "network-online.target" "nss-lookup.target" ];
+    after = [
+      "local-fs.target"
+      "network-online.target"
+      "nss-lookup.target"
+    ];
     description = "qBittorrent-nox service";
     documentation = [ "man:qbittorrent-nox(1)" ];
     serviceConfig = {

@@ -6,9 +6,7 @@
       rule = "Host(`${config.networking.hostName}.9875321.xyz`, `${config.networking.hostName}-cf.9875321.xyz`) && Path(`/proxy`)";
       service = "sing-box";
     };
-    services.sing-box.loadBalancer.servers = [{
-      url = "http://127.0.0.1:10000";
-    }];
+    services.sing-box.loadBalancer.servers = [ { url = "http://127.0.0.1:10000"; } ];
   };
 
   sops.secrets."sing-box.json" = {

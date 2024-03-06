@@ -3,21 +3,23 @@
 {
   programs.vscode = {
     enable = true;
-    extensions = (with pkgs.vscode-extensions; [
-      rust-lang.rust-analyzer
-      vadimcn.vscode-lldb
-    ]) ++ (with pkgs.vscode-marketplace; [
-      davidanson.vscode-markdownlint
-      editorconfig.editorconfig
-      huacnlee.autocorrect
-      golang.go
-      jnoortheen.nix-ide
-      llvm-vs-code-extensions.vscode-clangd
-      mkhl.direnv
-      pkief.material-icon-theme
-      redhat.vscode-xml
-      vscodevim.vim
-    ]);
+    extensions =
+      (with pkgs.vscode-extensions; [
+        rust-lang.rust-analyzer
+        vadimcn.vscode-lldb
+      ])
+      ++ (with pkgs.vscode-marketplace; [
+        davidanson.vscode-markdownlint
+        editorconfig.editorconfig
+        huacnlee.autocorrect
+        golang.go
+        jnoortheen.nix-ide
+        llvm-vs-code-extensions.vscode-clangd
+        mkhl.direnv
+        pkief.material-icon-theme
+        redhat.vscode-xml
+        vscodevim.vim
+      ]);
     mutableExtensionsDir = false;
     package = pkgs.vscodium.override {
       commandLineArgs = builtins.concatStringsSep " " [

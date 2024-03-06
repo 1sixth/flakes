@@ -1,4 +1,9 @@
-{ inputs, lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   boot = {
@@ -31,9 +36,7 @@
         "/var/lib"
         "/var/log/journal"
       ];
-      files = [
-        "/etc/machine-id"
-      ];
+      files = [ "/etc/machine-id" ];
     };
     systemPackages = with pkgs; [
       fd
@@ -61,7 +64,12 @@
     settings = {
       auto-allocate-uids = true;
       auto-optimise-store = true;
-      experimental-features = [ "auto-allocate-uids" "cgroups" "flakes" "nix-command" ];
+      experimental-features = [
+        "auto-allocate-uids"
+        "cgroups"
+        "flakes"
+        "nix-command"
+      ];
       flake-registry = "/etc/nix/registry.json";
       nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
       substituters = lib.mkAfter [ "https://cache.garnix.io" ];

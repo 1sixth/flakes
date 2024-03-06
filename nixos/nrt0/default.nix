@@ -1,4 +1,9 @@
-{ inputs, nixpkgs, self, system }:
+{
+  inputs,
+  nixpkgs,
+  self,
+  system,
+}:
 
 nixpkgs.lib.nixosSystem {
   inherit system;
@@ -15,5 +20,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.tor
     ./configuration.nix
   ];
-  specialArgs = { inherit inputs self; };
+  specialArgs = {
+    inherit inputs self;
+  };
 }

@@ -125,10 +125,12 @@ in
         commit.gpgSign = true;
         diff.sopsdiffer.textconv = "sops -d";
         gpg = {
-          ssh.allowedSignersFile = builtins.toString (pkgs.writeText "allowed_signers" ''
-            ${config.programs.git.userEmail} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOSqODpw3my6PkhWrAD/sulDNCiNjKqLjNOtFPMFwr
-            ${config.programs.git.userEmail} sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFo0aSRnBTZxloY4B3UBOtuRJVEKjs5qgjKerAB2sSr7AAAABHNzaDo=
-          '');
+          ssh.allowedSignersFile = builtins.toString (
+            pkgs.writeText "allowed_signers" ''
+              ${config.programs.git.userEmail} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOSqODpw3my6PkhWrAD/sulDNCiNjKqLjNOtFPMFwr
+              ${config.programs.git.userEmail} sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFo0aSRnBTZxloY4B3UBOtuRJVEKjs5qgjKerAB2sSr7AAAABHNzaDo=
+            ''
+          );
           format = "ssh";
         };
         init.defaultBranch = "master";
@@ -211,10 +213,12 @@ in
     };
     swayidle = {
       enable = true;
-      events = [{
-        command = "${config.programs.swaylock.package}/bin/swaylock";
-        event = "lock";
-      }];
+      events = [
+        {
+          command = "${config.programs.swaylock.package}/bin/swaylock";
+          event = "lock";
+        }
+      ];
       systemdTarget = "hyprland-session.target";
       timeouts = [
         {

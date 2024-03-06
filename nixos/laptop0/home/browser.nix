@@ -3,9 +3,7 @@
 {
   programs.firefox = {
     enable = true;
-    package = (pkgs.firefox-esr.override {
-      nativeMessagingHosts = [ pkgs.ff2mpv ];
-    });
+    package = (pkgs.firefox-esr.override { nativeMessagingHosts = [ pkgs.ff2mpv ]; });
     policies = {
       CaptivePortal = false;
       DisableFeedbackCommands = true;
