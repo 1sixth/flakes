@@ -49,7 +49,7 @@
       };
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nil}/bin/nil";
-      "nix.serverSettings".nil.formatting.command = [ "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt" ];
+      "nix.serverSettings".nil.formatting.command = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
       "redhat.telemetry.enabled" = false;
       "security.workspace.trust.enabled" = false;
       "terminal.integrated.copyOnSelection" = true;
