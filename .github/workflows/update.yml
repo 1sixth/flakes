@@ -13,8 +13,8 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@main
       - name: Configure Git
         run: |
-          git config --global user.email "1sixth@shinta.ro"
-          git config --global user.name "1sixth"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
       - name: Update Nix Flake
         run: nix flake update --commit-lock-file
       - name: Git Push
