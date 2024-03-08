@@ -18,6 +18,7 @@
         mkhl.direnv
         pkief.material-icon-theme
         redhat.vscode-xml
+        redhat.vscode-yaml
         vscodevim.vim
       ]);
     mutableExtensionsDir = false;
