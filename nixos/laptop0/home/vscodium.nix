@@ -32,7 +32,6 @@
     userSettings = {
       "[nix]"."editor.formatOnSave" = true;
       "autocorrect.formatOnSave" = false;
-      "editor.bracketPairColorization.enabled" = true;
       "editor.fontFamily" = "monospace";
       "editor.fontSize" = 20;
       "extensions.autoCheckUpdates" = false;
