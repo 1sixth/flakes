@@ -52,7 +52,13 @@
                 {
                   alert = "DiskWillFillin12Hours";
                   annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} will fill in 12 hours.";
-                  expr = ''predict_linear(node_filesystem_avail_bytes{mountpoint=~"/boot|/persistent"}[1h], 12 * 3600) < 0'';
+                  expr = ''predict_linear(node_filesystem_avail_bytes{mountpoint=~"/persistent"}[1h], 12 * 3600) < 0'';
+                  for = "5m";
+                }
+                {
+                  alert = "DiskWillFillin2Hours";
+                  annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} will fill in 2 hours.";
+                  expr = ''predict_linear(node_filesystem_avail_bytes{mountpoint=~"/boot|/persistent"}[1h], 2 * 3600) < 0'';
                   for = "5m";
                 }
                 {
