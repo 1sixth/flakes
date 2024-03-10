@@ -59,7 +59,7 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      (iosevka-bin.override { variant = "sgr-iosevka-fixed-slab"; })
+      (iosevka-bin.override { variant = "SGr-IosevkaFixedSlab"; })
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       noto-fonts
       noto-fonts-cjk-sans
