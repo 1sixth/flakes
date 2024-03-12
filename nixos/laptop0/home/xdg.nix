@@ -63,6 +63,7 @@
     };
     userDirs = {
       desktop = config.xdg.userDirs.download;
+      documents = config.xdg.userDirs.download;
       download = "${config.home.homeDirectory}/Download";
       enable = true;
     };
