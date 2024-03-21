@@ -1,6 +1,10 @@
 name: Check
 on:
   push:
+  workflow_run:
+    workflows: [ Update ]
+    types:
+      - completed
 
 jobs:
   check:
