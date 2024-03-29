@@ -3,14 +3,6 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    extraConfig = ''
-      device {
-        name=pnp0c50:00-093a:0255-touchpad
-        accel_profile=adaptive
-        middle_button_emulation=true
-        natural_scroll=true
-      }
-    '';
     settings = {
       "$Mod" = "SUPER";
       animations.enabled = false;
@@ -84,6 +76,14 @@
       bindm = [
         "$Mod, mouse:272, movewindow"
         "$Mod, mouse:273, resizewindow"
+      ];
+      device = [
+        {
+          accel_profile = "adaptive";
+          middle_button_emulation = true;
+          name = "pnp0c50:00-093a:0255-touchpad";
+          natural_scroll = true;
+        }
       ];
       dwindle = {
         force_split = 2;
