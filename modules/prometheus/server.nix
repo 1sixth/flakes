@@ -50,15 +50,14 @@
                   expr = ''node_btrfs_device_errors_total > 0'';
                 }
                 {
-                  alert = "DiskWillFillin12Hours";
-                  annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} will fill in 12 hours.";
-                  expr = ''predict_linear(node_filesystem_avail_bytes{mountpoint=~"/persistent"}[1h], 12 * 3600) < 0'';
-                  for = "5m";
+                  alert = "Diskis75%Full";
+                  annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} is 75% full.";
+                  expr = ''(node_filesystem_avail_bytes{mountpoint=~"/boot"}  / node_filesystem_size_bytes{mountpoint=~"/boot"} ) > 0.75'';
                 }
                 {
-                  alert = "DiskWillFillin2Hours";
-                  annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} will fill in 2 hours.";
-                  expr = ''predict_linear(node_filesystem_avail_bytes{mountpoint=~"/boot|/persistent"}[1h], 2 * 3600) < 0'';
+                  alert = "DiskWillFillin4Hours";
+                  annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} will fill in 4 hours.";
+                  expr = ''predict_linear(node_filesystem_avail_bytes{mountpoint=~"/persistent"}[1h], 4 * 3600) < 0'';
                   for = "5m";
                 }
                 {
