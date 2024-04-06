@@ -18,7 +18,10 @@
   };
 
   services = {
-    libreddit.enable = true;
+    libreddit = {
+      enable = true;
+      package = pkgs.redlib;
+    };
     traefik = {
       dynamicConfigOptions.http = {
         routers.libreddit = {
@@ -38,7 +41,7 @@
     };
     serviceConfig.ExecStart = lib.mkForce (
       "${config.programs.proxychains.package}/bin/proxychains4 -q "
-      + "${config.services.libreddit.package}/bin/libreddit --address 127.0.0.1 --port 8000"
+      + "${config.services.libreddit.package}/bin/redlib --address 127.0.0.1 --port 8000"
     );
   };
 }
