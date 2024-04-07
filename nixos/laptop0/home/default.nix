@@ -77,6 +77,7 @@ in
       rename
       sops
       tealdeer
+      texliveFull
       tokei
       translate-shell
       unar

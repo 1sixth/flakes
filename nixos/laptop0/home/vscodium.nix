@@ -13,6 +13,7 @@
         editorconfig.editorconfig
         huacnlee.autocorrect
         golang.go
+        james-yu.latex-workshop
         jnoortheen.nix-ide
         llvm-vs-code-extensions.vscode-clangd
         mkhl.direnv
@@ -34,6 +35,10 @@
       "autocorrect.formatOnSave" = false;
       "editor.fontFamily" = "monospace";
       "editor.fontSize" = 20;
+      "editor.unicodeHighlight.allowedLocales" = {
+        "zh-hans" = true;
+        "zh-hant" = true;
+      };
       "extensions.autoCheckUpdates" = false;
       "extensions.autoUpdate" = false;
       "extensions.ignoreRecommendations" = true;
@@ -41,6 +46,9 @@
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
+      "latex-workshop.bibtex-fields.sort.enabled" = true;
+      "latex-workshop.bibtex-format.sort.enabled" = true;
+      "latex-workshop.latex.recipe.default" = "lastUsed";
       "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
         MD010 = false;
