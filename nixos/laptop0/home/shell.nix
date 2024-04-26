@@ -4,6 +4,14 @@
   programs.fish = {
     enable = true;
     functions = {
+      colmena.body = ''
+        switch $argv[1]
+            case apply build
+                command colmena $argv --evaluator streaming --keep-result
+            case "*"
+                command colmena $argv
+        end
+      '';
       nl.body = "nix-locate --whole-name bin/$argv";
       podman.body = ''
         switch $argv[1]
