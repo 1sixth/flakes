@@ -78,7 +78,6 @@
           keyType = "EC256";
           storage = "${config.services.traefik.dataDir}/acme.json";
         };
-        experimental.http3 = true;
         entryPoints = {
           http = {
             address = ":80";
