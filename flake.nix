@@ -3,28 +3,15 @@
 
   inputs = {
     berberman = {
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        nvfetcher.follows = "nvfetcher";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:berberman/flakes";
     };
     colmena = {
       inputs = {
-        flake-compat.follows = "flake-compat";
-        flake-utils.follows = "flake-utils";
         nixpkgs.follows = "nixpkgs";
         stable.follows = "nixpkgs";
       };
       url = "github:zhaofengli/colmena";
-    };
-    flake-compat = {
-      flake = false;
-      url = "github:edolstra/flake-compat";
-    };
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "systems";
     };
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,22 +23,10 @@
       url = "github:nix-community/nix-index-database";
     };
     nix-vscode-extensions = {
-      inputs = {
-        flake-compat.follows = "flake-compat";
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/nix-vscode-extensions";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    nvfetcher = {
-      inputs = {
-        flake-compat.follows = "flake-compat";
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
-      url = "github:berberman/nvfetcher";
-    };
     sops-nix = {
       inputs = {
         nixpkgs.follows = "nixpkgs";
@@ -59,7 +34,6 @@
       };
       url = "github:Mic92/sops-nix";
     };
-    systems.url = "github:nix-systems/default";
   };
 
   outputs =
