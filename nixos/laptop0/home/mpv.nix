@@ -55,7 +55,9 @@
 
       l = ''cycle-values loop-file "inf" "no"''; # toggle infinite looping
 
-      p = "cycle-values speed 1 2";
+      "1" = "set speed 1";
+      "2" = "set speed 2";
+      "3" = "set speed 3";
 
       POWER = "quit";
       PLAY = "cycle pause"; # toggle pause/playback mode
