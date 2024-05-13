@@ -17,6 +17,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    hyprland = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    };
     impermanence.url = "github:nix-community/impermanence";
     nix-index-database = {
       inputs.nixpkgs.follows = "nixpkgs";
