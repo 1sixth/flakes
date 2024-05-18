@@ -16,7 +16,6 @@
       "vm.watermark_scale_factor" = 125;
       "vm.page-cluster" = 0;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
     swraid.enable = false;
     tmp.cleanOnBoot = true;
   };
