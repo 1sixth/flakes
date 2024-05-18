@@ -3,7 +3,7 @@
 {
   services.traefik.dynamicConfigOptions.http = {
     routers.sing-box = {
-      rule = "Host(`${config.networking.hostName}.9875321.xyz`, `${config.networking.hostName}-cf.9875321.xyz`) && Path(`/proxy`)";
+      rule = "(Host(`${config.networking.hostName}.9875321.xyz`) || Host(`${config.networking.hostName}-cf.9875321.xyz`)) && Path(`/proxy`)";
       service = "sing-box";
     };
     services.sing-box.loadBalancer.servers = [ { url = "http://127.0.0.1:10000"; } ];
