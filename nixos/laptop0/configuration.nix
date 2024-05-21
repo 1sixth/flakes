@@ -42,7 +42,6 @@
       ".local/share/okular"
       ".local/share/TelegramDesktop"
       ".local/share/virtualenv"
-      ".local/share/waydroid"
       ".local/share/zoxide"
       ".local/state/mpv/watch_later"
       ".local/state/nvim"
@@ -223,8 +222,5 @@
     root.hashedPasswordFile = config.sops.secrets.password_root.path;
   };
 
-  virtualisation = {
-    podman.enable = true;
-    waydroid.enable = true;
-  };
+  virtualisation.podman.enable = true;
 }
