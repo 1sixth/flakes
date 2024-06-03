@@ -130,7 +130,6 @@
       };
     };
     # https://github.com/stonecrusher/simpleMenuWizard
-    # https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#for-userchromecss
     profiles.default.userChrome = ''
       #context-openlinkinusercontext-menu,    /* Open Link in New Container Tab   */
       #context-openlink,                      /* Open Link in New Window          */
@@ -141,14 +140,6 @@
       #context-sep-sendlinktodevice,          /************ Separator *************/
       #frame-sep                              /************ Separator *************/
           { display:none !important; }
-
-      #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
-          opacity: 0;
-          pointer-events: none;
-      }
-      #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
-          visibility: collapse !important;
-      }
     '';
   };
 }
