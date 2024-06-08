@@ -60,8 +60,10 @@ in
       jetbrains.pycharm-community
       jetbrains.idea-community
       libreoffice
+      mumble
       obsidian
       okular
+      prismlauncher
       telegram-desktop
       tor-browser
 
