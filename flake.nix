@@ -76,6 +76,10 @@
           system = "aarch64-linux";
           inherit self nixpkgs inputs;
         };
+        sha0 = import ./nixos/sha0 {
+          system = "x86_64-linux";
+          inherit self nixpkgs inputs;
+        };
       };
 
       nixosModules = import ./modules;
