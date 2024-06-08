@@ -16,6 +16,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.proxy.server
     self.nixosModules.resolved.earth
     self.nixosModules.server
+    self.nixosModules.traefik
     ./configuration.nix
   ];
   specialArgs = {

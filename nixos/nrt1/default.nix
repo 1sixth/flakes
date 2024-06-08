@@ -18,6 +18,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.server
     self.nixosModules.stress-ng
     self.nixosModules.tor
+    self.nixosModules.traefik
     ./configuration.nix
   ];
   specialArgs = {

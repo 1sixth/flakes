@@ -15,6 +15,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.qbittorrent-nox
     self.nixosModules.resolved.china
     self.nixosModules.server
+    self.nixosModules.traefik
     ./configuration.nix
   ];
   specialArgs = {

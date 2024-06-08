@@ -62,54 +62,17 @@
         PasswordAuthentication = false;
       };
     };
-    traefik = {
-      dynamicConfigOptions = {
-        middlewares.compress.compress = { };
-        tls.options.default = {
-          minVersion = "VersionTLS12";
-          sniStrict = true;
-        };
-      };
-      enable = true;
-      staticConfigOptions = {
-        certificatesResolvers.letsencrypt.acme = {
-          dnsChallenge.provider = "cloudflare";
-          email = "letsencrypt@shinta.ro";
-          keyType = "EC256";
-          storage = "${config.services.traefik.dataDir}/acme.json";
-        };
-        entryPoints = {
-          http = {
-            address = ":80";
-            http.redirections.entryPoint.to = "https";
-          };
-          https = {
-            address = ":443";
-            http.tls.certResolver = "letsencrypt";
-            http3 = { };
-          };
-        };
-      };
-    };
     vnstat.enable = true;
   };
 
   sops = {
-    secrets.cloudflare_token = {
-      sopsFile = ./secrets.yaml;
-      owner = config.users.users.traefik.name;
-      group = config.users.users.traefik.group;
-    };
     secrets.password_root = {
       neededForUsers = true;
       sopsFile = ./secrets.yaml;
     };
   };
 
-  systemd = {
-    network.networks.default.matchConfig.Type = "ether";
-    services.traefik.serviceConfig.EnvironmentFile = [ config.sops.secrets.cloudflare_token.path ];
-  };
+  systemd.network.networks.default.matchConfig.Type = "ether";
 
   users.users.root = {
     hashedPasswordFile = config.sops.secrets.password_root.path;
