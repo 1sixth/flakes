@@ -103,10 +103,14 @@
       ytdl-raw-options = "yes-playlist=";
     };
     enable = true;
-    scripts = with pkgs.mpvScripts; [
-      autoload
-      mpris
-      sponsorblock
-    ];
+    package = (
+      pkgs.mpv.override {
+        scripts = with pkgs.mpvScripts; [
+          autoload
+          mpris
+          sponsorblock
+        ];
+      }
+    );
   };
 }
