@@ -107,7 +107,10 @@
     "vTrus Root CA"
   ];
 
-  services.journald.extraConfig = "SystemMaxUse=1G";
+  services = {
+    fstrim.enable = true;
+    journald.extraConfig = "SystemMaxUse=1G";
+  };
 
   sops.age = {
     keyFile = "/var/lib/sops.key";
