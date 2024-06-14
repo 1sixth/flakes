@@ -52,7 +52,7 @@
                 {
                   alert = "Diskis75%Full";
                   annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} is 75% full.";
-                  expr = ''(node_filesystem_avail_bytes{mountpoint=~"/boot"}  / node_filesystem_size_bytes{mountpoint=~"/boot"} ) > 0.75'';
+                  expr = ''(node_filesystem_avail_bytes{mountpoint=~"/boot"}  / node_filesystem_size_bytes{mountpoint=~"/boot"} ) < 0.25'';
                 }
                 {
                   alert = "DiskWillFillin4Hours";
