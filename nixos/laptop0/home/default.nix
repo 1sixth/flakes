@@ -53,12 +53,18 @@ in
       rustfmt
 
       # GUI
+      (prismlauncher.override {
+        jdks = with pkgs; [
+          jdk17
+          jdk21
+        ];
+        withWaylandGLFW = true;
+      })
       jetbrains.pycharm-community
       libreoffice
       mumble
       obsidian
       okular
-      prismlauncher
       telegram-desktop
       tor-browser
 
