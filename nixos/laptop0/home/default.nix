@@ -61,7 +61,6 @@ in
         withWaylandGLFW = true;
       })
       jetbrains.pycharm-community
-      libreoffice
       mumble
       obsidian
       okular
