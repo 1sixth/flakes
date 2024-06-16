@@ -85,11 +85,14 @@
 
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-chinese-addons
-      fcitx5-pinyin-moegirl
-      fcitx5-pinyin-zhwiki
-    ];
+    fcitx5 = {
+      addons = with pkgs; [
+        fcitx5-pinyin-moegirl
+        fcitx5-pinyin-zhwiki
+        qt6Packages.fcitx5-chinese-addons
+      ];
+      plasma6Support = true;
+    };
   };
 
   networking = {
