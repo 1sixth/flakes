@@ -35,10 +35,6 @@ in
       clang-tools
       gcc
 
-      # Java
-      gradle
-      jdk21
-
       # Go
       delve
       go-tools
@@ -58,7 +54,6 @@ in
 
       # GUI
       jetbrains.pycharm-community
-      jetbrains.idea-community
       libreoffice
       mumble
       obsidian
@@ -92,10 +87,6 @@ in
     ];
     sessionVariables = {
       CARGO_HOME = "${config.xdg.cacheHome}/cargo";
-
-      GRADLE_USER_HOME = "${config.xdg.cacheHome}/gradle";
-
-      JAVA_HOME = pkgs.jdk21.home;
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
     };
