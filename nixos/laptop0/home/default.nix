@@ -60,7 +60,7 @@ in
         ];
         withWaylandGLFW = true;
       })
-      jetbrains.pycharm-community
+      jetbrains.pycharm-community-bin
       mumble
       obsidian
       okular
