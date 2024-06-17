@@ -76,16 +76,24 @@
       telegram-desktop = prev.telegram-desktop.overrideAttrs (old: {
         patches = (old.patches or [ ]) ++ [
           (prev.fetchpatch {
-            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/2457ef3a2d3ff94dfa4b0a73ea4c51bad4b3f14b/0002-Disable-saving-restrictions.patch";
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/e9bc651c55cb32c741f5e147a781d5c2e77fb77b/0001-Disable-sponsored-messages.patch";
+            hash = "sha256-HeDH6tkkGx2XYTtzfo+gRee4BYxRiPKXQuftycl8Kvo=";
+          })
+          (prev.fetchpatch {
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/e9bc651c55cb32c741f5e147a781d5c2e77fb77b/0002-Disable-saving-restrictions.patch";
             hash = "sha256-sQsyXlvhXSvouPgzYSiRB8ieICo3GDXWH5MaZtBjtqw=";
           })
           (prev.fetchpatch {
-            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/2457ef3a2d3ff94dfa4b0a73ea4c51bad4b3f14b/0003-Disable-invite-peeking-restrictions.patch";
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/e9bc651c55cb32c741f5e147a781d5c2e77fb77b/0003-Disable-invite-peeking-restrictions.patch";
             hash = "sha256-8mJD6LOjz11yfAdY4QPK/AUz9o5W3XdupXxy7kRrbC8=";
           })
           (prev.fetchpatch {
-            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/2457ef3a2d3ff94dfa4b0a73ea4c51bad4b3f14b/0004-Disable-accounts-limit.patch";
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/e9bc651c55cb32c741f5e147a781d5c2e77fb77b/0004-Disable-accounts-limit.patch";
             hash = "sha256-PZWCFdGE/TTJ1auG1JXNpnTUko2rCWla6dYKaQNzreg=";
+          })
+          (prev.fetchpatch {
+            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/e9bc651c55cb32c741f5e147a781d5c2e77fb77b/0005-Option-to-disable-stories.patch";
+            hash = "sha256-aSAjyFiOg8JLgYA3voijVvkGIgK93kNMx40vqHsvW8Y=";
           })
         ];
       });
