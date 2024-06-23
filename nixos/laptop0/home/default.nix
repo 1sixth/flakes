@@ -65,7 +65,6 @@ in
       obsidian
       okular
       telegram-desktop
-      tor-browser
 
       # Terminal Utilities
       brightnessctl
