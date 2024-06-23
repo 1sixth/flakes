@@ -58,21 +58,6 @@
         ];
       });
 
-      poetry = prev.poetry.overrideAttrs (old: {
-        postInstall =
-          let
-            # 'xyz'' => "xyz"'
-            match = "'([^']+)''";
-            replace = "\"$1\"'";
-          in
-          ''
-            installShellCompletion --cmd poetry \
-              --bash <($out/bin/poetry completions bash) \
-              --fish <($out/bin/poetry completions fish | ${prev.sd}/bin/sd "${match}" "${replace}") \
-              --zsh <($out/bin/poetry completions zsh) \
-          '';
-      });
-
       telegram-desktop = prev.telegram-desktop.overrideAttrs (old: {
         patches = (old.patches or [ ]) ++ [
           (prev.fetchpatch {
