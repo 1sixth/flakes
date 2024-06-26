@@ -1,22 +1,38 @@
 { config, ... }:
 
 {
+  security.acme = {
+    acceptTerms = true;
+    certs."9875321.xyz" = {
+      domain = "${config.networking.hostName}.9875321.xyz";
+      extraDomainNames = [ "${config.networking.hostName}-cf.9875321.xyz" ];
+    };
+    defaults = {
+      dnsProvider = "cloudflare";
+      email = "acme@shinta.ro";
+      environmentFile = config.sops.secrets.cloudflare_token.path;
+      reloadServices = [ "traefik.service" ];
+    };
+  };
+
   services.traefik = {
     dynamicConfigOptions = {
       middlewares.compress.compress = { };
-      tls.options.default = {
-        minVersion = "VersionTLS12";
-        sniStrict = true;
+      tls = {
+        certificates = [
+          {
+            certFile = "/run/credentials/traefik.service/9875321.xyz.crt";
+            keyFile = "/run/credentials/traefik.service/9875321.xyz.key";
+          }
+        ];
+        options.default = {
+          minVersion = "VersionTLS12";
+          sniStrict = true;
+        };
       };
     };
     enable = true;
     staticConfigOptions = {
-      certificatesResolvers.letsencrypt.acme = {
-        dnsChallenge.provider = "cloudflare";
-        email = "letsencrypt@shinta.ro";
-        keyType = "EC256";
-        storage = "${config.services.traefik.dataDir}/acme.json";
-      };
       entryPoints = {
         http = {
           address = ":80";
@@ -24,7 +40,7 @@
         };
         https = {
           address = ":443";
-          http.tls.certResolver = "letsencrypt";
+          http.tls = { };
           http3 = { };
         };
       };
@@ -33,11 +49,12 @@
 
   sops.secrets.cloudflare_token = {
     sopsFile = ./secrets.yaml;
-    owner = config.users.users.traefik.name;
-    group = config.users.users.traefik.group;
+    owner = config.users.users.acme.name;
+    group = config.users.users.acme.group;
   };
 
-  systemd.services.traefik.serviceConfig.EnvironmentFile = [
-    config.sops.secrets.cloudflare_token.path
+  systemd.services.traefik.serviceConfig.LoadCredential = [
+    "9875321.xyz.crt:${config.security.acme.certs."9875321.xyz".directory}/cert.pem"
+    "9875321.xyz.key:${config.security.acme.certs."9875321.xyz".directory}/key.pem"
   ];
 }
