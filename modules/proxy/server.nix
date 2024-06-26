@@ -24,6 +24,10 @@
       '';
       serviceConfig = {
         DynamicUser = "yes";
+        LoadCredential = [
+          "9875321.xyz.crt:${config.security.acme.certs."9875321.xyz".directory}/cert.pem"
+          "9875321.xyz.key:${config.security.acme.certs."9875321.xyz".directory}/key.pem"
+        ];
         StateDirectory = "sing-box";
       };
       wantedBy = [ "multi-user.target" ];

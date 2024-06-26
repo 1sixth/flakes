@@ -11,7 +11,10 @@
       dnsProvider = "cloudflare";
       email = "acme@shinta.ro";
       environmentFile = config.sops.secrets.cloudflare_token.path;
-      reloadServices = [ "traefik.service" ];
+      reloadServices = [
+        "sing-box.service"
+        "traefik.service"
+      ];
     };
   };
 
