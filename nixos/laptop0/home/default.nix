@@ -45,6 +45,7 @@ in
       # Python
       poetry
       python3
+      ruff
 
       # Rust
       cargo
@@ -60,7 +61,6 @@ in
         ];
         withWaylandGLFW = true;
       })
-      jetbrains.pycharm-community-bin
       mumble
       obsidian
       okular

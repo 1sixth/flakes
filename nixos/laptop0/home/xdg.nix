@@ -29,15 +29,6 @@
         icon = "obsidian";
         name = "Obsidian";
       };
-      pycharm-community = {
-        exec = builtins.toString (
-          pkgs.writeShellScript "pycharm-community" ''
-            pycharm-community -Dsun.java2d.uiScale=2
-          ''
-        );
-        icon = "pycharm-community";
-        name = "PyCharm CE";
-      };
     };
     enable = true;
     mimeApps = {
