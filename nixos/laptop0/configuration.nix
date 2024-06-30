@@ -24,7 +24,6 @@
       ".config/htop"
       ".config/Mumble"
       ".config/nali"
-      ".config/obsidian"
       ".config/rclone"
       ".config/sops"
       ".config/VSCodium"
@@ -124,8 +123,6 @@
       ];
     };
   };
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "obsidian" ];
 
   programs = {
     adb.enable = true;
