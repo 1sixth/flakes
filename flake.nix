@@ -64,6 +64,10 @@
           system = "x86_64-linux";
           inherit self nixpkgs inputs;
         };
+        lax0 = import ./nixos/lax0 {
+          system = "x86_64-linux";
+          inherit self nixpkgs inputs;
+        };
         nas = import ./nixos/nas {
           system = "x86_64-linux";
           inherit self nixpkgs inputs;

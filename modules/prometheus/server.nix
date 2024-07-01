@@ -89,6 +89,7 @@
               # TODO: represent this list programmatically
               targets = [
                 "fsn0.9875321.xyz"
+                "lax0.9875321.xyz"
                 "nrt0.9875321.xyz"
                 "nrt1.9875321.xyz"
               ];
