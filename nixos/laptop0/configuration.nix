@@ -98,7 +98,20 @@
   nix = {
     buildMachines = [
       {
-        hostName = "fsn0";
+        hostName = "nrt0";
+        protocol = "ssh-ng";
+        sshUser = "root";
+        supportedFeatures = [
+          "benchmark"
+          "big-parallel"
+          "gccarch-armv8-a"
+          "kvm"
+          "nixos-test"
+        ];
+        system = "aarch64-linux";
+      }
+      {
+        hostName = "nrt1";
         protocol = "ssh-ng";
         sshUser = "root";
         supportedFeatures = [
