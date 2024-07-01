@@ -4,7 +4,6 @@
   nixpkgs.overlays = [
     (final: prev: {
       inherit (inputs.berberman.packages.${prev.system}) fcitx5-pinyin-moegirl fcitx5-pinyin-zhwiki;
-      inherit (inputs.hyprland.packages.${prev.system}) hyprland xdg-desktop-portal-hyprland;
       inherit (inputs.nix-index-database.packages.${prev.system}) nix-index-with-db;
       inherit
         (inputs.nix-vscode-extensions.extensions.${prev.system}.forVSCodeVersion
