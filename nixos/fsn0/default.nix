@@ -12,7 +12,6 @@ nixpkgs.lib.nixosSystem {
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
     self.nixosModules.prometheus.client
-    self.nixosModules.prometheus.server
     self.nixosModules.proxy.server
     self.nixosModules.resolved.earth
     self.nixosModules.server
