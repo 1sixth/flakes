@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -177,6 +172,17 @@
       powerKey = "ignore";
       suspendKey = "ignore";
       suspendKeyLongPress = "ignore";
+    };
+    nextjs-ollama-llm-ui = {
+      enable = true;
+      ollamaUrl = "http://127.0.0.1:11434";
+    };
+    ollama = {
+      enable = true;
+      environmentVariables = {
+        HTTP_PROXY = "http://127.0.0.1:1080";
+        HTTPS_PROXY = "http://127.0.0.1:1080";
+      };
     };
     pipewire = {
       enable = true;
