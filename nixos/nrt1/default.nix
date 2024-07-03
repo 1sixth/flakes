@@ -14,6 +14,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.hath
     self.nixosModules.prometheus.client
     self.nixosModules.proxy.server
+    self.nixosModules.qbittorrent-nox
     self.nixosModules.resolved.earth
     self.nixosModules.server
     self.nixosModules.stress-ng
