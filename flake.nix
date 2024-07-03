@@ -2,10 +2,6 @@
   description = "somewhat somehow deterministic";
 
   inputs = {
-    berberman = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:berberman/flakes";
-    };
     colmena = {
       inputs = {
         nixpkgs.follows = "nixpkgs";

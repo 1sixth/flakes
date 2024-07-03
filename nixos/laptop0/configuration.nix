@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [ ./hardware.nix ];
@@ -131,6 +136,9 @@
       ];
     };
   };
+
+  nixpkgs.config.allowUnfreePredicate =
+    pkg: builtins.elem (lib.getName pkg) [ "fcitx5-pinyin-moegirl" ];
 
   programs = {
     adb.enable = true;
