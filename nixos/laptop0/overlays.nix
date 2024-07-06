@@ -63,10 +63,6 @@
             hash = "sha256-HeDH6tkkGx2XYTtzfo+gRee4BYxRiPKXQuftycl8Kvo=";
           })
           (prev.fetchpatch {
-            url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/e9bc651c55cb32c741f5e147a781d5c2e77fb77b/0002-Disable-saving-restrictions.patch";
-            hash = "sha256-sQsyXlvhXSvouPgzYSiRB8ieICo3GDXWH5MaZtBjtqw=";
-          })
-          (prev.fetchpatch {
             url = "https://raw.githubusercontent.com/Layerex/telegram-desktop-patches/e9bc651c55cb32c741f5e147a781d5c2e77fb77b/0003-Disable-invite-peeking-restrictions.patch";
             hash = "sha256-8mJD6LOjz11yfAdY4QPK/AUz9o5W3XdupXxy7kRrbC8=";
           })
