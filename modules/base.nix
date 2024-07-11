@@ -117,7 +117,7 @@
     sshKeyPaths = [ ];
   };
 
-  system.stateVersion = "22.05";
+  system.stateVersion = "24.11";
 
   systemd.network.networks.default.DHCP = "yes";
 

@@ -93,7 +93,7 @@ in
 
       LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
     };
-    stateVersion = "22.05";
+    stateVersion = "24.11";
     username = "one6th";
   };
 

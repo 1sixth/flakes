@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   services = {
@@ -35,6 +30,4 @@
   };
 
   sops.secrets.vaultwarden.restartUnits = [ "vaultwarden.service" ];
-
-  systemd.services.vaultwarden.serviceConfig.StateDirectory = lib.mkForce "vaultwarden";
 }
