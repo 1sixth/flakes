@@ -164,9 +164,11 @@
     pam = {
       services.swaylock = { };
       u2f = {
-        authFile = config.sops.secrets.u2f_keys.path;
-        cue = true;
         enable = true;
+        settings = {
+          authFile = config.sops.secrets.u2f_keys.path;
+          cue = true;
+        };
       };
     };
     rtkit.enable = true;
