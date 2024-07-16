@@ -100,8 +100,11 @@
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
       };
-      input.accel_profile = "flat";
-      misc.vrr = 1;
+      input = {
+        accel_profile = "flat";
+        numlock_by_default = true;
+      };
+      opengl.force_introspection = 1;
       windowrulev2 = [
         "suppressevent maximize, class: mpv"
         "workspace 1 silent, class: codium-url-handler"
