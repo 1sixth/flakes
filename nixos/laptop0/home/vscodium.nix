@@ -23,6 +23,7 @@
         pkief.material-icon-theme
         redhat.vscode-xml
         redhat.vscode-yaml
+        tamasfe.even-better-toml
         vscodevim.vim
       ]);
     mutableExtensionsDir = false;
