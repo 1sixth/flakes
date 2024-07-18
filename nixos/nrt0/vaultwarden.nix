@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   services = {
@@ -25,7 +25,6 @@
       dbBackend = "postgresql";
       enable = true;
       environmentFile = config.sops.secrets.vaultwarden.path;
-      webVaultPackage = (pkgs.vaultwarden.webvault.override { python3 = pkgs.python311; });
     };
   };
 
