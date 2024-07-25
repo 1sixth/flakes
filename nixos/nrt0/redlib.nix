@@ -18,22 +18,19 @@
   };
 
   services = {
-    libreddit = {
-      enable = true;
-      package = pkgs.redlib;
-    };
+    redlib.enable = true;
     traefik = {
       dynamicConfigOptions.http = {
-        routers.libreddit = {
+        routers.redlib = {
           rule = "Host(`reddit.shinta.ro`)";
-          service = "libreddit";
+          service = "redlib";
         };
-        services.libreddit.loadBalancer.servers = [ { url = "http://127.0.0.1:8000"; } ];
+        services.redlib.loadBalancer.servers = [ { url = "http://127.0.0.1:8001"; } ];
       };
     };
   };
 
-  systemd.services.libreddit = {
+  systemd.services.redlib = {
     environment = {
       "LIBREDDIT_DEFAULT_SHOW_NSFW" = "on";
       "LIBREDDIT_DEFAULT_USE_HLS" = "on";
@@ -41,7 +38,7 @@
     };
     serviceConfig.ExecStart = lib.mkForce (
       "${config.programs.proxychains.package}/bin/proxychains4 -q "
-      + "${config.services.libreddit.package}/bin/redlib --address 127.0.0.1 --port 8000"
+      + "${config.services.redlib.package}/bin/redlib --address 127.0.0.1 --port 8001"
     );
   };
 }

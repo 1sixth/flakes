@@ -8,7 +8,7 @@
       config = {
         BASE_URL = "https://rss.shinta.ro";
         HTTP_CLIENT_PROXY = "http://127.0.0.1:1080";
-        LISTEN_ADDR = "127.0.0.1:8001";
+        LISTEN_ADDR = "127.0.0.1:8000";
       };
     };
     traefik.dynamicConfigOptions.http = {

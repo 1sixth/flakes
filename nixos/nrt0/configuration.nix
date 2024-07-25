@@ -4,9 +4,9 @@
   imports = [
     ./backup.nix
     ./hardware.nix
-    ./libreddit.nix
     ./miniflux.nix
     ./postgresql.nix
+    ./redlib.nix
     ./vaultwarden.nix
   ];
 
