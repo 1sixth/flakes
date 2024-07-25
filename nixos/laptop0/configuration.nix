@@ -8,7 +8,11 @@
 {
   imports = [ ./hardware.nix ];
 
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot = {
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    kernelModules = [ "nvidia_uvm" ];
+    supportedFilesystems = [ "ntfs" ];
+  };
 
   environment = {
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
@@ -97,37 +101,8 @@
   };
 
   nix = {
-    buildMachines = [
-      {
-        hostName = "nrt0";
-        protocol = "ssh-ng";
-        sshUser = "root";
-        supportedFeatures = [
-          "benchmark"
-          "big-parallel"
-          "gccarch-armv8-a"
-          "kvm"
-          "nixos-test"
-        ];
-        system = "aarch64-linux";
-      }
-      {
-        hostName = "nrt1";
-        protocol = "ssh-ng";
-        sshUser = "root";
-        supportedFeatures = [
-          "benchmark"
-          "big-parallel"
-          "gccarch-armv8-a"
-          "kvm"
-          "nixos-test"
-        ];
-        system = "aarch64-linux";
-      }
-    ];
     daemonCPUSchedPolicy = "idle";
     daemonIOSchedClass = "idle";
-    distributedBuilds = true;
     settings = {
       builders-use-substitutes = true;
       keep-outputs = true;
