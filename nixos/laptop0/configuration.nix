@@ -32,7 +32,6 @@
       ".config/sops"
       ".config/VSCodium"
       ".config/wireshark"
-      ".java"
       ".local/bin"
       ".local/share/containers"
       ".local/share/direnv"
@@ -71,9 +70,12 @@
     ];
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    settings.General.Experimental = true;
+  hardware = {
+    bluetooth = {
+      enable = true;
+      settings.General.Experimental = true;
+    };
+    graphics.extraPackages = with pkgs; [ intel-media-driver ];
   };
 
   home-manager = {
@@ -155,7 +157,6 @@
     getty.autologinUser = "one6th";
     logind = {
       lidSwitch = "ignore";
-      powerKey = "ignore";
       suspendKey = "ignore";
       suspendKeyLongPress = "ignore";
     };

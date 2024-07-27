@@ -16,7 +16,7 @@ in
       "usb_storage"
       "xhci_pci"
     ];
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = [ "kvm-intel" ];
     loader = {
       efi.canTouchEfiVariables = true;
       grub.enable = false;
@@ -37,16 +37,16 @@ in
       ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/4E1B-2A50";
+      device = "/dev/disk/by-uuid/24AD-97F5";
       fsType = "vfat";
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/0080291b-9ff4-470f-9c78-569ee68eb49d";
+      device = "/dev/disk/by-uuid/8b522308-2725-4d7d-878c-bc0d6f1f8c98";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@nix" ];
     };
     "/persistent" = {
-      device = "/dev/disk/by-uuid/0080291b-9ff4-470f-9c78-569ee68eb49d";
+      device = "/dev/disk/by-uuid/8b522308-2725-4d7d-878c-bc0d6f1f8c98";
       fsType = "btrfs";
       neededForBoot = true;
       options = mountOptions ++ [ "subvol=/@persistent" ];
@@ -54,7 +54,7 @@ in
   };
 
   hardware = {
-    cpu.amd.updateMicrocode = true;
+    cpu.intel.updateMicrocode = true;
     firmware = with pkgs; [ linux-firmware ];
   };
 

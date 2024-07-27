@@ -81,7 +81,7 @@
         {
           accel_profile = "adaptive";
           middle_button_emulation = true;
-          name = "pnp0c50:00-093a:0255-touchpad";
+          name = "uniw0001:00-093a:0255-touchpad";
           natural_scroll = true;
         }
       ];
