@@ -11,9 +11,9 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
+    self.nixosModules.dns.earth
     self.nixosModules.prometheus.client
     self.nixosModules.proxy.server
-    self.nixosModules.resolved.earth
     self.nixosModules.server
     self.nixosModules.traefik
     ./configuration.nix

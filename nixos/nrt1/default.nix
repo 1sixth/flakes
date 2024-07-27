@@ -11,11 +11,11 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
+    self.nixosModules.dns.earth
     self.nixosModules.hath
     self.nixosModules.prometheus.client
     self.nixosModules.proxy.server
     self.nixosModules.qbittorrent-nox
-    self.nixosModules.resolved.earth
     self.nixosModules.server
     self.nixosModules.stress-ng
     self.nixosModules.tor

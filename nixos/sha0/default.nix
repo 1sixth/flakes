@@ -11,8 +11,8 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
+    self.nixosModules.dns.china
     self.nixosModules.proxy.client
-    self.nixosModules.resolved.china
     self.nixosModules.server
     ./configuration.nix
   ];

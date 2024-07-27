@@ -11,9 +11,9 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
+    self.nixosModules.dns.china
     self.nixosModules.proxy.client
     self.nixosModules.qbittorrent-nox
-    self.nixosModules.resolved.china
     self.nixosModules.server
     self.nixosModules.traefik
     ./configuration.nix
