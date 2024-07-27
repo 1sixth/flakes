@@ -162,7 +162,7 @@
       u2f = {
         enable = true;
         settings = {
-          authFile = config.sops.secrets.u2f_keys.path;
+          authfile = config.sops.secrets.u2f_keys.path;
           cue = true;
         };
       };
