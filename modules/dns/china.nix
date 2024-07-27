@@ -1,26 +1,44 @@
 { ... }:
 
 let
-  DNS = builtins.concatStringsSep " " [
-    "2400:3200::1#dns.alidns.com"
-    "2400:3200:baba::1#dns.alidns.com"
-    "223.5.5.5#dns.alidns.com"
-    "223.6.6.6#dns.alidns.com"
-    "1.12.12.12#dot.pub"
-    "120.53.53.53#dot.pub"
+  DNS = [
+    # 阿里 DNS
+    "2400:3200::1"
+    "2400:3200:baba::1"
+    "223.5.5.5"
+    "223.6.6.6"
+
+    # 腾讯 DNS
+    "2402:4e00::"
+    "2402:4e00:1::"
+    "119.29.29.29"
+    "119.28.28.28"
+
+    # 114 DNS
+    "114.114.114.114"
+    "114.114.115.115"
   ];
 in
 
 {
-  services.resolved = {
-    extraConfig = ''
-      DNS=${DNS}
-      FallbackDNS=
-      Domains=~.
-      LLMNR=false
-      MulticastDNS=false
-      DNSOverTLS=true
-      DNSStubListenerExtra=127.0.0.1
-    '';
+
+  environment.etc."resolv.conf".text = ''
+    nameserver 127.0.0.1
+    options edns0 trust-ad
+    search .
+  '';
+
+  services = {
+    resolved.enable = false;
+    smartdns = {
+      enable = true;
+      settings = {
+        bind = "[::]:53";
+        log-syslog = true;
+        prefetch-domain = true;
+        server = DNS;
+        speed-check-mode = "ping";
+      };
+    };
   };
 }
