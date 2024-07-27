@@ -54,6 +54,7 @@
       "Develop"
       "Download"
     ];
+    sessionVariables.VK_DRIVER_FILES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
   };
 
   fonts = {
@@ -76,6 +77,12 @@
       settings.General.Experimental = true;
     };
     graphics.extraPackages = with pkgs; [ intel-media-driver ];
+    nvidia = {
+      modesetting.enable = true;
+      nvidiaSettings = false;
+      open = true;
+      powerManagement.enable = true;
+    };
   };
 
   home-manager = {
@@ -115,8 +122,19 @@
     };
   };
 
-  nixpkgs.config.allowUnfreePredicate =
-    pkg: builtins.elem (lib.getName pkg) [ "fcitx5-pinyin-moegirl" ];
+  nixpkgs.config = {
+    allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+        "cuda_cccl"
+        "cuda_cudart"
+        "cuda_nvcc"
+        "fcitx5-pinyin-moegirl"
+        "libcublas"
+        "nvidia-x11"
+      ];
+    cudaSupport = true;
+  };
 
   programs = {
     adb.enable = true;
@@ -182,6 +200,7 @@
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       };
     };
+    xserver.videoDrivers = [ "nvidia" ];
   };
 
   systemd = {

@@ -77,6 +77,7 @@
         "$Mod, mouse:272, movewindow"
         "$Mod, mouse:273, resizewindow"
       ];
+      cursor.no_hardware_cursors = true;
       device = [
         {
           accel_profile = "adaptive";
