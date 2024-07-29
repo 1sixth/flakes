@@ -33,7 +33,7 @@ in
     smartdns = {
       enable = true;
       settings = {
-        bind = "[::]:53";
+        bind = "127.0.0.1:53";
         log-syslog = true;
         prefetch-domain = true;
         server = DNS;
