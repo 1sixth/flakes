@@ -18,7 +18,18 @@
   };
 
   services = {
-    redlib.enable = true;
+    redlib = {
+      enable = true;
+      # To be removed in the next version.
+      package = pkgs.redlib.overrideAttrs (old: {
+        patches = (old.patches or [ ]) ++ [
+          (pkgs.fetchpatch {
+            url = "https://github.com/redlib-org/redlib/commit/67a890cab30e899650d40aa5c3d5416d3958c723.diff";
+            hash = "sha256-Mj825a4iScpXqA72WmZUmUlFqrlyIQSDusgc6zWo7h4=";
+          })
+        ];
+      });
+    };
     traefik = {
       dynamicConfigOptions.http = {
         routers.redlib = {
