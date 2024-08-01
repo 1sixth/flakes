@@ -56,6 +56,17 @@
         ];
       });
 
+      ollama = prev.ollama.overrideAttrs (old: rec {
+        version = "0.3.1";
+        src = prev.fetchFromGitHub {
+          owner = "ollama";
+          repo = "ollama";
+          rev = "v${version}";
+          hash = "sha256-ctz9xh1wisG0YUxglygKHIvU9bMgMLkGqDoknb8qSAU=";
+          fetchSubmodules = true;
+        };
+      });
+
       telegram-desktop = prev.telegram-desktop.overrideAttrs (old: {
         patches = (old.patches or [ ]) ++ [
           (prev.fetchpatch {
