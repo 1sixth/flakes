@@ -107,7 +107,6 @@
       };
       opengl.force_introspection = 1;
       windowrulev2 = [
-        "suppressevent maximize, class: mpv"
         "workspace 1 silent, class: codium-url-handler"
         "workspace 2 silent, class: firefox"
         "workspace 3 silent, class: imv"
