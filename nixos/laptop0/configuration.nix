@@ -40,6 +40,7 @@
       ".local/share/Mumble"
       ".local/share/nali"
       ".local/share/okular"
+      ".local/share/org.localsend.localsend_app"
       ".local/share/PrismLauncher"
       ".local/share/TelegramDesktop"
       ".local/share/virtualenv"
@@ -139,6 +140,7 @@
   programs = {
     adb.enable = true;
     hyprland.enable = true;
+    localsend.enable = true;
     ssh.extraConfig = ''
       CanonicalDomains 9875321.xyz
       CanonicalizeHostname always
