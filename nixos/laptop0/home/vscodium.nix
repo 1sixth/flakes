@@ -5,6 +5,7 @@
     enable = true;
     extensions =
       (with pkgs.vscode-extensions; [
+        continue.continue
         ms-python.debugpy
         ms-python.python
         rust-lang.rust-analyzer
@@ -44,6 +45,7 @@
         "editor.formatOnSave" = true;
       };
       "autocorrect.formatOnSave" = false;
+      "continue.telemetryEnabled" = false;
       "editor.fontFamily" = "monospace";
       "editor.fontSize" = 20;
       "editor.unicodeHighlight.allowedLocales" = {

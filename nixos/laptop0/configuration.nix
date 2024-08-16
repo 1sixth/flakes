@@ -32,6 +32,7 @@
       ".config/sops"
       ".config/VSCodium"
       ".config/wireshark"
+      ".continue"
       ".local/bin"
       ".local/share/containers"
       ".local/share/direnv"
