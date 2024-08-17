@@ -10,7 +10,12 @@
 
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
-    kernelModules = [ "nvidia_uvm" ];
+    kernelModules = [
+      # https://forums.developer.nvidia.com/t/550-54-14-cannot-create-sg-table-for-nvkmskapimemory-spammed-when-launching-chrome-on-wayland/284775/15
+      "i915"
+      # https://github.com/ollama/ollama/blob/main/docs/gpu.md#laptop-suspend-resume
+      "nvidia_uvm"
+    ];
     supportedFilesystems = [ "ntfs" ];
   };
 
