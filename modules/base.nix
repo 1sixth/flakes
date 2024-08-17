@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   boot = {
@@ -51,7 +56,7 @@
   nix = {
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = lib.mkDefault "weekly";
       options = "--delete-older-than 14d";
     };
     registry.nixpkgs.flake = inputs.nixpkgs;

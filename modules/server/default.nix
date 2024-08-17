@@ -17,6 +17,8 @@
 
   fonts.fontconfig.enable = false;
 
+  nix.gc.dates = "daily";
+
   programs = {
     fish = {
       interactiveShellInit = "set -g fish_greeting";
