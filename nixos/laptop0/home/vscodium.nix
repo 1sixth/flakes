@@ -45,6 +45,7 @@
         "editor.formatOnSave" = true;
       };
       "autocorrect.formatOnSave" = false;
+      "continue.enableTabAutocomplete" = false;
       "continue.telemetryEnabled" = false;
       "editor.fontFamily" = "monospace";
       "editor.fontSize" = 20;
