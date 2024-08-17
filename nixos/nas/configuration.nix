@@ -28,6 +28,4 @@
   };
 
   sops.defaultSopsFile = ./secrets.yaml;
-
-  virtualisation.podman.enable = true;
 }
