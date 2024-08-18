@@ -31,6 +31,8 @@
         sys = "systemctl";
 
         jou = "journalctl";
+
+        bandwhich = "bandwhich --no-resolve";
       };
     };
     git.enable = true;

@@ -79,6 +79,7 @@
   };
 
   programs = {
+    bandwhich.enable = true;
     command-not-found.enable = false;
     fish = {
       enable = true;

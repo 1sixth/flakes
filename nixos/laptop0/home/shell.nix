@@ -61,6 +61,8 @@
       jou = "journalctl";
       jouu = "journalctl --user";
 
+      bandwhich = "bandwhich --no-resolve";
+
       t = "trans en:zh-CN";
       ts = "t -speak";
 
