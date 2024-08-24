@@ -18,6 +18,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.proxy.server
     self.nixosModules.server
     self.nixosModules.stress-ng
+    self.nixosModules.syncthing
     self.nixosModules.tor
     self.nixosModules.traefik
     ./configuration.nix

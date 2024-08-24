@@ -15,6 +15,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.proxy.client
     self.nixosModules.qbittorrent-nox
     self.nixosModules.server
+    self.nixosModules.syncthing
     self.nixosModules.traefik
     ./configuration.nix
   ];
