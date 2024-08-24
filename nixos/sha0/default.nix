@@ -14,6 +14,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.dns.china
     self.nixosModules.proxy.client
     self.nixosModules.server
+    self.nixosModules.syncthing
     ./configuration.nix
   ];
   specialArgs = {
