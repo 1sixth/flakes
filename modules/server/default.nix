@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  documentation.nixos.enable = false;
+  documentation = {
+    doc.enable = false;
+    enable = false;
+    man.enable = false;
+    nixos.enable = false;
+  };
 
   environment = {
     persistence."/persistent/impermanence".files = [
