@@ -35,6 +35,7 @@
       ".config/nali"
       ".config/rclone"
       ".config/sops"
+      ".config/syncthing"
       ".config/VSCodium"
       ".config/wireshark"
       ".continue"
@@ -201,6 +202,15 @@
       enable = true;
       pulse.enable = true;
     };
+    syncthing = {
+      dataDir = config.users.users.one6th.home;
+      enable = true;
+      group = config.users.users.one6th.group;
+      overrideDevices = false;
+      overrideFolders = false;
+      settings.options.urAccepted = -1;
+      user = "one6th";
+    };
     tlp = {
       enable = true;
       settings = {
@@ -213,6 +223,7 @@
 
   systemd = {
     network.networks.default.matchConfig.Type = "wlan";
+    services.syncthing.after = [ "sing-box.service" ];
     tmpfiles.rules = [ "d /mnt 755 one6th users" ];
   };
 
