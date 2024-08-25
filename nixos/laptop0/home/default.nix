@@ -62,6 +62,7 @@ in
         withWaylandGLFW = true;
       })
       mumble
+      obsidian
       okular
       telegram-desktop
 

@@ -13,6 +13,23 @@
         GOPROXY=https://goproxy.cn,direct
       '';
     };
+    desktopEntries = {
+      obsidian = {
+        exec = builtins.toString (
+          pkgs.writeShellScript "obsidian" ''
+            obsidian ${
+              builtins.concatStringsSep " " [
+                "--enable-wayland-ime"
+                "--ozone-platform-hint=auto"
+                "--proxy-server=socks5://127.0.0.1:1080"
+              ]
+            }
+          ''
+        );
+        icon = "obsidian";
+        name = "Obsidian";
+      };
+    };
     enable = true;
     mimeApps = {
       defaultApplications = {

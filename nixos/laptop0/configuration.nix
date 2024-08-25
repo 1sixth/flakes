@@ -33,6 +33,7 @@
       ".config/htop"
       ".config/Mumble"
       ".config/nali"
+      ".config/obsidian"
       ".config/rclone"
       ".config/sops"
       ".config/syncthing"
@@ -140,6 +141,7 @@
         "fcitx5-pinyin-moegirl"
         "libcublas"
         "nvidia-x11"
+        "obsidian"
       ];
     cudaSupport = true;
   };
