@@ -4,6 +4,7 @@
   imports = [
     ./hardware.nix
     ./samba.nix
+    ./smokeping.nix
   ];
 
   boot.kernelParams = [ "mitigations=off" ];

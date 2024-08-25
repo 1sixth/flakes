@@ -1,0 +1,289 @@
+{ config, ... }:
+
+{
+  services = {
+    nginx.virtualHosts.smokeping = {
+      listen = [
+        {
+          addr = config.services.smokeping.host;
+          port = 8081;
+        }
+      ];
+    };
+    smokeping = {
+      databaseConfig = ''
+        step     = 60
+        pings    = 20
+        # consfn mrhb steps total
+        AVERAGE  0.5   1  1008
+        AVERAGE  0.5  12  4320
+            MIN  0.5  12  4320
+            MAX  0.5  12  4320
+        AVERAGE  0.5 144   720
+            MAX  0.5 144   720
+            MIN  0.5 144   720
+      '';
+      enable = true;
+      host = "127.0.0.1";
+      hostName = "${config.networking.hostName}.9875321.xyz";
+      targetConfig = ''
+        probe = FPing
+
+        menu = Top
+        title = Network Latency Grapher
+
+        + AWS
+        menu = AWS
+        title = AWS
+
+        ++ ap-east-1
+        menu = Hong Kong
+        title = ap-east-1
+        host = 16.162.0.253
+
+        ++ ap-northeast-1
+        menu = Tokyo
+        title = ap-northeast-1
+        host = 3.112.0.0
+
+        ++ ap-northeast-2
+        menu = Seoul
+        title = ap-northeast-2
+        host = 3.34.0.0
+
+        ++ ap-northeast-3
+        menu = Osaka
+        title = ap-northeast-3
+        host = 13.208.32.253
+
+        ++ ap-southeast-1
+        menu = Singapore
+        title = ap-southeast-1
+        host = 3.0.0.9
+
+        + BandwagonHost
+        menu = BandwagonHost
+        title = BandwagonHost
+
+        ++ HKHK_3
+        menu = 中国香港 HK85
+        title = HKHK_3
+        host = 45.78.18.149
+
+        ++ HKHK_8
+        menu = 中国香港 CN2 GIA
+        title = HKHK_8
+        host = 93.179.124.115
+
+        ++ JPOS_1
+        menu = 日本大阪软银
+        title = JPOS_1
+        host = jpos.bwg.net
+
+        ++ USCA_6
+        menu = 美国洛杉矶 DC6 CN2 GIA-E
+        title = USCA_6
+        host = dc6.bwg.net
+
+        ++ USCA_9
+        menu = 美国洛杉矶 DC9 CN2 GIA
+        title = USCA_9
+        host = dc9.bwg.net
+
+        + BuyVM
+        menu = BuyVM
+        title = BuyVM
+
+        ++ Las_Vegas
+        menu = Las Vegas
+        title = Las Vegas
+        host = speedtest.lv.buyvm.net
+
+        ++ Luxembourg
+        menu = Luxembourg
+        title = Luxembourg
+        host = speedtest.lu.buyvm.net
+
+        + Hetzner
+        menu = Hetzner
+        title = Hetzner
+
+        ++ NBG1
+        menu = nbg1
+        title = nbg1
+        host = nbg1-speed.hetzner.com
+
+        ++ FSN1
+        menu = fsn1
+        title = fsn1
+        host = fsn1-speed.hetzner.com
+
+        ++ HEL
+        menu = hel
+        title = hel
+        host = hel.icmp.hetzner.com
+
+        ++ SIN
+        menu = sin
+        title = sin
+        host = sin-speed.hetzner.com
+
+        ++ HIL
+        menu = hil
+        title = hil
+        host = hil-speed.hetzner.com
+
+        ++ ASH
+        menu = ash
+        title = ash
+        host = ash-speed.hetzner.com
+
+        + LiteServer
+        menu = LiteServer
+        title = LiteServer
+
+        ++ Dronten
+        menu = Dronten
+        title = drn
+        host = lg-drn.liteserver.nl
+
+        + Oracle_Cloud
+        menu = Oracle Cloud
+        title = Oracle Cloud
+
+        ++ chuncheon
+        menu = Chuncheon
+        title = Chuncheon
+        host = objectstorage.ap-chuncheon-1.oraclecloud.com
+
+        ++ osaka
+        menu = Osaka
+        title = Osaka
+        host = objectstorage.ap-osaka-1.oraclecloud.com
+
+        ++ seoul
+        menu = Seoul
+        title = Seoul
+        host = objectstorage.ap-seoul-1.oraclecloud.com
+
+        ++ singapore-1
+        menu = Singapore-1
+        title = Singapore-1
+        host = objectstorage.ap-singapore-1.oraclecloud.com
+
+        ++ singapore-2
+        menu = Singapore-2
+        title = Singapore-2
+        host = objectstorage.ap-singapore-2.oraclecloud.com
+
+        ++ tokyo
+        menu = Tokyo
+        title = Tokyo
+        host = objectstorage.ap-tokyo-1.oraclecloud.com
+
+        ++ frankfurt
+        menu = Frankfurt
+        title = Frankfurt
+        host = objectstorage.eu-frankfurt-1.oraclecloud.com
+
+        ++ chicago
+        menu = Chicago
+        title = Chicago
+        host = objectstorage.us-chicago-1.oraclecloud.com
+
+        ++ phoenix
+        menu = Phoenix
+        title = Phoenix
+        host = objectstorage.us-phoenix-1.oraclecloud.com
+
+        ++ sanjose
+        menu = San Jose
+        title = San Jose
+        host = objectstorage.us-sanjose-1.oraclecloud.com
+
+        + RackNerd
+        menu = RackNerd
+        title = RackNerd
+
+        ++ Los_Angeles
+        menu = Los Angeles DC02
+        title = Los Angeles DC02
+        host = lg-lax02.racknerd.com
+
+        ++ San_Jose
+        menu = San Jose
+        title = San Jose
+        host = lg-sj.racknerd.com
+
+        ++ Seattle
+        menu = Seattle
+        title = Seattle
+        host = lg-sea.racknerd.com
+
+        ++ Dallas
+        menu = Dallas
+        title = Dallas
+        host = lg-dal.racknerd.com
+
+        ++ Strasbourg
+        menu = Strasbourg
+        title = Strasbourg
+        host = lg-fr.racknerd.com
+
+        + V_PS
+        menu = V.PS
+        title = V.PS
+
+        ++ FRA
+        menu = Frankfurt
+        title = Frankfurt
+        host = fra.lg.v.ps
+
+        ++ HKG
+        menu = Hong Kong
+        title = Hong Kong
+        host = hkg.lg.v.ps
+
+        ++ KIX
+        menu = Osaka
+        title = Osaka
+        host = kix.lg.v.ps
+
+        ++ SJC
+        menu = San Jose
+        title = San Jose
+        host = sjc.lg.v.ps
+
+        ++ NRT
+        menu = Tokyo
+        title = Tokyo
+        host = nrt.lg.v.ps
+      '';
+    };
+    traefik.dynamicConfigOptions.http = {
+      middlewares = {
+        smokeping-redirect.redirectregex = {
+          regex = "^(.*)/smokeping$";
+          replacement = "$1/smokeping/";
+        };
+        smokeping-strip.stripprefix.prefixes = [ "/smokeping" ];
+      };
+      routers.smokeping = {
+        middlewares = [
+          "smokeping-redirect"
+          "smokeping-strip"
+        ];
+        rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/smokeping`)";
+        service = "smokeping";
+      };
+      services.smokeping.loadBalancer.servers = [
+        { url = "http://127.0.0.1:8081"; }
+      ];
+    };
+  };
+
+  users = {
+    groups.${config.services.smokeping.user}.gid = 250;
+    users.${config.services.smokeping.user}.uid = 250;
+  };
+}
