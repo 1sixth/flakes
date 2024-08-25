@@ -39,8 +39,8 @@
         "$Mod SHIFT, k, movewindow, u"
         "$Mod SHIFT, l, movewindow, r"
 
-        "$Mod SHIFT, Q, killactive"
-        "$Mod SHIFT, SPACE, togglefloating"
+        "$Mod SHIFT, q, killactive"
+        "$Mod SHIFT, space, togglefloating"
         "$Mod, f, fullscreen, 0"
         "$Mod, t, layoutmsg, togglesplit"
 
@@ -58,6 +58,7 @@
         "$Mod, RETURN, exec, ${config.programs.foot.package}/bin/foot"
 
         '', PRINT, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy''
+        ''$Mod, s, exec, sh -c "hyprctl monitors | grep eDP-1 && hyprctl keyword monitor eDP-1,disable || hyprctl keyword monitor eDP-1,preferred,auto,auto"''
       ];
       binde = [
         ", XF86AudioLowerVolume, exec, ${config.services.avizo.package}/bin/volumectl down"
