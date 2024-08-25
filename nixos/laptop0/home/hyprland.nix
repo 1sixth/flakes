@@ -71,8 +71,8 @@
         "$Mod, F3, exec, ${config.services.avizo.package}/bin/volumectl up"
       ];
       bindl = [
-        ", switch:off:Lid Switch, exec, ${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on"
-        ", switch:on:Lid Switch, exec, ${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off"
+        ", switch:off:Lid Switch, exec, ${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on eDP-1"
+        ", switch:on:Lid Switch, exec, ${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off eDP-1"
       ];
       bindm = [
         "$Mod, mouse:272, movewindow"
