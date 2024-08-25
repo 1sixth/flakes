@@ -8,10 +8,7 @@
         regex = "^(.*)/qbittorrent$";
         replacement = "$1/qbittorrent/";
       };
-      qb-strip.stripprefix = {
-        prefixes = [ "/qbittorrent" ];
-        forceSlash = false;
-      };
+      qb-strip.stripprefix.prefixes = [ "/qbittorrent" ];
     };
     routers.qbittorrent = {
       middlewares = [
