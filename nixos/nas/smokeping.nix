@@ -242,19 +242,8 @@
       '';
     };
     traefik.dynamicConfigOptions.http = {
-      middlewares = {
-        smokeping-redirect.redirectregex = {
-          regex = "^(.*)/smokeping$";
-          replacement = "$1/smokeping/";
-        };
-        smokeping-strip.stripprefix.prefixes = [ "/smokeping" ];
-      };
       routers.smokeping = {
-        middlewares = [
-          "smokeping-redirect"
-          "smokeping-strip"
-        ];
-        rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/smokeping`)";
+        rule = "Host(`${config.networking.hostName}.9875321.xyz`)";
         service = "smokeping";
       };
       services.smokeping.loadBalancer.servers = [
