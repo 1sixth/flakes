@@ -16,8 +16,19 @@
       };
     };
     traefik.dynamicConfigOptions.http = {
+      middlewares = {
+        syncthing-redirect.redirectregex = {
+          regex = "^(.*)/syncthing$";
+          replacement = "$1/syncthing/";
+        };
+        syncthing-strip.stripprefix.prefixes = [ "/syncthing" ];
+      };
       routers.syncthing = {
-        rule = "Host(`${config.networking.hostName}.9875321.xyz`)";
+        middlewares = [
+          "syncthing-redirect"
+          "syncthing-strip"
+        ];
+        rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/syncthing`)";
         service = "syncthing";
       };
       services.syncthing.loadBalancer.servers = [
