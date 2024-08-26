@@ -36,11 +36,6 @@
         menu = AWS
         title = AWS
 
-        ++ ap-east-1
-        menu = Hong Kong
-        title = ap-east-1
-        host = 16.162.0.253
-
         ++ ap-northeast-1
         menu = Tokyo
         title = ap-northeast-1
@@ -51,15 +46,30 @@
         title = ap-northeast-2
         host = 3.34.0.0
 
-        ++ ap-northeast-3
-        menu = Osaka
-        title = ap-northeast-3
-        host = 13.208.32.253
-
         ++ ap-southeast-1
         menu = Singapore
         title = ap-southeast-1
         host = 3.0.0.9
+
+        ++ eu-central-1
+        menu = Frankfurt
+        title = eu-central-1
+        host = 3.64.0.0
+
+        ++ eu-west-2
+        menu = London
+        title = eu-west-2
+        host = 3.8.0.0
+
+        ++ eu-west-3
+        menu = Paris
+        title = eu-west-3
+        host = 13.36.0.0
+
+        ++ us-west-2
+        menu = Oregon
+        title = us-west-2
+        host = 18.236.0.0
 
         + BandwagonHost
         menu = BandwagonHost
@@ -229,35 +239,6 @@
         menu = Strasbourg
         title = Strasbourg
         host = lg-fr.racknerd.com
-
-        + V_PS
-        menu = V.PS
-        title = V.PS
-
-        ++ FRA
-        menu = Frankfurt
-        title = Frankfurt
-        host = fra.lg.v.ps
-
-        ++ HKG
-        menu = Hong Kong
-        title = Hong Kong
-        host = hkg.lg.v.ps
-
-        ++ KIX
-        menu = Osaka
-        title = Osaka
-        host = kix.lg.v.ps
-
-        ++ SJC
-        menu = San Jose
-        title = San Jose
-        host = sjc.lg.v.ps
-
-        ++ NRT
-        menu = Tokyo
-        title = Tokyo
-        host = nrt.lg.v.ps
       '';
     };
     traefik.dynamicConfigOptions.http = {
