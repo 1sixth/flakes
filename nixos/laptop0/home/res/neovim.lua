@@ -1,4 +1,5 @@
 vim.opt.background = 'light'
+vim.opt.clipboard = 'unnamedplus'
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.ignorecase = true
