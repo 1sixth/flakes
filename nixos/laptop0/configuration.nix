@@ -247,7 +247,6 @@
       isNormalUser = true;
       extraGroups = [
         "adbusers"
-        "input"
         "podman"
         "wheel"
         "wireshark"
