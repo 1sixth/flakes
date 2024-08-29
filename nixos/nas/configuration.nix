@@ -17,6 +17,11 @@
 
   networking.hostName = "nas";
 
+  nix.settings.substituters = [
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+    "https://mirrors.ustc.edu.cn/nix-channels/store"
+  ];
+
   services = {
     btrfs.autoScrub = {
       enable = true;
