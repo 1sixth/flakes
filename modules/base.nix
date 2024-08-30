@@ -38,9 +38,9 @@
       files = [ "/etc/machine-id" ];
     };
     systemPackages = with pkgs; [
+      dig.dnsutils
       fd
       file
-      ldns
       rclone
       ripgrep
       tcpdump
