@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  DNS = [
+  Bootstrap = map (x: x + " -bootstrap-dns") [
     # 阿里 DNS
     "2400:3200::1"
     "2400:3200:baba::1"
@@ -17,6 +17,11 @@ let
     # 114 DNS
     "114.114.114.114"
     "114.114.115.115"
+  ];
+
+  DoH = [
+    "https://dns.alidns.com/dns-query"
+    "https://doh.pub/dns-query"
   ];
 in
 
@@ -36,7 +41,8 @@ in
         bind = "127.0.0.1:53";
         log-syslog = true;
         prefetch-domain = true;
-        server = DNS;
+        server = Bootstrap;
+        server-https = DoH;
         speed-check-mode = "ping";
       };
     };
