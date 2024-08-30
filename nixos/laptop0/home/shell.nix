@@ -13,6 +13,14 @@
         end
       '';
       nl.body = "nix-locate --whole-name bin/$argv";
+      u.body = ''
+        set -e all_proxy
+        set -e ftp_proxy
+        set -e http_proxy
+        set -e https_proxy
+        set -e no_proxy
+        set -e rsync_proxy
+      '';
       which.body = "realpath (command which $argv)";
     };
     interactiveShellInit = ''
