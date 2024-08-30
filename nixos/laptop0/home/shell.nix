@@ -13,14 +13,6 @@
         end
       '';
       nl.body = "nix-locate --whole-name bin/$argv";
-      podman.body = ''
-        switch $argv[1]
-            case build create run
-                command podman $argv[1] --http-proxy=false $argv[2..]
-            case "*"
-                command podman $argv
-        end
-      '';
       which.body = "realpath (command which $argv)";
     };
     interactiveShellInit = ''
