@@ -2,19 +2,19 @@
 
 {
   imports = [
-    ./firefox.nix
-    ./foot.nix
-    ./hypridle.nix
-    ./hyprland.nix
-    ./hyprlock.nix
-    ./hyprpaper.nix
-    ./mpv.nix
-    ./neovim.nix
-    ./shell.nix
-    ./theme.nix
-    ./vscodium.nix
-    ./waybar.nix
-    ./xdg.nix
+    ../../home-manager/firefox.nix
+    ../../home-manager/foot.nix
+    ../../home-manager/hypridle.nix
+    ../../home-manager/hyprland.nix
+    ../../home-manager/hyprlock.nix
+    ../../home-manager/hyprpaper.nix
+    ../../home-manager/mpv.nix
+    ../../home-manager/neovim.nix
+    ../../home-manager/shell.nix
+    ../../home-manager/theme.nix
+    ../../home-manager/vscodium.nix
+    ../../home-manager/waybar.nix
+    ../../home-manager/xdg.nix
   ];
 
   fonts.fontconfig.enable = false;

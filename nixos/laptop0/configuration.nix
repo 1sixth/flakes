@@ -97,7 +97,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.one6th = import ./home;
+    users.one6th = import ./home.nix;
   };
 
   i18n.inputMethod = {
