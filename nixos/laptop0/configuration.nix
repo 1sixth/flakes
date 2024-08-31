@@ -14,6 +14,12 @@
     "nvidia_uvm"
   ];
 
+  environment.persistence."/persistent/impermanence".users.one6th.directories = [
+    ".config/Mumble"
+    ".local/share/PrismLauncher"
+    ".thunderbird"
+  ];
+
   hardware = {
     graphics.extraPackages = with pkgs; [ intel-media-driver ];
     nvidia = {
