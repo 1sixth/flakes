@@ -13,6 +13,7 @@ nixpkgs.lib.nixosSystem {
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
     self.nixosModules.dns.china
+    self.nixosModules.laptop
     self.nixosModules.proxy.client
     ./configuration.nix
     ./overlays.nix

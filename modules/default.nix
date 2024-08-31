@@ -5,6 +5,7 @@
     earth = import ./dns/earth.nix;
   };
   hath = import ./hath.nix;
+  laptop = import ./laptop.nix;
   prometheus = {
     client = import ./prometheus/client.nix;
     server = import ./prometheus/server.nix;
