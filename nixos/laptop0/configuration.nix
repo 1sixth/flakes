@@ -30,11 +30,7 @@
     };
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.one6th = import ./home.nix;
-  };
+  home-manager.users.one6th = import ./home.nix;
 
   networking.hostName = "laptop0";
 

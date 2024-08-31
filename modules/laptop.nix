@@ -71,6 +71,11 @@
     settings.General.Experimental = true;
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
+
   networking.wireless.iwd.enable = true;
 
   i18n.inputMethod = {
