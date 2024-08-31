@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./browser.nix
+    ./firefox.nix
     ./foot.nix
     ./hypridle.nix
     ./hyprland.nix
