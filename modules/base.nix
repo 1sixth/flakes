@@ -40,6 +40,7 @@
     systemPackages = (
       with pkgs;
       [
+        curlHTTP3
         dig.dnsutils
         fd
         file

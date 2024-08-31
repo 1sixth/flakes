@@ -39,7 +39,6 @@
       # CLI
       brightnessctl
       colmena
-      curlHTTP3
       dmlive
       eza
       hyperfine
