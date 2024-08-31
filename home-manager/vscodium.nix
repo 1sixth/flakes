@@ -6,13 +6,10 @@
     extensions =
       (with pkgs.vscode-extensions; [
         continue.continue
-        ms-python.debugpy
-        ms-python.python
         rust-lang.rust-analyzer
         vadimcn.vscode-lldb
       ])
       ++ (with pkgs.vscode-marketplace; [
-        charliermarsh.ruff
         davidanson.vscode-markdownlint
         eamodio.gitlens
         editorconfig.editorconfig
@@ -37,13 +34,6 @@
     };
     userSettings = {
       "[nix]"."editor.formatOnSave" = true;
-      "[python]" = {
-        "editor.codeActionsOnSave" = {
-          "source.fixAll" = "explicit";
-          "source.organizeImports" = "explicit";
-        };
-        "editor.formatOnSave" = true;
-      };
       "autocorrect.formatOnSave" = false;
       "continue.enableTabAutocomplete" = false;
       "continue.telemetryEnabled" = false;
@@ -71,9 +61,7 @@
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nil}/bin/nil";
       "nix.serverSettings".nil.formatting.command = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
-      "python.experiments.enabled" = false;
       "redhat.telemetry.enabled" = false;
-      "ruff.nativeServer" = true;
       "security.workspace.trust.enabled" = false;
       "terminal.integrated.copyOnSelection" = true;
       "update.mode" = "none";

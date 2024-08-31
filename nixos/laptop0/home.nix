@@ -38,11 +38,6 @@
       gopls
       gotools
 
-      # Python
-      poetry
-      python3
-      ruff
-
       # Rust
       cargo
       clippy

@@ -18,7 +18,6 @@
       ".cache/go"
       ".cache/go-build"
       ".cache/nix"
-      ".cache/pypoetry"
       ".cache/tealdeer"
       ".config/fcitx5"
       ".config/htop"
