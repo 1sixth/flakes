@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.waybar = {
@@ -88,7 +88,7 @@
           ];
           format-muted = "󰸈";
           ignored-sinks = [ "Easy Effects Sink" ];
-          on-click = "${pkgs.pamixer}/bin/pamixer -t";
+          on-click = "${config.services.avizo.package}/bin/volumectl toggle-mute";
           scroll-step = 5;
         };
         spacing = 10;

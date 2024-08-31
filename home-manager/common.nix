@@ -48,7 +48,6 @@
       nali
       nix-index-with-db
       nix-tree
-      pamixer
       podman-compose
       rename
       sops
