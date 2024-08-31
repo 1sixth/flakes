@@ -40,7 +40,6 @@
       brightnessctl
       colmena
       dmlive
-      eza
       hyperfine
       libarchive
       libfaketime

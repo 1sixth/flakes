@@ -30,18 +30,11 @@
       set -gx DIRENV_LOG_FORMAT ""
     '';
     shellAliases = {
-      l = "ll --all";
-      ll = "ls --group --long --time-style=long-iso";
-      ls = "eza --group-directories-first --no-quotes";
-      tree = "ls --tree";
-
       sys = "sudo systemctl";
       sysu = "systemctl --user";
 
       jou = "journalctl";
       jouu = "journalctl --user";
-
-      bandwhich = "bandwhich --no-resolve";
 
       t = "trans en:zh-CN";
       ts = "t -speak";

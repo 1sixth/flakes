@@ -42,8 +42,10 @@
       [
         curlHTTP3
         dig.dnsutils
+        eza
         fd
         file
+        nmap
         rclone
         ripgrep
         tcpdump
@@ -92,6 +94,15 @@
     command-not-found.enable = false;
     fish = {
       enable = true;
+      interactiveShellInit = "set -g fish_greeting";
+      shellAliases = {
+        l = "ll --all";
+        ll = "ls --group --long --time-style=long-iso";
+        ls = "eza --group-directories-first --no-quotes";
+        tree = "ls --tree";
+
+        bandwhich = "bandwhich --no-resolve";
+      };
       useBabelfish = true;
     };
     htop.enable = true;

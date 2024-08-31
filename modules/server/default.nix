@@ -14,8 +14,6 @@
       "/etc/ssh/ssh_host_ed25519_key.pub"
     ];
     systemPackages = with pkgs; [
-      eza
-      nmap
       screen
     ];
   };
@@ -25,20 +23,10 @@
   nix.gc.dates = "daily";
 
   programs = {
-    fish = {
-      interactiveShellInit = "set -g fish_greeting";
-      shellAliases = {
-        l = "ll --all";
-        ll = "ls --group --long --time-style=long-iso";
-        ls = "eza --group-directories-first --no-quotes";
-        tree = "ls --tree";
+    fish.shellAliases = {
+      sys = "systemctl";
 
-        sys = "systemctl";
-
-        jou = "journalctl";
-
-        bandwhich = "bandwhich --no-resolve";
-      };
+      jou = "journalctl";
     };
     git.enable = true;
     neovim = {
