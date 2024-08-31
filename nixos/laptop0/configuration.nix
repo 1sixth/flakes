@@ -153,6 +153,7 @@
   programs = {
     adb.enable = true;
     hyprland.enable = true;
+    hyprlock.enable = true;
     localsend.enable = true;
     ssh.extraConfig = ''
       CanonicalDomains 9875321.xyz
@@ -172,14 +173,11 @@
   };
 
   security = {
-    pam = {
-      services.swaylock = { };
-      u2f = {
-        enable = true;
-        settings = {
-          authfile = config.sops.secrets.u2f_keys.path;
-          cue = true;
-        };
+    pam.u2f = {
+      enable = true;
+      settings = {
+        authfile = config.sops.secrets.u2f_keys.path;
+        cue = true;
       };
     };
     rtkit.enable = true;
@@ -188,6 +186,7 @@
 
   services = {
     getty.autologinUser = "one6th";
+    hypridle.enable = true;
     logind = {
       lidSwitch = "ignore";
       suspendKey = "ignore";

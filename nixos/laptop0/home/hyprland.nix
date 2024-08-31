@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
 
+let
+  wallpaper = pkgs.fetchurl {
+    url = "https://pixiv.cat/65204496.png";
+    hash = "sha256-AenfCFlD0afOvfoIqCrUelwbgLQ8l0POwsVykLI3Ksc=";
+  };
+in
+
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -93,7 +100,7 @@
         preserve_split = true;
       };
       exec-once = [
-        "${pkgs.swaybg}/bin/swaybg --mode fill --image ${config.programs.swaylock.settings.image}"
+        "${pkgs.swaybg}/bin/swaybg --mode fill --image ${wallpaper}"
         "${config.programs.foot.package}/bin/foot"
         "${config.programs.firefox.finalPackage}/bin/firefox-esr"
       ];

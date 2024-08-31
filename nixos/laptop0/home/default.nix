@@ -1,17 +1,12 @@
 { config, pkgs, ... }:
 
-let
-  wallpaper = pkgs.fetchurl {
-    url = "https://pixiv.cat/65204496.png";
-    hash = "sha256-AenfCFlD0afOvfoIqCrUelwbgLQ8l0POwsVykLI3Ksc=";
-  };
-in
-
 {
   imports = [
     ./browser.nix
     ./foot.nix
+    ./hypridle.nix
     ./hyprland.nix
+    ./hyprlock.nix
     ./mpv.nix
     ./neovim.nix
     ./shell.nix
@@ -165,14 +160,6 @@ in
         ratios = "1:2";
       };
     };
-    swaylock = {
-      enable = true;
-      settings = {
-        daemonize = true;
-        image = "${wallpaper}";
-        show-failed-attempts = true;
-      };
-    };
     thunderbird = {
       enable = true;
       package = pkgs.thunderbird.override {
@@ -216,28 +203,8 @@ in
       layer = "overlay";
       textColor = "#586e75";
     };
-    swayidle = {
-      enable = true;
-      events = [
-        {
-          command = "${config.programs.swaylock.package}/bin/swaylock";
-          event = "lock";
-        }
-      ];
-      systemdTarget = "hyprland-session.target";
-      timeouts = [
-        {
-          command = "${pkgs.systemd}/bin/loginctl lock-session";
-          timeout = 300;
-        }
-        {
-          command = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
-          resumeCommand = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-          timeout = 305;
-        }
-      ];
-    };
   };
 
+  # app-org.fcitx.Fcitx5@autostart.service
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
 }
