@@ -37,14 +37,22 @@
       ];
       files = [ "/etc/machine-id" ];
     };
-    systemPackages = with pkgs; [
-      dig.dnsutils
-      fd
-      file
-      rclone
-      ripgrep
-      tcpdump
-    ];
+    systemPackages = (
+      with pkgs;
+      [
+        dig.dnsutils
+        fd
+        file
+        rclone
+        ripgrep
+        tcpdump
+      ]
+      ++ (with fishPlugins; [
+        autopair
+        puffer
+        sponge
+      ])
+    );
   };
 
   networking = {

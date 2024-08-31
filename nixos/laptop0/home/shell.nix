@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.fish = {
@@ -29,26 +29,6 @@
       set -g fish_greeting
       set -gx DIRENV_LOG_FORMAT ""
     '';
-    plugins = [
-      {
-        name = "autopair";
-        src = pkgs.fetchFromGitHub {
-          owner = "jorgebucaran";
-          repo = "autopair.fish";
-          rev = "1.0.4";
-          sha256 = "sha256-s1o188TlwpUQEN3X5MxUlD/2CFCpEkWu83U9O+wg3VU=";
-        };
-      }
-      {
-        name = "puffer";
-        src = pkgs.fetchFromGitHub {
-          owner = "nickeb96";
-          repo = "puffer-fish";
-          rev = "fd0a9c95da59512beffddb3df95e64221f894631";
-          hash = "sha256-aij48yQHeAKCoAD43rGhqW8X/qmEGGkg8B4jSeqjVU0=";
-        };
-      }
-    ];
     shellAliases = {
       l = "ll --all";
       ll = "ls --group --long --time-style=long-iso";
