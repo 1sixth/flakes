@@ -7,6 +7,7 @@
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
+    ./hyprpaper.nix
     ./mpv.nix
     ./neovim.nix
     ./shell.nix
