@@ -38,7 +38,6 @@
 
   services = {
     logind = {
-      lidSwitch = "ignore";
       suspendKey = "ignore";
       suspendKeyLongPress = "ignore";
     };
