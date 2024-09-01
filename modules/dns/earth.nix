@@ -35,6 +35,7 @@ in
       enable = true;
       settings = {
         bind = "127.0.0.1:53";
+        cache-persist = false;
         log-syslog = true;
         prefetch-domain = true;
         server = Bootstrap;
