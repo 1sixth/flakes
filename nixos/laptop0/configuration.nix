@@ -16,8 +16,8 @@
 
   environment.persistence."/persistent/impermanence".users.one6th.directories = [
     ".config/Mumble"
+    ".local/share/Mumble"
     ".local/share/PrismLauncher"
-    ".thunderbird"
   ];
 
   hardware = {

@@ -108,7 +108,7 @@
         };
         init.defaultBranch = "master";
         log.date = "iso";
-        user.signingKey = "${config.home.homeDirectory}/.ssh/id_ed25519_sk";
+        user.signingKey = "${config.home.homeDirectory}/.ssh/id_ed25519_sk_rk";
       };
       userEmail = "1sixth@shinta.ro";
       userName = "1sixth";
@@ -131,6 +131,20 @@
         preview = false;
         ratios = "1:2";
       };
+    };
+    thunderbird = {
+      enable = true;
+      package = pkgs.thunderbird.override {
+        extraPolicies = {
+          Proxy = {
+            Mode = "manual";
+            SOCKSProxy = "127.0.0.1:1080";
+            SOCKSVersion = 5;
+            UseProxyForDNS = true;
+          };
+        };
+      };
+      profiles.default.isDefault = true;
     };
     yt-dlp = {
       enable = true;

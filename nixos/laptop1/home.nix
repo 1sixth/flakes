@@ -18,23 +18,11 @@
     ../../home-manager/xdg.nix
   ];
 
-  home.packages = with pkgs; [
-    # GUI
-    (prismlauncher.override {
-      jdks = with pkgs; [
-        jdk17
-        jdk21
-      ];
-      withWaylandGLFW = true;
-    })
-    mumble
-  ];
-
   wayland.windowManager.hyprland.settings.device = [
     {
       accel_profile = "adaptive";
       middle_button_emulation = true;
-      name = "uniw0001:00-093a:0255-touchpad";
+      name = "pnp0c50:00-093a:0255-touchpad";
       natural_scroll = true;
     }
   ];
