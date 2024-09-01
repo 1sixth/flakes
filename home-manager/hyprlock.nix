@@ -17,7 +17,17 @@
       };
       input-field = [
         {
-          position = "0, 0";
+          position = "0, -100";
+        }
+      ];
+      label = [
+        {
+          color = "rgb(39c5bb)";
+          font_size = 100;
+          halign = "center";
+          position = "0, 100";
+          text = "$TIME";
+          valign = "center";
         }
       ];
     };
