@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   ...
 }:
 
@@ -12,7 +11,6 @@
   networking.hostName = "laptop1";
 
   services.logind = {
-    lidSwitch = "ignore";
     powerKey = "ignore";
     suspendKey = "ignore";
     suspendKeyLongPress = "ignore";

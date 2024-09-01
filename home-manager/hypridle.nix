@@ -4,7 +4,10 @@
   services.hypridle = {
     enable = true;
     settings = {
-      general.lock_cmd = "hyprlock";
+      general = {
+        before_sleep_cmd = "loginctl lock-session";
+        lock_cmd = "hyprlock";
+      };
       # This is probably a bug, see hypridle/issues/86 for more details.
       listener = [
         # lock the screen after 1 minute
