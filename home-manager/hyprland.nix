@@ -79,14 +79,6 @@
         "$Mod, mouse:273, resizewindow"
       ];
       cursor.no_hardware_cursors = true;
-      device = [
-        {
-          accel_profile = "adaptive";
-          middle_button_emulation = true;
-          name = "uniw0001:00-093a:0255-touchpad";
-          natural_scroll = true;
-        }
-      ];
       dwindle = {
         force_split = 2;
         no_gaps_when_only = true;

@@ -44,4 +44,13 @@
     };
     profiles.default.isDefault = true;
   };
+
+  wayland.windowManager.hyprland.settings.device = [
+    {
+      accel_profile = "adaptive";
+      middle_button_emulation = true;
+      name = "uniw0001:00-093a:0255-touchpad";
+      natural_scroll = true;
+    }
+  ];
 }
