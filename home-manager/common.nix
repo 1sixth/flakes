@@ -175,6 +175,7 @@
       layer = "overlay";
       textColor = "#586e75";
     };
+    mpris-proxy.enable = true;
   };
 
   # app-org.fcitx.Fcitx5@autostart.service
