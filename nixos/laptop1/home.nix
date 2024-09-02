@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -17,6 +17,11 @@
     ../../home-manager/waybar.nix
     ../../home-manager/xdg.nix
   ];
+
+  home.file.".ssh/config".text = ''
+    Host *.9875321.xyz
+      Port 2222
+  '';
 
   wayland.windowManager.hyprland.settings.device = [
     {
