@@ -36,9 +36,7 @@
       colmena
       dmlive
       hyperfine
-      libarchive
       libfaketime
-      nali
       nix-index-with-db
       nix-tree
       podman-compose

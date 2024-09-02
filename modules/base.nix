@@ -39,6 +39,8 @@
         eza
         fd
         file
+        libarchive
+        nali
         nmap
         rclone
         ripgrep
