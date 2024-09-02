@@ -32,9 +32,8 @@
       ];
       files = [ "/etc/machine-id" ];
     };
-    systemPackages = (
-      with pkgs;
-      [
+    systemPackages =
+      (with pkgs; [
         curlHTTP3
         dig.dnsutils
         eza
@@ -44,13 +43,12 @@
         rclone
         ripgrep
         tcpdump
-      ]
-      ++ (with fishPlugins; [
+      ])
+      ++ (with pkgs.fishPlugins; [
         autopair
         puffer
         sponge
-      ])
-    );
+      ]);
   };
 
   networking = {
