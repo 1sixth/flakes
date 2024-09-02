@@ -22,7 +22,7 @@
       ];
       label = [
         {
-          color = "rgb(39c5bb)";
+          color = "rgb(00afaf)";
           font_size = 100;
           halign = "center";
           position = "0, 100";
