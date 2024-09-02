@@ -81,7 +81,7 @@
       cursor.no_hardware_cursors = true;
       dwindle = {
         force_split = 2;
-        no_gaps_when_only = true;
+        no_gaps_when_only = 1;
         preserve_split = true;
       };
       exec-once = [
@@ -90,8 +90,8 @@
       ];
       general = {
         border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgb(00afaf)";
+        "col.inactive_border" = "rgb(585858)";
       };
       input = {
         accel_profile = "flat";
@@ -103,7 +103,6 @@
         # TODO: replace with kanshi or shikane
         "desc:Shenzhen KTC Technology Group H27T22S 0x00000001,2560x1440@144,auto-left,1.6"
       ];
-      opengl.force_introspection = 1;
       windowrulev2 = [
         "workspace 1 silent, class: codium-url-handler"
         "workspace 2 silent, class: firefox"
