@@ -7,11 +7,6 @@
   fonts.fontconfig.enable = false;
 
   home = {
-    file.".iftoprc".text = ''
-      dns-resolution: no
-      port-display: on
-      port-resolution: no
-    '';
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
       # C/C++

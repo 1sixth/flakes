@@ -90,6 +90,8 @@
         tree = "ls --tree";
 
         bandwhich = "bandwhich --no-resolve";
+
+        iftop = "iftop -n -N -P";
       };
       useBabelfish = true;
     };
