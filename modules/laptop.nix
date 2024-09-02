@@ -187,5 +187,8 @@
     shell = pkgs.fish;
   };
 
-  virtualisation.podman.enable = true;
+  virtualisation.podman = {
+    autoPrune.enable = true;
+    enable = true;
+  };
 }
