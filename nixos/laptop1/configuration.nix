@@ -10,10 +10,13 @@
 
   networking.hostName = "laptop1";
 
-  services.logind = {
-    powerKey = "ignore";
-    suspendKey = "ignore";
-    suspendKeyLongPress = "ignore";
+  services = {
+    k3s.enable = true;
+    logind = {
+      powerKey = "ignore";
+      suspendKey = "ignore";
+      suspendKeyLongPress = "ignore";
+    };
   };
 
   sops = {
