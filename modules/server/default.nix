@@ -20,7 +20,11 @@
 
   fonts.fontconfig.enable = false;
 
-  nix.gc.dates = "daily";
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 14d";
+  };
 
   programs = {
     fish.shellAliases = {

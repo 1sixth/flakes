@@ -1,9 +1,4 @@
-{
-  inputs,
-  lib,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 
 {
   boot = {
@@ -65,11 +60,6 @@
   };
 
   nix = {
-    gc = {
-      automatic = true;
-      dates = lib.mkDefault "weekly";
-      options = "--delete-older-than 14d";
-    };
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
       auto-allocate-uids = true;
