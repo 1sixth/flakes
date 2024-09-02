@@ -56,10 +56,7 @@
       wl-clipboard
       xdg-utils
     ];
-    sessionVariables = {
-      CARGO_HOME = "${config.xdg.cacheHome}/cargo";
-      LESSHISTFILE = "${config.xdg.stateHome}/lesshst";
-    };
+    sessionVariables.CARGO_HOME = "${config.xdg.cacheHome}/cargo";
     stateVersion = "24.11";
     username = "one6th";
   };

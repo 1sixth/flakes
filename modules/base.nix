@@ -98,6 +98,11 @@
     htop.enable = true;
     iftop.enable = true;
     iotop.enable = true;
+    less = {
+      enable = true;
+      # ignore case if search pattern doesn't contain uppercase letters
+      envVariables.LESS = "-i";
+    };
     mtr.enable = true;
     nano.enable = false;
     ssh.knownHosts = {
