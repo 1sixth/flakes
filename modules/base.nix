@@ -42,6 +42,7 @@
         libarchive
         nali
         nmap
+        python3
         rclone
         ripgrep
         tcpdump
