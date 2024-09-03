@@ -35,7 +35,7 @@
     systemPackages =
       (with pkgs; [
         curlHTTP3
-        dig.dnsutils
+        dig
         eza
         fd
         file

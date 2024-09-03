@@ -59,8 +59,8 @@
         MD041 = false;
       };
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "${pkgs.nil}/bin/nil";
-      "nix.serverSettings".nil.formatting.command = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
+      "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
+      "nix.serverSettings".nixd.formatting.command = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
       "redhat.telemetry.enabled" = false;
       "security.workspace.trust.enabled" = false;
       "terminal.integrated.copyOnSelection" = true;
