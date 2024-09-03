@@ -43,11 +43,21 @@ in
         cache-persist = false;
         log-syslog = true;
         nameserver = "/syncthing.net/syncthing";
+        no-daemon = true;
+        no-pidfile = true;
         prefetch-domain = true;
         server = Bootstrap;
         server-https = DoH;
         speed-check-mode = "ping";
       };
+    };
+  };
+
+  systemd.services.smartdns = {
+    serviceConfig = {
+      AmbientCapabilities = [ "CAP_NET_BIND_SERVICE" ];
+      DynamicUser = true;
+      Type = "simple";
     };
   };
 }

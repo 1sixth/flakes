@@ -42,11 +42,21 @@ in
         bind-tcp = "127.0.0.1:53";
         cache-persist = false;
         log-syslog = true;
+        no-daemon = true;
+        no-pidfile = true;
         prefetch-domain = true;
         server = Bootstrap;
         server-https = DoH;
         speed-check-mode = "ping";
       };
+    };
+  };
+
+  systemd.services.smartdns = {
+    serviceConfig = {
+      AmbientCapabilities = [ "CAP_NET_BIND_SERVICE" ];
+      DynamicUser = true;
+      Type = "simple";
     };
   };
 }
