@@ -1,48 +1,24 @@
-{ ... }:
+{ config, ... }:
 
 let
-  Bootstrap = map (x: x + " -bootstrap-dns") [
-    # Cloudflare DNS
-    "2606:4700:4700::1111"
-    "2606:4700:4700::1001"
-    "1.1.1.1"
-    "1.0.0.1"
-
-    # Google DNS
-    "2001:4860:4860::8888"
-    "2001:4860:4860::8844"
-    "8.8.8.8"
-    "8.8.4.4"
-  ];
-
-  DoH = [
-    "https://cloudflare-dns.com/dns-query"
-    "https://dns.google/dns-query"
+  DNS = builtins.concatStringsSep " " [
+    "2a07:a8c0::#${config.networking.hostName}-81e651.dns.nextdns.io"
+    "2a07:a8c1::#${config.networking.hostName}-81e651.dns.nextdns.io"
+    "45.90.28.0${config.networking.hostName}-#81e651.dns.nextdns.io"
+    "45.90.30.0${config.networking.hostName}-#81e651.dns.nextdns.io"
   ];
 in
 
 {
-
-  environment.etc."resolv.conf".text = ''
-    nameserver 127.0.0.1
-    options edns0 trust-ad
-    search .
-  '';
-
-  services = {
-    resolved.enable = false;
-    smartdns = {
-      enable = true;
-      settings = {
-        bind = "127.0.0.1:53";
-        bind-tcp = "127.0.0.1:53";
-        cache-persist = false;
-        log-syslog = true;
-        prefetch-domain = true;
-        server = Bootstrap;
-        server-https = DoH;
-        speed-check-mode = "ping";
-      };
-    };
+  services.resolved = {
+    extraConfig = ''
+      DNS=${DNS}
+      FallbackDNS=
+      Domains=~.
+      LLMNR=false
+      MulticastDNS=false
+      DNSOverTLS=true
+      DNSStubListenerExtra=127.0.0.1
+    '';
   };
 }
