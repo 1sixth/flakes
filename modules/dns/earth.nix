@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  Bootstrap = map (x: x + " -bootstrap-dns") [
+  Bootstrap = builtins.map (x: x + " -bootstrap-dns") [
     # Cloudflare DNS
     "2606:4700:4700::1111"
     "2606:4700:4700::1001"
@@ -19,7 +19,7 @@ let
     [
       "https://dns.nextdns.io/81e651/${config.networking.hostName}"
     ]
-    ++ (map (x: x + " -group syncthing -exclude-default-group") [
+    ++ (builtins.map (x: x + " -group syncthing -exclude-default-group") [
       "https://cloudflare-dns.com/dns-query"
       "https://dns.google/dns-query"
     ]);

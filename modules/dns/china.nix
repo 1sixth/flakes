@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  Bootstrap = map (x: x + " -bootstrap-dns") [
+  Bootstrap = builtins.map (x: x + " -bootstrap-dns") [
     # 阿里 DNS
     "2400:3200::1"
     "2400:3200:baba::1"
