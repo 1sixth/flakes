@@ -14,6 +14,10 @@
       url = "github:nix-community/home-manager";
     };
     impermanence.url = "github:nix-community/impermanence";
+    lix-module = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+https://git.lix.systems/lix-project/nixos-module";
+    };
     nix-index-database = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/nix-index-database";
