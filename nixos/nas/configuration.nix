@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -8,6 +8,8 @@
   ];
 
   boot.kernelParams = [ "mitigations=off" ];
+
+  deployment.targetHost = config.networking.hostName;
 
   environment.systemPackages = with pkgs; [
     aria2

@@ -10,6 +10,8 @@
     ./vaultwarden.nix
   ];
 
+  deployment.buildOnTarget = true;
+
   networking.hostName = "nrt0";
 
   security.acme.certs."shinta.ro".domain = "*.shinta.ro";

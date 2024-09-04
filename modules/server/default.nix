@@ -1,6 +1,13 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
+  deployment.targetHost = lib.mkDefault "${config.networking.hostName}.9875321.xyz";
+
   documentation = {
     doc.enable = false;
     enable = false;
