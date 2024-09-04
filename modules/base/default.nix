@@ -143,8 +143,7 @@
       enable = true;
       extraDaemonFlags = [
         "--no-logs-no-support"
-        "--outbound-http-proxy-listen=127.0.0.1:2080"
-        "--socks5-server=127.0.0.1:2081"
+        "--socks5-server=127.0.0.1:2080"
       ];
       extraUpFlags = [ "--accept-dns=false" ];
     };
