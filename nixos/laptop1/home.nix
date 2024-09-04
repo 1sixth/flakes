@@ -18,11 +18,6 @@
     ../../home-manager/xdg.nix
   ];
 
-  home.file.".ssh/config".text = ''
-    Host *.9875321.xyz
-      Port 2222
-  '';
-
   wayland.windowManager.hyprland.settings.device = [
     {
       accel_profile = "adaptive";
