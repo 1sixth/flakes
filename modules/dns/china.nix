@@ -23,6 +23,11 @@ let
     "https://dns.alidns.com/dns-query"
     "https://doh.pub/dns-query"
   ];
+
+  MagicDNS = builtins.map (x: x + " -group magicdns -exclude-default-group") [
+    "fd7a:115c:a1e0::53"
+    "100.100.100.100"
+  ];
 in
 
 {
@@ -30,7 +35,7 @@ in
   environment.etc."resolv.conf".text = ''
     nameserver 127.0.0.1
     options edns0 trust-ad
-    search .
+    search tail5e6002.ts.net
   '';
 
   services = {
@@ -42,10 +47,11 @@ in
         bind-tcp = "127.0.0.1:53";
         cache-persist = false;
         log-syslog = true;
+        nameserver = [ "/tail5e6002.ts.net/magicdns" ];
         no-daemon = true;
         no-pidfile = true;
         prefetch-domain = true;
-        server = Bootstrap;
+        server = Bootstrap ++ MagicDNS;
         server-https = DoH;
         speed-check-mode = "ping";
       };

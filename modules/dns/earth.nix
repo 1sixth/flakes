@@ -15,14 +15,19 @@ let
     "8.8.4.4"
   ];
 
-  DoH =
-    [
-      "https://dns.nextdns.io/81e651/${config.networking.hostName}"
-    ]
-    ++ (builtins.map (x: x + " -group syncthing -exclude-default-group") [
-      "https://cloudflare-dns.com/dns-query"
-      "https://dns.google/dns-query"
-    ]);
+  MagicDNS = builtins.map (x: x + " -group magicdns -exclude-default-group") [
+    "fd7a:115c:a1e0::53"
+    "100.100.100.100"
+  ];
+
+  NextDNS = [
+    "https://dns.nextdns.io/81e651/${config.networking.hostName}"
+  ];
+
+  Syncthing = builtins.map (x: x + " -group syncthing -exclude-default-group") [
+    "https://cloudflare-dns.com/dns-query"
+    "https://dns.google/dns-query"
+  ];
 in
 
 {
@@ -30,7 +35,7 @@ in
   environment.etc."resolv.conf".text = ''
     nameserver 127.0.0.1
     options edns0 trust-ad
-    search .
+    search tail5e6002.ts.net
   '';
 
   services = {
@@ -42,12 +47,15 @@ in
         bind-tcp = "127.0.0.1:53";
         cache-persist = false;
         log-syslog = true;
-        nameserver = "/syncthing.net/syncthing";
+        nameserver = [
+          "/syncthing.net/syncthing"
+          "/tail5e6002.ts.net/magicdns"
+        ];
         no-daemon = true;
         no-pidfile = true;
         prefetch-domain = true;
-        server = Bootstrap;
-        server-https = DoH;
+        server = Bootstrap ++ MagicDNS;
+        server-https = NextDNS ++ Syncthing;
         speed-check-mode = "ping";
       };
     };
