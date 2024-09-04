@@ -1,5 +1,5 @@
 {
-  base = import ./base.nix;
+  base = import ./base;
   dns = {
     china = import ./dns/china.nix;
     earth = import ./dns/earth.nix;

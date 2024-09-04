@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
   boot = {
@@ -133,11 +138,23 @@
   services = {
     fstrim.enable = true;
     journald.extraConfig = "SystemMaxUse=1G";
+    tailscale = {
+      authKeyFile = config.sops.secrets.tailscale_key.path;
+      enable = true;
+      extraDaemonFlags = [
+        "--no-logs-no-support"
+        "--outbound-http-proxy-listen=127.0.0.1:2080"
+        "--socks5-server=127.0.0.1:2081"
+      ];
+    };
   };
 
-  sops.age = {
-    keyFile = "/var/lib/sops.key";
-    sshKeyPaths = [ ];
+  sops = {
+    age = {
+      keyFile = "/var/lib/sops.key";
+      sshKeyPaths = [ ];
+    };
+    secrets.tailscale_key.sopsFile = ./secrets.yml;
   };
 
   system.stateVersion = "24.11";
