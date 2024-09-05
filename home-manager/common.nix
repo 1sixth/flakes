@@ -37,6 +37,7 @@
       colmena
       dmlive
       hyperfine
+      impala
       libfaketime
       nix-index-with-db
       nix-tree
