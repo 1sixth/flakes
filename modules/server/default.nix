@@ -8,13 +8,6 @@
 {
   deployment.targetHost = lib.mkDefault "${config.networking.hostName}.9875321.xyz";
 
-  documentation = {
-    doc.enable = false;
-    enable = false;
-    man.enable = false;
-    nixos.enable = false;
-  };
-
   environment = {
     persistence."/persistent/impermanence".files = [
       "/etc/ssh/ssh_host_ed25519_key"
