@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.mpv = {
@@ -93,14 +93,15 @@
       profile = "gpu-hq";
       scale = "ewa_lanczos";
       scale-blur = "0.981251";
-      script-opts = ''ytdl_hook-exclude="%.mkv$|%.mp4$",ytdl_hook-try_ytdl_first=yes'';
-      slang = "en-orig,zh-CN,zh-TW,zh-HK,zh-SG,zh-Hans,zh-Hant,chi,zho,zh";
+      slang = "en,ai-zh";
       sub-auto = "fuzzy";
-      subs-fallback = "default";
-      subs-with-matching-audio = "yes";
       vo = "gpu-next";
       volume-max = "100";
-      ytdl-raw-options = "yes-playlist=";
+      # The yt-dlp invoked by mpv doesn't really use all the settings defined
+      # in ~/.config/yt-dlp/config, so a bit of duplication is necessary here.
+      ytdl-raw-options-append = [
+        "sub-langs=${config.programs.yt-dlp.settings.sub-langs}"
+      ];
     };
     enable = true;
     scripts = with pkgs.mpvScripts; [
