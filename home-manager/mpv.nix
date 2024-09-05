@@ -93,6 +93,10 @@
       profile = "gpu-hq";
       scale = "ewa_lanczos";
       scale-blur = "0.981251";
+      script-opts-append = [
+        "sponsorblock-categories=sponsor"
+        "sponsorblock-report_views=false"
+      ];
       slang = "en,ai-zh";
       sub-auto = "fuzzy";
       vo = "gpu-next";
