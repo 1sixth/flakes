@@ -32,6 +32,7 @@
       telegram-desktop
 
       # CLI
+      bluetuith
       brightnessctl
       colmena
       dmlive
