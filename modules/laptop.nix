@@ -191,6 +191,7 @@
   users.users.one6th = {
     extraGroups = [
       "adbusers"
+      "input" # waybar keyboard-state module
       "podman"
       "wheel"
       "wireshark"
