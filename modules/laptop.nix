@@ -160,6 +160,13 @@
   services = {
     getty.autologinUser = "one6th";
     hypridle.enable = true;
+    keyd = {
+      enable = true;
+      keyboards.default = {
+        ids = [ "*" ];
+        settings.main.capslock = "leftcontrol";
+      };
+    };
     pipewire = {
       enable = true;
       pulse.enable = true;
