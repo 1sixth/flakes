@@ -20,11 +20,7 @@ let
     "100.100.100.100"
   ];
 
-  NextDNS = [
-    "https://dns.nextdns.io/81e651/${config.networking.hostName}"
-  ];
-
-  Syncthing = builtins.map (x: x + " -group syncthing -exclude-default-group") [
+  DoH = [
     "https://cloudflare-dns.com/dns-query"
     "https://dns.google/dns-query"
   ];
@@ -47,15 +43,12 @@ in
         bind-tcp = "127.0.0.1:53";
         cache-persist = false;
         log-syslog = true;
-        nameserver = [
-          "/syncthing.net/syncthing"
-          "/tail5e6002.ts.net/magicdns"
-        ];
+        nameserver = [ "/tail5e6002.ts.net/magicdns" ];
         no-daemon = true;
         no-pidfile = true;
         prefetch-domain = true;
         server = Bootstrap ++ MagicDNS;
-        server-https = NextDNS ++ Syncthing;
+        server-https = DoH;
         speed-check-mode = "ping";
       };
     };
