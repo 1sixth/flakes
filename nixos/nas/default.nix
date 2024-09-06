@@ -11,11 +11,11 @@ nixpkgs.lib.nixosSystem {
   modules = [
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
-    self.nixosModules.base
     self.nixosModules.dns.china
+    self.nixosModules.profiles.base
+    self.nixosModules.profiles.server
     self.nixosModules.proxy.client
     self.nixosModules.qbittorrent-nox
-    self.nixosModules.server
     self.nixosModules.syncthing
     self.nixosModules.traefik
     ./configuration.nix

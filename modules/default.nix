@@ -1,11 +1,13 @@
 {
-  base = import ./base;
   dns = {
     china = import ./dns/china.nix;
     earth = import ./dns/earth.nix;
   };
-  hath = import ./hath.nix;
-  laptop = import ./laptop.nix;
+  profiles = {
+    base = import ./profiles/base;
+    laptop = import ./profiles/laptop;
+    server = import ./profiles/server;
+  };
   prometheus = {
     client = import ./prometheus/client.nix;
     server = import ./prometheus/server.nix;
@@ -14,10 +16,11 @@
     client = import ./proxy/client.nix;
     server = import ./proxy/server.nix;
   };
+  traefik = import ./traefik;
+
+  hath = import ./hath.nix;
   qbittorrent-nox = import ./qbittorrent-nox.nix;
-  server = import ./server;
   stress-ng = import ./stress-ng.nix;
   syncthing = import ./syncthing.nix;
   tor = import ./tor.nix;
-  traefik = import ./traefik;
 }

@@ -12,9 +12,9 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.lix-module.nixosModules.default
     inputs.sops-nix.nixosModules.sops
-    self.nixosModules.base
     self.nixosModules.dns.china
-    self.nixosModules.laptop
+    self.nixosModules.profiles.base
+    self.nixosModules.profiles.laptop
     self.nixosModules.proxy.client
     ./configuration.nix
     ./overlays.nix
