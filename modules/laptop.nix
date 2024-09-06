@@ -29,6 +29,7 @@
       ".config/VSCodium"
       ".config/wireshark"
       ".continue"
+      ".kube"
       ".local/bin"
       ".local/share/containers"
       ".local/share/direnv"
@@ -43,6 +44,7 @@
       ".local/state/mpv/watch_later"
       ".local/state/nvim"
       ".local/state/wireplumber"
+      ".minikube"
       ".mozilla"
       ".ssh"
       ".thunderbird"
@@ -198,6 +200,7 @@
   users.users.one6th = {
     extraGroups = [
       "adbusers"
+      "docker"
       "input" # waybar keyboard-state module
       "podman"
       "wheel"
@@ -207,8 +210,14 @@
     shell = pkgs.fish;
   };
 
-  virtualisation.podman = {
-    autoPrune.enable = true;
-    enable = true;
+  virtualisation = {
+    docker = {
+      autoPrune.enable = true;
+      enable = true;
+    };
+    podman = {
+      autoPrune.enable = true;
+      enable = true;
+    };
   };
 }

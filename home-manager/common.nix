@@ -38,7 +38,9 @@
       dmlive
       hyperfine
       impala
+      kubectl
       libfaketime
+      minikube
       nix-index-with-db
       nix-tree
       podman-compose
