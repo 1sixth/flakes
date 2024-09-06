@@ -31,7 +31,6 @@
       ".continue"
       ".kube"
       ".local/bin"
-      ".local/share/containers"
       ".local/share/direnv"
       ".local/share/fcitx5"
       ".local/share/fish"
@@ -202,7 +201,6 @@
       "adbusers"
       "docker"
       "input" # waybar keyboard-state module
-      "podman"
       "wheel"
       "wireshark"
     ];
@@ -210,14 +208,8 @@
     shell = pkgs.fish;
   };
 
-  virtualisation = {
-    docker = {
-      autoPrune.enable = true;
-      enable = true;
-    };
-    podman = {
-      autoPrune.enable = true;
-      enable = true;
-    };
+  virtualisation.docker = {
+    autoPrune.enable = true;
+    enable = true;
   };
 }

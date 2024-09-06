@@ -43,7 +43,6 @@
       minikube
       nix-index-with-db
       nix-tree
-      podman-compose
       rename
       sops
       tealdeer

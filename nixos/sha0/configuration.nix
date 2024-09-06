@@ -3,7 +3,7 @@
 {
   imports = [ ./hardware.nix ];
 
-  environment.systemPackages = with pkgs; [ podman-compose ];
+  environment.systemPackages = with pkgs; [ docker-compose ];
 
   networking.hostName = "sha0";
 
@@ -16,5 +16,8 @@
 
   sops.defaultSopsFile = ./secrets.yaml;
 
-  virtualisation.podman.enable = true;
+  virtualisation.docker = {
+    autoPrune.enable = true;
+    enable = true;
+  };
 }
