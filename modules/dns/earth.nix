@@ -49,7 +49,6 @@ in
         prefetch-domain = true;
         server = Bootstrap ++ MagicDNS;
         server-https = DoH;
-        speed-check-mode = "ping";
       };
     };
   };
