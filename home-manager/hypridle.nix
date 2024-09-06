@@ -10,16 +10,16 @@
       };
       # This is probably a bug, see hypridle/issues/86 for more details.
       listener = [
-        # lock the screen after 1 minute
+        # lock the screen after 5 minute
         {
           on-timeout = "loginctl lock-session";
-          timeout = 60;
+          timeout = 300;
         }
-        # then turn the screen off after 2 minutes
+        # then turn the screen off after 5 minutes and 5 seconds
         {
           on-resume = "hyprctl dispatch dpms on";
           on-timeout = "hyprctl dispatch dpms off";
-          timeout = 120;
+          timeout = 305;
         }
       ];
     };
