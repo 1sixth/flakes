@@ -21,7 +21,10 @@
   ];
 
   hardware = {
-    graphics.extraPackages = with pkgs; [ intel-media-driver ];
+    graphics.extraPackages = with pkgs; [
+      intel-media-driver
+      vpl-gpu-rt
+    ];
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = false;
