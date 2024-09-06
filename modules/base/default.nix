@@ -141,10 +141,7 @@
     tailscale = {
       authKeyFile = config.sops.secrets.tailscale_key.path;
       enable = true;
-      extraDaemonFlags = [
-        "--no-logs-no-support"
-        "--socks5-server=127.0.0.1:2080"
-      ];
+      extraDaemonFlags = [ "--no-logs-no-support" ];
       extraUpFlags = [ "--accept-dns=false" ];
     };
   };
