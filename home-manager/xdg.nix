@@ -3,10 +3,6 @@
 {
   xdg = {
     configFile = {
-      "containers/containers.conf".text = ''
-        [containers]
-        http_proxy = false
-      '';
       # https://github.com/rydesun/dotfiles/tree/ef1f12bac03ce724f3c90380140dc96abf604478/.config/fontconfig/conf.d
       "fontconfig/conf.d/50-generic.conf".source = ./res/fontconfig/50-generic.conf;
       "fontconfig/conf.d/51-language-noto-cjk.conf".source = ./res/fontconfig/51-language-noto-cjk.conf;
