@@ -17,7 +17,6 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.profiles.laptop
     self.nixosModules.proxy.client
     ./configuration.nix
-    ./overlays.nix
   ];
   specialArgs = {
     inherit inputs self;

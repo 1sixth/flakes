@@ -1,10 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
+  imports = [ ./overlays.nix ];
+
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     supportedFilesystems = [ "ntfs" ];
