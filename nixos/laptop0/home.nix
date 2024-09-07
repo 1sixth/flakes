@@ -20,14 +20,8 @@
 
   home.packages = with pkgs; [
     # GUI
-    (prismlauncher.override {
-      jdks = with pkgs; [
-        jdk17
-        jdk21
-      ];
-      withWaylandGLFW = true;
-    })
     mumble
+    prismlauncher
   ];
 
   wayland.windowManager.hyprland.settings.device = [
