@@ -243,7 +243,7 @@
     };
     traefik.dynamicConfigOptions.http = {
       routers.smokeping = {
-        rule = "Host(`${config.networking.hostName}.9875321.xyz`)";
+        rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/`)";
         service = "smokeping";
       };
       services.smokeping.loadBalancer.servers = [
