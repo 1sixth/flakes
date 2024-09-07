@@ -151,7 +151,7 @@
       keyFile = "/var/lib/sops.key";
       sshKeyPaths = [ ];
     };
-    secrets.tailscale_key.sopsFile = ./secrets.yml;
+    secrets.tailscale_key.sopsFile = ./secrets.yaml;
   };
 
   system.stateVersion = "24.11";
