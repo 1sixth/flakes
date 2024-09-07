@@ -142,7 +142,10 @@
       authKeyFile = config.sops.secrets.tailscale_key.path;
       enable = true;
       extraDaemonFlags = [ "--no-logs-no-support" ];
-      extraUpFlags = [ "--accept-dns=false" ];
+      extraUpFlags = [
+        "--accept-dns=false"
+        "--ssh"
+      ];
     };
   };
 

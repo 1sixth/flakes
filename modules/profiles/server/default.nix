@@ -66,7 +66,6 @@
         PasswordAuthentication = false;
       };
     };
-    tailscale.extraUpFlags = [ "--ssh" ];
     vnstat.enable = true;
   };
 
