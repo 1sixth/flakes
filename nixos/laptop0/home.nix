@@ -1,21 +1,21 @@
-{ pkgs, ... }:
+{ pkgs, self, ... }:
 
 {
   imports = [
-    ../../home-manager/common.nix
-    ../../home-manager/firefox.nix
-    ../../home-manager/foot.nix
-    ../../home-manager/hypridle.nix
-    ../../home-manager/hyprland.nix
-    ../../home-manager/hyprlock.nix
-    ../../home-manager/hyprpaper.nix
-    ../../home-manager/mpv.nix
-    ../../home-manager/neovim.nix
-    ../../home-manager/shell.nix
-    ../../home-manager/theme.nix
-    ../../home-manager/vscodium.nix
-    ../../home-manager/waybar.nix
-    ../../home-manager/xdg.nix
+    self.homeModules.base
+    self.homeModules.firefox
+    self.homeModules.foot
+    self.homeModules.hypridle
+    self.homeModules.hyprland
+    self.homeModules.hyprlock
+    self.homeModules.hyprpaper
+    self.homeModules.mpv
+    self.homeModules.neovim
+    self.homeModules.shell
+    self.homeModules.theme
+    self.homeModules.vscodium
+    self.homeModules.waybar
+    self.homeModules.xdg
   ];
 
   home.packages = with pkgs; [

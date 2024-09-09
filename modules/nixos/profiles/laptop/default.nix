@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  self,
+  ...
+}:
 
 {
   imports = [ ./overlays.nix ];
@@ -71,6 +76,9 @@
   };
 
   home-manager = {
+    extraSpecialArgs = {
+      inherit self;
+    };
     useGlobalPkgs = true;
     useUserPackages = true;
   };

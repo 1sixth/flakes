@@ -82,6 +82,8 @@
         };
       };
 
-      nixosModules = import ./modules;
+      homeModules = import ./modules/home;
+
+      nixosModules = import ./modules/nixos;
     };
 }
