@@ -66,7 +66,6 @@
   };
 
   nix = {
-    registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
       auto-allocate-uids = true;
       auto-optimise-store = true;
@@ -76,8 +75,6 @@
         "flakes"
         "nix-command"
       ];
-      flake-registry = "/etc/nix/registry.json";
-      nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
       substituters = [ "https://cache.garnix.io" ];
       trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
       use-cgroups = true;
