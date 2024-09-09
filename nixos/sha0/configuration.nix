@@ -18,6 +18,7 @@
 
   virtualisation.docker = {
     autoPrune.enable = true;
+    daemon.settings.log-driver = "journald";
     enable = true;
   };
 }
