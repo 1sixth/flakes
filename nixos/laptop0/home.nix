@@ -1,22 +1,7 @@
 { pkgs, self, ... }:
 
 {
-  imports = [
-    self.homeModules.base
-    self.homeModules.firefox
-    self.homeModules.foot
-    self.homeModules.hypridle
-    self.homeModules.hyprland
-    self.homeModules.hyprlock
-    self.homeModules.hyprpaper
-    self.homeModules.mpv
-    self.homeModules.neovim
-    self.homeModules.shell
-    self.homeModules.theme
-    self.homeModules.vscodium
-    self.homeModules.waybar
-    self.homeModules.xdg
-  ];
+  imports = builtins.attrValues self.homeModules;
 
   home.packages = with pkgs; [
     # GUI
