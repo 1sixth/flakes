@@ -11,13 +11,13 @@ nixpkgs.lib.nixosSystem {
   modules = [
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
+    self.nixosModules.base
     self.nixosModules.dns.earth
     self.nixosModules.hath
-    self.nixosModules.profiles.base
-    self.nixosModules.profiles.server
     self.nixosModules.prometheus.client
     self.nixosModules.proxy.server
     self.nixosModules.qbittorrent-nox
+    self.nixosModules.server
     self.nixosModules.stress-ng
     self.nixosModules.syncthing
     self.nixosModules.tor

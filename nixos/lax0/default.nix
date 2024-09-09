@@ -11,11 +11,11 @@ nixpkgs.lib.nixosSystem {
   modules = [
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
+    self.nixosModules.base
     self.nixosModules.dns.earth
-    self.nixosModules.profiles.base
-    self.nixosModules.profiles.server
     self.nixosModules.prometheus.client
     self.nixosModules.proxy.server
+    self.nixosModules.server
     self.nixosModules.traefik
     ./configuration.nix
   ];

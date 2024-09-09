@@ -3,11 +3,7 @@
     china = import ./dns/china.nix;
     earth = import ./dns/earth.nix;
   };
-  profiles = {
-    base = import ./profiles/base;
-    laptop = import ./profiles/laptop;
-    server = import ./profiles/server;
-  };
+
   prometheus = {
     client = import ./prometheus/client.nix;
     server = import ./prometheus/server.nix;
@@ -16,6 +12,10 @@
     client = import ./proxy/client.nix;
     server = import ./proxy/server.nix;
   };
+
+  base = import ./base;
+  laptop = import ./laptop;
+  server = import ./server;
   traefik = import ./traefik;
 
   hath = import ./hath.nix;
