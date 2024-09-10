@@ -89,6 +89,7 @@
               # TODO: represent this list programmatically
               targets = [
                 "lax0.9875321.xyz"
+                "nas.9875321.xyz"
                 "nrt0.9875321.xyz"
                 "nrt1.9875321.xyz"
               ];

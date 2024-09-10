@@ -13,6 +13,7 @@ nixpkgs.lib.nixosSystem {
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
     self.nixosModules.dns.china
+    self.nixosModules.prometheus.client
     self.nixosModules.proxy.client
     self.nixosModules.qbittorrent-nox
     self.nixosModules.server
