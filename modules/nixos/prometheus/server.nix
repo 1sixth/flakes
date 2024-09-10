@@ -97,7 +97,7 @@
           ];
         }
       ];
-      webExternalUrl = "https://${config.networking.hostName}.9875321.xyz/prometheus";
+      webExternalUrl = "https://prom.shinta.ro/";
     };
     traefik.dynamicConfigOptions.http = {
       routers.prometheus = {
@@ -116,9 +116,9 @@
       sopsFile = ./secrets.yaml;
     };
     prometheus_basic_auth_password = {
+      owner = config.systemd.services.prometheus.serviceConfig.User;
       restartUnits = [ "prometheus.service" ];
       sopsFile = ./secrets.yaml;
-      owner = config.systemd.services.prometheus.serviceConfig.User;
     };
   };
 
