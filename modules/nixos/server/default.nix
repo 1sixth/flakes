@@ -6,9 +6,21 @@
 }:
 
 {
+  boot.loader = {
+    grub.configurationLimit = 5;
+    systemd-boot.configurationLimit = 5;
+  };
+
   deployment = {
     buildOnTarget = lib.mkIf (config.nixpkgs.system != "x86_64-linux") true;
     targetHost = lib.mkDefault "${config.networking.hostName}.9875321.xyz";
+  };
+
+  documentation = {
+    doc.enable = false;
+    enable = false;
+    man.enable = false;
+    nixos.enable = false;
   };
 
   environment = {
@@ -16,6 +28,9 @@
       "/etc/ssh/ssh_host_ed25519_key"
       "/etc/ssh/ssh_host_ed25519_key.pub"
     ];
+    # print the URL instead
+    sessionVariables.BROWSER = "echo";
+    stub-ld.enable = false;
     systemPackages = with pkgs; [
       screen
     ];
@@ -81,5 +96,12 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOSqODpw3my6PkhWrAD/sulDNCiNjKqLjNOtFPMFwr" # Normal ssh-ed25519 Key
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFo0aSRnBTZxloY4B3UBOtuRJVEKjs5qgjKerAB2sSr7AAAABHNzaDo=" # ed25519-sk Resident Key
     ];
+  };
+
+  xdg = {
+    autostart.enable = false;
+    icons.enable = false;
+    menus.enable = false;
+    mime.enable = false;
   };
 }
