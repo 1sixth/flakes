@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   pkgs,
   ...
 }:
@@ -39,6 +38,7 @@
     };
     systemPackages =
       (with pkgs; [
+        aria2
         curlHTTP3
         dig
         eza
