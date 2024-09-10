@@ -121,17 +121,6 @@
     traceroute.enable = true;
   };
 
-  security.pki.caCertificateBlacklist = [
-    "BJCA Global Root CA1"
-    "BJCA Global Root CA2"
-    "CFCA EV ROOT"
-    "GDCA TrustAUTH R5 ROOT"
-    "UCA Extended Validation Root"
-    "UCA Global G2 Root"
-    "vTrus ECC Root CA"
-    "vTrus Root CA"
-  ];
-
   services = {
     fstrim.enable = true;
     journald.extraConfig = "SystemMaxUse=1G";
