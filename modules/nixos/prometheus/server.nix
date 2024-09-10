@@ -50,15 +50,9 @@
                   expr = ''node_btrfs_device_errors_total > 0'';
                 }
                 {
-                  alert = "Diskis75%Full";
-                  annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} is 75% full.";
-                  expr = ''(node_filesystem_avail_bytes{mountpoint=~"/boot"}  / node_filesystem_size_bytes{mountpoint=~"/boot"} ) < 0.25'';
-                }
-                {
-                  alert = "DiskWillFillin4Hours";
-                  annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} will fill in 4 hours.";
-                  expr = ''predict_linear(node_filesystem_avail_bytes{mountpoint=~"/persistent"}[1h], 4 * 3600) < 0'';
-                  for = "5m";
+                  alert = "Diskis90%Full";
+                  annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} is 90% full.";
+                  expr = ''(node_filesystem_avail_bytes{mountpoint=~"/boot|/persistent"}  / node_filesystem_size_bytes{mountpoint=~"/boot|/persistent"}) < 0.1'';
                 }
                 {
                   alert = "NodeDown";
