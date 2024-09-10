@@ -48,25 +48,22 @@
 
   security.sudo.enable = false;
 
-  services = {
-    openssh = {
-      enable = true;
-      hostKeys = [
-        {
-          path = "/etc/ssh/ssh_host_ed25519_key";
-          type = "ed25519";
-        }
-      ];
-      ports = [
-        22
-        2222
-      ];
-      settings = {
-        KbdInteractiveAuthentication = false;
-        PasswordAuthentication = false;
-      };
+  services.openssh = {
+    enable = true;
+    hostKeys = [
+      {
+        path = "/etc/ssh/ssh_host_ed25519_key";
+        type = "ed25519";
+      }
+    ];
+    ports = [
+      22
+      2222
+    ];
+    settings = {
+      KbdInteractiveAuthentication = false;
+      PasswordAuthentication = false;
     };
-    vnstat.enable = true;
   };
 
   sops = {
