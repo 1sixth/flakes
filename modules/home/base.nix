@@ -34,7 +34,6 @@
       # CLI
       bluetuith
       brightnessctl
-      colmena
       dmlive
       hyperfine
       impala
@@ -44,7 +43,6 @@
       nix-index-with-db
       nix-tree
       rename
-      sops
       tealdeer
       tokei
       translate-shell
