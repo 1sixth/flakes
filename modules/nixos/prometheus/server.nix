@@ -101,7 +101,7 @@
     };
     traefik.dynamicConfigOptions.http = {
       routers.prometheus = {
-        rule = "Host(`${config.networking.hostName}.9875321.xyz`) && PathPrefix(`/prometheus`)";
+        rule = "Host(`prom.shinta.ro`)";
         service = "prometheus";
       };
       services.prometheus.loadBalancer.servers = [
