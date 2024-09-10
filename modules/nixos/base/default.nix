@@ -44,6 +44,7 @@
         eza
         fd
         file
+        iperf3
         libarchive
         nali
         nmap
@@ -123,6 +124,13 @@
 
   services = {
     fstrim.enable = true;
+    iperf3 = {
+      enable = true;
+      extraFlags = [
+        "--bind-dev"
+        config.services.tailscale.interfaceName
+      ];
+    };
     journald.extraConfig = "SystemMaxUse=1G";
     tailscale = {
       authKeyFile = config.sops.secrets.tailscale_key.path;

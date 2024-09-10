@@ -48,15 +48,12 @@
     "https://mirrors.ustc.edu.cn/nix-channels/store"
   ];
 
-  services = {
-    btrfs.autoScrub = {
-      enable = true;
-      fileSystems = [
-        "/persistent/8T"
-        "/persistent/16T"
-      ];
-    };
-    iperf3.enable = true;
+  services.btrfs.autoScrub = {
+    enable = true;
+    fileSystems = [
+      "/persistent/8T"
+      "/persistent/16T"
+    ];
   };
 
   sops.defaultSopsFile = ./secrets.yaml;
