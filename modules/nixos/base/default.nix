@@ -27,6 +27,7 @@
   documentation.info.enable = false;
 
   environment = {
+    defaultPackages = [ ];
     persistence."/persistent/impermanence" = {
       directories = [
         "/root"
@@ -51,6 +52,7 @@
         python3
         rclone
         ripgrep
+        rsync
         tcpdump
       ])
       ++ (with pkgs.fishPlugins; [
@@ -108,6 +110,7 @@
       enable = true;
       # ignore case if search pattern doesn't contain uppercase letters
       envVariables.LESS = "-i";
+      lessopen = null;
     };
     mtr.enable = true;
     nano.enable = false;
@@ -141,6 +144,7 @@
         "--ssh"
       ];
     };
+    userborn.enable = true;
   };
 
   sops = {
@@ -151,7 +155,10 @@
     secrets.tailscale_key.sopsFile = ./secrets.yaml;
   };
 
-  system.stateVersion = "24.11";
+  system = {
+    etc.overlay.enable = true;
+    stateVersion = "24.11";
+  };
 
   systemd.network.networks.default.DHCP = "yes";
 
