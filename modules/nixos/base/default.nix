@@ -21,6 +21,10 @@
       "vm.page-cluster" = 0;
     };
     kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      grub.configurationLimit = 5;
+      systemd-boot.configurationLimit = 5;
+    };
     tmp.cleanOnBoot = true;
   };
 

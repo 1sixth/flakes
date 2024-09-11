@@ -6,11 +6,6 @@
 }:
 
 {
-  boot.loader = {
-    grub.configurationLimit = 5;
-    systemd-boot.configurationLimit = 5;
-  };
-
   deployment = {
     buildOnTarget = lib.mkIf (config.nixpkgs.system != "x86_64-linux") true;
     targetHost = lib.mkDefault "${config.networking.hostName}.9875321.xyz";
