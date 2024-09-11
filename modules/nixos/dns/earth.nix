@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 let
   Bootstrap = builtins.map (x: x + " -bootstrap-dns") [
