@@ -126,14 +126,8 @@
     hyprland.enable = true;
     hyprlock.enable = true;
     localsend.enable = true;
-    # Behavior:
-    # `ssh lax0`: routed via tailscale
-    # `ssh lax0.tail5e6002.ts.net`: routed via tailscale
-    # `ssh lax0.9875321.xyz`: direct, this is used by colmena
-    # `ssh lax0.9875321.xyz -p 2222`: proxied via sing-box, just in case
-    # `ssh -T git@github.com`: proxied via sing-box
     ssh.extraConfig = ''
-      CanonicalDomains tail5e6002.ts.net
+      CanonicalDomains 9875321.xyz
       CanonicalizeHostname always
       Compression yes
       ServerAliveInterval 10
@@ -144,9 +138,8 @@
       Host *.tail5e6002.ts.net
         ProxyCommand none
 
-      # This matches any host that contains at least 1 dot.
-      Host *.*
-        ProxyCommand ${pkgs.netcat}/bin/nc -n -x 127.0.0.1:1080 %h %p
+      Host *
+      ProxyCommand ${pkgs.netcat}/bin/nc -n -x 127.0.0.1:1080 %h %p
     '';
     starship.settings.cmd_duration.show_notifications = true;
     wireshark = {
