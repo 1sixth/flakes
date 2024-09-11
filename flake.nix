@@ -47,6 +47,7 @@
 
       forEachSupportedSystem = nixpkgs.lib.genAttrs supportedSystems;
     in
+
     {
       colmena =
         {
@@ -93,6 +94,7 @@
 
       devShells = forEachSupportedSystem (
         system:
+
         let
           pkgs = import nixpkgs {
             inherit system;
@@ -102,6 +104,7 @@
             ];
           };
         in
+
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
