@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}:
+{ config, ... }:
 
 {
   imports = [ ./hardware.nix ];
@@ -19,6 +16,10 @@
   sops = {
     defaultSopsFile = ./secrets.yaml;
     secrets = {
+      "company.network" = {
+        owner = "systemd-network";
+        path = "/etc/systemd/network/company.network";
+      };
       password_root.neededForUsers = true;
       password_one6th.neededForUsers = true;
       u2f_keys.mode = "0444";
