@@ -79,14 +79,17 @@
       delta = {
         enable = true;
         options = {
-          light = true;
           line-numbers = true;
+          navigate = true;
         };
       };
       enable = true;
       extraConfig = {
         commit.gpgSign = true;
-        diff.sopsdiffer.textconv = "sops -d";
+        diff = {
+          colorMoved = "default";
+          sopsdiffer.textconv = "sops -d";
+        };
         gpg = {
           ssh.allowedSignersFile = builtins.toString (
             pkgs.writeText "allowed_signers" ''
