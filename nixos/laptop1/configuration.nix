@@ -3,6 +3,15 @@
 {
   imports = [ ./hardware.nix ];
 
+  environment.persistence."/persistent/impermanence".users.one6th.directories = [
+    ".cache/JetBrains"
+    ".config/JetBrains"
+    ".gradle"
+    ".java"
+    ".local/share/JetBrains"
+    ".m2"
+  ];
+
   home-manager.users.one6th = import ./home.nix;
 
   networking.hostName = "laptop1";
