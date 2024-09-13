@@ -43,6 +43,8 @@
       nwdrc = "nix why-depends /run/current-system";
 
       ncf = "nix copy --no-check-sigs --from";
+
+      n = "nvim (fzf)";
     };
   };
 }
