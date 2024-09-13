@@ -83,7 +83,7 @@
         ++ HKHK_8
         menu = 中国香港 CN2 GIA
         title = HKHK_8
-        host = 93.179.124.115
+        host = 93.179.124.235
 
         ++ JPOS_1
         menu = 日本大阪软银
