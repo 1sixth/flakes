@@ -159,10 +159,7 @@
     secrets.tailscale_key.sopsFile = ./secrets.yaml;
   };
 
-  system = {
-    etc.overlay.enable = true;
-    stateVersion = "24.11";
-  };
+  system.stateVersion = "24.11";
 
   systemd.network.networks.default.DHCP = "yes";
 
