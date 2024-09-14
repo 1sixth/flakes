@@ -4,18 +4,18 @@
   services = {
     samba = {
       enable = true;
-      extraConfig = ''
-        map to guest = bad user
-        use sendfile = yes
-      '';
-      shares = {
+      settings = {
+        global = {
+          "map to guest" = "Bad User";
+          "use sendfile" = true;
+        };
         "16T" = {
+          "guest ok" = true;
           path = "/persistent/16T";
-          public = true;
         };
         "8T" = {
+          "guest ok" = true;
           path = "/persistent/8T";
-          public = true;
         };
       };
     };
