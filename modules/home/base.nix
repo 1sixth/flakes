@@ -32,11 +32,9 @@
       telegram-desktop
 
       # CLI
-      bluetuith
       brightnessctl
       dmlive
       hyperfine
-      impala
       kubectl
       libfaketime
       minikube
@@ -49,6 +47,10 @@
       unar
       wl-clipboard
       xdg-utils
+
+      # TUI
+      bluetuith
+      impala
     ];
     sessionVariables.CARGO_HOME = "${config.xdg.cacheHome}/cargo";
     stateVersion = "24.11";

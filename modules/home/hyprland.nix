@@ -57,6 +57,9 @@
         "$Mod, x, exec, ${pkgs.systemd}/bin/loginctl lock-session"
         "$Mod, RETURN, exec, ${config.programs.foot.package}/bin/foot"
 
+        "$Mod, b, exec, ${config.programs.foot.package}/bin/foot -e bluetuith"
+        "$Mod, w, exec, ${config.programs.foot.package}/bin/foot -e impala"
+
         '', PRINT, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy''
         ''$Mod, s, exec, sh -c "hyprctl monitors | grep eDP-1 && hyprctl keyword monitor eDP-1,disable || hyprctl keyword monitor eDP-1,preferred,auto,auto"''
       ];
