@@ -54,4 +54,45 @@
   };
 
   sops.defaultSopsFile = ./secrets.yaml;
+
+  systemd = {
+    services = {
+      sync = {
+        after = [ "youtube.service" ];
+        path = [ pkgs.rclone ];
+        serviceConfig = {
+          ExecStart = "/root/sync.sh";
+          Type = "oneshot";
+        };
+      };
+      youtube = {
+        before = [ "sync.service" ];
+        path = [ pkgs.yt-dlp ];
+        serviceConfig = {
+          ExecStart = "/root/youtube.sh";
+          # yt-dlp somehow returns 1 even if everything looks alright.
+          SuccessExitStatus = 1;
+          Type = "oneshot";
+        };
+      };
+    };
+    timers = {
+      sync = {
+        timerConfig = {
+          Persistent = true;
+          OnCalendar = "daily";
+          RandomizedDelaySec = "1h";
+        };
+        wantedBy = [ "timers.target" ];
+      };
+      youtube = {
+        timerConfig = {
+          Persistent = true;
+          OnCalendar = "daily";
+          RandomizedDelaySec = "1h";
+        };
+        wantedBy = [ "timers.target" ];
+      };
+    };
+  };
 }
