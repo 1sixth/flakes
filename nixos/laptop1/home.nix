@@ -9,13 +9,6 @@
       ".jdks/jdk11".source = "${pkgs.jdk11}/lib/openjdk";
       ".jdks/jdk17".source = "${pkgs.jdk17}/lib/openjdk";
       ".jdks/jdk21".source = "${pkgs.jdk21}/lib/openjdk";
-      ".ssh/config".text = ''
-        Host *.9875321.xyz
-          Port 2222
-
-        Host nas nas.9875321.xyz nas.tail5e6002.ts.net
-          ProxyJump sha0
-      '';
     };
     packages = with pkgs; [
       gradle
