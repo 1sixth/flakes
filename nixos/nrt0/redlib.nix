@@ -27,6 +27,10 @@
             url = "https://github.com/redlib-org/redlib/commit/67a890cab30e899650d40aa5c3d5416d3958c723.diff";
             hash = "sha256-Mj825a4iScpXqA72WmZUmUlFqrlyIQSDusgc6zWo7h4=";
           })
+          (pkgs.fetchpatch {
+            url = "https://github.com/redlib-org/redlib/commit/b299db6ca372f3c90971ccbd5cf05054db0c8598.diff";
+            hash = "sha256-8YiUIai/J8Rd08MB7d+eWkDbxP/u5L0fScpSXY6v0Yw=";
+          })
         ];
       });
     };
