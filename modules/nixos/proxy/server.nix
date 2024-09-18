@@ -10,7 +10,6 @@
   };
 
   sops.secrets."sing-box.json" = {
-    path = "/etc/sing-box/config.json";
     restartUnits = [ "sing-box.service" ];
     sopsFile = ./secrets.yaml;
   };
@@ -20,7 +19,13 @@
     services.sing-box = {
       serviceConfig = {
         DynamicUser = "yes";
+        ExecStart = [
+          ""
+          "${pkgs.sing-box}/bin/sing-box -C $CREDENTIALS_DIRECTORY run"
+        ];
+        LoadCredential = [ "config.json:${config.sops.secrets."sing-box.json".path}" ];
         StateDirectory = "sing-box";
+        WorkingDirectory = "/var/lib/sing-box";
       };
       wantedBy = [ "multi-user.target" ];
     };
