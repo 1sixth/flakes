@@ -90,6 +90,10 @@
           system = "x86_64-linux";
           inherit self nixpkgs inputs;
         };
+        sjc0 = import ./nixos/sjc0 {
+          system = "x86_64-linux";
+          inherit self nixpkgs inputs;
+        };
       };
 
       devShells = forEachSupportedSystem (
