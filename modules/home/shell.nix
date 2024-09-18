@@ -45,6 +45,8 @@
       ncf = "nix copy --no-check-sigs --from";
 
       n = "nvim (fzf)";
+
+      i = "curl -s https://cloudflare.com/cdn-cgi/trace | grep ip | cut -c4-";
     };
   };
 }
