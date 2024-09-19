@@ -127,16 +127,11 @@
       CanonicalDomains 9875321.xyz
       CanonicalizeHostname always
       Compression yes
+      ProxyCommand ${pkgs.netcat}/bin/nc -n -x 127.0.0.1:1080 %h %p
       ServerAliveInterval 10
 
       Host *.9875321.xyz *.tail5e6002.ts.net
         User root
-
-      Host *.tail5e6002.ts.net
-        ProxyCommand none
-
-      Host *
-        ProxyCommand ${pkgs.netcat}/bin/nc -n -x 127.0.0.1:1080 %h %p
     '';
     starship.settings.cmd_duration.show_notifications = true;
     wireshark = {
