@@ -141,7 +141,6 @@
         "--ssh"
       ];
     };
-    userborn.enable = true;
   };
 
   sops = {
