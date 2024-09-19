@@ -90,7 +90,7 @@
           system = "x86_64-linux";
           inherit self nixpkgs inputs;
         };
-        sjc0 = import ./nixos/sjc0 {
+        sxb0 = import ./nixos/sxb0 {
           system = "x86_64-linux";
           inherit self nixpkgs inputs;
         };
