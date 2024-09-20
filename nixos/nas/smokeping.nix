@@ -71,35 +71,6 @@
         title = us-west-2
         host = 18.236.0.0
 
-        + BandwagonHost
-        menu = BandwagonHost
-        title = BandwagonHost
-
-        ++ HKHK_3
-        menu = 中国香港 HK85
-        title = HKHK_3
-        host = 45.78.18.149
-
-        ++ HKHK_8
-        menu = 中国香港 CN2 GIA
-        title = HKHK_8
-        host = 93.179.124.235
-
-        ++ JPOS_1
-        menu = 日本大阪软银
-        title = JPOS_1
-        host = jpos.bwg.net
-
-        ++ USCA_6
-        menu = 美国洛杉矶 DC6 CN2 GIA-E
-        title = USCA_6
-        host = dc6.bwg.net
-
-        ++ USCA_9
-        menu = 美国洛杉矶 DC9 CN2 GIA
-        title = USCA_9
-        host = dc9.bwg.net
-
         + BuyVM
         menu = BuyVM
         title = BuyVM
