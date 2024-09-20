@@ -61,7 +61,6 @@
       ++ (with pkgs.fishPlugins; [
         autopair
         puffer
-        sponge
       ]);
   };
 
