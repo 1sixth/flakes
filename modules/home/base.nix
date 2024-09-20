@@ -35,9 +35,9 @@
       brightnessctl
       dmlive
       hyperfine
+      kind
       kubectl
       libfaketime
-      minikube
       nix-index-with-db
       nix-tree
       rename

@@ -49,15 +49,6 @@
         Mode = "manual";
         SOCKSProxy = "127.0.0.1:1080";
         SOCKSVersion = 5;
-        # https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/
-        Passthrough = builtins.concatStringsSep "," [
-          "127.0.0.1"
-          "localhost"
-          "192.168.59.0/24"
-          "192.168.39.0/24"
-          "192.168.49.0/24"
-          "10.96.0.0/12"
-        ];
         UseProxyForDNS = true;
       };
       SearchEngines = {
