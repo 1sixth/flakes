@@ -46,7 +46,6 @@
       ".mozilla"
       ".ssh"
       ".thunderbird"
-      ".vscode-oss"
       "Develop"
       "Download"
     ];
