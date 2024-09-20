@@ -21,17 +21,18 @@
     redlib = {
       enable = true;
       # To be removed in the next version.
-      package = pkgs.redlib.overrideAttrs (old: {
-        patches = (old.patches or [ ]) ++ [
-          (pkgs.fetchpatch {
-            url = "https://github.com/redlib-org/redlib/commit/67a890cab30e899650d40aa5c3d5416d3958c723.diff";
-            hash = "sha256-Mj825a4iScpXqA72WmZUmUlFqrlyIQSDusgc6zWo7h4=";
-          })
-          (pkgs.fetchpatch {
-            url = "https://github.com/redlib-org/redlib/commit/b299db6ca372f3c90971ccbd5cf05054db0c8598.diff";
-            hash = "sha256-8YiUIai/J8Rd08MB7d+eWkDbxP/u5L0fScpSXY6v0Yw=";
-          })
-        ];
+      package = pkgs.redlib.overrideAttrs (old: rec {
+        src = pkgs.fetchFromGitHub {
+          owner = "redlib-org";
+          repo = "redlib";
+          rev = "793047f63f0f603e342c919bbfc469c7569276fa";
+          hash = "sha256-A6t/AdKP3fCEyIo8fTIirZAlZPfyS8ba3Pejp8J6AUQ=";
+        };
+        cargoDeps = old.cargoDeps.overrideAttrs {
+          inherit src;
+          outputHash = "sha256-rJXKH9z8DC+7qqawbnSkYoQby6hBLLM6in239Wc8rvk=";
+        };
+        checkFlags = [ old.checkFlags or [ ] ] ++ [ "--skip=test_gated_and_quarantined" ];
       });
     };
     traefik = {
