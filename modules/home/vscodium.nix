@@ -11,7 +11,6 @@
       ])
       ++ (with pkgs.vscode-marketplace; [
         davidanson.vscode-markdownlint
-        eamodio.gitlens
         editorconfig.editorconfig
         huacnlee.autocorrect
         golang.go
