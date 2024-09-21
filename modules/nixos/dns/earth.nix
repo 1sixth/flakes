@@ -15,14 +15,14 @@ let
     "8.8.4.4"
   ];
 
-  MagicDNS = builtins.map (x: x + " -group magicdns -exclude-default-group") [
-    "fd7a:115c:a1e0::53"
-    "100.100.100.100"
-  ];
-
   DoH = [
     "https://cloudflare-dns.com/dns-query"
     "https://dns.google/dns-query"
+  ];
+
+  MagicDNS = builtins.map (x: x + " -group magicdns -exclude-default-group") [
+    "fd7a:115c:a1e0::53"
+    "100.100.100.100"
   ];
 in
 
