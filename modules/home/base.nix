@@ -111,22 +111,6 @@
     home-manager.enable = true;
     imv.enable = true;
     jq.enable = true;
-    lf = {
-      enable = true;
-      keybindings = {
-        "<c-c>" = "copy";
-        "<c-x>" = "cut";
-        "<c-v>" = "paste";
-        "<delete>" = "delete";
-        "<enter>" = "open";
-        "<f-2>" = "rename";
-        d = "delete";
-      };
-      settings = {
-        preview = false;
-        ratios = "1:2";
-      };
-    };
     thunderbird = {
       enable = true;
       package = pkgs.thunderbird.override {
@@ -141,6 +125,7 @@
       };
       profiles.default.isDefault = true;
     };
+    yazi.enable = true;
     yt-dlp = {
       enable = true;
       settings = {
