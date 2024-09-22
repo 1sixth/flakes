@@ -8,6 +8,7 @@
   systemd = {
     packages = [ pkgs.sing-box ];
     services.sing-box = {
+      preStart = "ln -fsT ${pkgs.metacubexd} $STATE_DIRECTORY/dashboard";
       serviceConfig = {
         DynamicUser = "yes";
         ExecStart = [
