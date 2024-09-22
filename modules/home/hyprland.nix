@@ -57,7 +57,7 @@
         "$Mod, x, exec, ${pkgs.systemd}/bin/loginctl lock-session"
         "$Mod, RETURN, exec, ${config.programs.foot.package}/bin/foot"
 
-        "$Mod, b, exec, ${config.programs.foot.package}/bin/foot -e bluetuith"
+        "$Mod, c, exec, ${config.programs.foot.package}/bin/foot -e bluetuith"
         "$Mod, w, exec, ${config.programs.foot.package}/bin/foot -e impala"
 
         '', PRINT, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy''
