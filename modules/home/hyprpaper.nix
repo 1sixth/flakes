@@ -2,8 +2,8 @@
 
 let
   wallpaper = pkgs.fetchurl {
-    url = "https://pixiv.cat/65204496.png";
-    hash = "sha256-AenfCFlD0afOvfoIqCrUelwbgLQ8l0POwsVykLI3Ksc=";
+    url = "https://pixiv.cat/122675302.jpg";
+    hash = "sha256-qt9Lw5XQrjMq17lFoWXugxRidn100lIpoHPeHWuTSJk=";
   };
 in
 
