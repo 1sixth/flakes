@@ -95,7 +95,7 @@
       scale-blur = "0.981251";
       script-opts-append = [
         "sponsorblock-categories=sponsor"
-        "sponsorblock-report_views=false"
+        "sponsorblock-report_views=no"
       ];
       slang = "en,ai-zh";
       sub-auto = "fuzzy";
