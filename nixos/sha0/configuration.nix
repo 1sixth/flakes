@@ -3,6 +3,8 @@
 {
   imports = [ ./hardware.nix ];
 
+  deployment.tags = [ "china" ];
+
   environment.systemPackages = with pkgs; [ docker-compose ];
 
   networking.hostName = "sha0";

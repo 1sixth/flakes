@@ -3,6 +3,8 @@
 {
   imports = [ ./hardware.nix ];
 
+  deployment.tags = [ "china" ];
+
   environment.persistence."/persistent/impermanence".users.one6th.directories = [
     ".cache/JetBrains"
     ".config/JetBrains"

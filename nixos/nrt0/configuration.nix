@@ -10,6 +10,8 @@
     ./vaultwarden.nix
   ];
 
+  deployment.tags = [ "earth" ];
+
   networking.hostName = "nrt0";
 
   security.acme.certs."shinta.ro".domain = "*.shinta.ro";

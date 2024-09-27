@@ -7,6 +7,8 @@
 {
   imports = [ ./hardware.nix ];
 
+  deployment.tags = [ "china" ];
+
   boot.kernelModules = [
     # https://forums.developer.nvidia.com/t/550-54-14-cannot-create-sg-table-for-nvkmskapimemory-spammed-when-launching-chrome-on-wayland/284775/15
     "i915"

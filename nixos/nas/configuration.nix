@@ -9,6 +9,8 @@
 
   boot.kernelParams = [ "mitigations=off" ];
 
+  deployment.tags = [ "china" ];
+
   environment.systemPackages = with pkgs; [
     smartmontools
   ];

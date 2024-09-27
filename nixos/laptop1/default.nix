@@ -7,6 +7,7 @@
 
 nixpkgs.lib.nixosSystem {
   inherit system;
+  extraModules = [ inputs.colmena.nixosModules.deploymentOptions ];
   modules = [
     inputs.home-manager.nixosModules.home-manager
     inputs.impermanence.nixosModules.impermanence
