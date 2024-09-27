@@ -22,5 +22,4 @@
   qbittorrent-nox = import ./qbittorrent-nox.nix;
   stress-ng = import ./stress-ng.nix;
   syncthing = import ./syncthing.nix;
-  tor = import ./tor.nix;
 }
