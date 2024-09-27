@@ -12,7 +12,7 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
-    self.nixosModules.dns.earth
+    self.nixosModules.dns
     self.nixosModules.hath
     self.nixosModules.prometheus.client
     self.nixosModules.proxy.server

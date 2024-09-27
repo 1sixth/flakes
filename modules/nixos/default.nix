@@ -1,9 +1,4 @@
 {
-  dns = {
-    china = import ./dns/china.nix;
-    earth = import ./dns/earth.nix;
-  };
-
   prometheus = {
     client = import ./prometheus/client.nix;
     server = import ./prometheus/server.nix;
@@ -18,6 +13,7 @@
   server = import ./server;
   traefik = import ./traefik;
 
+  dns = import ./dns.nix;
   hath = import ./hath.nix;
   qbittorrent-nox = import ./qbittorrent-nox.nix;
   stress-ng = import ./stress-ng.nix;
