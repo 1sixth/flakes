@@ -6,10 +6,7 @@
 }:
 
 {
-  deployment = {
-    buildOnTarget = lib.mkIf (config.nixpkgs.system != "x86_64-linux") true;
-    targetHost = lib.mkDefault "${config.networking.hostName}.9875321.xyz";
-  };
+  deployment.buildOnTarget = lib.mkIf (config.nixpkgs.system != "x86_64-linux") true;
 
   documentation = {
     doc.enable = false;
