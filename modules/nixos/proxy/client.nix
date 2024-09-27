@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   networking.proxy.default = "http://127.0.0.1:1080";
@@ -8,7 +13,7 @@
   systemd = {
     packages = [ pkgs.sing-box ];
     services.sing-box = {
-      preStart = "ln -fsT ${pkgs.metacubexd} $STATE_DIRECTORY/dashboard";
+      preStart = lib.optionalString (builtins.elem "laptop" config.deployment.tags) "ln -fsT ${pkgs.metacubexd} $STATE_DIRECTORY/dashboard";
       serviceConfig = {
         DynamicUser = "yes";
         ExecStart = [
