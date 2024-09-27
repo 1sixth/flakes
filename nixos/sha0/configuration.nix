@@ -9,8 +9,6 @@
 
   networking.hostName = "sha0";
 
-  nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
-
   services.pykms.enable = true;
 
   sops.defaultSopsFile = ./secrets.yaml;

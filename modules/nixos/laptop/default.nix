@@ -105,7 +105,6 @@
       # available or there is no more garbage.
       max-free = (20 * 1024 * 1024 * 1024);
       min-free = (10 * 1024 * 1024 * 1024);
-      substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
       trusted-users = [
         "@wheel"
         "root"

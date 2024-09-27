@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }:
 
@@ -81,7 +82,13 @@
         "nix-command"
       ];
       flake-registry = "/etc/nix/registry.json";
-      substituters = [ "https://cache.garnix.io" ];
+      substituters =
+        [
+          "https://cache.garnix.io"
+        ]
+        ++ (lib.optionals (builtins.elem "china" config.deployment.tags) [
+          "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+        ]);
       trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
       use-cgroups = true;
       use-xdg-base-directories = true;
