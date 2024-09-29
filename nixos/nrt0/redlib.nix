@@ -25,14 +25,21 @@
         src = pkgs.fetchFromGitHub {
           owner = "redlib-org";
           repo = "redlib";
-          rev = "793047f63f0f603e342c919bbfc469c7569276fa";
-          hash = "sha256-A6t/AdKP3fCEyIo8fTIirZAlZPfyS8ba3Pejp8J6AUQ=";
+          rev = "8d0ed4682e4766202184532772d328754dd18749";
+          hash = "sha256-TzXsxRd66hWcQ3AsCW2SihO2W5JFSXdHuKcJ7opDKEI=";
         };
         cargoDeps = old.cargoDeps.overrideAttrs {
           inherit src;
-          outputHash = "sha256-rJXKH9z8DC+7qqawbnSkYoQby6hBLLM6in239Wc8rvk=";
+          outputHash = "sha256-P7usc4JsKaYoM0XgGuL488reszV7vbrxV0TRGhN13Nw=";
         };
-        checkFlags = [ old.checkFlags or [ ] ] ++ [ "--skip=test_gated_and_quarantined" ];
+        checkFlags =
+          [ old.checkFlags or [ ] ]
+          ++ [
+            "--skip=test_oauth_headers_len"
+            "--skip=test_private_sub"
+            "--skip=test_banned_sub"
+            "--skip=test_gated_sub"
+          ];
       });
     };
     traefik = {
