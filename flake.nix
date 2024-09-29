@@ -13,6 +13,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
+    hyprland = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/Hyprland";
+    };
     impermanence.url = "github:nix-community/impermanence";
     lix-module = {
       inputs.nixpkgs.follows = "nixpkgs";

@@ -2,6 +2,7 @@
 
 {
   nixpkgs.overlays = [
+    inputs.hyprland.overlays.default
     (final: prev: {
       inherit (inputs.nix-index-database.packages.${prev.system}) nix-index-with-db;
       inherit
