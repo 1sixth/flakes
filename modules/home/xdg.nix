@@ -39,7 +39,7 @@
         "image/gif" = [ "imv-dir.desktop" ];
         "image/png" = [ "imv-dir.desktop" ];
         "image/webp" = [ "imv-dir.desktop" ];
-        "inode/directory" = [ "lf.desktop" ];
+        "inode/directory" = [ "yazi.desktop" ];
         "text/html" = [ "firefox-esr.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
         "video/quicktime" = [ "mpv.desktop" ];
