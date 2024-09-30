@@ -6,7 +6,10 @@
 }:
 
 {
-  deployment.buildOnTarget = lib.mkIf (config.nixpkgs.system != "x86_64-linux") true;
+  deployment = {
+    buildOnTarget = lib.mkIf (config.nixpkgs.system != "x86_64-linux") true;
+    tags = [ "server" ];
+  };
 
   documentation = {
     doc.enable = false;
