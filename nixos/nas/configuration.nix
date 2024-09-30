@@ -11,9 +11,35 @@
 
   deployment.tags = [ "china" ];
 
-  environment.systemPackages = with pkgs; [
-    smartmontools
-  ];
+  environment = {
+    etc."yt-dlp/config".text = ''
+      --download-archive "archive.log"
+
+      --embed-chapters
+
+      --extractor-args "youtube:skip=dash,hls,translated_subs"
+
+      --match-filter "original_url!*=/shorts/"
+
+      --no-continue
+
+      --output "$PWD/%(channel)s/%(upload_date)s %(title)s.%(ext)s"
+
+      --remux-video mkv
+
+      --retry-sleep extractor:5
+      --retry-sleep fragment:5
+      --retry-sleep http:5
+
+      --sub-langs "en.*,zh.*"
+
+      --write-subs
+    '';
+    systemPackages = with pkgs; [
+      smartmontools
+      yt-dlp
+    ];
+  };
 
   networking.hostName = "nas";
 
@@ -28,20 +54,41 @@
   sops.defaultSopsFile = ./secrets.yaml;
 
   systemd = {
-    services.sync = {
-      path = [ pkgs.rclone ];
-      serviceConfig = {
-        ExecStart = "/root/sync.sh";
-        Type = "oneshot";
+    services = {
+      sync = {
+        after = [ "youtube.service" ];
+        path = [ pkgs.rclone ];
+        serviceConfig = {
+          ExecStart = "/root/sync.sh";
+          Type = "oneshot";
+        };
+      };
+      youtube = {
+        before = [ "sync.service" ];
+        path = [ pkgs.yt-dlp ];
+        serviceConfig = {
+          ExecStart = "/root/youtube.sh";
+          Type = "oneshot";
+        };
       };
     };
-    timers.sync = {
-      timerConfig = {
-        OnCalendar = "daily";
-        Persistent = true;
-        RandomizedDelaySec = "1h";
+    timers = {
+      sync = {
+        timerConfig = {
+          Persistent = true;
+          OnCalendar = "daily";
+          RandomizedDelaySec = "1h";
+        };
+        wantedBy = [ "timers.target" ];
       };
-      wantedBy = [ "timers.target" ];
+      youtube = {
+        timerConfig = {
+          Persistent = true;
+          OnCalendar = "daily";
+          RandomizedDelaySec = "1h";
+        };
+        wantedBy = [ "timers.target" ];
+      };
     };
   };
 }
