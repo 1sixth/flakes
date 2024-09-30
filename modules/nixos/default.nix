@@ -4,8 +4,8 @@
     server = import ./prometheus/server.nix;
   };
   proxy = {
-    client = import ./proxy/client.nix;
-    server = import ./proxy/server.nix;
+    client = import ./proxy/client;
+    server = import ./proxy/server;
   };
 
   base = import ./base;
