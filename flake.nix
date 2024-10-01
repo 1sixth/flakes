@@ -60,10 +60,16 @@
             nodeSpecialArgs = builtins.mapAttrs (_: v: v._module.specialArgs) self.nixosConfigurations;
           };
         }
-        // builtins.mapAttrs (_: v: {
-          imports = v._module.args.modules;
-          nixpkgs.system = v.config.nixpkgs.system;
-        }) (nixpkgs.lib.filterAttrs (n: _: !nixpkgs.lib.hasPrefix "laptop" n) self.nixosConfigurations);
+        // builtins.mapAttrs
+          (_: v: {
+            imports = v._module.args.modules;
+            nixpkgs.system = v.config.nixpkgs.system;
+          })
+          (
+            nixpkgs.lib.filterAttrs (
+              _: v: (builtins.elem "server" v.config.deployment.tags)
+            ) self.nixosConfigurations
+          );
 
       nixosConfigurations = {
         laptop0 = import ./nixos/laptop0 {
