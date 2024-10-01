@@ -10,8 +10,6 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
 
-  deployment.tags = [ "laptop" ];
-
   environment = {
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
     localBinInPath = true;
