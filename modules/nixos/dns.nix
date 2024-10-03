@@ -59,7 +59,7 @@ in
   environment.etc."resolv.conf".text = ''
     nameserver 127.0.0.1
     options edns0 trust-ad
-    search .
+    search tail5e6002.ts.net
   '';
 
   services = {
