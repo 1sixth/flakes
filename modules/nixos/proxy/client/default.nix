@@ -25,6 +25,14 @@
       restartUnits = [ "sing-box.service" ];
       sopsFile = ./secrets.yaml;
     };
+    "route_head.json" = {
+      restartUnits = [ "sing-box.service" ];
+      sopsFile = ./secrets.yaml;
+    };
+    "route_tail.json" = {
+      restartUnits = [ "sing-box.service" ];
+      sopsFile = ./secrets.yaml;
+    };
     "sing-box.json".restartUnits = [ "sing-box.service" ];
   };
 
@@ -41,11 +49,13 @@
           "${pkgs.sing-box}/bin/sing-box -C $CREDENTIALS_DIRECTORY run"
         ];
         LoadCredential = [
-          "dns.json:${config.sops.secrets."dns.json".path}"
-          "inbounds.json:${config.sops.secrets."inbounds.json".path}"
-          "misc.json:${config.sops.secrets."misc.json".path}"
-          "outbounds.json:${config.sops.secrets."outbounds.json".path}"
-          "sing-box.json:${config.sops.secrets."sing-box.json".path}"
+          "00-dns.json:${config.sops.secrets."dns.json".path}"
+          "01-inbounds.json:${config.sops.secrets."inbounds.json".path}"
+          "02-misc.json:${config.sops.secrets."misc.json".path}"
+          "03-outbounds.json:${config.sops.secrets."outbounds.json".path}"
+          "04-route_head.json:${config.sops.secrets."route_head.json".path}"
+          "05-sing-box.json:${config.sops.secrets."sing-box.json".path}"
+          "06-route_tail.json:${config.sops.secrets."route_tail.json".path}"
         ];
         StateDirectory = "sing-box";
         WorkingDirectory = "/var/lib/sing-box";
