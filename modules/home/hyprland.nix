@@ -103,7 +103,10 @@
         accel_profile = "flat";
         numlock_by_default = true;
       };
-      misc.vrr = 2;
+      misc = {
+        focus_on_activate = true;
+        vrr = 2;
+      };
       monitor = [
         "eDP-1,preferred,auto,auto"
         # TODO: replace with kanshi or shikane
