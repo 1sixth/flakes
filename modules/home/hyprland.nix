@@ -103,16 +103,14 @@
         accel_profile = "flat";
         numlock_by_default = true;
       };
-      misc = {
-        focus_on_activate = true;
-        vrr = 2;
-      };
+      misc.vrr = 2;
       monitor = [
         "eDP-1,preferred,auto,auto"
         # TODO: replace with kanshi or shikane
         "desc:Shenzhen KTC Technology Group H27T22S 0x00000001,2560x1440@144,auto-left,1.6"
       ];
       windowrulev2 = [
+        "focusonactivate, class: mpv"
         "workspace 1 silent, class: codium-url-handler"
         "workspace 2 silent, class: firefox"
         "workspace 3 silent, class: imv"
