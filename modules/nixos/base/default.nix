@@ -136,7 +136,6 @@
   };
 
   services = {
-    fstrim.enable = true;
     journald.extraConfig = "SystemMaxUse=1G";
     tailscale = {
       authKeyFile = config.sops.secrets.tailscale_key.path;
