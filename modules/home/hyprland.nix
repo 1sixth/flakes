@@ -87,7 +87,6 @@
       cursor.no_hardware_cursors = true;
       dwindle = {
         force_split = 2;
-        no_gaps_when_only = 1;
         preserve_split = true;
       };
       exec-once = [
@@ -110,14 +109,15 @@
         "desc:Shenzhen KTC Technology Group H27T22S 0x00000001,2560x1440@144,auto-left,1.6"
       ];
       windowrulev2 = [
-        "focusonactivate, class: mpv"
-        "workspace 1 silent, class: codium-url-handler"
-        "workspace 2 silent, class: firefox"
-        "workspace 3 silent, class: imv"
-        "workspace 3 silent, class: mpv"
-        "workspace 3 silent, class: org.kde.okular"
-        "workspace 4 silent, class: thunderbird"
+        "focusonactivate, class:mpv"
+        "workspace 1 silent, class:codium-url-handler"
+        "workspace 2 silent, class:firefox"
+        "workspace 3 silent, class:imv"
+        "workspace 3 silent, class:mpv"
+        "workspace 3 silent, class:org.kde.okular"
+        "workspace 4 silent, class:thunderbird"
       ];
+      workspace = "w[t1], gapsout:0, border:0";
       xwayland.force_zero_scaling = true;
     };
   };
