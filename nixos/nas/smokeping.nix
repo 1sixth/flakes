@@ -85,6 +85,15 @@
         title = Luxembourg
         host = speedtest.lu.buyvm.net
 
+        + GreenCloud
+        menu = GreenCloud
+        title = GreenCloud
+
+        ++ Tokyo_SoftBank
+        menu = Tokyo (SoftBank)
+        title = Tokyo (SoftBank)
+        host = 103.201.131.131
+
         + Hetzner
         menu = Hetzner
         title = Hetzner
@@ -127,60 +136,6 @@
         menu = Dronten
         title = drn
         host = lg-drn.liteserver.nl
-
-        + Oracle_Cloud
-        menu = Oracle Cloud
-        title = Oracle Cloud
-
-        ++ chuncheon
-        menu = Chuncheon
-        title = Chuncheon
-        host = objectstorage.ap-chuncheon-1.oraclecloud.com
-
-        ++ osaka
-        menu = Osaka
-        title = Osaka
-        host = objectstorage.ap-osaka-1.oraclecloud.com
-
-        ++ seoul
-        menu = Seoul
-        title = Seoul
-        host = objectstorage.ap-seoul-1.oraclecloud.com
-
-        ++ singapore-1
-        menu = Singapore-1
-        title = Singapore-1
-        host = objectstorage.ap-singapore-1.oraclecloud.com
-
-        ++ singapore-2
-        menu = Singapore-2
-        title = Singapore-2
-        host = objectstorage.ap-singapore-2.oraclecloud.com
-
-        ++ tokyo
-        menu = Tokyo
-        title = Tokyo
-        host = objectstorage.ap-tokyo-1.oraclecloud.com
-
-        ++ frankfurt
-        menu = Frankfurt
-        title = Frankfurt
-        host = objectstorage.eu-frankfurt-1.oraclecloud.com
-
-        ++ chicago
-        menu = Chicago
-        title = Chicago
-        host = objectstorage.us-chicago-1.oraclecloud.com
-
-        ++ phoenix
-        menu = Phoenix
-        title = Phoenix
-        host = objectstorage.us-phoenix-1.oraclecloud.com
-
-        ++ sanjose
-        menu = San Jose
-        title = San Jose
-        host = objectstorage.us-sanjose-1.oraclecloud.com
 
         + RackNerd
         menu = RackNerd
