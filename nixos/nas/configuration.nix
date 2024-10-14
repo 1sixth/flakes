@@ -60,14 +60,18 @@
         path = [ pkgs.rclone ];
         serviceConfig = {
           ExecStart = "/root/sync.sh";
+          Restart = "on-failure";
           Type = "oneshot";
         };
+        unitConfig.StartLimitIntervalSec = "1h";
       };
       youtube = {
         before = [ "sync.service" ];
         path = [ pkgs.yt-dlp ];
         serviceConfig = {
           ExecStart = "/root/youtube.sh";
+          # Failure to download YouTube Premiere yields an exit code of 1.
+          SuccessExitStatus = "1";
           Type = "oneshot";
         };
       };
