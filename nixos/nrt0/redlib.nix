@@ -18,30 +18,7 @@
   };
 
   services = {
-    redlib = {
-      enable = true;
-      # To be removed in the next version.
-      package = pkgs.redlib.overrideAttrs (old: rec {
-        src = pkgs.fetchFromGitHub {
-          owner = "redlib-org";
-          repo = "redlib";
-          rev = "8d0ed4682e4766202184532772d328754dd18749";
-          hash = "sha256-TzXsxRd66hWcQ3AsCW2SihO2W5JFSXdHuKcJ7opDKEI=";
-        };
-        cargoDeps = old.cargoDeps.overrideAttrs {
-          inherit src;
-          outputHash = "sha256-P7usc4JsKaYoM0XgGuL488reszV7vbrxV0TRGhN13Nw=";
-        };
-        checkFlags =
-          [ old.checkFlags or [ ] ]
-          ++ [
-            "--skip=test_oauth_headers_len"
-            "--skip=test_private_sub"
-            "--skip=test_banned_sub"
-            "--skip=test_gated_sub"
-          ];
-      });
-    };
+    redlib.enable = true;
     traefik = {
       dynamicConfigOptions.http = {
         routers.redlib = {
