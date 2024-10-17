@@ -18,6 +18,7 @@ in
       "sr_mod"
       "uhci_hcd"
     ];
+    kernelModules = [ "kvm-amd" ];
     loader.grub.device = "/dev/vda";
   };
 
