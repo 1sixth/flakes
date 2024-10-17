@@ -85,6 +85,35 @@
         title = Luxembourg
         host = speedtest.lu.buyvm.net
 
+        + Earth
+        menu = Earth
+        title = Earth
+
+        ++ lax0
+        menu = lax0
+        title = lax0
+        host  = lax0.9875321.xyz
+
+        ++ nrt0
+        menu = nrt0
+        title = nrt0
+        host  = nrt0.9875321.xyz
+
+        ++ nrt1
+        menu = nrt1
+        title = nrt1
+        host  = nrt1.9875321.xyz
+
+        ++ nrt2
+        menu = nrt2
+        title = nrt2
+        host  = nrt2.9875321.xyz
+
+        ++ sxb0
+        menu = sxb0
+        title = sxb0
+        host  = sxb0.9875321.xyz
+
         + GreenCloud
         menu = GreenCloud
         title = GreenCloud
@@ -127,15 +156,6 @@
         menu = ash
         title = ash
         host = ash-speed.hetzner.com
-
-        + LiteServer
-        menu = LiteServer
-        title = LiteServer
-
-        ++ Dronten
-        menu = Dronten
-        title = drn
-        host = lg-drn.liteserver.nl
 
         + RackNerd
         menu = RackNerd
