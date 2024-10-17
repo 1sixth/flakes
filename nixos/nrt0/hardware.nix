@@ -13,16 +13,12 @@ in
 
   boot = {
     initrd.availableKernelModules = [
-      "xhci_pci"
-      "usbhid"
+      "ahci"
+      "ata_piix"
+      "sr_mod"
+      "uhci_hcd"
     ];
-    loader = {
-      grub.enable = false;
-      systemd-boot = {
-        editor = false;
-        enable = true;
-      };
-    };
+    loader.grub.device = "/dev/vda";
   };
 
   fileSystems = {
@@ -34,19 +30,27 @@ in
       ];
     };
     "/boot" = {
-      device = "/dev/sda1";
-      fsType = "vfat";
+      device = "/dev/vda2";
+      fsType = "btrfs";
+      options = mountOptions ++ [ "subvol=/@boot" ];
     };
     "/nix" = {
-      device = "/dev/sda2";
+      device = "/dev/vda2";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@nix" ];
     };
     "/persistent" = {
-      device = "/dev/sda2";
+      device = "/dev/vda2";
       fsType = "btrfs";
       neededForBoot = true;
       options = mountOptions ++ [ "subvol=/@persistent" ];
     };
   };
+
+  swapDevices = [
+    {
+      device = "/persistent/swapfile";
+      size = 4096;
+    }
+  ];
 }

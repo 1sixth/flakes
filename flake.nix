@@ -76,7 +76,7 @@
           inherit self nixpkgs inputs;
         };
         nrt0 = import ./nixos/nrt0 {
-          system = "aarch64-linux";
+          system = "x86_64-linux";
           inherit self nixpkgs inputs;
         };
         nrt1 = import ./nixos/nrt1 {
@@ -84,7 +84,7 @@
           inherit self nixpkgs inputs;
         };
         nrt2 = import ./nixos/nrt2 {
-          system = "x86_64-linux";
+          system = "aarch64-linux";
           inherit self nixpkgs inputs;
         };
         sha0 = import ./nixos/sha0 {
