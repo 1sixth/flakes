@@ -43,6 +43,7 @@
       ".local/state/mpv/watch_later"
       ".local/state/nvim"
       ".local/state/wireplumber"
+      ".minikube"
       ".mozilla"
       ".ssh"
       ".thunderbird"
