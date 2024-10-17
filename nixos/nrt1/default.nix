@@ -15,7 +15,6 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.dns
     self.nixosModules.hath
     self.nixosModules.prometheus.client
-    self.nixosModules.prometheus.server
     self.nixosModules.proxy.server
     self.nixosModules.server
     self.nixosModules.stress-ng

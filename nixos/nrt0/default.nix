@@ -14,6 +14,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.base
     self.nixosModules.dns
     self.nixosModules.prometheus.client
+    self.nixosModules.prometheus.server
     self.nixosModules.proxy.server
     self.nixosModules.server
     self.nixosModules.traefik
