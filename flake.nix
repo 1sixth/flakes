@@ -18,10 +18,6 @@
       url = "github:hyprwm/Hyprland";
     };
     impermanence.url = "github:nix-community/impermanence";
-    lix-module = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "git+https://git.lix.systems/lix-project/nixos-module";
-    };
     nix-index-database = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/nix-index-database";
@@ -42,15 +38,6 @@
 
   outputs =
     inputs@{ nixpkgs, self, ... }:
-
-    let
-      supportedSystems = [
-        "aarch64-linux"
-        "x86_64-linux"
-      ];
-
-      forEachSupportedSystem = nixpkgs.lib.genAttrs supportedSystems;
-    in
 
     {
       colmena =
@@ -109,29 +96,6 @@
           inherit self nixpkgs inputs;
         };
       };
-
-      devShells = forEachSupportedSystem (
-        system:
-
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [
-              inputs.colmena.overlays.default
-              inputs.lix-module.overlays.default
-            ];
-          };
-        in
-
-        {
-          default = pkgs.mkShell {
-            packages = with pkgs; [
-              colmena
-              sops
-            ];
-          };
-        }
-      );
 
       homeModules = import ./modules/home;
 

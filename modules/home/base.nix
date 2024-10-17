@@ -33,6 +33,7 @@
 
       # CLI
       brightnessctl
+      colmena
       dmlive
       hyperfine
       kind
@@ -41,6 +42,7 @@
       nix-index-with-db
       nix-tree
       rename
+      sops
       tealdeer
       tokei
       translate-shell
