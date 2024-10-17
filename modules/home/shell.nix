@@ -7,7 +7,7 @@
       colmena.body = ''
         switch $argv[1]
             case apply build
-                command colmena $argv --evaluator streaming --keep-result
+                command colmena $argv --keep-result
             case "*"
                 command colmena $argv
         end
