@@ -158,7 +158,7 @@
 
   system.stateVersion = "24.11";
 
-  systemd.network.networks.default.DHCP = "yes";
+  systemd.network.networks.default.DHCP = lib.mkDefault "yes";
 
   time.timeZone = "Asia/Shanghai";
 
