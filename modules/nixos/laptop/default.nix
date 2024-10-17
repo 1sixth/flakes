@@ -50,7 +50,6 @@
       "Develop"
       "Download"
     ];
-    sessionVariables.QT_IM_MODULE = "fcitx";
   };
 
   fonts = {
