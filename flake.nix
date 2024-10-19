@@ -7,7 +7,7 @@
         nixpkgs.follows = "nixpkgs";
         stable.follows = "nixpkgs";
       };
-      url = "github:zhaofengli/colmena";
+      url = "github:zhaofengli/colmena/direct-flake-eval";
     };
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,6 +57,8 @@
               _: v: (builtins.elem "server" v.config.deployment.tags)
             ) self.nixosConfigurations
           );
+
+      colmenaHive = inputs.colmena.lib.makeHive self.outputs.colmena;
 
       nixosConfigurations = {
         laptop0 = import ./nixos/laptop0 {

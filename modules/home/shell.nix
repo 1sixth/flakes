@@ -7,7 +7,7 @@
       colmena.body = ''
         switch $argv[1]
             case apply build
-                command colmena $argv --keep-result
+                command colmena $argv --experimental-flake-eval --keep-result
             case "*"
                 command colmena $argv
         end
