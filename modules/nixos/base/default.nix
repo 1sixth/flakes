@@ -63,6 +63,7 @@
 
   networking = {
     firewall.enable = false;
+    nftables.enable = true;
     useDHCP = false;
     useNetworkd = true;
   };
@@ -154,7 +155,10 @@
 
   system.stateVersion = "24.11";
 
-  systemd.network.networks.default.DHCP = lib.mkDefault "yes";
+  systemd = {
+    network.networks.default.DHCP = lib.mkDefault "yes";
+    services.tailscaled.environment.TS_DEBUG_FIREWALL_MODE = "auto";
+  };
 
   time.timeZone = "Asia/Shanghai";
 
