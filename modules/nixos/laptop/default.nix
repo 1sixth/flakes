@@ -51,6 +51,15 @@
       "Download"
     ];
     sessionVariables.QT_IM_MODULE = "fcitx";
+    # https://codereview.qt-project.org/c/qt/qtbase/+/597856
+    variables.QT_PLUGIN_PATH =
+      let
+        fcitx5Workaround = pkgs.runCommand "fcitx5-workaround" { } ''
+          plugins="${config.i18n.inputMethod.package}/${pkgs.qt6.qtbase.qtPluginPrefix}"
+          cp -r --dereference "$plugins" $out
+        '';
+      in
+      [ "${fcitx5Workaround}" ];
   };
 
   fonts = {
