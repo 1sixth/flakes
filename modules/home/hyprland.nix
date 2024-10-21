@@ -118,7 +118,12 @@
         "workspace 3 silent, class:org.kde.okular"
         "workspace 4 silent, class:thunderbird"
       ];
-      workspace = "w[t1], gapsout:0, border:0";
+      workspace = [
+        "1, monitor:eDP-1"
+        "2, monitor:HDMI-A-1"
+        "3, monitor:eDP-1"
+        "w[t1], gapsout:0, border:0"
+      ];
       xwayland.force_zero_scaling = true;
     };
   };
