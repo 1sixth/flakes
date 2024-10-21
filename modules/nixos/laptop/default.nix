@@ -22,7 +22,6 @@
       ".config/fcitx5"
       ".config/htop"
       ".config/nali"
-      ".config/obsidian"
       ".config/rclone"
       ".config/sops"
       ".config/syncthing"

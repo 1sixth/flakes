@@ -27,7 +27,6 @@
       rustfmt
 
       # GUI
-      obsidian
       okular
       telegram-desktop
 
