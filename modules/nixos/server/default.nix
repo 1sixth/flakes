@@ -59,7 +59,10 @@
   security.sudo.enable = false;
 
   services = {
-    fail2ban.enable = true;
+    fail2ban = {
+      bantime = "1d";
+      enable = true;
+    };
     openssh = {
       enable = true;
       hostKeys = [
