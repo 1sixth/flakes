@@ -106,6 +106,7 @@
       monitor = [
         "eDP-1,preferred,auto,auto"
         # TODO: replace with kanshi or shikane
+        "desc:HP Inc. HP Z24f G3 CN44040321,preferred,auto-up,auto"
         "desc:Shenzhen KTC Technology Group H27T22S 0x00000001,2560x1440@144,auto-left,1.6"
       ];
       windowrulev2 = [
