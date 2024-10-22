@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 let
 
@@ -70,7 +70,9 @@ in
         bind = "127.0.0.1:53";
         bind-tcp = "127.0.0.1:53";
         cache-persist = false;
-        cname = [ "/nas.9875321.xyz/nas.tail5e6002.ts.net" ];
+        cname = lib.mkIf (config.networking.hostName != "nas") [
+          "/nas.9875321.xyz/nas.tail5e6002.ts.net"
+        ];
         log-syslog = true;
         nameserver = [ "/tail5e6002.ts.net/magicdns" ];
         no-daemon = true;
