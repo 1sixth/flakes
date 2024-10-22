@@ -16,6 +16,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.prometheus.client
     self.nixosModules.proxy.server
     self.nixosModules.server
+    self.nixosModules.syncthing
     self.nixosModules.traefik
     ./configuration.nix
   ];
