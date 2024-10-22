@@ -22,6 +22,7 @@
         redhat.vscode-yaml
         tamasfe.even-better-toml
         vscodevim.vim
+        yzhang.markdown-all-in-one
       ]);
     mutableExtensionsDir = false;
     package = pkgs.vscodium.override {
