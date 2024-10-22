@@ -23,7 +23,11 @@
           ""
           "${pkgs.sing-box}/bin/sing-box -C $CREDENTIALS_DIRECTORY run"
         ];
-        LoadCredential = [ "config.json:${config.sops.secrets."sing-box.json".path}" ];
+        LoadCredential = [
+          "9875321.xyz.crt:${config.security.acme.certs."9875321.xyz".directory}/cert.pem"
+          "9875321.xyz.key:${config.security.acme.certs."9875321.xyz".directory}/key.pem"
+          "config.json:${config.sops.secrets."sing-box.json".path}"
+        ];
         StateDirectory = "sing-box";
         WorkingDirectory = "/var/lib/sing-box";
       };
