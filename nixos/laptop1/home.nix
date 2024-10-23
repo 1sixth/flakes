@@ -30,7 +30,7 @@
   xdg.desktopEntries.idea-community = {
     exec = builtins.toString (
       pkgs.writeShellScript "idea-community" ''
-        idea-community -Dsun.java2d.uiScale=2
+        idea-community -Dawt.toolkit.name=WLToolkit
       ''
     );
     icon = "idea-community";
