@@ -55,21 +55,21 @@
 
   systemd = {
     services = {
-      sync = {
-        after = [ "youtube.service" ];
+      rclone = {
+        after = [ "yt-dlp.service" ];
         path = [ pkgs.rclone ];
         serviceConfig = {
-          ExecStart = "/root/sync.sh";
+          ExecStart = "/root/rclone.sh";
           Restart = "on-failure";
           Type = "oneshot";
         };
         unitConfig.StartLimitIntervalSec = "1h";
       };
-      youtube = {
-        before = [ "sync.service" ];
+      yt-dlp = {
+        before = [ "rclone.service" ];
         path = [ pkgs.yt-dlp ];
         serviceConfig = {
-          ExecStart = "/root/youtube.sh";
+          ExecStart = "/root/yt-dlp.sh";
           # Failure to download YouTube Premiere yields an exit code of 1.
           SuccessExitStatus = "1";
           Type = "oneshot";
@@ -77,7 +77,7 @@
       };
     };
     timers = {
-      sync = {
+      rclone = {
         timerConfig = {
           Persistent = true;
           OnCalendar = "daily";
@@ -85,7 +85,7 @@
         };
         wantedBy = [ "timers.target" ];
       };
-      youtube = {
+      yt-dlp = {
         timerConfig = {
           Persistent = true;
           OnCalendar = "daily";
