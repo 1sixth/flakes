@@ -106,7 +106,7 @@
       monitor = [
         "eDP-1,preferred,auto,auto"
         # TODO: replace with kanshi or shikane
-        "desc:HP Inc. HP Z24f G3 CN44040321,preferred,auto-up,auto"
+        "desc:HP Inc. HP Z24f G3 CN44040321,preferred,auto-left,auto"
         "desc:Shenzhen KTC Technology Group H27T22S 0x00000001,2560x1440@144,auto-left,1.6"
       ];
       windowrulev2 = [
@@ -119,9 +119,6 @@
         "workspace 4 silent, class:thunderbird"
       ];
       workspace = [
-        "1, monitor:eDP-1"
-        "2, monitor:HDMI-A-1"
-        "3, monitor:eDP-1"
         "w[t1], gapsout:0, border:0"
       ];
       xwayland.force_zero_scaling = true;
