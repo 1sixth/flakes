@@ -19,6 +19,7 @@
       ".cache/go-build"
       ".cache/nix"
       ".cache/tealdeer"
+      ".config/chromium"
       ".config/fcitx5"
       ".config/htop"
       ".config/nali"
