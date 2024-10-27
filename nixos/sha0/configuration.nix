@@ -9,8 +9,6 @@
 
   networking.hostName = "sha0";
 
-  services.pykms.enable = true;
-
   sops.defaultSopsFile = ./secrets.yaml;
 
   virtualisation.docker = {
