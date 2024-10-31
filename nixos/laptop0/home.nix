@@ -1,13 +1,7 @@
-{ pkgs, self, ... }:
+{ self, ... }:
 
 {
   imports = builtins.attrValues self.homeModules;
-
-  home.packages = with pkgs; [
-    # GUI
-    mumble
-    prismlauncher
-  ];
 
   wayland.windowManager.hyprland.settings.device = [
     {
