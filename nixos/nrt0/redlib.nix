@@ -25,12 +25,12 @@
         src = pkgs.fetchFromGitHub {
           owner = "redlib-org";
           repo = "redlib";
-          rev = "8d0ed4682e4766202184532772d328754dd18749";
-          hash = "sha256-TzXsxRd66hWcQ3AsCW2SihO2W5JFSXdHuKcJ7opDKEI=";
+          rev = "d17d097b12b227f2e783a05cbd1e37c80f9ebe0b";
+          hash = "sha256-MT1FtRszFQuUMGaM4t0Zw+xOeMnK+kvG69SdyAbFB0A=";
         };
         cargoDeps = old.cargoDeps.overrideAttrs {
           inherit src;
-          outputHash = "sha256-P7usc4JsKaYoM0XgGuL488reszV7vbrxV0TRGhN13Nw=";
+          outputHash = "sha256-SCsxVu3n0/w6y1EYUiDgweDMEJLYEy5HOfIp70dqynM=";
         };
         checkFlags =
           [ old.checkFlags or [ ] ]
