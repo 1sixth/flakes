@@ -32,45 +32,6 @@
         menu = Top
         title = Network Latency Grapher
 
-        + AWS
-        menu = AWS
-        title = AWS
-
-        ++ ap-northeast-1
-        menu = Tokyo
-        title = ap-northeast-1
-        host = 3.112.0.0
-
-        ++ ap-northeast-2
-        menu = Seoul
-        title = ap-northeast-2
-        host = 3.34.0.0
-
-        ++ ap-southeast-1
-        menu = Singapore
-        title = ap-southeast-1
-        host = 3.0.0.9
-
-        ++ eu-central-1
-        menu = Frankfurt
-        title = eu-central-1
-        host = 3.64.0.0
-
-        ++ eu-west-2
-        menu = London
-        title = eu-west-2
-        host = 3.8.0.0
-
-        ++ eu-west-3
-        menu = Paris
-        title = eu-west-3
-        host = 13.36.0.0
-
-        ++ us-west-2
-        menu = Oregon
-        title = us-west-2
-        host = 18.236.0.0
-
         + BuyVM
         menu = BuyVM
         title = BuyVM
@@ -156,6 +117,24 @@
         menu = ash
         title = ash
         host = ash-speed.hetzner.com
+
+        + HostSlick
+        menu = HostSlick
+        title = HostSlick
+
+        ++ Netherlands
+        menu = Netherlands
+        title = Netherlands
+        host = 193.142.146.46
+
+        + LiteServer
+        menu = LiteServer
+        title = LiteServer
+
+        ++ Netherlands
+        menu = Netherlands
+        title = Netherlands
+        host = lg-drn.liteserver.nl
 
         + RackNerd
         menu = RackNerd
