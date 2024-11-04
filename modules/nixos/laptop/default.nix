@@ -14,6 +14,7 @@
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
     localBinInPath = true;
     persistence."/persistent/impermanence".users.one6th.directories = [
+      ".cache/fuzzel"
       ".cache/go"
       ".cache/go-build"
       ".cache/JetBrains"

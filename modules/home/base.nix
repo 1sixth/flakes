@@ -82,6 +82,7 @@
     fuzzel = {
       enable = true;
       settings.main = {
+        cache = "${config.xdg.cacheHome}/fuzzel/history";
         fields = "name";
         font = "monospace:size=20";
         fuzzy = "no";
