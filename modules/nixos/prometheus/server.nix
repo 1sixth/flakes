@@ -37,7 +37,7 @@
       enable = true;
       listenAddress = "127.0.0.1";
       port = 9090;
-      retentionTime = "7d";
+      retentionTime = "30d";
       rules = [
         (builtins.toJSON {
           groups = [
@@ -46,23 +46,38 @@
               rules = [
                 {
                   alert = "BtrfsDeviceError";
-                  annotations.summary = "{{ $labels.instance }} has {{ $value }} btrfs device errors. Good luck.";
                   expr = ''node_btrfs_device_errors_total > 0'';
                 }
                 {
-                  alert = "Diskis90%Full";
-                  annotations.summary = "{{ $labels.mountpoint }} of {{ $labels.instance }} is 90% full.";
+                  alert = "Disk90%Full";
                   expr = ''(node_filesystem_avail_bytes{mountpoint=~"/boot|/persistent"}  / node_filesystem_size_bytes{mountpoint=~"/boot|/persistent"}) < 0.1'';
                 }
                 {
+                  alert = "NodeLoad5";
+                  expr = ''node_load5 / count(node_cpu_seconds_total{mode="idle"}) without (cpu,mode) > 0.9'';
+                  for = "2m";
+                }
+                {
+                  alert = "NodeLoad10";
+                  expr = ''node_load10 / count(node_cpu_seconds_total{mode="idle"}) without (cpu,mode) > 0.9'';
+                  for = "2m";
+                }
+                {
+                  alert = "NodeLoad15";
+                  expr = ''node_load15 / count(node_cpu_seconds_total{mode="idle"}) without (cpu,mode) > 0.9'';
+                  for = "2m";
+                }
+                {
                   alert = "NodeDown";
-                  annotations.summary = "{{ $labels.instance }} has been down for more than 5 minutes.";
                   expr = ''up == 0'';
                   for = "5m";
                 }
                 {
+                  alert = "Ram90%Full";
+                  expr = ''node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes < 0.1'';
+                }
+                {
                   alert = "UnitFailed";
-                  annotations.summary = "{{ $labels.instance }} has {{ $value }} failed systemd units.";
                   expr = ''node_systemd_unit_state{state="failed"} > 0'';
                 }
               ];
