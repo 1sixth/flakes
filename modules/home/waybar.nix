@@ -89,6 +89,8 @@
           format-muted = "󰸈";
           ignored-sinks = [ "Easy Effects Sink" ];
           on-click = "${config.services.avizo.package}/bin/volumectl toggle-mute";
+          on-scroll-down = "${config.services.avizo.package}/bin/volumectl down";
+          on-scroll-up = "${config.services.avizo.package}/bin/volumectl up";
           scroll-step = 5;
         };
         spacing = 10;
