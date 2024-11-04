@@ -7,6 +7,16 @@
   fonts.fontconfig.enable = false;
 
   home = {
+    file.cargo = {
+      target = "${config.xdg.dataHome}/cargo/config.toml";
+      text = ''
+        [source.crates-io]
+        replace-with = 'mirror'
+
+        [source.mirror]
+        registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
+      '';
+    };
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
       # C/C++
@@ -21,12 +31,10 @@
       gotools
 
       # Rust
-      cargo
-      clippy
-      rustc
-      rustfmt
+      rustup
 
       # GUI
+      jetbrains.rust-rover
       okular
       telegram-desktop
 
@@ -53,7 +61,10 @@
       bluetuith
       impala
     ];
-    sessionVariables.CARGO_HOME = "${config.xdg.cacheHome}/cargo";
+    sessionVariables = {
+      CARGO_HOME = "${config.xdg.dataHome}/cargo";
+      RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
+    };
     stateVersion = "24.11";
     username = "one6th";
   };
