@@ -46,6 +46,20 @@
         title = Luxembourg
         host = speedtest.lu.buyvm.net
 
+        + ClawCloud
+        menu = ClawCloud
+        title = ClawCloud
+
+        ++ Hong_Kong
+        menu = Hong Kong
+        title = Hong Kong
+        host = lg.cn-hongkong.claw.cloud
+
+        ++ Singapore
+        menu = Singapore
+        title = Singapore
+        host = lg.ap-southeast-1.claw.cloud
+
         + Earth
         menu = Earth
         title = Earth
