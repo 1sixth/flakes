@@ -2,7 +2,6 @@
 
 {
   nixpkgs.overlays = [
-    inputs.hyprland.overlays.default
     (final: prev: {
       inherit (inputs.colmena.packages.${prev.system}) colmena;
       inherit (inputs.nix-index-database.packages.${prev.system}) nix-index-with-db;
