@@ -11,7 +11,6 @@
       ".jdks/jdk21".source = "${pkgs.jdk21}/lib/openjdk";
     };
     packages = with pkgs; [
-      gradle
       maven
 
       jetbrains.idea-community
