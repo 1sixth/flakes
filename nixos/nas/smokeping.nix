@@ -132,24 +132,6 @@
         title = ash
         host = ash-speed.hetzner.com
 
-        + HostSlick
-        menu = HostSlick
-        title = HostSlick
-
-        ++ Netherlands
-        menu = Netherlands
-        title = Netherlands
-        host = 193.142.146.46
-
-        + LiteServer
-        menu = LiteServer
-        title = LiteServer
-
-        ++ Netherlands
-        menu = Netherlands
-        title = Netherlands
-        host = lg-drn.liteserver.nl
-
         + RackNerd
         menu = RackNerd
         title = RackNerd
