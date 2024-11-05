@@ -72,7 +72,12 @@
   programs = {
     atuin = {
       enable = true;
-      settings.update_check = false;
+      settings = {
+        enter_accept = true;
+        sync.records = true;
+        sync_frequency = "5m";
+        update_check = false;
+      };
     };
     bash = {
       enable = true;
