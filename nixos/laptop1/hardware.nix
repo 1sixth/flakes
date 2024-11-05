@@ -37,16 +37,16 @@ in
       ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/5F42-43F9";
+      device = "/dev/disk/by-uuid/6860-8E52";
       fsType = "vfat";
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/08f29cd1-d8d6-43cc-80a5-061ac0359f08";
+      device = "/dev/disk/by-uuid/e6a1f69c-5d3b-4b82-922c-ec698b710e8a";
       fsType = "btrfs";
       options = mountOptions ++ [ "subvol=/@nix" ];
     };
     "/persistent" = {
-      device = "/dev/disk/by-uuid/08f29cd1-d8d6-43cc-80a5-061ac0359f08";
+      device = "/dev/disk/by-uuid/e6a1f69c-5d3b-4b82-922c-ec698b710e8a";
       fsType = "btrfs";
       neededForBoot = true;
       options = mountOptions ++ [ "subvol=/@persistent" ];
