@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   pkgs,
   lib,
   ...
@@ -156,7 +157,17 @@
     secrets.tailscale_key.sopsFile = ./secrets.yaml;
   };
 
-  system.stateVersion = "24.11";
+  system = {
+    # keep all flake inputs
+    extraDependencies =
+      let
+        collectFlakeInputs =
+          input:
+          [ input ] ++ builtins.concatMap collectFlakeInputs (builtins.attrValues (input.inputs or { }));
+      in
+      builtins.concatMap collectFlakeInputs (builtins.attrValues inputs);
+    stateVersion = "24.11";
+  };
 
   systemd = {
     network.networks.default.DHCP = lib.mkDefault "yes";
