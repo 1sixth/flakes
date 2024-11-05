@@ -34,6 +34,7 @@
       ".java"
       ".kube"
       ".local/bin"
+      ".local/share/atuin"
       ".local/share/cargo"
       ".local/share/direnv"
       ".local/share/fcitx5"

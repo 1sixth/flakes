@@ -70,6 +70,10 @@
   };
 
   programs = {
+    atuin = {
+      enable = true;
+      settings.update_check = false;
+    };
     bash = {
       enable = true;
       historyFile = "${config.xdg.stateHome}/bash_history";
