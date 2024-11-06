@@ -89,10 +89,6 @@
         force_split = 2;
         preserve_split = true;
       };
-      exec-once = [
-        "${config.programs.foot.package}/bin/foot"
-        "${config.programs.firefox.finalPackage}/bin/firefox-esr"
-      ];
       general = {
         border_size = 2;
         "col.active_border" = "rgb(00afaf)";
