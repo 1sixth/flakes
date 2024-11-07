@@ -55,17 +55,17 @@
                 {
                   alert = "NodeLoad5";
                   expr = ''node_load5 / count(node_cpu_seconds_total{mode="idle"}) without (cpu,mode) > 0.9'';
-                  for = "2m";
+                  for = "1h";
                 }
                 {
                   alert = "NodeLoad10";
                   expr = ''node_load10 / count(node_cpu_seconds_total{mode="idle"}) without (cpu,mode) > 0.9'';
-                  for = "2m";
+                  for = "1h";
                 }
                 {
                   alert = "NodeLoad15";
                   expr = ''node_load15 / count(node_cpu_seconds_total{mode="idle"}) without (cpu,mode) > 0.9'';
-                  for = "2m";
+                  for = "1h";
                 }
                 {
                   alert = "NodeDown";
@@ -73,7 +73,7 @@
                   for = "5m";
                 }
                 {
-                  alert = "Ram90%Full";
+                  alert = "RAM90%Full";
                   expr = ''node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes < 0.1'';
                 }
                 {
