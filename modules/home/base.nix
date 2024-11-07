@@ -169,7 +169,6 @@
         cookies-from-browser = "firefox";
         embed-chapters = true;
         extractor-args = "youtube:skip=dash,translated_subs";
-        format-sort = "res,vcodec:av01";
         output = "$PWD/%(title)s.%(ext)s";
         remux-video = "mkv";
         sub-langs = "ai-zh,en.*,zh.*";
