@@ -72,10 +72,16 @@
   programs = {
     atuin = {
       enable = true;
+      flags = [
+        "--disable-up-arrow"
+      ];
       settings = {
-        enter_accept = true;
+        history_filter = [
+          "^aria2c"
+          "^curl"
+          "^yazi"
+        ];
         sync.records = true;
-        sync_frequency = "5m";
         update_check = false;
       };
     };
