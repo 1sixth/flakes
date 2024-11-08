@@ -7,7 +7,7 @@
         nixpkgs.follows = "nixpkgs";
         stable.follows = "nixpkgs";
       };
-      url = "github:zhaofengli/colmena/direct-flake-eval";
+      url = "github:zhaofengli/colmena";
     };
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
