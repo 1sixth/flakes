@@ -85,6 +85,7 @@
         "$Mod, mouse:273, resizewindow"
       ];
       cursor.no_hardware_cursors = true;
+      decoration.blur.enabled = false;
       dwindle = {
         force_split = 2;
         preserve_split = true;
