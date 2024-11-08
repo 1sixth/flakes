@@ -44,6 +44,7 @@
       dmlive
       hyperfine
       kubectl
+      kubernetes-helm
       libfaketime
       minikube
       nix-index-with-db
