@@ -158,11 +158,36 @@
       enable = true;
       keymap.manager.prepend_keymap = [
         {
+          desc = "Enter the child directory, or open the file";
+          on = "<Enter>";
+          run = "plugin --sync smart-enter";
+        }
+        {
+          desc = "Enter the child directory, or open the file";
+          on = "<Right>";
+          run = "plugin --sync smart-enter";
+        }
+        {
+          desc = "Enter the child directory, or open the file";
+          on = "l";
+          run = "plugin --sync smart-enter";
+        }
+        {
           desc = "Permanently delete selected files";
           on = "d";
           run = "remove --permanently";
         }
       ];
+      plugins.smart-enter = (
+        pkgs.writeTextDir "init.lua" ''
+          return {
+          	entry = function()
+          		local h = cx.active.current.hovered
+          		ya.manager_emit(h and h.cha.is_dir and "enter" or "open", { hovered = true })
+          	end,
+          }
+        ''
+      );
     };
     yt-dlp = {
       enable = true;
