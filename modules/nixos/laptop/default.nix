@@ -48,7 +48,6 @@
       ".local/share/org.localsend.localsend_app"
       ".local/share/rustup"
       ".local/share/TelegramDesktop"
-      ".local/share/virtualenv"
       ".local/share/zoxide"
       ".local/state/mpv/watch_later"
       ".local/state/nvim"
