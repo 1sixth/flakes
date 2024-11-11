@@ -18,6 +18,10 @@
           on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
           timeout = 300;
         }
+        {
+          on-timeout = "systemctl suspend";
+          timeout = 3600;
+        }
       ];
     };
   };
