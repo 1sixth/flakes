@@ -91,19 +91,19 @@
         preserve_split = true;
       };
       general = {
+        "col.active_border" = "0xff00afaf";
+        "col.inactive_border" = "0xff585858";
         border_size = 2;
-        "col.active_border" = "rgb(00afaf)";
-        "col.inactive_border" = "rgb(585858)";
+        snap.enabled = true;
       };
       input = {
         accel_profile = "flat";
         numlock_by_default = true;
       };
       monitor = [
-        "eDP-1,preferred,auto,auto"
+        "eDP-1,preferred,auto-right,auto"
         # TODO: replace with kanshi or shikane
-        "desc:HP Inc. HP Z24f G3 CN44040321,preferred,auto-left,auto"
-        "desc:Shenzhen KTC Technology Group H27T22S 0x00000001,2560x1440@144,auto-left,1.6"
+        "desc:Shenzhen KTC Technology Group H27T22S 0x00000001,2560x1440@144,auto,1.6"
       ];
       windowrulev2 = [
         "focusonactivate, class:mpv"
