@@ -11,11 +11,24 @@
       ".jdks/jdk21".source = "${pkgs.jdk21}/lib/openjdk";
     };
     packages = with pkgs; [
+      kubectl
+      kubernetes-helm
       maven
+      minikube
 
       jetbrains.idea-community
     ];
   };
+
+  # https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/
+  programs.firefox.policies.Proxy.Passthrough = builtins.concatStringsSep "," [
+    "127.0.0.1"
+    "localhost"
+    "192.168.59.0/24"
+    "192.168.39.0/24"
+    "192.168.49.0/24"
+    "10.96.0.0/12"
+  ];
 
   wayland.windowManager.hyprland.settings.device = [
     {

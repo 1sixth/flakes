@@ -6,12 +6,28 @@
   deployment.tags = [ "china" ];
 
   environment.persistence."/persistent/impermanence".users.one6th.directories = [
+    ".cache/helm"
+    ".config/helm"
+    ".local/share/helm"
+    ".kube"
     ".m2"
+    ".minikube"
   ];
 
   home-manager.users.one6th = import ./home.nix;
 
-  networking.hostName = "laptop1";
+  networking = {
+    hostName = "laptop1";
+    # https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/
+    proxy.noProxy = builtins.concatStringsSep "," [
+      "127.0.0.1"
+      "localhost"
+      "192.168.59.0/24"
+      "192.168.39.0/24"
+      "192.168.49.0/24"
+      "10.96.0.0/12"
+    ];
+  };
 
   services = {
     logind = {
