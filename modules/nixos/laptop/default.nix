@@ -21,6 +21,7 @@
       ".cache/nix"
       ".cache/tealdeer"
       ".config/chromium"
+      ".config/dconf"
       ".config/fcitx5"
       ".config/htop"
       ".config/JetBrains"
