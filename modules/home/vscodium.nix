@@ -20,6 +20,7 @@
         pkief.material-icon-theme
         redhat.vscode-xml
         redhat.vscode-yaml
+        saoudrizwan.claude-dev
         tamasfe.even-better-toml
         vscodevim.vim
         yzhang.markdown-all-in-one
