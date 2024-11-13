@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   services.hypridle = {
@@ -6,7 +6,7 @@
     settings = {
       general = {
         before_sleep_cmd = "loginctl lock-session";
-        lock_cmd = "${pkgs.hyprlock}/bin/hyprlock";
+        lock_cmd = "pidof hyprlock || hyprlock";
       };
       listener = [
         {
@@ -14,8 +14,8 @@
           timeout = 120;
         }
         {
-          on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
-          on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+          on-timeout = "hyprctl dispatch dpms off";
           timeout = 300;
         }
         {
