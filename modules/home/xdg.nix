@@ -13,15 +13,6 @@
         GOPROXY=https://goproxy.cn,direct
       '';
     };
-    desktopEntries.rust-rover = {
-      exec = builtins.toString (
-        pkgs.writeShellScript "rust-rover" ''
-          rust-rover -Dawt.toolkit.name=WLToolkit
-        ''
-      );
-      icon = "rust-rover";
-      name = "RustRover";
-    };
     enable = true;
     mimeApps = {
       defaultApplications = {

@@ -31,10 +31,12 @@
       gotools
 
       # Rust
-      rustup
+      cargo
+      clippy
+      rustc
+      rustfmt
 
       # GUI
-      jetbrains.rust-rover
       papers
       telegram-desktop
 

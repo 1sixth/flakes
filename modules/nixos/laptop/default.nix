@@ -42,7 +42,6 @@
       ".local/share/JetBrains"
       ".local/share/nali"
       ".local/share/org.localsend.localsend_app"
-      ".local/share/rustup"
       ".local/share/TelegramDesktop"
       ".local/share/zoxide"
       ".local/state/mpv/watch_later"

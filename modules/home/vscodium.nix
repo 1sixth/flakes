@@ -6,6 +6,8 @@
     extensions =
       (with pkgs.vscode-extensions; [
         continue.continue
+        rust-lang.rust-analyzer
+        vadimcn.vscode-lldb
       ])
       ++ (with pkgs.vscode-marketplace; [
         davidanson.vscode-markdownlint
@@ -48,6 +50,7 @@
       "files.insertFinalNewline" = true;
       "files.trimFinalNewlines" = true;
       "files.trimTrailingWhitespace" = true;
+      "lldb.suppressUpdateNotifications" = true;
       "markdownlint.config" = {
         MD010 = false;
         MD024.siblings_only = true;
