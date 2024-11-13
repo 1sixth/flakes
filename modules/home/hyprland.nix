@@ -111,7 +111,7 @@
         "workspace 2 silent, class:firefox"
         "workspace 3 silent, class:imv"
         "workspace 3 silent, class:mpv"
-        "workspace 3 silent, class:org.kde.okular"
+        "workspace 3 silent, class:org.gnome.Papers"
         "workspace 4 silent, class:thunderbird"
 
         # smart gaps, see https://wiki.hyprland.org/Configuring/Workspace-Rules/#smart-gaps

@@ -35,7 +35,7 @@
 
       # GUI
       jetbrains.rust-rover
-      okular
+      papers
       telegram-desktop
 
       # CLI

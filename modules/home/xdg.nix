@@ -26,7 +26,7 @@
     mimeApps = {
       defaultApplications = {
         "audio/flac" = [ "mpv.desktop" ];
-        "application/pdf" = [ "okularApplication_pdf.desktop" ];
+        "application/pdf" = [ "org.gnome.Papers.desktop" ];
         "image/jpeg" = [ "imv-dir.desktop" ];
         "image/gif" = [ "imv-dir.desktop" ];
         "image/png" = [ "imv-dir.desktop" ];
