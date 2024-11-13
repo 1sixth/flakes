@@ -185,6 +185,10 @@
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       };
     };
+    udisks2 = {
+      enable = true;
+      mountOnMedia = true;
+    };
   };
 
   systemd = {
