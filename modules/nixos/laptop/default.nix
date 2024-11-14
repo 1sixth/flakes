@@ -20,6 +20,7 @@
       ".cache/JetBrains"
       ".cache/nix"
       ".cache/tealdeer"
+      ".cache/uv"
       ".config/chromium"
       ".config/dconf"
       ".config/fcitx5"

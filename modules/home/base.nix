@@ -30,6 +30,10 @@
       gopls
       gotools
 
+
+      # Python
+      uv
+
       # Rust
       cargo
       clippy
