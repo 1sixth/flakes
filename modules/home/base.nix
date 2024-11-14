@@ -7,16 +7,6 @@
   fonts.fontconfig.enable = false;
 
   home = {
-    file.cargo = {
-      target = "${config.xdg.dataHome}/cargo/config.toml";
-      text = ''
-        [source.crates-io]
-        replace-with = 'mirror'
-
-        [source.mirror]
-        registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
-      '';
-    };
     homeDirectory = "/home/one6th";
     packages = with pkgs; [
       # C/C++
@@ -29,7 +19,6 @@
       go
       gopls
       gotools
-
 
       # Python
       uv
