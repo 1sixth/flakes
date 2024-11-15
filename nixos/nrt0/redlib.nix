@@ -18,30 +18,7 @@
   };
 
   services = {
-    redlib = {
-      enable = true;
-      # To be removed in the next version.
-      package = pkgs.redlib.overrideAttrs (old: rec {
-        src = pkgs.fetchFromGitHub {
-          owner = "redlib-org";
-          repo = "redlib";
-          rev = "d17d097b12b227f2e783a05cbd1e37c80f9ebe0b";
-          hash = "sha256-MT1FtRszFQuUMGaM4t0Zw+xOeMnK+kvG69SdyAbFB0A=";
-        };
-        cargoDeps = old.cargoDeps.overrideAttrs {
-          inherit src;
-          outputHash = "sha256-SCsxVu3n0/w6y1EYUiDgweDMEJLYEy5HOfIp70dqynM=";
-        };
-        checkFlags =
-          [ old.checkFlags or [ ] ]
-          ++ [
-            "--skip=test_oauth_headers_len"
-            "--skip=test_private_sub"
-            "--skip=test_banned_sub"
-            "--skip=test_gated_sub"
-          ];
-      });
-    };
+    redlib.enable = true;
     traefik = {
       dynamicConfigOptions.http = {
         routers.redlib = {
@@ -55,9 +32,9 @@
 
   systemd.services.redlib = {
     environment = {
-      "LIBREDDIT_DEFAULT_SHOW_NSFW" = "on";
-      "LIBREDDIT_DEFAULT_USE_HLS" = "on";
-      "LIBREDDIT_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION" = "on";
+      "REDLIB_DEFAULT_SHOW_NSFW" = "on";
+      "REDLIB_DEFAULT_USE_HLS" = "on";
+      "REDLIB_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION" = "on";
     };
     serviceConfig.ExecStart = lib.mkForce (
       "${config.programs.proxychains.package}/bin/proxychains4 -q "
