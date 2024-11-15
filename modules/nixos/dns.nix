@@ -78,6 +78,7 @@ in
         no-daemon = true;
         no-pidfile = true;
         prefetch-domain = true;
+        response-mode = "fastest-ip";
         server = Bootstrap ++ MagicDNS;
         server-https = DoH;
       };
