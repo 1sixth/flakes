@@ -64,6 +64,7 @@
 
   networking = {
     firewall.enable = false;
+    nftables.enable = true;
     useDHCP = false;
     useNetworkd = true;
   };
@@ -165,6 +166,7 @@
 
   systemd = {
     network.networks.default.DHCP = lib.mkDefault "yes";
+    services.tailscaled.environment.TS_DEBUG_FIREWALL_MODE = "auto";
     suppressedSystemUnits = [
       "systemd-machine-id-commit.service"
     ];
