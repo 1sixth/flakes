@@ -22,6 +22,7 @@
       ".cache/tealdeer"
       ".cache/uv"
       ".config/chromium"
+      ".config/Cursor"
       ".config/dconf"
       ".config/fcitx5"
       ".config/htop"

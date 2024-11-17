@@ -1,6 +1,7 @@
 {
   base = import ./base.nix;
   chromium = import ./chromium.nix;
+  cursor = import ./cursor.nix;
   firefox = import ./firefox.nix;
   foot = import ./foot.nix;
   hypridle = import ./hypridle.nix;
