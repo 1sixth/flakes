@@ -5,7 +5,6 @@
     enable = true;
     extensions =
       (with pkgs.vscode-extensions; [
-        continue.continue
         rust-lang.rust-analyzer
         vadimcn.vscode-lldb
       ])
@@ -20,7 +19,6 @@
         pkief.material-icon-theme
         redhat.vscode-xml
         redhat.vscode-yaml
-        saoudrizwan.claude-dev
         tamasfe.even-better-toml
         vscodevim.vim
         yzhang.markdown-all-in-one
@@ -36,8 +34,6 @@
     userSettings = {
       "[nix]"."editor.formatOnSave" = true;
       "autocorrect.formatOnSave" = false;
-      "continue.enableTabAutocomplete" = false;
-      "continue.telemetryEnabled" = false;
       "editor.fontFamily" = "monospace";
       "editor.fontSize" = 20;
       "editor.unicodeHighlight.allowedLocales" = {

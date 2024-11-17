@@ -33,7 +33,6 @@
       ".config/syncthing"
       ".config/VSCodium"
       ".config/wireshark"
-      ".continue"
       ".java"
       ".local/bin"
       ".local/share/atuin"
