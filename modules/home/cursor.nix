@@ -21,11 +21,7 @@ in
       settings.generate "settings.json" config.programs.vscode.userSettings
     );
     desktopEntries.cursor = {
-      exec = builtins.toString (
-        pkgs.writeShellScript "cursor" ''
-          cursor ${commandLineArgs} --no-sandbox
-        ''
-      );
+      exec = "cursor ${commandLineArgs} --no-sandbox %U";
       icon = "cursor";
       name = "Cursor";
     };

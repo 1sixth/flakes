@@ -108,6 +108,7 @@
       windowrulev2 = [
         "focusonactivate, class:mpv"
         "workspace 1 silent, class:codium-url-handler"
+        "workspace 1 silent, class:cursor-url-handler"
         "workspace 2 silent, class:firefox"
         "workspace 3 silent, class:imv"
         "workspace 3 silent, class:mpv"
