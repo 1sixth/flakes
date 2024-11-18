@@ -18,7 +18,12 @@ in
 
   xdg = {
     configFile."Cursor/User/settings.json".source = (
-      settings.generate "settings.json" config.programs.vscode.userSettings
+      settings.generate "settings.json" (
+        config.programs.vscode.userSettings
+        // {
+          "cursor.general.enableShadowWorkspace" = true;
+        }
+      )
     );
     desktopEntries.cursor = {
       exec = "cursor ${commandLineArgs} --no-sandbox %U";
