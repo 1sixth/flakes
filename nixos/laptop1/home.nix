@@ -18,17 +18,37 @@
 
       jetbrains.idea-community
     ];
+    sessionVariables.JAVA_HOME = "${pkgs.jdk8}/lib/openjdk";
   };
 
-  # https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/
-  programs.firefox.policies.Proxy.Passthrough = builtins.concatStringsSep "," [
-    "127.0.0.1"
-    "localhost"
-    "192.168.59.0/24"
-    "192.168.39.0/24"
-    "192.168.49.0/24"
-    "10.96.0.0/12"
-  ];
+  programs = {
+    # https://minikube.sigs.k8s.io/docs/handbook/vpn_and_proxy/
+    firefox.policies.Proxy.Passthrough = builtins.concatStringsSep "," [
+      "127.0.0.1"
+      "localhost"
+      "192.168.59.0/24"
+      "192.168.39.0/24"
+      "192.168.49.0/24"
+      "10.96.0.0/12"
+    ];
+    vscode = {
+      extensions = with pkgs.vscode-marketplace; [
+        redhat.java
+        vmware.vscode-spring-boot
+        vscjava.vscode-java-debug
+        vscjava.vscode-java-dependency
+        vscjava.vscode-java-test
+        vscjava.vscode-maven
+        vscjava.vscode-spring-boot-dashboard
+        vscjava.vscode-spring-initializr
+      ];
+      userSettings = {
+        "java.compile.nullAnalysis.mode" = "automatic";
+        "java.jdt.ls.java.home" = "${pkgs.jdk17}/lib/openjdk";
+        "maven.view" = "hierarchical";
+      };
+    };
+  };
 
   wayland.windowManager.hyprland.settings.device = [
     {
