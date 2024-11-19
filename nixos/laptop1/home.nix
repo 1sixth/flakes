@@ -17,6 +17,7 @@
       minikube
 
       jetbrains.idea-community
+      jetbrains.pycharm-community
     ];
     sessionVariables.JAVA_HOME = "${pkgs.jdk8}/lib/openjdk";
   };
@@ -59,13 +60,16 @@
     }
   ];
 
-  xdg.desktopEntries.idea-community = {
-    exec = builtins.toString (
-      pkgs.writeShellScript "idea-community" ''
-        idea-community -Dawt.toolkit.name=WLToolkit
-      ''
-    );
-    icon = "idea-community";
-    name = "IntelliJ IDEA CE";
+  xdg.desktopEntries = {
+    idea-community = {
+      exec = "idea-community -Dawt.toolkit.name=WLToolkit";
+      icon = "idea-community";
+      name = "IntelliJ IDEA CE";
+    };
+    pycharm-community = {
+      exec = "pycharm-community -Dawt.toolkit.name=WLToolkit";
+      icon = "pycharm-community";
+      name = "PyCharm CE";
+    };
   };
 }
