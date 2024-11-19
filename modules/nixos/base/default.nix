@@ -50,7 +50,6 @@
         libarchive
         nali
         nmap
-        python3
         rclone
         ripgrep
         rsync

@@ -44,6 +44,7 @@
       ".local/share/nali"
       ".local/share/org.localsend.localsend_app"
       ".local/share/TelegramDesktop"
+      ".local/share/uv"
       ".local/share/zoxide"
       ".local/state/mpv/watch_later"
       ".local/state/nvim"
@@ -126,6 +127,12 @@
     hyprland.enable = true;
     hyprlock.enable = true;
     localsend.enable = true;
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        stdenv.cc.cc.lib
+      ];
+    };
     ssh.extraConfig = ''
       CanonicalDomains 9875321.xyz
       CanonicalizeHostname always
