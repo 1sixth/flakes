@@ -5,10 +5,12 @@
     enable = true;
     extensions =
       (with pkgs.vscode-extensions; [
+        ms-python.python
         rust-lang.rust-analyzer
         vadimcn.vscode-lldb
       ])
       ++ (with pkgs.vscode-marketplace; [
+        charliermarsh.ruff
         davidanson.vscode-markdownlint
         editorconfig.editorconfig
         huacnlee.autocorrect
@@ -59,6 +61,7 @@
       "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
       "nix.serverSettings".nixd.formatting.command = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
       "redhat.telemetry.enabled" = false;
+      "ruff.path" = "${pkgs.ruff}/bin/ruff";
       "security.workspace.trust.enabled" = false;
       "terminal.integrated.copyOnSelection" = true;
       "update.mode" = "none";
