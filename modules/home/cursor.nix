@@ -21,6 +21,10 @@ in
       settings.generate "settings.json" (
         config.programs.vscode.userSettings
         // {
+          "cursor.cpp.disabledLanguages" = [
+            "markdown"
+            "plaintext"
+          ];
           "cursor.general.enableShadowWorkspace" = true;
         }
       )
