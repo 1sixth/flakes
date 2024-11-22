@@ -26,6 +26,7 @@ in
             "plaintext"
           ];
           "cursor.general.enableShadowWorkspace" = true;
+          "workbench.activityBar.orientation" = "vertical";
         }
       )
     );
