@@ -6,6 +6,8 @@
     (final: prev: {
       inherit (inputs.colmena.packages.${prev.system}) colmena;
       inherit (inputs.nix-index-database.packages.${prev.system}) nix-index-with-db;
+      inherit (inputs.nixpkgs-noto-sans.legacyPackages.${prev.system}) noto-fonts-cjk-sans-static;
+      inherit (inputs.nixpkgs-noto-serif.legacyPackages.${prev.system}) noto-fonts-cjk-serif-static;
       inherit
         (inputs.nix-vscode-extensions.extensions.${prev.system}.forVSCodeVersion
           config.home-manager.users.one6th.programs.vscode.package.version

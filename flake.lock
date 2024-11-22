@@ -438,6 +438,38 @@
         "type": "github"
       }
     },
+    "nixpkgs-noto-sans": {
+      "locked": {
+        "lastModified": 1731261201,
+        "narHash": "sha256-WWgfR0K+ZJ6gbZIKe0my1Rck8utYx2gWiibYS7NkiDo=",
+        "owner": "leana8959",
+        "repo": "nixpkgs",
+        "rev": "02c705eb80110edf3bfa063794f410db23e4fbd5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "leana8959",
+        "ref": "add-noto-fonts-cjk-sans-static",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-noto-serif": {
+      "locked": {
+        "lastModified": 1729965894,
+        "narHash": "sha256-rlCLnnRl2St7NqcBAa7Y7+bn4yB9AmzsFihqSEpjluA=",
+        "owner": "leana8959",
+        "repo": "nixpkgs",
+        "rev": "9691468f1b1a2b0e8badada9bf11f2ea377a3df8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "leana8959",
+        "ref": "add-noto-fonts-cjk-serif-static",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1730741070,
@@ -487,6 +519,8 @@
         "nix-index-database": "nix-index-database",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-noto-sans": "nixpkgs-noto-sans",
+        "nixpkgs-noto-serif": "nixpkgs-noto-serif",
         "sops-nix": "sops-nix"
       }
     },

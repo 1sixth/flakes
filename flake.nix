@@ -27,6 +27,8 @@
       url = "github:nix-community/nix-vscode-extensions";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs-noto-sans.url = "github:leana8959/nixpkgs/add-noto-fonts-cjk-sans-static";
+    nixpkgs-noto-serif.url = "github:leana8959/nixpkgs/add-noto-fonts-cjk-serif-static";
     sops-nix = {
       inputs = {
         nixpkgs.follows = "nixpkgs";

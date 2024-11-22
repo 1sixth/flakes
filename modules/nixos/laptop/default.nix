@@ -64,8 +64,9 @@
       (iosevka-bin.override { variant = "SGr-IosevkaFixedSlab"; })
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
       noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
+      # Jetbrains IDEs don't support variable fonts.
+      noto-fonts-cjk-sans-static
+      noto-fonts-cjk-serif-static
       noto-fonts-color-emoji
       noto-fonts-extra
       noto-fonts-monochrome-emoji
