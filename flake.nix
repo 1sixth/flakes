@@ -30,10 +30,7 @@
     nixpkgs-noto-sans.url = "github:leana8959/nixpkgs/add-noto-fonts-cjk-sans-static";
     nixpkgs-noto-serif.url = "github:leana8959/nixpkgs/add-noto-fonts-cjk-serif-static";
     sops-nix = {
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:Mic92/sops-nix";
     };
   };
