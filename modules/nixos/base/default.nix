@@ -18,7 +18,7 @@
       "net.core.wmem_max" = 7500000;
     };
     kernelParams = [ "zswap.enabled=1" ];
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
     loader = {
       grub.configurationLimit = 5;
       systemd-boot.configurationLimit = 5;
