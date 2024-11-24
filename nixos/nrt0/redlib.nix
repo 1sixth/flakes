@@ -50,9 +50,12 @@
       "REDLIB_DEFAULT_USE_HLS" = "on";
       "REDLIB_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION" = "on";
     };
-    serviceConfig.ExecStart = lib.mkForce (
-      "${config.programs.proxychains.package}/bin/proxychains4 -q "
-      + "${config.services.redlib.package}/bin/redlib --address 127.0.0.1 --port 8001"
-    );
+    serviceConfig = {
+      ExecStart = lib.mkForce (
+        "${config.programs.proxychains.package}/bin/proxychains4 -q "
+        + "${config.services.redlib.package}/bin/redlib --address 127.0.0.1 --port 8001"
+      );
+      RuntimeMaxSec = "1h";
+    };
   };
 }
