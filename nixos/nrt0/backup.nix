@@ -27,4 +27,6 @@
   };
 
   sops.secrets.restic = { };
+
+  systemd.services.restic-backups-main.serviceConfig.Restart = "on-failure";
 }
