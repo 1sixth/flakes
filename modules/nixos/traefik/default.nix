@@ -37,10 +37,7 @@
     enable = true;
     staticConfigOptions = {
       entryPoints = {
-        http = {
-          address = ":80";
-          http.redirections.entryPoint.to = "https";
-        };
+        http.address = ":80";
         https = {
           address = ":443";
           http.tls = { };

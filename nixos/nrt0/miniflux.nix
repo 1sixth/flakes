@@ -7,7 +7,7 @@
       enable = true;
       config = {
         BASE_URL = "https://rss.shinta.ro";
-        LISTEN_ADDR = "127.0.0.1:8000";
+        LISTEN_ADDR = "127.0.0.1:8001";
       };
     };
     traefik.dynamicConfigOptions.http = {
