@@ -3,7 +3,6 @@
 {
   imports = [
     ./backup.nix
-    ./derp.nix
     ./hardware.nix
     ./miniflux.nix
     ./postgresql.nix

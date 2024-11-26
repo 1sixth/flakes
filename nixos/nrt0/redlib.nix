@@ -39,7 +39,7 @@
           rule = "Host(`reddit.shinta.ro`)";
           service = "redlib";
         };
-        services.redlib.loadBalancer.servers = [ { url = "http://127.0.0.1:8002"; } ];
+        services.redlib.loadBalancer.servers = [ { url = "http://127.0.0.1:8001"; } ];
       };
     };
   };
@@ -53,7 +53,7 @@
     serviceConfig = {
       ExecStart = lib.mkForce (
         "${config.programs.proxychains.package}/bin/proxychains4 -q "
-        + "${config.services.redlib.package}/bin/redlib --address 127.0.0.1 --port 8002"
+        + "${config.services.redlib.package}/bin/redlib --address 127.0.0.1 --port 8001"
       );
       RuntimeMaxSec = "1h";
     };

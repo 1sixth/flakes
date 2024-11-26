@@ -21,7 +21,7 @@
       ];
     };
     vaultwarden = {
-      config.ROCKET_PORT = 8003;
+      config.ROCKET_PORT = 8002;
       dbBackend = "postgresql";
       enable = true;
       environmentFile = config.sops.secrets.vaultwarden.path;

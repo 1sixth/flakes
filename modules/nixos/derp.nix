@@ -4,7 +4,7 @@
   services = {
     nginx.enable = lib.mkForce false;
     tailscale.derper = {
-      domain = "derp.shinta.ro";
+      domain = "${config.networking.hostName}.9875321.xyz";
       enable = true;
     };
     traefik = {
@@ -14,15 +14,15 @@
           service = "derp";
         };
         services.derp.loadBalancer.servers = [
-          { url = "http://127.0.0.1:8000"; }
+          { url = "http://127.0.0.1:8010"; }
         ];
       };
     };
   };
 
-  # force derper to listen on 127.0.0.1
+  # force derper to listen on 127.0.0.1, also disable STUN
   systemd.services.tailscale-derper.serviceConfig.ExecStart = lib.mkForce (
-    "${config.services.tailscale.package.derper}/bin/derper -a 127.0.0.1:8000 -c /var/lib/derper/derper.key "
-    + "-hostname=${config.services.tailscale.derper.domain} -verify-clients"
+    "${config.services.tailscale.package.derper}/bin/derper -a 127.0.0.1:8010 -c /var/lib/derper/derper.key "
+    + "-hostname=${config.services.tailscale.derper.domain} -stun=false -verify-clients"
   );
 }
