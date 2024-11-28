@@ -16,8 +16,10 @@
       maven
       minikube
 
+      dbeaver-bin
       jetbrains.idea-community
       jetbrains.pycharm-community
+      remmina
     ];
     sessionVariables.JAVA_HOME = "${pkgs.jdk8}/lib/openjdk";
   };

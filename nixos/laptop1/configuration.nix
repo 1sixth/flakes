@@ -8,7 +8,10 @@
   environment.persistence."/persistent/impermanence".users.one6th.directories = [
     ".cache/helm"
     ".config/helm"
+    ".config/remmina"
+    ".local/share/DBeaverData"
     ".local/share/helm"
+    ".local/share/remmina"
     ".kube"
     ".m2"
     ".minikube"
