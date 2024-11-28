@@ -27,6 +27,7 @@
       ".config/fcitx5"
       ".config/htop"
       ".config/JetBrains"
+      ".config/libreoffice"
       ".config/nali"
       ".config/rclone"
       ".config/sops"

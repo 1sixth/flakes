@@ -30,6 +30,7 @@
       rustfmt
 
       # GUI
+      libreoffice
       papers
       telegram-desktop
 
