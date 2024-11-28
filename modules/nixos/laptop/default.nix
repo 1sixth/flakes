@@ -62,7 +62,7 @@
     enableDefaultPackages = false;
     packages = with pkgs; [
       (iosevka-bin.override { variant = "SGr-IosevkaFixedSlab"; })
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      nerd-fonts.symbols-only
       noto-fonts
       # Jetbrains IDEs don't support variable fonts.
       noto-fonts-cjk-sans-static
