@@ -36,6 +36,7 @@
     ];
     vscode = {
       extensions = with pkgs.vscode-marketplace; [
+        ms-kubernetes-tools.vscode-kubernetes-tools
         redhat.java
         vmware.vscode-spring-boot
         vscjava.vscode-java-debug
