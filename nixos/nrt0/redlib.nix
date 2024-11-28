@@ -32,6 +32,11 @@
           outputHash = "sha256-6a//gKo4YYsXdf5mxktD3gmeoUdKujUPUUO9EOnf8ao=";
         };
       });
+      settings = {
+        REDLIB_DEFAULT_SHOW_NSFW = true;
+        REDLIB_DEFAULT_USE_HLS = true;
+        REDLIB_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION = true;
+      };
     };
     traefik = {
       dynamicConfigOptions.http = {
@@ -44,18 +49,15 @@
     };
   };
 
-  systemd.services.redlib = {
-    environment = {
-      "REDLIB_DEFAULT_SHOW_NSFW" = "on";
-      "REDLIB_DEFAULT_USE_HLS" = "on";
-      "REDLIB_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION" = "on";
-    };
-    serviceConfig = {
-      ExecStart = lib.mkForce (
+  systemd.services.redlib.serviceConfig = {
+    ExecStart = lib.mkForce [
+      ""
+      (
         "${config.programs.proxychains.package}/bin/proxychains4 -q "
         + "${config.services.redlib.package}/bin/redlib --address 127.0.0.1 --port 8001"
-      );
-      RuntimeMaxSec = "1h";
-    };
+      )
+    ];
+    Restart = "on-failure";
+    RuntimeMaxSec = "1h";
   };
 }
