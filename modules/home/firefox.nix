@@ -130,17 +130,5 @@
         MoreFromMozilla = false;
       };
     };
-    # https://github.com/stonecrusher/simpleMenuWizard
-    profiles.default.userChrome = ''
-      #context-openlinkinusercontext-menu,    /* Open Link in New Container Tab   */
-      #context-openlink,                      /* Open Link in New Window          */
-      #context-openlinkprivate,               /* Open Link in New Private Window  */
-      #context-sep-open,                      /************ Separator *************/
-      #context-bookmarklink,                  /* Bookmark Link                    */
-      #context-savelink,                      /* Save Link As…                    */
-      #context-sep-sendlinktodevice,          /************ Separator *************/
-      #frame-sep                              /************ Separator *************/
-          { display:none !important; }
-    '';
   };
 }
