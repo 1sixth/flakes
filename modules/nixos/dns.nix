@@ -77,10 +77,9 @@ in
         nameserver = [ "/tail5e6002.ts.net/magicdns" ];
         no-daemon = true;
         no-pidfile = true;
-        prefetch-domain = true;
-        response-mode = "fastest-ip";
         server = Bootstrap ++ MagicDNS;
         server-https = DoH;
+        speed-check-mode = "none";
       };
     };
   };
