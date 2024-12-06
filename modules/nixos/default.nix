@@ -13,7 +13,6 @@
   server = import ./server;
   traefik = import ./traefik;
 
-  derp = import ./derp.nix;
   dns = import ./dns.nix;
   hath = import ./hath.nix;
   qbittorrent-nox = import ./qbittorrent-nox.nix;

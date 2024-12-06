@@ -12,7 +12,6 @@ nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.sops-nix.nixosModules.sops
     self.nixosModules.base
-    self.nixosModules.derp
     self.nixosModules.dns
     self.nixosModules.hath
     self.nixosModules.prometheus.client
