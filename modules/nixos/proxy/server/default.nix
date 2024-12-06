@@ -9,9 +9,20 @@
     services.sing-box.loadBalancer.servers = [ { url = "http://127.0.0.1:10000"; } ];
   };
 
-  sops.secrets."sing-box.json" = {
-    restartUnits = [ "sing-box.service" ];
-    sopsFile = ./secrets.yaml;
+  sops.secrets = {
+    "misc.json" = {
+      restartUnits = [ "sing-box.service" ];
+      sopsFile = ./secrets.yaml;
+    };
+    "route_head.json" = {
+      restartUnits = [ "sing-box.service" ];
+      sopsFile = ./secrets.yaml;
+    };
+    "route_tail.json" = {
+      restartUnits = [ "sing-box.service" ];
+      sopsFile = ./secrets.yaml;
+    };
+    "sing-box.json".restartUnits = [ "sing-box.service" ];
   };
 
   systemd = {
@@ -24,7 +35,10 @@
           "${pkgs.sing-box}/bin/sing-box -C $CREDENTIALS_DIRECTORY run"
         ];
         LoadCredential = [
-          "config.json:${config.sops.secrets."sing-box.json".path}"
+          "00-misc.json:${config.sops.secrets."misc.json".path}"
+          "01-route_head.json:${config.sops.secrets."route_head.json".path}"
+          "02-sing-box.json:${config.sops.secrets."sing-box.json".path}"
+          "03-route_tail.json:${config.sops.secrets."route_tail.json".path}"
         ];
         StateDirectory = "sing-box";
         WorkingDirectory = "/var/lib/sing-box";
