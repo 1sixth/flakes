@@ -81,17 +81,13 @@
       F9 = "show-text \${track-list}"; # show the list of video, audio and sub tracks
     };
     config = {
-      cscale = "ewa_lanczossharp";
-      dscale = "ewa_lanczossharp";
       demuxer-max-bytes = "1GiB";
-      drm-vrr-enabled = "auto";
       fullscreen = "";
       gpu-api = "vulkan";
       hwdec = "auto-safe";
       keep-open = "yes";
       no-input-default-bindings = "";
-      profile = "gpu-hq";
-      scale = "ewa_lanczossharp";
+      profile = "high-quality";
       script-opts-append = [
         "sponsorblock-categories=sponsor"
         "sponsorblock-report_views=no"
