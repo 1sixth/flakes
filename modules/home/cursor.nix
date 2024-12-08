@@ -2,9 +2,7 @@
 
 let
   commandLineArgs = builtins.concatStringsSep " " [
-    "--enable-wayland-ime"
     "--extensions-dir ${config.home.homeDirectory}/.vscode-oss/extensions"
-    "--ozone-platform-hint=auto"
     "--proxy-server=socks5://127.0.0.1:1080"
   ];
 
