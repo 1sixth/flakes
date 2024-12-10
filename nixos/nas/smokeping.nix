@@ -32,110 +32,218 @@
         menu = Top
         title = Network Latency Grapher
 
-        + BuyVM
-        menu = BuyVM
-        title = BuyVM
+        + Cloudflare
+        menu = Cloudflare
+        title = Cloudflare
 
-        ++ Las_Vegas
-        menu = Las Vegas
-        title = Las Vegas
-        host = speedtest.lv.buyvm.net
+        ++ Vault
+        menu = Vault
+        title = Vault
+        host = vault.shinta.ro
 
-        ++ Luxembourg
-        menu = Luxembourg
-        title = Luxembourg
-        host = speedtest.lu.buyvm.net
+        ++ Cloudflare
+        menu = Cloudflare
+        title = Cloudflare
+        host = cloudflare.com
 
-        + ClawCloud
+        + Domestic
+        menu = Domestic
+        title = Domestic
+
+        ++ 119_29_29_29
+        menu = 119.29.29.29
+        title = 119.29.29.29
+        host = 119.29.29.29
+
+        ++ 223_5_5_5
+        menu = 223.5.5.5
+        title = 223.5.5.5
+        host = 223.5.5.5
+
+        ++ 223_6_6_6
+        menu = 223.6.6.6
+        title = 223.6.6.6
+        host = 223.6.6.6
+
+        ++ Alibaba_Cloud
+        menu = Alibaba Cloud
+        title = Alibaba Cloud
+        host = aliyun.com
+
+        ++ Baidu
+        menu = Baidu
+        title = Baidu
+        host = baidu.com
+
+        ++ Tencent_Cloud
+        menu = Tencent Cloud
+        title = Tencent Cloud
+        host = cloud.tencent.com
+
+        + Hosts
+        menu = Hosts
+        title = Hosts
+
+        ++ lax0
+        menu = lax0
+        title = lax0
+        host = lax0.9875321.xyz
+
+        ++ nrt0
+        menu = nrt0
+        title = nrt0
+        host = nrt0.9875321.xyz
+
+        ++ nrt1
+        menu = nrt1
+        title = nrt1
+        host = nrt1.9875321.xyz
+
+        ++ nrt2
+        menu = nrt2
+        title = nrt2
+        host = nrt2.9875321.xyz
+
+        ++ sxb0
+        menu = sxb0
+        title = sxb0
+        host = sxb0.9875321.xyz
+
+        + Providers
+        menu = Providers
+        title = Providers
+
+        ++ ClawCloud
         menu = ClawCloud
         title = ClawCloud
 
-        ++ Hong_Kong
+        +++ Hong_Kong
         menu = Hong Kong
         title = Hong Kong
         host = lg.cn-hongkong.claw.cloud
 
-        ++ Tokyo
-        menu = Tokyo
-        title = Tokyo
-        host = lg.ap-northeast-1.claw.cloud
-
-        ++ Singapore
+        +++ Singapore
         menu = Singapore
         title = Singapore
         host = lg.ap-southeast-1.claw.cloud
 
-        + GreenCloud
-        menu = GreenCloud
-        title = GreenCloud
+        +++ Tokyo
+        menu = Tokyo
+        title = Tokyo
+        host = lg.ap-northeast-1.claw.cloud
 
-        ++ Tokyo_SoftBank
-        menu = Tokyo (SoftBank)
-        title = Tokyo (SoftBank)
-        host = 103.201.131.131
+        +++ Virginia
+        menu = Virginia
+        title = Virginia
+        host = lg.us-east-1.claw.cloud
 
-        + Hetzner
+        +++ Silicon_Valley
+        menu = Silicon Valley
+        title = Silicon Valley
+        host = lg.us-west-1.claw.cloud
+
+        +++ Frankfurt
+        menu = Frankfurt
+        title = Frankfurt
+        host = lg.eu-central-1.claw.cloud
+
+        ++ Hetzner
         menu = Hetzner
         title = Hetzner
 
-        ++ NBG1
+        +++ NBG1
         menu = nbg1
         title = nbg1
         host = nbg1-speed.hetzner.com
 
-        ++ FSN1
+        +++ FSN1
         menu = fsn1
         title = fsn1
         host = fsn1-speed.hetzner.com
 
-        ++ HEL
-        menu = hel
-        title = hel
-        host = hel.icmp.hetzner.com
+        +++ HEL1
+        menu = hel1
+        title = hel1
+        host = hel1-speed.hetzner.com
 
-        ++ SIN
-        menu = sin
-        title = sin
-        host = sin-speed.hetzner.com
-
-        ++ HIL
+        +++ HIL
         menu = hil
         title = hil
         host = hil-speed.hetzner.com
 
-        ++ ASH
+        +++ ASH
         menu = ash
         title = ash
         host = ash-speed.hetzner.com
 
-        + RackNerd
+        +++ SIN
+        menu = sin
+        title = sin
+        host = sin-speed.hetzner.com
+
+        ++ LiteServer
+        menu = LiteServer
+        title = LiteServer
+        host = lg-drn.liteserver.nl
+
+        ++ RackNerd
         menu = RackNerd
         title = RackNerd
 
-        ++ Los_Angeles
-        menu = Los Angeles DC02
-        title = Los Angeles DC02
+        +++ Los_Angeles
+        menu = Los Angeles
+        title = Los Angeles
         host = lg-lax02.racknerd.com
 
-        ++ San_Jose
+        +++ San_Jose
         menu = San Jose
         title = San Jose
         host = lg-sj.racknerd.com
 
-        ++ Seattle
+        +++ Seattle
         menu = Seattle
         title = Seattle
         host = lg-sea.racknerd.com
 
-        ++ Dallas
+        +++ Dallas
         menu = Dallas
         title = Dallas
         host = lg-dal.racknerd.com
 
-        ++ Strasbourg
+        +++ Chicago
+        menu = Chicago
+        title = Chicago
+        host = lg-chi.racknerd.com
+
+        +++ New_York
+        menu = New York
+        title = New York
+        host = lg-ny.racknerd.com
+
+        +++ Ashburn
+        menu = Ashburn
+        title = Ashburn
+        host = lg-ash.racknerd.com
+
+        +++ Atlanta
+        menu = Atlanta
+        title = Atlanta
+        host = lg-atl.racknerd.com
+
+        +++ Strasbourg
         menu = Strasbourg
         title = Strasbourg
         host = lg-fr.racknerd.com
+
+        +++ Amsterdam
+        menu = Amsterdam
+        title = Amsterdam
+        host = lg-ams.racknerd.com
+
+        +++ Dublin
+        menu = Dublin
+        title = Dublin
+        host = lg-dub.racknerd.com
       '';
     };
     traefik.dynamicConfigOptions.http = {
