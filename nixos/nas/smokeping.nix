@@ -26,6 +26,11 @@
       enable = true;
       host = "127.0.0.1";
       hostName = "${config.networking.hostName}.9875321.xyz";
+      probeConfig = ''
+        + FPing
+        binary = ${config.security.wrapperDir}/fping
+        protocol = 4
+      '';
       targetConfig = ''
         probe = FPing
 
