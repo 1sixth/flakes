@@ -23,6 +23,7 @@ in
             "markdown"
             "plaintext"
           ];
+          "cursor.cpp.enablePartialAccepts" = true;
           "cursor.general.enableShadowWorkspace" = true;
           "workbench.activityBar.orientation" = "vertical";
         }
