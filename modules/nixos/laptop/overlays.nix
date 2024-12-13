@@ -39,6 +39,15 @@
           '')
         ];
       });
+
+      yt-dlp = prev.yt-dlp.overrideAttrs (old: rec {
+        version = "2024.12.12.232950.dev0";
+        src = prev.fetchPypi {
+          inherit version;
+          pname = "yt_dlp";
+          hash = "sha256-MPmi6cRbvfrRMOk7uQ725FtAavg+h5P+006mI8TEqcc=";
+        };
+      });
     })
   ];
 }
