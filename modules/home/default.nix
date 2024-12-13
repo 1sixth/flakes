@@ -14,5 +14,6 @@
   theme = import ./theme.nix;
   vscodium = import ./vscodium.nix;
   waybar = import ./waybar.nix;
+  windsurf = import ./windsurf.nix;
   xdg = import ./xdg.nix;
 }

@@ -1,4 +1,9 @@
-{ config, inputs, ... }:
+{
+  config,
+  inputs,
+  self,
+  ...
+}:
 
 {
   nixpkgs.overlays = [
@@ -14,6 +19,7 @@
         )
         vscode-marketplace
         ;
+      inherit (self.packages.${prev.system}) windsurf;
 
       impala = prev.impala.overrideAttrs (old: {
         patches = (old.patches or [ ]) ++ [
