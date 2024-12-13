@@ -101,5 +101,10 @@
       homeModules = import ./modules/home;
 
       nixosModules = import ./modules/nixos;
+
+      packages.x86_64-linux = import ./pkgs {
+        inherit nixpkgs;
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      };
     };
 }
