@@ -64,6 +64,10 @@
       "terminal.integrated.copyOnSelection" = true;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
+      "vim.autoSwitchInputMethod.enable" = true;
+      "vim.autoSwitchInputMethod.defaultIM" = "1";
+      "vim.autoSwitchInputMethod.obtainIMCmd" = "${pkgs.fcitx5}/bin/fcitx5-remote";
+      "vim.autoSwitchInputMethod.switchIMCmd" = "${pkgs.fcitx5}/bin/fcitx5-remote -t {im}";
       "vim.useCtrlKeys" = false;
       "window.menuBarVisibility" = "toggle";
       "window.titleBarStyle" = "custom";
