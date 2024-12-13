@@ -2,7 +2,8 @@
 
 let
   commandLineArgs = builtins.concatStringsSep " " [
-    "--extensions-dir ${config.home.homeDirectory}/.vscode-oss/extensions"
+    "--extensions-dir=${config.home.homeDirectory}/.vscode-oss/extensions"
+    "--password-store=gnome-libsecret"
     "--proxy-server=socks5://127.0.0.1:1080"
   ];
 
