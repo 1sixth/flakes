@@ -47,6 +47,7 @@ in
             forward tail5e6002.ts.net ${MagicDNS}
 
             forward . ${DNS} {
+                health_check 1m
                 tls_servername ${ServerName}
             }
 
