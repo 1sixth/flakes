@@ -15,7 +15,7 @@
 
   dns = import ./dns.nix;
   hath = import ./hath.nix;
-  qbittorrent-nox = import ./qbittorrent-nox.nix;
+  qbittorrent = import ./qbittorrent.nix;
   stress-ng = import ./stress-ng.nix;
   syncthing = import ./syncthing.nix;
 }

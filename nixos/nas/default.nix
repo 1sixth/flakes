@@ -12,7 +12,7 @@ nixpkgs.lib.nixosSystem {
     self.nixosModules.base
     self.nixosModules.prometheus.client
     self.nixosModules.proxy.client
-    self.nixosModules.qbittorrent-nox
+    self.nixosModules.qbittorrent
     self.nixosModules.server
     self.nixosModules.syncthing
     self.nixosModules.traefik
