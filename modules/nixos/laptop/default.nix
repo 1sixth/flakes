@@ -48,6 +48,7 @@
       ".local/share/fcitx5"
       ".local/share/fish"
       ".local/share/JetBrains"
+      ".local/share/keyrings"
       ".local/share/nali"
       ".local/share/org.localsend.localsend_app"
       ".local/share/TelegramDesktop"
@@ -175,6 +176,8 @@
 
   services = {
     getty.autologinUser = "one6th";
+    # used by vscode
+    gnome.gnome-keyring.enable = true;
     hypridle.enable = true;
     pipewire = {
       enable = true;
