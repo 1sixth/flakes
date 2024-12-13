@@ -118,6 +118,35 @@
         menu = Providers
         title = Providers
 
+        ++ BandwagonHost
+        menu = BandwagonHost
+        title = BandwagonHost
+
+        +++ Osaka
+        menu = Osaka
+        title = Osaka
+        host = jpos.52bwg.com
+
+        +++ Hong_Kong
+        menu = Hong Kong
+        title = Hong Kong
+        host = hk85.52bwg.com
+
+        +++ Amsterdam
+        menu = Amsterdam
+        title = Amsterdam
+        host = eunl9.52bwg.com
+
+        +++ DC6
+        menu = DC6
+        title = DC6
+        host = dc6.52bwg.com
+
+        +++ DC9
+        menu = DC9
+        title = DC9
+        host = dc9.52bwg.com
+
         ++ ClawCloud
         menu = ClawCloud
         title = ClawCloud
@@ -249,6 +278,35 @@
         menu = Dublin
         title = Dublin
         host = lg-dub.racknerd.com
+
+        ++ V_PS
+        menu = V.PS
+        title = V.PS
+
+        +++ Frankfurt
+        menu = Frankfurt
+        title = Frankfurt
+        host = fra.lg.v.ps
+
+        ++ San_Jose
+        menu = San Jose
+        title = San Jose
+        host = sjc.lg.v.ps
+
+        +++ Seattle
+        menu = Seattle
+        title = Seattle
+        host = sea.lg.v.ps
+
+        +++ Osaka
+        menu = Osaka
+        title = Osaka
+        host = kix.lg.v.ps
+
+        +++ Tokyo
+        menu = Tokyo
+        title = Tokyo
+        host = nrt.lg.v.ps
       '';
     };
     traefik.dynamicConfigOptions.http = {
