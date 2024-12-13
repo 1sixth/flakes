@@ -133,5 +133,6 @@
     };
   };
 
-  systemd.services.alertmanager.serviceConfig.LoadCredential = "smtp_password:${config.sops.secrets.alertmanager.path}";
+  systemd.services.alertmanager.serviceConfig.LoadCredential =
+    "smtp_password:${config.sops.secrets.alertmanager.path}";
 }

@@ -1,12 +1,16 @@
 {
   config,
+  inputs,
   pkgs,
   self,
   ...
 }:
 
 {
-  imports = [ ./overlays.nix ];
+  imports = [
+    ./overlays.nix
+    inputs.home-manager.nixosModules.home-manager
+  ];
 
   boot.supportedFilesystems = [ "ntfs" ];
 
