@@ -71,7 +71,7 @@
       "vim.useCtrlKeys" = false;
       "window.menuBarVisibility" = "toggle";
       "window.titleBarStyle" = "custom";
-      "workbench.colorTheme" = "Quiet Light";
+      "workbench.colorTheme" = "Solarized Light";
       "workbench.enableExperiments" = false;
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.settings.enableNaturalLanguageSearch" = false;
