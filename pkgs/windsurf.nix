@@ -11,7 +11,7 @@
 callPackage "${nixpkgs}/pkgs/applications/editors/vscode/generic.nix" {
   inherit commandLineArgs useVSCodeRipgrep;
 
-  version = "1.10.0";
+  version = "1.1.0";
   pname = "windsurf";
 
   executableName = "windsurf";
