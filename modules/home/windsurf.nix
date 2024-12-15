@@ -22,6 +22,7 @@ in
         config.programs.vscode.userSettings
         // {
           "windsurf.autocompleteSpeed" = "fast";
+          "windsurf.cascadeOpenOnReload" = false;
         }
       )
     );
