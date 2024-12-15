@@ -288,7 +288,7 @@
         title = Frankfurt
         host = fra.lg.v.ps
 
-        ++ San_Jose
+        +++ San_Jose
         menu = San Jose
         title = San Jose
         host = sjc.lg.v.ps
