@@ -28,6 +28,7 @@
     mutableExtensionsDir = false;
     package = pkgs.vscodium.override {
       commandLineArgs = builtins.concatStringsSep " " [
+        "--password-store=gnome-libsecret"
         "--proxy-server=socks5://127.0.0.1:1080"
       ];
     };
