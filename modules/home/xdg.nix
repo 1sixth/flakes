@@ -32,6 +32,7 @@
         "x-scheme-handler/https" = [ "firefox-esr.desktop" ];
         "x-scheme-handler/mailto" = [ "thunderbird.desktop" ];
         "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
+        "x-scheme-handler/tonsite" = [ "org.telegram.desktop.desktop" ];
       };
       enable = true;
     };
