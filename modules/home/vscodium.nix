@@ -34,6 +34,7 @@
     };
     userSettings = {
       "[nix]"."editor.formatOnSave" = true;
+      "[rust]"."editor.formatOnSave" = true;
       "autocorrect.formatOnSave" = false;
       "editor.fontFamily" = "monospace";
       "editor.fontSize" = 20;
