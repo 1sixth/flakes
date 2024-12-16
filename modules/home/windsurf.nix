@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   commandLineArgs = builtins.concatStringsSep " " [
@@ -11,24 +16,21 @@ let
 in
 
 {
-  # collision with vscode/vscodium
-  # home.packages = with pkgs; [
-  #   windsurf
-  # ];
+  home.packages = with pkgs; [
+    (lib.lowPrio (
+      windsurf.override {
+        inherit commandLineArgs;
+      }
+    ))
+  ];
 
-  xdg = {
-    configFile."Windsurf/User/settings.json".source = (
-      settings.generate "settings.json" (
-        config.programs.vscode.userSettings
-        // {
-          "windsurf.autocompleteSpeed" = "fast";
-          "windsurf.cascadeOpenOnReload" = false;
-        }
-      )
-    );
-    desktopEntries.windsurf = {
-      exec = "${pkgs.windsurf}/bin/windsurf ${commandLineArgs}";
-      name = "Windsurf";
-    };
-  };
+  xdg.configFile."Windsurf/User/settings.json".source = (
+    settings.generate "settings.json" (
+      config.programs.vscode.userSettings
+      // {
+        "windsurf.autocompleteSpeed" = "fast";
+        "windsurf.cascadeOpenOnReload" = false;
+      }
+    )
+  );
 }
