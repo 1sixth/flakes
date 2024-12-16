@@ -12,7 +12,10 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot = {
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    supportedFilesystems = [ "ntfs" ];
+  };
 
   environment = {
     etc."nixos/flake.nix".source = "${config.users.users.one6th.home}/Develop/flakes/flake.nix";
